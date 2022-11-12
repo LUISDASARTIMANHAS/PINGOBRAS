@@ -1,0 +1,273 @@
+@font-face {
+  font-family: "Noto Sans Mono", monospace;
+  src: url("https://fonts.googleapis.com/css2?family=Noto+Sans+Mono:wght@500&display=swap")
+    format("opentype");
+}
+:root {
+  --color-padrao: white;
+  --color-text-main: #000000;
+  --color-primary: #ffff00;
+  --wrapper-altura: 87vh;
+  --image-max-largura: 100px;
+  --image-margin: 1rem;
+  --font-principal: "Arial";
+  --font-family-cabecalho: "Roboto, sans-serif;";
+  --max-largura: 144px;
+  --max-altura: 544px;
+  --max-peso: 500;
+  --font-tamanho: 15px;
+  --font-tamanho-cabecalho: 20px;
+  --fundo-padrao: white;
+  --negrito: bold;
+  --espaco-em-branco: nowrap;
+  --btn-tamanho: 10pt;
+  --sub-tamanho: 17pt;
+  --X: 0px;
+  --Y: 390px;
+  --PINGOBRASIMG: url(https://cdn.glitch.global/b39d6a4a-0e14-4b41-930d-29d3ccd6c137/pingobras.png?v=1650114443929);
+  --PINGOBRASIMG2: url(https://cdn.glitch.global/b39d6a4a-0e14-4b41-930d-29d3ccd6c137/PINGOBRAS.png?v=1650116906906);
+  --IMGLuisdasartimanhas: url(https://cdn.glitch.global/b39d6a4a-0e14-4b41-930d-29d3ccd6c137/doge-angry.png?v=1661855131002);
+
+  --display: flex formato de celular;
+  --height: "altuta";
+  --Weight: "peso";
+  --width: "largura";
+  --white-space: "espaco em branco";
+}
+/* Basic page style resets */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Roboto", sans-serif;
+  max-width:100%;
+}
+js{
+  width: auto;
+  display: inline;
+}
+.game-board{
+  width: 100%;
+  height: 600px;
+  border-bottom: 15px solid green;
+  margin: 0 auto;
+  position: relative;
+  overflow: hidden;
+  bottom: 0;
+  background: linear-gradient(white,lightblue);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+}
+.pipe{
+  position: absolute;
+  bottom: 0;
+  width: 80px;
+  height: 80px;
+  animation: pipe-animation 2s infinite linear;
+}
+.pipe-plant{
+  position: absolute;
+  bottom: -18px;
+  width: 80px;
+  height: 90px;
+  animation: pipe-plant-animation 2s infinite linear;
+  display: none;
+  border: 1px solid black;
+}
+.castelo{
+  position: absolute;
+  bottom: 0;
+  width: 50%;
+  height: 90%;
+}
+.mario{
+  position: absolute;
+  bottom: 0;
+  width: 150px;
+  height: 150px;
+}
+.jump{
+  animation: jump 500ms ease-out;  
+}
+.clouds{
+  position: absolute;
+  width: 450px;
+  height: 450px;
+  animation: clouds-animation 22s infinite linear;
+}
+.bird{
+  position: absolute;
+  width: 75px;
+  height: 75px;
+  animation: bird-animation 15s infinite linear;
+}
+.airplane{
+  position: absolute;
+  width: 133px;
+  height: 100px;
+  animation: airplane-animation 120s infinite linear;
+}
+.game-over{
+  position: absolute;
+  width: 280px;
+  height: 280px;
+  left: 35%;
+  display: none;
+  z-index: 1;
+
+}
+.cubo{
+  position: absolute;
+  width: 55px;
+  height: 55px;
+  bottom: 180px;
+  animation: cubo-animation 30s infinite linear;
+}
+
+.animation-game-over{
+  animation: game-over-animation 7s linear;  
+}
+
+@keyframes pipe-animation{
+  from{
+    right: -80px;
+  }
+  to{
+    right:100%;
+  }
+}
+@keyframes pipe-plant-animation{
+  from{
+    right: -80px;
+  }
+  to{
+    right:100%;
+  }
+}
+@keyframes cubo-animation{
+  from{
+    right: -80px;
+  }
+  to{
+    right:100%;
+  }
+}
+@keyframes jump{
+  0%{
+    bottom: 0;
+  }
+  40%{
+    bottom: 180px;
+  }
+  50%{
+    bottom: 180px;
+  }
+  60%{
+    bottom: 180px;
+  }
+  100%{
+    bottom: 0;
+  }
+}
+@keyframes clouds-animation{
+  from{
+    right: -550px;
+  }
+  to{
+    right:100%;
+  }
+}
+@keyframes bird-animation{
+  from{
+    right: -750px;
+  }
+  to{
+    right:100%;
+  }
+  0%{
+    bottom: 90%;
+  }
+  30{
+    bottom: 75%;
+  }
+  40%{
+    bottom: 65%;
+  }
+  50%{
+    bottom: 50%;
+  }
+  60%{
+    bottom: 65%;
+  }
+  70%{
+    bottom: 75%;
+  }
+  100%{
+    bottom: 90%;
+  }
+}
+@keyframes airplane-animation{
+  from{
+    right: -5750px;
+  }
+  to{
+    right:100%;
+  }
+  0%{
+    bottom: 90%;
+  }
+  30{
+    bottom: 75%;
+  }
+  40%{
+    bottom: 65%;
+  }
+  50%{
+    bottom: 50%;
+  }
+  60%{
+    bottom: 55%;
+  }
+  70%{
+    bottom: 50%;
+  }
+  100%{
+    bottom: 55%;
+  }
+}
+@keyframes game-over-animation{
+  0%{
+    bottom: -50%;
+  }
+  10%{
+    bottom: -45%;
+  }
+  20%{
+    bottom: -35%;
+  }
+  30%{
+    bottom: -25%;
+  }
+  40%{
+    bottom: -15%;
+  }
+  50%{
+    bottom: 0%;
+  }
+  60%{
+    bottom: 10%;
+  }
+  70%{
+    bottom: 20%;
+  }
+  80%{
+    bottom: 30%;
+  }
+  90%{
+    bottom: 40%;
+  }
+  100%{
+    bottom: 50%;
+  }
+}
