@@ -1,0 +1,258 @@
+@font-face{
+  font-family: 'Noto Sans Mono', monospace;
+  src: url("https://fonts.googleapis.com/css2?family=Noto+Sans+Mono:wght@500&display=swap")
+    format("opentype");
+}
+:root {
+  --background-tela: transparent;
+  --background-padrao: linear-gradient(90deg, cyan, purple);
+  --color-padrao: white;
+  --color-text-main: #000000;
+  --color-primary: #FFFF00;
+  --wrapper-altura: 87vh;
+  --image-max-largura: 100px;
+  --image-margin: 1rem;
+  --font-principal: "Arial";
+  --font-family-cabecalho: "Roboto, sans-serif;";
+  --max-largura: 144px;
+  --max-altura: 544px;
+  --max-peso: 500;
+  --font-tamanho: 15px;
+  --font-tamanho-cabecalho: 20px;
+  --fundo-padrao: white;
+  --negrito: bold;
+  --espaco-em-branco: nowrap;
+  --btn-tamanho: 15pt;
+  --sub-tamanho: 17pt;
+  --X: 0px;
+  --Y: 390px;
+ 
+  --height: "altuta";
+  --Weight: "peso";
+  --width: "largura";
+  --white-space: "espaco em branco";
+    
+}
+.screen{
+      right: 0px;
+      bottom: 5%;
+      border: 5px solid black;
+      border-radius: 5px;
+      font-size: 15px;
+      padding: 0.5rem 0.7em;
+      background-color:red;
+      color: white;
+      -webkit-font-smoothing: antialiased;
+      cursor: pointer;
+      z-index: 11;
+}
+.screen:hover{
+        background-image: linear-gradient(45deg, red, green);
+        cursor: pointer;
+        box-shadow: -8px 20px 20px whitesmoke;
+        transform: translateY(5px);
+        transition: all 1s ease-out;
+}
+.tela{
+        background-image:  var(--background-tela);
+        justify-content: center;
+        position: absolute;
+        padding: 30px;
+        border-radius: 20px;
+        color: black;
+        height: 100%;
+        box-shadow: 3px 3px 43px 0px black;
+        }
+usuario{
+  display: inline-block;
+   text-align: center;
+   font-size: 17pt;
+   align-items: center;
+   width: 100%;
+}
+senha{
+  display: inline-block;
+   text-align: center;
+   font-size: 17pt;
+   color: green;
+   align-items: center;
+   width: 100%;
+}
+.senhaNum{
+   text-align: center;
+   font-size: 30px;
+   color: green;
+   width: 100%;
+   border-bottom: 3px dashed orange;
+}
+.ofuscar{
+  color: transparent; 
+  text-shadow: black 0px 0px 15px;
+}
+.ofuscar:hover{
+  color: black;
+  text-shadow: none; 
+}
+saldo{
+   display: inline-block;
+   text-align: center;
+   align-items: center;
+   width: 100%;
+   font-size: 17pt;
+   color: yellow;
+}
+.eye{
+  position: absolute;
+  top: 15px;
+  right: 10px;
+  cursor: pointer;
+  color: #0d009c;
+  background: url("https://www.google.com/imgres?imgurl=https%3A%2F%2Fwww.pikpng.com%2Fpngl%2Fm%2F166-1666105_eye-png-svg-black-and-white-library-eye.png&imgrefurl=https%3A%2F%2Fwww.pikpng.com%2Fpngvi%2FwJxmxi_eye-png-svg-black-and-white-library-eye-password-png-icon-clipart%2F&tbnid=TuHzRZsi15zwGM&vet=12ahUKEwjl2IPQq6P3AhUaNbkGHYqGD2AQMygKegUIARDbAQ..i&docid=GNrhPpYSbv4ACM&w=840&h=579&q=eye%20password%20icon&hl=pt-BR&safe=active&ved=2ahUKEwjl2IPQq6P3AhUaNbkGHYqGD2AQMygKegUIARDbAQ");
+}
+
+ul {
+  padding-left: 1rem;
+  list-style: none;
+}
+
+li {
+  flex-shrink: 0;
+  width: clamp(500px, 60vw, 800px);
+  padding-right: 1rem;
+}
+
+header {height: 100vh}
+footer {height: 50vh}
+
+.loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: black;
+  color: white;
+}
+
+.demo-wrapper {
+  overflow-x: hidden;
+}
+
+.demo-gallery:not(.last) {
+  padding-bottom: 1rem;
+}
+
+.demo-text .text {
+  font-size: clamp(8rem, 15vw, 16rem);
+  line-height: 1;
+  font-weight: 900;
+}
+
+/******************************************************************************
+END Glitch hello-app default styles
+******************************************************************************/
+body{
+  background: transparent;
+}
+.btnTema{
+ padding: 5px;
+ border: 3px solid black;
+ background: gray;
+ float:right;
+ right: 1%;
+ bottom: 1%;
+ display:block;
+ cursor:wait;
+ position:fixed;
+}
+
+.esconder{
+  display: none;
+}
+
+h1::before {  
+  transform: scaleX(0);
+  transform-origin: bottom right;
+}
+h1:hover::before {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+h1:before {
+  content: " ";
+  display: block;
+  position: absolute;
+  top: 0; right: 0; bottom: 0; left: 0;
+  inset: 0 0 0 0;
+  background: hsl(200 100% 80%);
+  z-index: -1;
+  transition: transform .3s ease;
+}
+h1 {
+  position: relative;
+}
+h2{
+   display: inline-block;
+   text-align: center;
+   font-size: var(--sub-tamanho);
+   color: purple;
+  }
+h3{
+   display: inline-block;
+   text-align: center;
+   font-size: var(--sub-tamanho);
+   color: red;
+  }
+h4{
+  display: inline-block;
+   text-align: center;
+   font-size: var(--sub-tamanho);
+   color: green;
+}
+h5{
+  display: inline-block;
+   text-align: center;
+   font-size: var(--sub-tamanho);
+   color: black;
+}
+logs{
+  font-size: 17px;
+  display: inline-block;
+  text-align: center;
+  color: red;
+}
+hr{
+  margin-top: 10%;
+  margin-bottom: 10%;
+  width: 60%;
+}
+/* Interactive image */
+.illustration:active {
+  transform: translateY(5px);
+}
+
+gradient{
+  width: 100%;
+  height: 800px;
+  padding: 0px;
+  margin: 0px;
+}
+.config-conta{
+  color: black;
+  display:block;
+}
+.config-conta:hover{
+  color: red;
+  text-decoration: underline;
+  border-bottom: 3px dashed orange;
+}
+conta{
+  margin-top: auto;
+  display: block;
+  color: black;
+  background: white;
+  border: 5px solid black ;
+  padding: 10px;
+  width: auto;
+  cursor: help;
+}
