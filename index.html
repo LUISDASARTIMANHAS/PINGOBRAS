@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+  <head>
+
+    <meta charset="utf-8" />
+    <meta http-equiv="Refresh" content="300">
+    <meta name="viewport" content="width=device-width, initial-scale=0.7" />
+    <links></links>
+    <link rel="icon" href="https://cdn.glitch.global/b39d6a4a-0e14-4b41-930d-29d3ccd6c137/PINGOBRAS icon.png?v=1665177105635" />
+    <seo>
+    <meta
+      name="description"
+      content=" PINGOBRAS LOBBY, CADASTRO, ENTRAR, REDIRECTS! "/>
+    <meta name="robots" content="index,follow" />
+    <meta property="og:title" content="PINGOBRAS LOBBY" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://pingobras.glitch.me" />
+    <meta
+      property="og:description"
+      content=" PINGOBRAS LOBBY, CADASTRO, ENTRAR, REDIRECTS! "/>
+    <meta
+      property="og:image"
+      content="https://cdn.glitch.global/b39d6a4a-0e14-4b41-930d-29d3ccd6c137/PINGOBRAS CORP SEO.png?v=1665177583063"/>
+    <meta name="twitter:card" content="summary" />
+    </seo>
+    <title>PINGOBRAS LOBBY</title>
+    
+<nav class="cabecalho">
+          <button
+                  class="btnList btnNav"
+                  id="btnlist">
+            Lista de Devedores
+          </button>
+          
+
+          <button
+                  class="btnadmin btnNav"
+                  id="btnadmin"
+                  onclick="autentication()"
+                  target="_blank">
+            Pagina ADMIN
+          </button>
+          
+          <button
+                  class="btnNav"
+                  id="btnlistChangelogs">
+          Changelogs 
+          </button>
+  
+        <info class="adminID">
+         <right>
+           <img 
+               src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSyt0KNCU6vBxcq3gIZzAvTBGIJrlmFPXSD9w&usqp=CAU" 
+               height="20px" /> 
+            <border border rgb>
+              <time 
+                    style="font-size: 25px;justify-content: center;" 
+                    horario> 
+                Sem horario
+              </time>
+            </border>
+            
+            <br>
+            <br>
+            
+          <img 
+               src="data:image/png;base64,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"
+               height="20px"/>
+            <fechar style="font-size: 20px;">
+              Fechamento em:
+            </fechar>
+            <js style="font-size: 20px;" fault></js>
+            
+            <br>
+                
+            <p inline>IP:</p><a target="_blank" name="192.168.1.1" id="linkIP"><js inline id="IP"></js></a>
+            <br>
+            <p inline>Estado: </p><js inline id="regiao"></js>
+            
+            <br>
+            
+            <button onclick="pausePingobras()" class="muted">
+            <img height="45px" src="https://cdn.glitch.global/b39d6a4a-0e14-4b41-930d-29d3ccd6c137/Sound-off.ico?v=1667649333101">   
+           </button>
+          </right>
+          
+          <left>
+            
+          <p>ADMINISTRADOR ACCOUNT:</p><js inline id="adminStatus" vermelho>NÃO CONECTADA</js>
+          <p>Velocidade da Internet:</p>  
+          <p inline id="MBps" >SEM CONEXÃO MBps</p>
+          <p inline id="GBps" >SEM CONEXÃO GBps</p>
+          <p> Tempo do download: </p><js id="downloadTime">00:00</js>
+          <br>
+          <script type="text/javascript" 
+                  src="https://usuariosonline.s12.com.br/uo-b7aay0C7Z27zdAd1-52-1.js">
+          </script>
+          <br>
+          <img 
+               src="https://usuariosonline.s12.com.br/selo/selo-uo.gif" 
+               alt="usuários on-line">
+          </left>
+          
+        </info>
+          
+    </nav>
+ </head>
+  <body style="text-transform: capitalize;">
+    <div class="site-altura">
+      <conteudo class="index" role="main">
+      
+      <br>
+        
+        <audio  
+            id="pingobras-music"
+            autoplay 
+            loop
+            preload="auto"
+            src="https://cdn.glitch.global/b39d6a4a-0e14-4b41-930d-29d3ccd6c137/Art%20of%20Silence%20-%20Dramatic%20_%20Cinematic%20%5BFree%20to%20use%5D%20Baixinho.mp3.mp3?v=1666869328078">
+        </audio>
+        
+      <main-text crgb2>PINGOBRAS S.A ©2010-2022</main-text>
+        
+        <br>
+        
+        <list class="list" style="display:block;
+                                  align-items: center;
+                                  text-align: center;">
+          <h1 preto>Devedores!</h1>
+          <p vermelho> Fernando, Isaque</p>
+          
+          <br>
+          
+          <a id="listDevedores" style="display:none;" links href="calcs&dividendos.html">Consultar Juros e Dívidas</a>
+        </list>
+        
+        <br>
+        
+<info style="display: none;" class="changelogs copyright" id="listChangelogs">
+  <strong vermelho>VERSÃO: 1.6.5</strong>
+  <p>Página do usuário aprimorada</p>
+  <p>Alerta de bugs</p>
+  <p>Banco de dados atualizado</p>
+  <p>3 novos modelos de contas para usuário</p>
+  <p>Página do usuário agora tem fundo personalizado para o usuário</p>
+  <p>Imagem de plano de fundo de perfil adicionada (liberada apenas para admins)</p>
+      
+  <br>
+  
+  <strong vermelho>VERSÃO: 1.7.0</strong>
+  <p>Pagina do usuário atualizada</p>
+  <p>correção de bugs</p>
+  <p>correção de erro de cadastro e login</p>
+  <p>correção ao sincronizar o banco de dados</p>
+  <p>correção da pagina de wifi grátis</p>
+  
+  <a links href="https://pingobras.glitch.me/info">ALL VERSIONS/TODAS AS VERSÕES</a>
+</info>
+        <br>
+        <br>
+        
+        
+        <h2>PINGOBRAS</h2> <h3>CORPORATION</h3>
+        
+        <br>
+
+        <div class="links"></div>
+        
+        <a 
+           class="btn-cadastro"
+           href="/cadastro">
+          CADASTRAR-SE
+           </a>
+        
+      <a
+        class="btnlogin btn"
+        href="/login"> 
+        <img
+          style="justify-content: left;"
+          src="https://cdn.glitch.global/d4f5fe8f-71d8-4ff8-be3a-c3c78bbd1b44/Member-Login-Button-PNG-Clipart.png?v=1646151214012"
+          alt="login"
+          height="27px"
+        />
+        ENTRAR NA SUA CONTA
+      </a>
+        
+        <a hidden
+           class="btn"
+           href="/loja.html"> 
+          <img
+               title="loja da pingobras"
+               src="https://fhbrackdelivery.com.br/wp-content/uploads/2019/12/bot%C3%A3o-loja-fhb.png"
+               alt="Loja da pingobras"
+               height="60pt"
+               width="100%"/>
+        </a>
+        
+        <a
+        class="btndc btn"
+        href="/Galeria-Da-Arte"> 
+        <img
+          style="justify-content: left;"
+          src="https://cdn.glitch.global/b39d6a4a-0e14-4b41-930d-29d3ccd6c137/diogo%20SEO.png?v=1661635130692"
+          alt="Galeria de arte"
+          height="37px"
+        />
+        Galeria Da Arte
+      </a>
+        
+         <a
+         class="btn-pages btn"
+         href="https://pingobras.glitch.me/bot/PINGUINHO.html"
+         target="_blank">
+         <img
+            style="border-radius: 35px;"  
+            src="https://cdn.discordapp.com/avatars/785908432670687262/5cfa33ac80c88c95702215e028902938.webp?size=2048"
+            height="57px"/>
+        Conheça O Bot PINGUINHO!
+      </a>
+        
+        <a
+         class="btn-pages btn"
+         href="https://pingobras.glitch.me/bot/COMMUNICATIONS-SATELLITE.html"
+         target="_blank">
+        <img 
+            style="border-radius: 35px;" 
+            src="https://cdn.discordapp.com/avatars/925362178662498314/dbb4e47b9f8a3a870d72fea935bbe8da"
+            height="57px"/>
+        Conheça O Bot COMMUNICATIONS SATELLITE!
+      </a>
+        
+        <a
+         class="btn-pages btn"
+         href="https://pingobras.glitch.me/bot/LUIS_DAS_ARTIMANHAS_EQUIPE.html"
+         target="_blank">
+        <img
+            style="border-radius: 35px;" 
+            src="https://cdn.discordapp.com/avatars/913479603526447134/944b224ce9583326cebf6ba932600005"
+            height="57px"/>
+        Conheça O Bot LUIS_DAS_ARTIMANHAS_EQUIPE!
+      </a>
+      
+      <a
+        class="btndc btn"
+        href="https://discord.gg/HW7WZH9bPe"
+        target="_blank">
+        <img
+          src="https://cdn.glitch.global/b39d6a4a-0e14-4b41-930d-29d3ccd6c137/pequeno%2032%C3%9732.png?v=1643046753877"
+          alt="icone do discord"/>
+        ENTRE NO SERVER DE ECONOMIA!
+      </a>
+        
+        <a
+        class="btndc btn"
+        href="https://discord.gg/TUpNd6CQgg"
+        target="_blank">
+        <img
+          src="https://cdn.glitch.global/b39d6a4a-0e14-4b41-930d-29d3ccd6c137/pequeno%2032%C3%9732.png?v=1643046753877"
+          alt="icone do discord"/>
+        SERVER DA PINGOBRAS
+      </a>
+        
+        <a
+        class="btndc btn"
+        href="https://discord.gg/7uP6cKHYZ2"
+        target="_blank">
+        <img
+          src="https://cdn.glitch.global/b39d6a4a-0e14-4b41-930d-29d3ccd6c137/pequeno%2032%C3%9732.png?v=1643046753877"
+          alt="icone do discord"
+        />
+        SERVER DE MANUTENÇÃO/TI
+      </a>
+        
+        <br>
+        
+        <button class="btn-subir btn" id="back-to-top">Voltar ao topo</button>
+        
+        
+        <footer>
+        <div class="links"></div>
+    
+          <div id="direitos" class="direitos">Loading...</div>
+            </footer>
+       
+        
+        <button class="btn-descer" id="jsDescer">Descer Mais Fundo</button>
+</conteudo> </div>
+    
+<div class="popup">
+<p>Para se conectar ao wifi digite a senha "pingobras", na rede "www.pingobras.glitch.me" </p>
+<br>
+<button id="close">&times;</button>
+</div>
+    
+<div rgb2 class="msg-error-hour">
+<p>O Site está fechado apartir das <js horaselect>Sem horario definifo</js></p><p>Volte amanha!</p><p><time timer>horario</time></p>
+</div>
+</body> 
+    
+    <scripts>
+    <script src="js/links.js" defer></script>
+    <script src="js/main.js" defer></script>
+    <script src="js/script.js" defer></script>
+    <script src="js/STORAGE.js" defer></script>
+    <script src="js/autentication.js" defer></script>
+    <script src="js/functions.js" defer></script>
+    <script src="js/network.js" defer></script>
+    <script src="js/time.js" defer></script>
+    <script src="js/worker.js" defer></script>
+    <script src="GlobalDB.js" defer></script>
+    <script src="https://pingobras.glitch.me/cadastro/STORAGEcad.js" defer></script>
+    <script src="https://pingobras.glitch.me/Cliente.java" defer></script>
+    <script src="https://pingobras.glitch.me/Servidor.java" defer=""></script>
+    <script src="https://pingobras.glitch.me/js/copyright.js" defer></script>  
+    <script type="text/javascript" src="https://contador.s12.com.br/ad.js?id=4yx6AWdD2yb0CzDy"></script>
+    </scripts>
+    <host>
+    <script src="https://pingobras-sistema.glitch.me/bot.js" defer></script>  
+    <script src="https://equipe-host.glitch.me/bot.js" defer></script>
+    <script src="https://pinguinho-host.glitch.me/bot.js" defer></script>
+    <script src="https://satelite-bot-host.glitch.me/bot.js" defer></script>
+    </host>
+  
+  <script>
+  const http = "http://pingobras.glitch.me/"
+if(document.URL == http) {
+   window.location.href = ("https://pingobras.glitch.me/"); 
+  alert("Pagina insegura execuando Seguranca Da Pagina " + document.URL);
+    }
+  </script>
+  <api>
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script>
+    async function getIpClient() {
+  try {
+    const linkIP = document.getElementById("linkIP")
+    const response = await axios.get('https://ipinfo.io/json');
+ /* document.getElementById("city").innerHTML = response.data.city:
+    document.getElementById("pais").innerHTML = response.data.country; */
+    document.getElementById("regiao").innerHTML = response.data.region;
+   /* document.getElementById("timezone").innerHTML = response.data.timezone;
+    document.getElementById("location").innerHTML = response.data.loc */
+    document.getElementById("IP").innerHTML = response.data.ip
+    linkIP.name = response.data.ip;
+   /* document.getElementById("HostIP").innerHTML = response.data.hostname
+    document.getElementById("postal").innerHTML = response.data.postal
+    document.getElementById("ISP").innerHTML = response.data.org */
+    console.log(response);
+  } catch (error) {
+    console.error(error);
+  }
+}
+
+getIpClient();
+</script>    
+  
+  
+  </api>
+</html>
+
+
