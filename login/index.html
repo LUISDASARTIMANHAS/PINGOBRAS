@@ -1,0 +1,157 @@
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=0.7" />
+    <link rel="icon" href="https://cdn.glitch.global/d4f5fe8f-71d8-4ff8-be3a-c3c78bbd1b44/Member-Login-Button-PNG-Clipart.png?v=1646151214012" />
+    <links></links>
+    <link rel="stylesheet" href="login/style.css" />
+    <seo>
+    <meta name="robots" content="index,follow" />
+    <meta property="og:title" content="PINGOBRAS LOGIN" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://pingobras.glitch.me/login" />
+    <meta
+      property="og:description"
+      content="ENTRE NA SUA CONTA DA PINGOBRAS OU CRIE UMA FAÇA PARTE DESSA EMPRESA!"/>
+    </seo>
+    
+    <title>PINGOBRAS LOGIN</title>
+  </head>
+  <body>
+    <div class="tela-altura">
+      <div class="conteudo" role="main">
+       <div class="links"></div>
+    
+        <br>
+        <br>
+        
+      <teladelogin>
+       <form id="form">
+        <h1>LOGIN PINGOBRAS S.A</h1>
+        <script type="text/javascript" 
+                  src="https://usuariosonline.s12.com.br/uo-b7aay0C7Z27zdAd1-52-1.js">
+          </script>
+          <br>
+          <img 
+               src="https://usuariosonline.s12.com.br/selo/selo-uo.gif" 
+               alt="usuários on-line" 
+               border="0">
+        <js id="msgError" class="msg-Error">Nenhum Erro Encontrado!</js>
+        <js id="msgSuccess" class="msg-Success">Verificando...</js>
+        
+        
+      <label-float>
+      <label-login for="usuario" id="userLabel" > USUARIO </label-login>
+      <br>
+      <input
+      class="input-float-login"       
+      type="text"
+      id="usuario"
+      placeholder="NOME" required>
+      <br>
+      <br>
+        <js class="alert" id="userCad">Sem Usuarios cadastrados</js>
+        <js class="alert" id="userCad2">Sem Usuarios cadastrados</js>
+        <js class="alert" id="userCad3">Sem Usuarios cadastrados</js>
+        <js class="alert" id="userCad4">Sem Usuarios cadastrados</js>
+        <js class="alert" id="userCad5">Sem Usuarios cadastrados</js>
+        <js class="alert" id="userCad6">Sem Usuarios cadastrados</js>
+        <js class="alert" id="userCad7">Sem Usuarios cadastrados</js>
+        <js class="alert" id="userCad8">Sem Usuarios cadastrados</js>
+      </label-float>
+        
+        <br>
+        <br>
+        
+      <label-float>  
+      <label-login for="senha" id="senhaLabel"> SENHA </label-login>
+      <br>
+      <input 
+      class="input-float-login"       
+      type="password" 
+      id="senha"
+      placeholder="******" required>
+       <img 
+        src="https://cdn-icons-png.flaticon.com/512/1621/1621629.png"
+        id="verSenhaLogin" 
+        height="37px"
+        class="faeye"
+        style="background-color:#ffffff;
+               cursor:pointer;
+               display:inline-block !important;
+               margin-bottom:-10px;"/> 
+      </label-float> 
+        
+        <separador></separador>
+        
+      <p-cadastro>
+        ESQUECEU SUA SENHA?
+        <a 
+           href="https://pingobras-404.glitch.me" 
+           links>
+          trocar senha
+        </a>
+        </p-cadastro>
+      <button style="border: 5px solid white;"
+              class="btn-entrar"
+              id="autenticador" 
+              onclick="autenticar()">
+        Entrar
+        </button>
+        </form>
+        
+        <br>
+        <br>        
+        
+        <a style="border: 5px solid white;"
+           class="btnvoltar"
+           href="https://pingobras.glitch.me"> 
+          RETORNAR PARA PINGOBRAS
+        </a>
+        
+        <hr>
+
+      <p-cadastro>
+        Não tem uma conta?
+        <a style="border: 5px solid white;"
+           class="btn-cadastrar" 
+           href="/cadastro">
+          CADASTRE-SE!
+        </a>
+        </p-cadastro>
+      
+        <button class="reload-db" onclick="RecarregarSTCAD()">
+          <img src="https://w7.pngwing.com/pngs/894/488/png-transparent-database-encryption-computer-icons-encrypting-file-system-update-button-miscellaneous-blue-electric-blue.png" 
+               height="50px">
+          Recarregar Banco de Dados
+        </button>
+        </teladelogin>
+        
+        <footer>
+          <div id="direitos">Loading...</div>
+          
+        </footer>
+        
+        
+          </div></div>
+  </body>
+  <script src="https://pingobras.glitch.me/js/links.js" defer></script>
+  <script src="login/login.js" defer></script>
+  <script src="https://pingobras.glitch.me/GlobalDB.js" defer></script>
+  <script src="https://pingobras.glitch.me/cadastro/STORAGEcad.js" defer></script>
+  <script src="https://pingobras.glitch.me/js/copyright.js" defer></script>
+  <script>
+  const http = "http://pingobras.glitch.me/login"
+if(document.URL == http) {
+   window.location.href = ("https://pingobras.glitch.me/login");}
+  </script>
+  <script>
+function stopDefAction(evt) {
+    evt.preventDefault();
+}
+
+document.getElementById('form').addEventListener(
+    'click', stopDefAction, false
+);
+</script>
+</html>

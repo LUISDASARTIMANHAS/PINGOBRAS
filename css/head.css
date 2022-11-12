@@ -1,0 +1,255 @@
+js{
+  width: auto;
+  display: inline;
+}
+[inline]{
+  display: inline;
+}
+[hidden] {
+  display: none !important;
+}
+[branco]{
+  color: white;
+}
+[white]{
+  background: white;
+}
+[azul]{
+  color: blue;
+}
+[blue]{
+  background: blue;
+}
+[lightblue]{
+  background: lightblue;
+}
+[amarelo]{
+  color: yellow;
+}
+[yellow]{
+  background: yellow;
+}
+[vermelho]{
+  color: red;
+}
+[red]{
+  background: red;
+}
+[verde]{
+  color: green;
+}
+[green]{
+  background: green;
+}
+[laranja]{
+  color: orange;
+}
+[laranjavermelho]{
+  color: orangered;
+}
+[orange]{
+  background: orange;
+}
+[cinza]{
+  color: gray;
+}
+[gray]{
+  background: gray;
+}
+[roxo]{
+  color: purple;
+}
+[purple]{
+background: purple;
+}
+[border]{
+  padding: 4px;
+  border: 2px solid black;
+}
+
+.cabecalho {
+  position: absolute;
+  top: 0;
+  background: gray;
+  padding: 5px;
+  width: 100%;
+  border: 5px solid black;
+  margin-bottom: 100%;
+  margin-top: 0%;
+  z-index: 1;
+  height: auto; 
+  display: block;
+  max-width:100%;
+}
+/* Page alturaure */
+.site-altura {
+  min-height: var(--wrapper-altura);
+  display: grid;
+  place-items: center;
+}
+.msg-error-hour{
+  position: absolute;
+  display: none;
+  font-size: 25px;
+  color: red;
+  border: 5px solid black;
+  bottom: 0;
+  width: 100%;
+  background: white;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+conteudo, .index{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin-top: 470px;
+
+}
+.conteudo {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+/* Instructions */
+.instructions {
+  margin: 1rem auto 0;
+}
+/* footer grid */
+footer {
+  display: block;
+  margin-top: 10%;
+  width: 100%;
+  font-size: 15pt;
+  text-align: center;
+  padding-top: 50px;
+  border-top: 5px solid white;
+  max-width:102%;
+}
+.footer-gray{
+    margin-top: 10%;
+    background: gray;
+    display: block;
+    width: 100%;
+    font-size: 17pt;
+    text-align: center;
+    padding: 7%;
+    border-top: 5px solid white;
+    max-width: 100%;
+}
+.footer.links {
+  padding: 40px;
+  white-space: nowrap;
+}
+.footer-dev {
+  display: flex;
+  justify-content: space-between;
+  margin: 1rem auto 0;
+  width: 100%;
+  color: white;
+}
+
+.diogo-cabecalho{
+  background: black;
+  border: 5px solid black;
+  height: auto;
+  min-height: 190pt ;
+}
+.info{
+  background: white;
+  border: 3px solid gray;
+  color: black;
+  width: 100%;
+  cursor: help;
+  height: auto;
+  display: block;
+}
+
+.list, list{
+  margin-top: auto;
+  display: none;
+  color: blue;
+  background: white;
+  border: 5px solid black ;
+  padding: 10px 10px;
+  width: 95%;
+  cursor: help;
+  max-width:100%;
+}
+.list saldo{
+  display: inline-block;
+  color: red;
+}
+.list payment{
+  display: inline-block;
+  color: green; 
+}
+.list-changelogs{
+  display: block;
+  color: blue;
+  background: white;
+  border: 5px solid black ;
+  padding: 10px 10px;
+  width: 100%;
+  cursor: help;
+  font-size: 17px;
+}
+info{
+  background: white;
+  border: 3px solid black;
+  color: black;
+  width: 100%;
+  cursor: help;
+  height: auto;
+  display: block;
+}
+info.changelogs{
+  font-style:italic;
+ text-transform:capitalize;
+ text-align:center;
+ font-family:'Coming Soon', handwriting;
+ color: black;
+ border-top-left-radius:35px;
+ border-top-right-radius:35px;
+ border-bottom-left-radius:35px;
+ border-bottom-right-radius:35px;
+ width:75%;
+ min-width:50px;
+ border-width:5px;
+ box-shadow:0px 0px 50px 25px #000000;
+}
+info.jogos{
+  text-align: center; 
+  background: transparent; 
+  color: white;
+  border: none;
+}
+info strong{
+ text-transform:uppercase;
+ text-decoration:underline;
+ text-shadow:rgb(255, 255, 255) 1px 1px 0px, rgb(170, 170, 170) 2px 2px 0px;
+ margin-top:10px;
+ margin-bottom:10px;
+}
+.item-account-left{
+  display:block;
+  color: white;
+  background: gray;
+  font-size: 22px;
+  text-transform:uppercase;
+ font-style:italic;
+ font-size:20px;
+ text-shadow:rgb(255, 255, 255) 1px 1px 0px, rgb(170, 170, 170) 2px 2px 0px;
+ overflow:hidden;
+ border-radius:25px;
+ text-align:center;
+ width:50%;
+ margin-left:25%;
+}

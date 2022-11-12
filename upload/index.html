@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Server uploader</title>
+	<meta charset="UTF-8" />
+  <meta http-equiv="Refresh" content="60">
+  <meta name="viewport" content="width=device-width, initial-scale=0.7" />
+  <link rel="icon" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRkwdDfPO6m5TgI2v4IxDr0kJwYHQWQsAj_ZVYy7xIvcQ&s" />
+  <link rel="stylesheet" href="/css/style.css" />
+  <link rel="stylesheet" href="/css/head.css" />
+  <link rel="stylesheet" href="/css/btn.css" />
+  <link rel="stylesheet" href="/upload/upload.css" />
+</head>
+
+<body>
+<div class="site-altura">
+<div class="conteudo" role="main">
+  
+
+<upador>
+<h1>Upador De Arquivos</h1>
+<input type="file" id="fileInput" />
+<br>
+<p vermelho>Upador: </p><js id="statusUP">Sem Arquivo!</js>
+</upador>
+  
+  <br>
+  
+  <tela>
+  <p amarelo orange>Dados Do Arquivo:</p>
+  <br>
+  <p laranja>Status de carregaento:</p><js id="statusLoad">Sem Dados</js>
+  <br>
+  <p laranja>Status do server:</p><js id="statusServer">402</js> 
+  <br>
+  <p laranja>ID do Arquivo:</p><js id="fileID">Sem Dados</js> 
+  <br>
+  <p laranja>Chave do Link:</p><js id="keyLink">Sem Dados</js>
+  <br>
+  <p laranja>Nome do arquivo:</p><js id="fileName">Sem Dados</js> 
+  <br>
+  <p laranja>Tamanho do arquivo:</p><js id="fileSize">Sem Dados</js>
+  <br>
+  <p laranja>Link do arquivo:</p><js id="fileLink">Sem Dados</js>  
+  <br>
+  <p laranja>Expira em:</p><js id="fileExpire">Sem Dados</js>
+  <br>
+  <p laranja>Downloads maximos do arquivo: </p><js id="maxDownloads">0</js>
+  <br>
+  <p laranja>Tipo do arquivo: </p><js id="fileType">Sem Dados</js>
+  <br>
+  <p laranja>Arquivo criado em: </p><js id="filecreated">Sem Dados</js>
+  <br>
+  <p laranja>Arquivo modificado em:</p><js id="filemodified">Sem Dados</js>
+  <br>
+    
+  <a target="_blank" id="labelLink">Re-Baixar Arquivo</a>
+  </tela>
+  
+</div></div>  
+</body>
+<script src="upload/upload.js" defer></script>
+</html>

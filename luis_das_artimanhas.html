@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="PT">
+
+  <head>
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=0.7" />
+    <meta http-equiv="Refresh" content="120">
+    <link rel="icon" href="https://cdn.glitch.global/b39d6a4a-0e14-4b41-930d-29d3ccd6c137/PINGOBRAS icon.png?v=1665177105635" />
+    <links></links>
+    
+    <title>PINGOBRAS LUIS_DAS_ARTIMANHAS</title>
+ </head>
+  <body class="luis-das-artimanhas">
+    <div class="site-altura">
+      <div id="main" style="display: none;" class="conteudo" role="main"> 
+        
+        <info>
+          <p>ADMINISTRADOR ACCOUNT:</p>
+          <p id="adminStatus">NÃO CONECTADA</p>
+          <p>ADMIN SALDO:</p><js id="currentSaldo" vermelho>SEM SALDO</js>
+          <p>Segurança:</p><js id="security" >Desativada</js>
+          <script type="text/javascript" src="https://www.usersonline.org/uo-Z68D49z08AW8bZxZ-6-1.js"></script>
+          <br>
+          <img src="https://www.usersonline.org/selo/selo-uo.gif" alt="users online">
+          <button onclick="NetSpeed()">
+            Calcular Velociade De Internet
+          </button>
+        </info>
+          
+        
+      
+        <a class="download"
+           href="link do download" 
+           download="nome do download"
+           onclick="barButton()"
+           >
+          nome de exibição
+         </a>
+        <div class="boxbar">
+          <div class="bar" id="bar">0%</div>
+        </div>
+        
+        <iframe style="background: transparent; 
+                       border-radius: 25px;"
+                src="https://docs.google.com/forms/d/e/1FAIpQLScy4ERXEVBgcYBtI3E_bL6Avg2JICePFaOfTkNdPyJz5aAuGg/viewform?embedded=true" 
+                width="50%"
+                height="300px">
+          Carregando…
+        </iframe>
+        
+        <a
+           class="download"
+           href="https://www.factorio.com/get-download/1.1.69/demo/win64" 
+           download="factorio1.1.69-demo-win64.exe"
+           onclick="factorioButton()">
+          <win>
+          <img
+              class="arquivos"
+              src="https://cdn.glitch.global/b39d6a4a-0e14-4b41-930d-29d3ccd6c137/Windows_logo_-_2012_(dark_blue).svg.png?v=1652101587081"/>
+          <img
+              class="arquivos"
+              src="https://cdn.factorio.com/assets/img/web/factorio-logo.png"/>
+           1.1.69 demo win64
+          </win>
+        </a>
+        <div class="boxbar">
+          <div class="bar" id="factoriobar">0%</div>
+        </div>
+        
+        
+        <a class="download-music"
+           href="https://cdn.glitch.me/b39d6a4a-0e14-4b41-930d-29d3ccd6c137/Minhas%20Musicas.zip?v=1661859834289" 
+           download="minhas-musicas.zip">
+          <img
+          src="https://cdn.glitch.global/b39d6a4a-0e14-4b41-930d-29d3ccd6c137/music%20button.png?v=1651863338417"
+          class="music"/>
+          Minhas Musicas
+        </a>
+        
+        <a 
+          class="btndc btn"
+          href="https://pingobras.glitch.me">
+          Retornar para PINGOBRAS
+        </a>
+       
+        <br>
+        
+			<ul>
+        <li class="siteOff"><strong>Off Line</strong> <span id="valueOffid">1</span></li>
+        <li class="siteOn"><strong>On Line</strong> <span id="valueOnid"><script type="text/javascript" src="https://www.usersonline.org/uo-Z68D49z08AW8bZxZ-6-1.js"></script></span></li>
+      </ul>
+        
+        <footer>
+        <div id="direitos" class="direitos">loading...</div>  
+
+        </footer>
+        
+      </div> 
+<login id="screenLoad" class="conteudo" role="main">
+  <h1 id="labelLogin">AGUARDANDO LOGIN...</h1>
+  
+  <input id="userInput" 
+         class="input-LDA"
+         placeholder="0000"
+         type="number"
+         min="1000"
+         max="9000">
+  <button onclick="authLDA()" class="btn-LDA">Enviar</button>
+  
+  <div style="width: 75%;" class="boxbar">
+    <div style="width: 50%;" class="bar" id="barlogin">Loading... 50%</div>
+  </div>
+  
+  
+      
+</login></div>
+</body>
+  <script src="js/links.js" defer></script>
+  <script type="text/javascript" src="https://counter9.stat.ovh/private/counter.js?c=zcrmrdqsuts62apq8xn82nu44gqpxtpj&down=async" async></script>
+  <link rel="stylesheet" href="https://pingobras.glitch.me/css/download.css" defer/>
+  <script src="https://pingobras.glitch.me/js/download.js" defer></script>
+  <script src="https://pingobras.glitch.me/js/autentication.js" defer></script>
+  <script src="https://pingobras.glitch.me/js/STORAGE.js" defer></script>
+  <script src="https://pingobras.glitch.me/js/functions.js" defer></script>
+  <script src="https://pingobras.glitch.me/js/copyright.js" defer></script>
+  <script src="luis_das_artimanhas-auth.js" defer></script>
+  
+  <script type="text/javascript">
+function NetSpeed(){
+    var userImageLink = "https://media.geeksforgeeks.org/wp-content/cdn-uploads/20200714180638/CIP_Launch-banner.png";
+            var time_start, end_time;
+            
+            // The size in bytes
+            var downloadSize = 5616998;
+            var downloadImgSrc = new Image();
+  
+            downloadImgSrc.onload = function () {
+                end_time = new Date().getTime();
+                displaySpeed();
+            };
+            time_start = new Date().getTime();
+            downloadImgSrc.src = userImageLink;
+  
+            function displaySpeed() {
+                var timeDuration = (end_time - time_start) / 1000;
+                var loadedBits = downloadSize * 8;
+                
+                /* Converts a number into string
+                   using toFixed(2) rounding to 2 */
+                var bps = (loadedBits / timeDuration).toFixed(2);
+                var speedInKbps = (bps / 1024).toFixed(2);
+                var speedInMbps = (speedInKbps / 1024).toFixed(2);
+                alert("Your internet connection speed is: \n" 
+                      + bps + " bps\n" + speedInKbps 
+                      + " kbps\n" + speedInMbps + " Mbps\n");
+            }}
+        </script>
+  <host>
+    <script -src="https://pingobras-sistema.glitch.me/bot.js" defer></script>
+    <script -src="https://equipe-host.glitch.me/bot.js" defer></script>
+    <script -src="https://pinguinho-host.glitch.me/bot.js" defer></script>
+    <script -src="https://satelite-bot-host.glitch.me/bot.js" defer></script>
+  </host>
+  
+</html>

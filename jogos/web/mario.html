@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="PT">
+
+  <head>
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=0.7" />
+    <link rel="icon" href="https://www.pngitem.com/pimgs/m/399-3992589_super-mario-3d-world-mario-icon-hd-png.png" />
+    <link rel="stylesheet" href="https://pingobras.glitch.me/jogos/mario/mario.css" />
+    <link rel="stylesheet" href="https://pingobras.glitch.me/css/head.css" />
+    <link rel="stylesheet" href="https://pingobras.glitch.me/css/btn.css" />
+    <meta
+      name="description"
+      content="Jogo do Mario / Divirta-se tentando escapar dos canos! / Todos os direitos ©luis_das_artimanhas©"/>
+    <meta name="robots" content="index,follow" />
+    <meta property="og:title" content="Mario Jump" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://pinggobras.glitch.me/jogos/web/mario.html" />
+    <meta
+      property="og:description"
+      content="Jogo do Mario / Divirta-se tentando escapar dos canos! / Todos os direitos ©luis_das_artimanhas©"/>
+    <meta
+      property="og:image"
+      content="https://iconarchive.com/show/super-mario-icons-by-ph03nyx/Paper-Mario-icon.html"/>
+    <meta name="twitter:card" content="summary" />
+    
+    <title>PINGOBRAS Mario Jump Web</title>
+    <style>
+      .gameCursor{
+        curosr: crosshair;
+      }
+    </style>
+    
+ </head>
+  <body>
+    <div class="site-altura">
+    <div class="conteudo" -hidden role="main">
+        
+        <div class="game-board">
+        <info style="font-size:20px;
+                     text-transform:capitalize;
+                     font-style:normal;
+                     text-shadow:rgb(255, 0, 0) -1px 0px 0px, rgb(0, 255, 255) 1px 0px 0px;
+                     text-align:center;"> 
+        <left style="text-align:left;">
+        <p>Ave:</p>  
+        <p>Tempo de jogo: <js id="runTime">0</js>s</p>
+        </left>
+          
+        <p inline vermelho>Placar: <js id="placar">Sem pontos</js></p>
+        <p azul>Pontuação Alta: <js id="HightScore">Sem Pontuação Alta</js></p>
+        </info>
+          <img src="https://i.pinimg.com/736x/3b/d3/e7/3bd3e7fcf03935e331b008d1f9398f61--mario.jpg"
+               alt="torre"
+               class="castelo" hidden>
+          <img src="https://freepngimg.com/download/logo/174680-logo-game-pic-over-free-download-image.png"
+               alt="game over"
+               class="game-over">
+          <img src="https://cdn.glitch.global/b39d6a4a-0e14-4b41-930d-29d3ccd6c137/nuvem%20mario%20bros%20png%20_1320%20x%20770_px%2031%2C1%20KB%20(1).png?v=1662585282500"
+               alt="Nuvens"
+               class="clouds">
+          <img src="https://cdn.glitch.global/b39d6a4a-0e14-4b41-930d-29d3ccd6c137/aviao-e-aeronave-imagem-animada-0050.gif?v=1662645357604"
+               alt="aviao"
+               class="airplane" hidden>
+          <img src="https://www.imagensanimadas.com/data/media/230/ave-passaro-imagem-animada-0397.gif"
+               alt="Passaro voador"
+               class="bird"> 
+          <img src="https://w7.pngwing.com/pngs/328/162/png-transparent-new-super-mario-bros-2-super-mario-bros-3-mario-sonic-at-the-olympic-games-mario-heroes-super-mario-bros-text.png"
+               alt="Cubo Surpreza"
+               class="cubo">
+          <img src="https://gamerview.uai.com.br/wp-content/uploads/2019/12/mario-gif.gif"
+               alt="mario"
+               class="mario">
+          <img src="https://cdn.glitch.global/b39d6a4a-0e14-4b41-930d-29d3ccd6c137/Piranha_Plant%2C_New_Super_Mario_Bros._U.png?v=1662855056184"
+               alt="cano de planta"
+               class="pipe-plant">
+          <img
+               src="https://cdn.pixabay.com/photo/2013/07/12/13/52/super-mario-brothers-147465_1280.png"
+               alt="cano do mario"
+               class="pipe">
+        </div>
+       <div id="configsM" style="background: gray; 
+                                 width: 100%; 
+                                 text-align: center;
+                                 cursor: crosshair;">
+      <h1>Menu De Configurações</h1>
+      <p>Tela do usuario: <js id="labelTela">Sem Dimenções de tela</js></p>
+      <p>Modo de jogo: Padrão(medium)</p>
+        <audio  
+            controls
+            class="audio"
+            loop
+            volume="0.1"
+            preload="auto"
+            src="https://cdn.glitch.global/b39d6a4a-0e14-4b41-930d-29d3ccd6c137/MÚSICA TEMA DO SUPER MARIO WORLD.mp3?v=1662587661787">
+          </audio>
+         
+         <br>
+         
+        <button verde class="btnNav gameCursor">
+          Easy mode
+        </button>
+         
+         <br>
+         
+        <button laranja class="btnNav gameCursor">
+          Medium mode
+        </button>
+         
+         <br>
+         
+        <button vermelho class="btnNav gameCursor">
+          Hard mode
+        </button>
+         
+         <br>
+         
+        <button class="btnNav gameCursor" id="btnHit" onclick="HitBox()"> 
+          Ativar Hit Box?
+        </button>
+         
+         <br>
+         
+         <button class="btnNav gameCursor" id="btnRestart" onclick="restart()"> 
+          Reiniciar Automatico?
+        </button>
+         
+         <br>
+         
+        <button class="btnNav gameCursor" onclick="playGame()"> 
+          Iniciar Jogo
+        </button>
+         </div>
+        
+      </div></div>
+  </body>
+  <script src="https://pingobras.glitch.me/jogos/mario/mario.js" defer></script>
+</html>

@@ -1,0 +1,322 @@
+<!doctype html>
+<html lang="PT">
+  
+  <head>
+    
+    <meta charset="utf-8" />
+    <meta http-equiv="Refresh" content="60">
+    <meta name="viewport" content="width=device-width, initial-scale=0.7" />
+    <link rel="icon" href="https://cdn2.iconfinder.com/data/icons/seo-2-5/64/SEO_-3-_Line-23-512.png" />
+    <links></links>
+    <title>PINGOBRAS CONSOLE</title>
+    
+  </head>
+  <body>
+<div class="site-altura">
+      <div class="conteudo" role="main">
+        <style>
+body {
+  font-family: "Lato", sans-serif;
+}
+
+
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+.compact .dot.is-big {
+    width: 30px;
+    height: 30px;
+}
+.compact .psp-main-status-dot {
+    margin-right: 15px;
+}
+.dot.is-big {
+    width: 60px;
+    height: 60px;
+}
+.dot {
+    width: 12px;
+    height: 12px;
+    display: inline-block;
+    border-radius: 50%;
+    color: #3bd671;
+    background: #3bd671;
+    position: relative;
+    -ms-transform: none;
+    transform: none;
+}
+.m-r-30 {
+    margin-right: 30px;
+}
+.uk-flex-none {
+    -ms-flex: none;
+    flex: none;
+}
+.dark .card {
+    background: #212937;
+    color: #fff;
+}
+.card {
+    background: #fff;
+    padding: 60px;
+    box-shadow: 0 20px 60px rgb(0 0 0 / 10%);
+    border-radius: 6px;
+    color: #131a26;
+}
+.dot.is-big:after {
+    animation: pulseBig 2s infinite;
+}
+.dot:after {
+    content: '';
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background: currentColor;
+    animation: pulse 2s infinite;
+    opacity: 1;
+    border-radius: 50%;
+    top: 0;
+    left: 0;
+}
+::selection {
+    background: #39f;
+    color: #fff;
+    text-shadow: none;
+}
+.compact .dot.is-big {
+    width: 30px;
+    height: 30px;
+}
+.compact .psp-main-status-dot {
+    margin-right: 15px;
+}
+.dot.is-big {
+    width: 60px;
+    height: 60px;
+}
+.dot {
+    width: 12px;
+    height: 12px;
+    display: inline-block;
+    border-radius: 50%;
+    color: #3bd671;
+    background: #3bd671;
+    position: relative;
+    -ms-transform: none;
+    transform: none;
+}
+.m-r-30 {
+    margin-right: 30px;
+}
+.uk-flex-none {
+    -ms-flex: none;
+    flex: none;
+}
+body * {
+    scrollbar-width: thin;
+}
+* {
+    box-sizing: border-box;
+}
+* {
+    box-sizing: border-box;
+}
+user agent stylesheet
+div {
+    display: block;
+}
+.dark .card {
+    background: #212937;
+    color: #fff;
+}
+.card {
+    background: #fff;
+    padding: 60px;
+    box-shadow: 0 20px 60px rgb(0 0 0 / 10%);
+    border-radius: 6px;
+    color: #131a26;
+}
+body {
+    margin: 0;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+html.dark {
+    background: #131a26;
+    color: #fff;
+}
+html.compact {
+    font-size: 16px;
+}
+:root {
+    --uk-breakpoint-s: 640px;
+    --uk-breakpoint-m: 960px;
+    --uk-breakpoint-l: 1200px;
+    --uk-breakpoint-xl: 1600px;
+}
+html {
+    font-family: "Roboto",Arial,sans-serif;
+    font-size: 18px;
+    font-weight: normal;
+    line-height: 1.33;
+    -webkit-text-size-adjust: 100%;
+    background: #fff;
+    color: #131a26;
+}
+html {
+    font-family: sans-serif;
+    line-height: 1.15;
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+    letter-spacing: 0.01em;
+}
+injected stylesheet
+html {
+    font-family: sans-serif;
+}
+.dot.is-big:after {
+    animation: pulseBig 2s infinite;
+}
+.dot:after {
+    content: '';
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background: currentColor;
+    animation: pulse 2s infinite;
+    opacity: 1;
+    border-radius: 50%;
+    top: 0;
+    left: 0;
+}
+body *::-webkit-scrollbar {
+    width: 11px;
+}
+body *::-webkit-scrollbar-thumb {
+    border-radius: 6px;
+}
+::selection {
+    background: #39f;
+    color: #fff;
+    text-shadow: none;
+}
+@keyframes pulseBig{
+  0%{opacity:0.5}
+  70%{opacity:0;transform:scale(1.6)}
+  100%{opacity:0}
+}
+@keyframes pulse{
+  0%{opacity:0.5}
+  70%{opacity:0;transform:scale(2.5)}
+  100%{opacity:0}
+}
+</style>
+
+<span class="open-sidenav" onclick="openNav()">&#9776; open</span>
+        
+        <info>
+          <p>ADMINISTRADOR ACCOUNT:</p>
+          <p id="adminStatus">NÃO CONECTADA</p>
+          <p>ADMIN SALDO:</p><js id="siteSaldo" vermelho>SEM SALDO</js>
+          <p>Segurança:</p><js id="security" >Desativada</js>
+          <p>Velocidade da Internet:</p>
+          <p id="MBps" >SEM CONEXÃO MBps</p>
+          <p id="GBps" >SEM CONEXÃO GBps</p>
+          <script type="text/javascript" src="https://www.usersonline.org/uo-7cAbCCc9y19CAZ03-4-1.js"></script>
+          <br>
+          <img src="https://www.usersonline.org/selo/selo-uo.gif" alt="Users Online">
+          <div class="psp-main-status-dot dot is-big m-r-30 uk-flex-none">
+          </div>
+        </info>
+        
+     <tela 
+      style="width:75%;"
+      class="console" 
+      id="multiconsole">
+      Console sem informações
+      </tela>
+
+      <tela 
+          style="display:inline;">
+       <h1>Console1:</h1>
+       <js id="demo">Sem informações Analogicas</js>
+       <br>
+       <p style="display:inline;">Cidade: </p><js id="city">Sem informações</js>
+       <br>
+       <p style="display:inline;">Pais: </p><js id="pais">Sem informações</js>
+       <br>
+       <p style="display:inline;">Região: </p><js id="regiao">Sem informações</js>
+       <br> 
+       <p style="display:inline;">Fuso Horario: </p><js id="timezone">Sem informações</js>
+       <br>
+       <p style="display:inline;">Provedor IP: </p><js id="IP">Sem informações</js>
+       <br>
+       <p style="display:inline;">Host/Getaway IP: </p><js id="HostIP">Sem informações</js>
+       <br>
+       <p style="display:inline;">Fornecedor de acesso à internet: </p><js id="ISP">Sem informações</js>
+       <br>
+       <p style="display:inline;">localização: </p><js id="location">Sem informações</js>
+       <br> 
+       <p style="display:inline;">Codigo Postal: </p><js id="postal">Sem informações</js> 
+        
+      </tela>
+        
+        <br>
+        <div id="direitos" class="direitos">Loading...</div>  
+        
+        
+</div></div>
+  <leftnav id="mySidenav" class="sidenav">
+  <button class="closebtn" onclick="closeNav()">&times;</button>
+  <a href="#">About</a>
+</leftnav>
+</body>
+    <script src="https://pingobras.glitch.me/js/script.js" defer></script>
+    <script src="https://pingobras.glitch.me/js/STORAGE.js" defer></script>
+    <script src="https://pingobras.glitch.me/js/autentication.js" defer></script>
+    <script src="https://pingobras.glitch.me/js/functions.js" defer></script>
+    <script src="https://pingobras.glitch.me/js/network.js" defer></script>
+    <script src="https://pingobras.glitch.me/admin/console.js" defer></script>
+    <script src="https://pingobras.glitch.me/admin/auth.js" defer></script>        
+    <script src="https://pingobras.glitch.me/js/copyright.js" defer></script>
+    <script src="https://pingobras.glitch.me/js/links.js" defer></script>
+  <script>
+function openNav() {
+  document.getElementById("mySidenav").style.width = "250px";
+  document.querySelector(".site-altura").style.opacity = "0.6";
+}
+
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+  document.querySelector(".site-altura").style.opacity = "1";
+}
+</script>
+  
+  <api>
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script>
+    async function getIpClient() {
+  try {
+    const response = await axios.get('https://ipinfo.io/json');
+    document.getElementById("city").innerHTML = response.data.city;
+    document.getElementById("pais").innerHTML = response.data.country;
+    document.getElementById("regiao").innerHTML = response.data.region;
+    document.getElementById("timezone").innerHTML = response.data.timezone;
+    document.getElementById("location").innerHTML = response.data.loc
+    document.getElementById("IP").innerHTML = response.data.ip
+    document.getElementById("HostIP").innerHTML = response.data.hostname
+    document.getElementById("postal").innerHTML = response.data.postal
+    document.getElementById("ISP").innerHTML = response.data.org
+    console.log(response);
+  } catch (error) {
+    console.error(error);
+  }
+}
+
+getIpClient();
+</script>    
+  </api>
+
+</html>
