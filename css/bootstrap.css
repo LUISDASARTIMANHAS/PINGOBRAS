@@ -1,0 +1,823 @@
+/* Our default values set as CSS variables */
+@font-face {
+  font-family: "Noto Sans Mono", monospace;
+  src: url("https://fonts.googleapis.com/css2?family=Noto+Sans+Mono:wght@500&display=swap")
+    format("opentype");
+}
+
+/* ==================== presets css ==================== */
+
+js {
+  width: auto;
+  display: inline;
+}
+[inline] {
+  display: inline;
+}
+[hidden] {
+  display: none !important;
+}
+[branco] {
+  color: white;
+}
+[white] {
+  background: white;
+}
+[azul] {
+  color: blue;
+}
+[blue] {
+  background: blue;
+}
+[lightblue] {
+  background: lightblue;
+}
+[amarelo] {
+  color: yellow;
+}
+[yellow] {
+  background: yellow;
+}
+[vermelho] {
+  color: red;
+}
+[red] {
+  background: red;
+}
+[verde] {
+  color: green;
+}
+[green] {
+  background: green;
+}
+[laranja] {
+  color: orange;
+}
+[laranjavermelho] {
+  color: orangered;
+}
+[orange] {
+  background: orange;
+}
+[cinza] {
+  color: gray;
+}
+[gray] {
+  background: gray;
+}
+[roxo] {
+  color: purple;
+}
+[purple] {
+  background: purple;
+}
+[border] {
+  padding: 4px;
+  border: 2px solid black;
+}
+[RGB] {
+  transition: all 1s ease-out;
+}
+
+/* ==================== header css ==================== */
+
+header{
+  display: flex;
+  justify-content: center;
+}
+.cabecalho {
+  display: block;
+  position: static;
+  top: 0;
+  padding: 5px;
+  width: 100%;
+  border: 3px solid black;
+  z-index: 1;
+  height: auto;
+  max-width: 100%;
+  background: repeating-linear-gradient(45deg, purple, #00b489);
+}
+
+@media (max-width: 820px) {
+  .cabecalho {
+    position: absolute;
+    top: 0;
+  }
+}
+.msg-error-hour {
+  position: absolute;
+  display: none;
+  font-size: 25px;
+  color: red;
+  border: 5px solid black;
+  bottom: 0;
+  width: 100%;
+  background: white;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+conteudo,
+.index {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin-top: 30%;
+}
+.site-altura {
+  min-height: var(--wrapper-altura);
+  display: grid;
+  place-items: center;
+  min-width: 50%;
+  width: 100%;
+}
+.conteudo {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+/* Instructions */
+.instructions {
+  margin: 1rem auto 0;
+}
+/* .info {
+  background: white;
+  border: 3px solid gray;
+  color: black;
+  width: 100%;
+  cursor: help;
+  height: auto;
+  display: block;
+} */
+.info-TR {
+  font-style: italic;
+  text-shadow: rgb(255, 255, 255) 1px 1px 0px, rgb(170, 170, 170) 2px 2px 0px;
+  text-align: center;
+}
+
+.list,
+list {
+  margin-top: auto;
+  display: none;
+  color: blue;
+  background: white;
+  border: 5px solid black;
+  padding: 10px 10px;
+  width: 95%;
+  cursor: help;
+  max-width: 100%;
+}
+.list saldo {
+  display: inline-block;
+  color: red;
+}
+.list payment {
+  display: inline-block;
+  color: green;
+}
+.list-changelogs {
+  display: block;
+  color: blue;
+  background: white;
+  border: 5px solid black;
+  padding: 10px 10px;
+  width: 100%;
+  cursor: help;
+  font-size: 17px;
+}
+info {
+  background: white;
+  border: 3px solid black;
+  color: black;
+  width: 100%;
+  cursor: help;
+  height: auto;
+  display: block;
+}
+info.changelogs {
+  font-style: italic;
+  text-transform: capitalize;
+  text-align: center;
+  font-family: "Coming Soon", handwriting;
+  color: black;
+  border-top-left-radius: 35px;
+  border-top-right-radius: 35px;
+  border-bottom-left-radius: 35px;
+  border-bottom-right-radius: 35px;
+  width: 75%;
+  min-width: 50px;
+  border-width: 5px;
+  box-shadow: 0px 0px 50px 25px #000000;
+}
+info.jogos {
+  text-align: center;
+  background: transparent;
+  color: white;
+  border: none;
+}
+info strong {
+  text-transform: uppercase;
+  text-decoration: underline;
+  text-shadow: rgb(255, 255, 255) 1px 1px 0px, rgb(170, 170, 170) 2px 2px 0px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.item-account-left {
+  display: block;
+  color: white;
+  background: gray;
+  font-size: 22px;
+  text-transform: uppercase;
+  font-style: italic;
+  font-size: 20px;
+  text-shadow: rgb(255, 255, 255) 1px 1px 0px, rgb(170, 170, 170) 2px 2px 0px;
+  overflow: hidden;
+  border-radius: 25px;
+  text-align: center;
+  width: 50%;
+  margin-left: 25%;
+}
+
+/* ==================== buttons css ==================== */
+
+button {
+  text-transform: capitalize;
+  font-size: 18px;
+  background-color: gray;
+  border-color: black;
+  border-width: 5px;
+  margin: 5px;
+  border-left-color: blue;
+  border-right-color: mediumpurple;
+  transition: all 0.3s ease-out;
+  padding: 5px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.custom-btn {
+  width: 130px;
+  height: 40px;
+  color: white;
+  border-radius: 5px;
+  padding: 10px 25px;
+  font-family: "Lato", sans-serif;
+  font-weight: 500;
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  display: inline-block;
+  box-shadow: inset 2px 2px 2px 0px rgba(255, 255, 255, 0.5),
+    7px 7px 20px 0px rgba(0, 0, 0, 0.1), 4px 4px 5px 0px rgba(0, 0, 0, 0.1);
+  outline: none;
+}
+.Ani-laminado {
+  animation: Ani-laminado 3s ease-in-out infinite;
+}
+
+/* 
+<button class="btn-laminado">
+Read More
+<div class="dot"></div>
+</button> 
+*/
+/* 11 */
+.btn-laminado {
+  border: none;
+  background: rgb(251, 33, 117);
+  background: linear-gradient(
+    0deg,
+    rgba(251, 33, 117, 1) 0%,
+    rgba(234, 76, 137, 1) 100%
+  );
+  color: white;
+  overflow: hidden;
+}
+.btn-laminado:hover {
+  text-decoration: none;
+  color: white;
+  opacity: 0.7;
+}
+.btn-laminado:before {
+  position: absolute;
+  content: "";
+  display: inline-block;
+  top: -180px;
+  left: 0;
+  width: 30px;
+  height: 100%;
+  background-color: white;
+  animation: Ani-laminado 3s ease-in-out infinite;
+}
+.btn-laminado:active {
+  box-shadow: 4px 4px 6px 0 rgba(255, 255, 255, 0.3),
+    -4px -4px 6px 0 rgba(116, 125, 136, 0.2),
+    inset -4px -4px 6px 0 rgba(255, 255, 255, 0.2),
+    inset 4px 4px 6px 0 rgba(0, 0, 0, 0.2);
+}
+
+/*
+<button class=" btn-girada">
+<span>Click!</span>
+<span>Read More</span>
+</button>
+*/
+.btn-girada {
+  position: relative;
+  right: 20px;
+  bottom: 20px;
+  border: none;
+  box-shadow: none;
+  width: 130px;
+  height: 40px;
+  line-height: 42px;
+  -webkit-perspective: 230px;
+  perspective: 230px;
+  background: transparent;
+}
+.btn-girada span {
+  background: rgb(0, 172, 238);
+  background: linear-gradient(
+    0deg,
+    rgba(0, 172, 238, 1) 0%,
+    rgba(2, 126, 251, 1) 100%
+  );
+  display: block;
+  position: absolute;
+  width: 130px;
+  height: 40px;
+  box-shadow: inset 2px 2px 2px 0px rgba(255, 255, 255, 0.5),
+    7px 7px 20px 0px rgba(0, 0, 0, 0.1), 4px 4px 5px 0px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  margin: 0;
+  text-align: center;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+.btn-girada span:nth-child(1) {
+  box-shadow: -7px -7px 20px 0px #fff9, -4px -4px 5px 0px #fff9,
+    7px 7px 20px 0px #0002, 4px 4px 5px 0px #0001;
+  -webkit-transform: rotateX(90deg);
+  -moz-transform: rotateX(90deg);
+  transform: rotateX(90deg);
+  -webkit-transform-origin: 50% 50% -20px;
+  -moz-transform-origin: 50% 50% -20px;
+  transform-origin: 50% 50% -20px;
+}
+.btn-girada span:nth-child(2) {
+  -webkit-transform: rotateX(0deg);
+  -moz-transform: rotateX(0deg);
+  transform: rotateX(0deg);
+  -webkit-transform-origin: 50% 50% -20px;
+  -moz-transform-origin: 50% 50% -20px;
+  transform-origin: 50% 50% -20px;
+}
+.btn-girada:hover span:nth-child(1) {
+  box-shadow: inset 2px 2px 2px 0px rgba(255, 255, 255, 0.5),
+    7px 7px 20px 0px rgba(0, 0, 0, 0.1), 4px 4px 5px 0px rgba(0, 0, 0, 0.1);
+  -webkit-transform: rotateX(0deg);
+  -moz-transform: rotateX(0deg);
+  transform: rotateX(0deg);
+}
+.btn-girada:hover span:nth-child(2) {
+  box-shadow: inset 2px 2px 2px 0px rgba(255, 255, 255, 0.5),
+    7px 7px 20px 0px rgba(0, 0, 0, 0.1), 4px 4px 5px 0px rgba(0, 0, 0, 0.1);
+  color: transparent;
+  -webkit-transform: rotateX(-90deg);
+  -moz-transform: rotateX(-90deg);
+  transform: rotateX(-90deg);
+}
+@keyframes Ani-laminado {
+  0% {
+    -webkit-transform: scale(0) rotate(45deg);
+    opacity: 0;
+  }
+  80% {
+    -webkit-transform: scale(0) rotate(45deg);
+    opacity: 0.5;
+  }
+  81% {
+    -webkit-transform: scale(4) rotate(45deg);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: scale(50) rotate(45deg);
+    opacity: 0;
+  }
+}
+
+.btnFixedLeft {
+  font-size: 15px;
+  font-weight: bold;
+  padding: 10pt;
+  position: fixed;
+  bottom: 50px;
+  left: 50px;
+  opacity: 0.7;
+}
+.btnFixedLeft:hover {
+  box-shadow: -8px 20px 20px gray;
+  transform: translateY(5px);
+  transition: all 1s ease-out;
+  opacity: 1;
+}
+.btnFixedRight {
+  font-size: 15px;
+  font-weight: bold;
+  padding: 10pt;
+  position: fixed;
+  bottom: 50px;
+  right: 50px;
+  opacity: 0.7;
+}
+.btnFixedRight:hover {
+  box-shadow: -8px 20px 20px gray;
+  transform: translateY(5px);
+  transition: all 1s ease-out;
+  opacity: 1;
+}
+.btn-criptografar {
+  border-radius: 25px;
+  overflow: hidden;
+  background-color: purple;
+  width: 25%;
+}
+.btn-entrar {
+  background-color: purple;
+  border: 5px solid black;
+  padding: 10px;
+  width: 100%;
+  border-radius: 15px;
+  color: white;
+  font-size: 15px;
+  font-weight: bold;
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+}
+.btn-entrar:hover {
+  background-image: linear-gradient(50deg, purple, blue);
+  cursor: pointer;
+  box-shadow: -8px 20px 20px gray;
+  transform: translateY(5px);
+  transition: all 0.5s ease-out;
+}
+.btn-voltar-login {
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  background-color: blue;
+  padding: 10px;
+  cursor: help;
+  font-size: 16px;
+  width: 100%;
+  border-radius: 15px;
+  display: flex;
+  color: white;
+  text-decoration: none;
+}
+.btn-voltar-login:hover {
+  background-image: linear-gradient(50deg, blue, purple);
+  cursor: pointer;
+  transform: translateY(5px);
+  transition: all 0.5s ease-out;
+}
+
+.btnReload {
+  height: 45px;
+  position: absolute;
+  background: black;
+  background-repeat: no repeat;
+  border: none;
+  width: 15%;
+  right: 0;
+  top: 0;
+  border-radius: 50%;
+}
+.btnReload:hover {
+  background: green;
+  background-repeat: no repeat;
+  cursor: pointer;
+  transform: translateY(5px);
+  transition: all 1s ease-out;
+}
+
+.btnList:hover {
+  cursor: help;
+  box-shadow: -8px 20px 20px gray;
+  color: gold;
+}
+.btn-enviar-autentication {
+  background-color: red;
+  color: black;
+  padding: 10px;
+  border: 5px solid black;
+  width: 75%;
+  margin-top: 20px;
+}
+.btn-enviar-autentication:hover {
+  background: green;
+  cursor: pointer;
+  box-shadow: -8px 20px 20px gray;
+  color: gold;
+  transform: translateY(5px);
+  transition: all 0.3s ease-out;
+  opacity: 0.8;
+}
+
+.btn-cancel-msm {
+  color: white;
+  padding: 16px 20px;
+  border: 5px solid black;
+  cursor: pointer;
+  width: 100%;
+  background-color: red;
+}
+.btn-cancel-msm:hover {
+  cursor: pointer;
+  box-shadow: -8px 20px 20px gray;
+  color: gold;
+  transform: translateY(5px);
+  transition: all 0.3s ease-out;
+  opacity: 0.8;
+}
+.btn-download {
+  font-weight: bold;
+  font-size: 18px;
+  min-width: 50%;
+  padding: 10px;
+  border-radius: 25px;
+  background: gold;
+  color: black;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  cursor: pointer;
+  justify-content: space-between;
+}
+.btn-download:hover {
+  transform: translateY(5px);
+  transition: all 0.3s ease-out;
+}
+
+.btnLogin {
+  background-color: blue;
+  padding: var(--btn-tamanho);
+  cursor: pointer;
+  justify-content: center;
+}
+.btnLogin:hover {
+  background-image: linear-gradient(45deg, blue, green);
+}
+
+.btn-cadastro {
+  background-color: purple;
+  padding: var(--btn-tamanho);
+  cursor: help;
+}
+.btn-cadastro:hover {
+  background-image: linear-gradient(45deg, purple, green);
+}
+.btn-cadastrar {
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  background-color: purple;
+  padding: var(--btn-tamanho);
+  cursor: help;
+  font-size: 15px;
+  border: 5px solid black;
+  font-weight: bold;
+  width: 100%;
+  border-radius: 15px;
+  display: flex;
+  color: white;
+  text-decoration: none;
+}
+.btn-cadastrar:hover {
+  background-image: linear-gradient(45deg, purple, green);
+}
+
+.btn-danger {
+  background-color: red;
+  border: 5px solid black;
+  padding: 7px;
+  width: 100%;
+  border-radius: 15px;
+  color: white;
+  font-size: 15px;
+  margin-top: 10px;
+  justify-content: center;
+  transform: translateY(5px);
+}
+
+.btn-disabled,
+button[disabled],
+[disabled],
+fieldset[disabled] .disabled {
+  cursor: not-allowed;
+  filter: alpha(opacity=65);
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  opacity: 0.65;
+}
+
+.btn-votacao-footer {
+  background-color: gray;
+  border: 3px solid black;
+  padding: var(--btn-tamanho);
+  font-weight: bold;
+  font-size: 15px;
+  justify-content: center;
+  width: 35%;
+}
+.btn-votacao-footer:hover {
+  cursor: pointer;
+  box-shadow: -8px 20px 20px gray;
+  color: gold;
+}
+
+.btnDeslogar {
+  float: right;
+  cursor: pointer;
+  margin: 3px;
+}
+.btnDeslogar:hover {
+  opacity: 0.5;
+}
+.btnMostrarSenha {
+  float: right;
+  cursor: pointer;
+  margin: 3px;
+  width: auto;
+}
+.btnMostrarSenha:hover {
+  opacity: 0.5;
+}
+.btnEdu {
+  background-color: blue;
+  padding: var(--btn-tamanho);
+  font-weight: bold;
+}
+.btnEdu:hover {
+  background-image: linear-gradient(45deg, blue, green);
+  width: 65%;
+  padding: 5pt;
+  cursor: pointer;
+  box-shadow: -8px 20px 20px green;
+  transform: translateY(5px);
+  transition: all 1s ease-out;
+}
+.eduIcon {
+  height: 50px;
+  align-items: left;
+  text-align: left;
+  margin: 5px;
+}
+.btnChat {
+  background: green;
+  color: white;
+  cursor: pointer;
+  font-weight: bold;
+  padding: 7px 5px;
+  width: 75%;
+  border: 2px solid black;
+  margin: 5px;
+  border-radius: 25px;
+}
+
+/* ==================== auto rgb ==================== */
+
+[rgb]{
+font-family: "Roboto",sans-serif, arial;
+animation: ani-rbg 5s infinite;
+}
+.linear-gradient{
+font-family: "Roboto",sans-serif, arial;
+background-image: linear-gradient(60deg,red,blue,purple);
+  animation: auto-deg 1s infinite linear;
+}
+
+@keyframes ani-rgb{
+  0%{
+    border-color: red;
+    color: red;
+  }
+  14%{
+    border-color: blue;
+    color: blue;
+  }
+  28%{
+    border-color: green;
+    color: green;
+  }
+  42%{
+    border-color: yellow;
+    color: yellow;
+  }
+  56%{
+    border-color: orange;
+    color: orange;
+  }
+  70%{
+    border-color: gray;
+    color: gray;
+  }
+  84%{
+    border-color: white;
+    color: white;
+  }
+  98%{
+    border-color: purple;
+    color: purple;
+  }
+}
+a {
+  border-radius: 25px;
+  margin: 5px;
+  padding: 7px;
+  color: purple;
+  align-items: center;
+  text-align: justify;
+}
+a:hover {
+  transform: translateY(5px);
+  transition: all 1s ease-out;
+  opacity: 1;
+}
+/* ==================== footer css ==================== */
+
+/* footer grid */
+footer {
+  display: flex;
+  margin-top: 10%;
+  width: 100%;
+  font-size: 15pt;
+  text-align: center;
+  padding: 50px;
+  border-top: 5px solid white;
+  max-width: 100%;
+  justify-content: center;
+}
+.footer-gray {
+  background: gray;
+  font-size: 17pt;
+}
+.footer.links {
+  padding: 40px;
+  white-space: nowrap;
+}
+.footer-dev {  
+  display: flex;
+  justify-content: space-between;
+  margin: 1rem auto 0;
+  width: 100%;
+  color: white;
+}
+footer .load,
+footer div.load,
+footer js.load{
+  width: 50px;
+  height: 50px;
+  border: 6px solid #e5e5e5;
+  border-top: 6px solid #51d4db;
+  border-radius: 50%;
+  animation: roda 1.5s infinite;
+}
+
+@keyframes roda {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* ==================== temas css ==================== */
+
+body.modo-escuro header {
+  background-color: #333333;
+  color: white;
+}
+
+body.modo-escuro {
+  background-color: #212121;
+  color: white;
+}
+
+.modo-escuro .produto {
+  background-color: #a8a8a8;
+}

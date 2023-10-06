@@ -1,0 +1,711 @@
+/* Our default values set as CSS variables */
+@font-face {
+  font-family: "Noto Sans Mono", monospace;
+  src: url("https://fonts.googleapis.com/css2?family=Noto+Sans+Mono:wght@500&display=swap")
+    format("opentype");
+}
+:root {
+  --color-padrao: white;
+  --color-text-main: #000000;
+  --color-primary: #ffff00;
+  --wrapper-altura: 87vh;
+  --image-max-largura: 100px;
+  --image-margin: 1rem;
+  --font-principal: "Arial";
+  --font-family-cabecalho: "Roboto, sans-serif;";
+  --max-largura: 144px;
+  --max-altura: 544px;
+  --max-peso: 500;
+  --font-tamanho: 15px;
+  --font-tamanho-cabecalho: 20px;
+  --fundo-padrao: white;
+  --negrito: bold;
+  --espaco-em-branco: nowrap;
+  --btn-tamanho: 10pt;
+  --sub-tamanho: 17pt;
+  --X: 0px;
+  --Y: 390px;
+  --IMGLuisdasartimanhas: url(https://cdn.glitch.global/b39d6a4a-0e14-4b41-930d-29d3ccd6c137/doge-angry.png?v=1661855131002);
+
+  --display: flex formato de celular;
+  --height: "altuta";
+  --Weight: "peso";
+  --width: "largura";
+  --white-space: "espaco em branco";
+}
+
+[RGB] {
+  transition: all 1s ease-out;
+}
+/* Basic page style resets */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Roboto", sans-serif;
+  max-width: 100%;
+}
+.img-status {
+  height: 30px;
+  width: 40px;
+  margin: 0;
+  padding: 0;
+  animation: piscar 1s infinite linear;
+}
+/******************************************************************************
+END Glitch hello-app default styles
+******************************************************************************/
+
+body.luis-das-artimanhas {
+  background-image: var(--IMGLuisdasartimanhas);
+  width: auto;
+  background-repeat: no-repeat;
+  background-size: cover;
+  justify-content: center;
+}
+body.trailer-game {
+  background-image: url(https://c.tenor.com/zjbXreUb5_YAAAAd/steam.gif);
+  width: auto;
+  background-repeat: no-repeat;
+  background-size: cover;
+  justify-content: center;
+}
+
+.discord {
+  display: inline-block;
+  border: 5px solid black;
+  padding: 3px;
+  align-items: left;
+  text-align: left;
+  justify-content: left;
+  background: black;
+  z-index: 1;
+  margin-bottom: 3%;
+  margin-right: 50%;
+  width: 50%;
+}
+.console {
+  background-image: linear-gradient(45deg, gray, silver);
+  justify-content: center;
+  padding: 30px;
+  border-radius: 15px;
+  color: yellow;
+  box-shadow: 3px 3px 43px 0px black;
+}
+
+a.btn-cadastro,
+.btnlogin {
+  font-size: 15px;
+  border: 5px solid black;
+  font-weight: bold;
+  text-decoration: none;
+  transform: translateY(5px);
+  transition: all 0.3s ease-out;
+  width: 75%;
+  border-radius: 15px;
+  display: flex;
+  margin-top: 15px;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+.video-game {
+  font-size: 1.7rem;
+  font-weight: 900;
+  font-size: 1.7em;
+  color: white;
+  box-sizing: border-box;
+  display: block;
+  align-items: center;
+  width: 25%;
+  padding: 8px;
+  background-image: linear-gradient(
+    290deg,
+    rgb(59, 43, 115) 55%,
+    rgb(111, 47, 147),
+    #6f2f93
+  );
+  background-position: center;
+  text-align: center;
+  text-decoration: none;
+  height: max-content;
+  margin: 5px;
+}
+.video-game-LDA {
+  font-size: 1.7rem;
+  font-weight: 900;
+  font-size: 1.7em;
+  color: white;
+  align-items: center;
+  padding: 8px;
+  background-image: linear-gradient(
+    290deg,
+    rgb(59, 43, 115) 55%,
+    rgb(111, 47, 147),
+    #6f2f93
+  );
+  background-position: center;
+  text-align: center;
+  text-decoration: none;
+  margin: 5px;
+  width: 50%;
+  height: 520px;
+  max-width: 75%;
+  min-width: 25%;
+  min-height: 420px;
+  max-height: 720px;
+}
+.red-title {
+  font-size: 17px;
+  color: red;
+}
+.yellow-title {
+  font-size: 17px;
+  color: yellow;
+}
+main-text {
+  text-align: center;
+  font-size: 20pt;
+  color: black;
+}
+main-text:hover:before {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+main-text:before {
+  content: " ";
+  transform: scaleX(0);
+  transform-origin: bottom right;
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  inset: 0 0 0 0;
+  background-image: linear-gradient(90deg, green, yellow, blue);
+  z-index: -1;
+  transition: transform 2s ease;
+}
+telacalc {
+  text-align: left;
+  display: block;
+  color: black;
+  background: white;
+  border: 5px solid black;
+  padding: 10px 10px;
+  width: 75%;
+  cursor: help;
+  font-size: 18px;
+  margin-left: 20px;
+  opacity: 100%;
+  z-index: 1;
+}
+telacarteira {
+  text-align: left;
+  display: block;
+  color: white;
+  background: #56707f;
+  border: 5px solid black;
+  padding: 10px 10px;
+  width: 95%;
+  cursor: help;
+  font-size: 18px;
+  margin-left: 20px;
+  opacity: 100%;
+  z-index: 1;
+}
+.open-sidenav {
+  width: 100%;
+  font-size: 30px;
+  cursor: pointer;
+  float: left;
+  display: block;
+  justify-content: left;
+  text-transform: capitalize;
+  text-align: left;
+  text-decoration: underline;
+  text-shadow: rgb(255 255 255) 1px 1px 0px, rgb(170 170 170) 2px 2px 0px;
+  direction: ltr;
+}
+.sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: white;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+#header_wallet_ctn {
+  text-align: right;
+  padding-right: 15px;
+  line-height: normal;
+  background: #171a21;
+}
+
+.logo-goves,
+a .logo-goves {
+  margin: 0;
+  display: block;
+  text-align: left;
+  border: none;
+}
+.direitos {
+  font-size: 18px;
+  color: yellow;
+  margin: 0;
+  display: block;
+  text-align: center;
+  border: none;
+  cursor: help;
+  max-width: 100%;
+}
+/* Button dip
+- Toggling this class on and off will move it down and up again
+- The button transition property above determines the speed of the translate (500ms)
+*/
+.muted {
+  background: red;
+  font-style: italic;
+  text-transform: capitalize;
+  text-shadow: rgb(255, 255, 255) 1px 1px 0px, rgb(170, 170, 170) 2px 2px 0px;
+  background-color: #8e44ad;
+  border-radius: 25px;
+  border-top-width: 5px;
+  border-top-color: yellow;
+  border-right-width: 5px;
+  border-right-color: red;
+  border-bottom-color: green;
+  border-bottom-width: 5px;
+  border-bottom-style: solid;
+  border-left-color: blue;
+  border-left-width: 5px;
+  overflow: hidden;
+  width: 50px;
+  height: 50px;
+  padding: 0px !important;
+}
+.muted:hover {
+  opacity: 0.8;
+  border-top-width: 5px;
+  border-top-color: red;
+  border-right-width: 5px;
+  border-right-color: yellow;
+  border-bottom-color: blue;
+  border-bottom-width: 5px;
+  border-bottom-style: solid;
+  border-left-color: green;
+  border-left-width: 5px;
+}
+.dipped {
+  background: green;
+  transform: translateY(5px);
+  cursor: wait;
+}
+
+boxbar {
+  display: block;
+  width: 50%;
+  background-color: grey;
+   border-style:solid;
+ border-width:2px;
+}
+bar {
+  display: block;
+  width: 10%;
+  height: 30px;
+  background: green;
+  text-align: center; /* To center it horizontally (if you want) */
+  line-height: 30px; /* To center it vertically */
+  color: white;
+}
+.boxbar-vertical {
+  width: 5%;
+  height: 50vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  background-color: grey;
+}
+.bar-vertical {
+  width: 100%;
+  height: 10%;
+  height: 30px;
+  background: green;
+  text-align: center; /* To center it horizontally (if you want) */
+  line-height: 30px; /* To center it vertically */
+  color: white;
+}
+.titulo-do-produto {
+  font-size: 20px;
+  color: black;
+  text-align: center;
+  word-break: break-word;
+}
+item-loja {
+  cursor: pointer;
+  background: white;
+  border: 3px solid black;
+  display: block;
+  width: 60%;
+  height: 45%;
+  padding: 15px;
+  display: inline-block;
+}
+.item-descricao {
+  text-align: right;
+  white-space: normal;
+  float: none;
+  outline: 0;
+  position: right;
+  display: inline-block;
+}
+.painelResgate {
+  display: block;
+  background: white;
+  min-height: 50%;
+  width: 75%;
+  height: auto;
+  position: fixed;
+  transform: translate(-50%, -50%);
+  left: 50%;
+  top: 50%;
+  border-radius: 8px;
+  display: none;
+  font-family: "arial", sans-serif;
+  text-align: center;
+  opacity: 1;
+  border-width: 5px;
+  border-style: solid;
+  border-top-color: green;
+  border-right-color: blue;
+  border-bottom-color: black;
+  border-left-color: red;
+  z-index: 1;
+  color: black;
+  text-transform: uppercase;
+  text-align: center;
+  text-shadow: rgb(255, 255, 255) 1px 1px 0px, rgb(170, 170, 170) 2px 2px 0px;
+}
+.painelResgate .fecharPainel {
+  position: absolute;
+  display: block;
+  margin: -40px 0 20px auto;
+  background-color: transparent;
+  font-size: 30px;
+  color: white;
+  background: purple;
+  border-radius: 100%;
+  width: 40px;
+  height: 40px;
+  border: none;
+  cursor: crosshair;
+  top: 15%;
+  right: 0;
+}
+.painelResgate p {
+  padding: 5px;
+  font-size: 24px;
+  text-align: center;
+}
+.painelResgate .fecharPainel:hover {
+  background: red;
+  box-shadow: -8px 20px 20px gold;
+  transition: all 1s ease-out;
+}
+.painelResgate input {
+  width: 75%;
+  overflow: hidden;
+  min-width: 50%;
+  font-style: italic;
+  text-align: center;
+  text-shadow: rgb(255, 255, 255) 1px 1px 0px, rgb(170, 170, 170) 2px 2px 0px;
+  color: white;
+  border-top-style: solid;
+  border-top-color: black;
+  border-top-width: 5px;
+  border-bottom-color: green;
+  border-bottom-width: 5px;
+  border-right-style: solid;
+  border-right-width: 5px;
+  border-right-color: red;
+  border-left-color: blue;
+  border-left-width: 5px;
+  border-left-style: solid;
+  background-color: gray;
+  font-size: 22px;
+}
+.popup {
+  background-image: url("https://www.pngarts.com/files/10/Notice-PNG-Image.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 50%;
+  width: 75%;
+  height: auto;
+  position: fixed;
+  transform: translate(-50%, -50%);
+  left: 50%;
+  top: 50%;
+  border-radius: 8px;
+  display: none;
+  font-family: "arial", sans-serif;
+  text-align: center;
+  opacity: 1;
+  border: 5px dashed black;
+  z-index: 1;
+}
+.popup button {
+  position: absolute;
+  display: block;
+  margin: -40px 0 20px auto;
+  background-color: transparent;
+  font-size: 30px;
+  color: white;
+  background: red;
+  border-radius: 100%;
+  width: 40px;
+  height: 40px;
+  border: none;
+  cursor: crosshair;
+  top: 15%;
+  right: 0;
+}
+.popup p {
+  margin-top: 35%;
+  padding: 5px;
+  font-size: 24px;
+  text-align: center;
+}
+.popup button:hover {
+  background: green;
+  box-shadow: -8px 20px 20px white;
+  transition: all 1s ease-out;
+}
+
+.text-autentication {
+  color: white;
+  font-weight: bold;
+}
+.input-autentication {
+  width: 85%;
+  padding: 5px 5px;
+  display: inline-block;
+  border: 0;
+  border-bottom: 3px solid blue;
+  background-color: transparent;
+  outline: none;
+  min-width: 180px;
+  font-size: 16px;
+  transition: all 0.3s ease-out;
+  text-align: left;
+  align-items: center;
+  place-items: center;
+}
+.input-autentication:focus {
+  border-bottom: 3px solid orange;
+  font-size: 13px;
+  margin-top: 0;
+  color: blue;
+}
+
+/* Set a style for the submit/send button */
+.youtube-video {
+  position: relative;
+  width: 95%;
+  height: 620px;
+  background: white;
+  border: 5px solid silver;
+}
+.youtube-video:hover {
+  border: 5px solid gold;
+}
+
+switch {
+  position: relative;
+  padding: 7px;
+  display: inline;
+  width: 60px;
+  height: 35px;
+}
+/* Hide default HTML checkbox */
+.switch-inp {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: gray;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+  border-radius: 34px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+  border-radius: 50%;
+}
+
+input:checked + .slider {
+  background-color: #2196f3;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196f3;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+.calcJurosTxt {
+  font-size: 20px;
+}
+.input-calc {
+  font-size: 18px;
+  width: 30%;
+  height: 30pt;
+  text-align: center;
+}
+.input-calc:focus {
+  width: 27%;
+  height: 27pt;
+  outline-color: blue;
+}
+.buscar {
+  text-align: center;
+  font-size: 16px;
+  box-shadow: 0px 0px 50px 0px red;
+  width: 75%;
+  height: 30pt;
+}
+.listaDiv {
+  display: none;
+  background: gray;
+  color: black;
+  width: auto;
+  padding: 5px;
+}
+.dividendos {
+  border: 5px solid black;
+  margin-top: 5px;
+  background: white;
+  width: auto;
+  min-width: 75%;
+  align-items: center;
+  text-align: left;
+  position: relative;
+}
+.tumb-dividendos {
+  position: absolute;
+  right: 0;
+  height: 100%;
+  margin-left: 20px;
+  padding-left: 15px;
+}
+.perfil-icon {
+  margin-right: 95%;
+  height: 70px;
+  border-radius: 55%;
+}
+.pages-img-icon {
+  border-radius: 35px;
+  height: 57px;
+}
+.item-account-left {
+  display: block;
+  text-align: left;
+  color: white;
+  background: gray;
+  font-size: 22px;
+}
+.img-arquivos {
+  height: 40px;
+}
+tela-jogos {
+  width: 80%;
+  margin-top: 20%;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  align-items: center;
+  z-index: 0;
+  text-align: center;
+  justify-content: center;
+  background: #ffffffb5;
+  border-radius: 25px;
+}
+boll {
+  text-shadow: rgb(255, 255, 255) 1px 1px 0px, rgb(170, 170, 170) 2px 2px 0px;
+  display: inline-block;
+  margin-left: 0px;
+  height: 47px;
+  width: 47px;
+  border: 5px solid red;
+  border-radius: 25px;
+  font-size: 29px;
+  font-weight: 700;
+}
+.title-crypto {
+  font-style: italic;
+  text-transform: uppercase;
+  text-shadow: rgb(255, 255, 255) 1px 1px 0px, rgb(170, 170, 170) 2px 2px 0px;
+  font-weight: 600;
+  font-size: 20px;
+}
+
+.win-console {
+  width: 100%;
+  opacity: 1;
+  color: rgb(204, 204, 204);
+  min-height: 100px;
+  height: auto auto;
+  text-align: left;
+  font-size: 16px;
+  font-weight: 600;
+  background-color: #121212;
+}

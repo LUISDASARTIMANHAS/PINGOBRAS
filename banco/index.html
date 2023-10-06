@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="PT">
+
+  <head>
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=0.7" />
+    <meta http-equiv="Refresh" content="300">
+    <link rel="icon" href="https://w7.pngwing.com/pngs/434/670/png-transparent-dividend-discount-model-computer-icons-equity-finance-others-miscellaneous-text-trademark.png" >
+    <links></links>
+    <link rel="stylesheet" href="/banco/style.css">
+    <seo>
+    <meta
+      name="description"
+      content="Calcular juros para pegar emprestimos e Ver quem ja esta devendo alem de ver os status de sua divida!!"/>
+    <meta name="robots" content="index,follow" />
+    <meta property="og:title" content="PINGOBRAS Calculos E Dividendos" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://pingobras.glitch.me/calcs&dividendos.html" />
+    <meta
+      property="og:description"
+      content="Calcular juros para pegar emprestimos e Ver quem já esta devendo alem de ver os status de sua divida!"/>
+    <meta
+      property="og:image"
+      content="https://inteligenciafinanceira.com.br/wp-content/uploads/2022/09/Diversificar-Dividendos.jpg"/>
+    <meta name="twitter:card" content="summary" />
+    </seo>
+    
+    <title>PINGOBRAS SISTEMA BANCÁRIO</title>
+ </head>
+  <body>
+    <div class="site-altura">
+      <div class="conteudo" role="main"> 
+
+     <tela>
+       <h1>Calculadora E Dividendos</h1>
+       
+       <telacalc>
+       <h1>Calcular juros da Pingobras</h1>
+        <p>Porcentagem Do Juros:</p><js id="JurosPorcent" inline>20%</js>
+         
+         <br>
+         
+       <div>
+       <label for="EMP">Valor Do Empréstimo:</label>
+       <input class="input-calc" 
+               type="number" 
+               min="2"
+               max="50"
+               id="EMP" 
+               placeholder="Valor" 
+               required/>
+         <img style="text-align:left; "
+              id="loadingCalc"
+              height="30px"
+              src="https://thumbs.gfycat.com/DarkFlamboyantGecko-max-1mb.gif"/>
+              </div>
+       
+       <p class="calcJurosTxt">Juros Em Uma Semana:</p><js id="jurosSem" style="color:orange;">Insira o valor na calculadora!</js>
+       <br>
+       <p class="calcJurosTxt">Total Em Uma Semana:</p><js id="calcTotal" style="color:orange;">Insira o valor na calculadora!</js>
+       <br>
+       <p class="calcJurosTxt">Juros Em Duas Semanas:</p><js id="jurosProxSem" style="color:orange;">Insira o valor na calculadora!</js>
+       <p class="calcJurosTxt">Total Em Duas Semanas:</p><js id="proximasem" style="color:orange;">Insira o valor na calculadora!</js> 
+       </telacalc>
+       
+       <br>
+       
+       <p>Buscar Dados</p>
+       <input id="inputbuscar" class="buscar" 
+              type="searcher" 
+              placeholder="Digite Nome de quem você procura" 
+              autocomplete="on">
+        </tela>
+        
+       <perfil class="copyright">   
+        <img class="perfil-img" 
+             id="perfilImg" 
+             src="https://cdn.glitch.global/b39d6a4a-0e14-4b41-930d-29d3ccd6c137/icon-4399701_960_720.png?v=1687048218541" 
+             alt="Imagem de Perfil">
+        <div class="profile-info">
+          <h1 roxo id="perfilNome">Perfil não encontrado</h1>
+          <p>Saldo: <js id="perfilSaldo">00.00</js></p>
+          <p>Crédito Bônus: <js id="perfilBonus">00.00</js></p>
+          <p vermelho>Juros: <js id="perfilJuros">00.00</js></p>
+          <p>Emitido: <js id="perfilEmitido">DD/MM/AAAA</js></p>
+          <p>Data De Pagamento: <js id="perfilPayData">DD/MM/AAAA</js></p>
+          <p>Código: <js id="perfilCod">000.000.000-00</js></p>
+          
+          <br>
+          
+          <p azul>Adicione mais informações relevantes do perfil aqui.</p>
+          
+          
+          <br><br>
+          
+          <p verde>Atividades: 
+            <js id="perfilAtividades">Sem Atividades Recentes.</js></p>
+        </div>
+      </perfil>
+        
+        <button
+                class="btn-voltar"
+                onclick="window.location.href='./'; ClickMouse.play()">
+        RETORNAR PARA PINGOBRAS
+        </button>
+        
+        
+     <footer class="footer">
+        <div class="links"></div>
+       
+        <div id="direitos" class="direitos">Loading...</div>     
+        </footer>   
+        
+</div></div>
+    
+</body>
+  <scripts> 
+    <script src="js/links.js" defer></script>
+    <script src="banco/script.js" defer></script>
+    <script src="js/calcs.js" defer></script>
+  </scripts>
+  <autoscripts>
+    <script src="js/load-scripts.js"></script>
+    </autoscripts>
+</html>

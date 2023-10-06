@@ -1,0 +1,49 @@
+body{
+  overflow: hidden;
+}
+table {
+  border-collapse: collapse;
+  width: 95%;
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  text-shadow:
+    rgb(255, 255, 255) 1px 1px 0px, 
+    rgb(170, 170, 170) 2px 2px 0px;
+}
+/* th e o titulo */
+/* tr e a liha da tabela */
+/* td e o bloco de cada elemento da tabela */
+th,
+td {
+  padding: 8px;
+  text-align: center;
+  border: 2px solid black;
+  transition: transform .2s; /* Animation */
+}
+
+th {
+  background-color: purple;
+  color: white;
+  text-shadow:
+    rgb(0, 0, 0) 0px 1px 1px, 
+    rgb(0, 0, 0) 0px -1px 1px, 
+    rgb(0, 0, 0) 1px 0px 1px, 
+    rgb(0, 0, 0) -1px 0px 1px;
+
+}
+
+tr {
+  background-color: gray;
+  color: black;
+}
+
+tr:hover {
+  background-color: silver;
+  color: white;
+}
+td:hover{
+  transform: scale(1.5); 
+  color: yellow;
+}

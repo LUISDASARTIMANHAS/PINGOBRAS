@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script type="module">
+    import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+
+    mermaid.initialize({
+      startOnLoad: true,
+    });
+  </script>
+</head>
+<body>
+  <div class="mermaid">
+    graph TD;
+    
+    PR1[PERIODO 1]
+    240.246[comunicação empresarial];
+    240.243[fund. de sistemas de informação];
+    240.242[Lógica];
+    240.245[metodologia de pesquisa];
+    240.249[organização e arquitetura de computadores];
+    240.244[progamação I];
+    
+    PR2[PERIODO 2]
+    SSI.10[calculo I];
+    240.248[matemática discreta];
+    240.250[progamação II];
+    240.253[Sistemas operacionais];
+    240.262[Sociologia];
+    240.251[teoria geral de administração];
+    
+    PR3[PERIODO 3]
+    240.256[ADMINISTRAÇÃO FINANCEIRA];
+    SSI.11[Calculo II];
+    240.255[estrutura de dados]
+    240.252[Probabilidade e estatística ]
+    240.258[Redes de Computadores]
+    
+    
+    PR1 --> 240.246 & 240.243 & 240.242 & 240.245 & 240.249 & 240.244 --> PR2
+    
+    PR2 --> SSI.10 & 240.248 & 240.250 & 240.253 & 240.262 & 240.251 --> PR3
+
+    PR3 --> 240.256 & SSI.11 & 240.255 & 240.252 & 240.258
+
+    240.242 --> 240.248;
+    240.244 --> 240.250;
+    240.249 --> 240.253;
+    SSI.10 --> SSI.11;
+    240.250 --> 240.255
+    SSI.10 --> 240.252
+  </div>
+</body>
+</html>

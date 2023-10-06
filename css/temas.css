@@ -1,0 +1,13 @@
+body.modo-escuro header {
+  background-color: #333333;
+  color: white;
+}
+
+body.modo-escuro {
+  background-color: #212121;
+  color: white;
+}
+
+.modo-escuro .produto {
+  background-color: #a8a8a8;
+}

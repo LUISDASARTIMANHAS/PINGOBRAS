@@ -1,0 +1,97 @@
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=0.7" />
+    <link rel="icon" href="https://cdn.glitch.global/d4f5fe8f-71d8-4ff8-be3a-c3c78bbd1b44/Member-Login-Button-PNG-Clipart.png?v=1646151214012" >
+    <links></links>
+    <link rel="stylesheet" href="login/style.css" />
+    <link rel="stylesheet" href="login/reset.css" />
+    <seo>
+    <meta name="robots" content="index,follow" />
+    <meta property="og:title" content="PINGOBRAS LOGIN" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://pingobras.glitch.me/login" />
+    <meta
+      property="og:description"
+      content="Pingobras Login do usuário e administrativo "/>
+    </seo>
+    
+    <title>PINGOBRAS LOGIN</title>
+  </head>
+  <body>
+    <div class="site-altura">
+      <div class="conteudo" role="main">
+        
+      <teladelogin>
+       <form id="form">
+        <h1 class="title-login">LOGIN PINGOBRAS S.A</h1>
+        <js id="msgError" class="msg-Error msg">Nenhum Erro Encontrado!</js>
+        <js id="msgSuccess" class="msg-Success msg">Verificando...</js>
+        
+         <label for="usuario">USUARIO</label>
+         <input
+                class="input-login"       
+                type="text"
+                id="usuario"
+                placeholder="NOME" 
+                required>
+      
+      
+         <label for="senha"> SENHA </label>
+         <input 
+                class="input-login"       
+                type="password" 
+                id="senha"
+                placeholder="******" 
+                required>
+         
+         <button
+                 type="submit"
+                 class="btn btn-login"
+                 id="autenticador" 
+                 onclick="ClickMouseFUNCTIONS.play(); getData();">
+           Entrar
+         </button>
+         
+         <p>Perdeu Sua Senha?</p>
+         <button class="btn btn-recupear-senha"
+                 onclick="redirectUrl('login/recuperar-senha.html')">
+           Trocar Senha!
+         </button>
+        </form>
+        
+        <button 
+           class="btn"
+           onclick="redirectUrl('/cadastro')"> 
+          Cadastrar
+        </button>
+        
+        </teladelogin>
+
+        <button 
+           class="btn-voltar"
+           onclick="redirectUrl('/')"> 
+          RETORNAR PARA PINGOBRAS
+        </button>
+        
+        
+          </div></div>
+        <footer>
+          <div id="direitos" class="direitos">
+            <div class="loading ">
+              <p class="load "></p>
+            </div> 
+          </div>
+        </footer>
+  </body>
+  <script src="https://pingobras.glitch.me/js/links.js" defer></script>
+  <script src="login/login.js" defer></script>
+  <autoscripts>
+    <script src="js/load-scripts.js"></script>
+    </autoscripts>
+  <script>
+  const http = "http://pingobras.glitch.me/login"
+if(document.URL == http) {
+   window.location.href = ("https://pingobras.glitch.me/login");}
+  </script>
+</html>

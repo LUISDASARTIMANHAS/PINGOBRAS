@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+  <head>
+
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta http-equiv="Refresh" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=0.7" />
+    <link rel="stylesheet" href="https://pingobras.glitch.me/LUIS_DAS_ARTIMANHAS/JOGO-DA-COBRA/style.css">
+    <link rel="icon" 
+          href="https://cdn.glitch.global/b39d6a4a-0e14-4b41-930d-29d3ccd6c137/sliterio.io.jpg?v=1679929541189" />
+    <links></links>
+    
+  <title>PINGOBRAS JOGO DA COBRA</title>
+  </head>  
+  <body class="copyright">
+    <div class="site-altura">
+      <div class="conteudo" role="main">
+        
+<barraicon>
+  <a href="/LUIS_DAS_ARTIMANHAS"><i class="fa fa-home"></i></a>
+  <a href="https://pingobras-mario-jump.glitch.me">Mario Jump<i class="fa fa-gamepad"></i></a>
+  <a class="barramain" href="#">Jogo da cobra<i class="fa fa-gamepad"></i></a>
+  <a href="/LUIS_DAS_ARTIMANHAS/192.168.6.126/8080.html"> REDE<i class="fa fa-globe"></i></a>
+</barraicon>         
+        
+        <br><br><br><br><br><br><br>
+        
+        <h1>Snake Game!</h1>
+        <canvas class="game-board" id="snake" width="620" height="620" ></canvas>
+        
+        <div class="teclado"
+             id="Teclado">
+        <button class="btn-teclado">
+         ⬅️ 
+        </button>
+          
+        <button class="btn-teclado">
+         ⬇️
+        </button>
+          
+        <button class="btn-teclado">
+         ⬆️
+        </button>
+          
+        <button class="btn-teclado">
+         ➡️ 
+        </button>
+        </div>
+       
+        
+        
+        <footer>
+    
+          <div id="direitos" class="direitos">Loading...</div>
+            </footer>
+       
+</div></div>
+    <button class="btnFixedRight"
+            id="ARDCbtn"
+            onclick="ARDCelular()">
+          Ativar Recursos Para Celular
+        </button>
+    <button class="btnFixedLeft"
+            onclick="FullScreen()">
+          Tela Cheia
+        </button>
+</body>
+
+  <scripts>
+    <script src="/LUIS_DAS_ARTIMANHAS/JOGO-DA-COBRA/script.js" defer></script>
+    <script src="https://pingobras.glitch.me/js/links.js" defer></script>
+    <script src="https://pingobras.glitch.me/js/main.js" defer></script>
+    <script src="https://pingobras.glitch.me/js/copyright.js" defer></script>  
+    </scripts>
+  
+    <host>
+    </host>
+  <script>
+  const ARDCBTN = document.getElementById("ARDCbtn")
+const Recursos = document.getElementById("Teclado")
+    
+function ARDCelular(){
+  ARDCBTN.style.display = "none"
+  Recursos.style.display = "block"  
+  }
+  </script>
+</html>

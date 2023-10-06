@@ -1,0 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+canvas {
+ background: gray;
+ border: 5px solid black;
+ border-style:solid;
+ border-top-color:#ff0000;
+ border-right-color:#ffff00;
+ border-bottom-color:#008000;
+ border-left-color:#0000ff;
+ border-width:7px;
+}
+
+.teclado{
+  display:none;
+  background:gray;                  
+  border: 5px solid black;      
+  width: 100%;                
+  align-items: center;
+  text-align: center;
+}
+.btn-teclado{
+ height:50px;
+ width:50px;
+}
