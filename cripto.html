@@ -1,0 +1,59 @@
+<html>
+    <head>
+      <links></links>
+      <link rel="stylesheet" href="https://pingobras.glitch.me/css/download.css" defer/>
+      
+      <title>SISTEMA DE CRIPTOGRAFIA PADRÃO</title>
+    </head>   
+<body>
+  <div class="site-altura">
+      <div class="conteudo" role="main">
+    
+        <tela>
+          <p class="title-crypto">Canal de conversa</p>
+          <p vermelho>E recomendável usar o canal 1 pois os canais mais adiante estão em desenvolvimendo e podem não funcionar!</p>
+          <input class="input-numero"
+                 type="number"
+                 id="channel"
+                 min="1"
+                 max="9"
+                 value="1" 
+                 required>
+          
+          <br>
+          
+        <p class="title-crypto">Mensagem</p>  
+        <input class="input"
+               type="text"
+               id="msmASerCripto"
+               value="Teste"
+               placeholder="Mensagem A Ser Criptografada" 
+               required>
+         
+        <div style="font-size: 20px;">Mensagem Ciptografada: <js id="msmCripto">NDA</js></div> 
+        <button onclick="copyCripto()">Copie Aqui!</button>
+          
+          <br>
+          
+          <p class="title-crypto">Descriptografar</p>
+          <input
+               style=" background-color:gray;"
+               class="input"
+               type="text"
+               id="msmASerDescripto"
+               value="1y49x1y4"
+               placeholder="Mensagem A Ser Descriptografada" required>
+          <div style="font-size: 20px;
+                      white-space:break-spaces;">
+            Mensagem Descriptografada: 
+            <br>
+            <js id="msmDescripto">NDA</js>
+          
+          </div>
+        </tela>
+        
+    </div></div>
+</body>
+  <script src="/js/links.js" defer></script>
+  <script src="/experimental/criptigrafia.js" defer></script>
+</html>

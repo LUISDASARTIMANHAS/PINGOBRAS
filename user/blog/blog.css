@@ -1,0 +1,115 @@
+tela-posts {
+  max-width: 75%;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: white;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  min-width: 50%;
+  border-radius: 25px;
+}
+p {
+  line-height: 1.6;
+  font-size: 16px;
+}
+.post-form,
+tela-posts {
+  margin-bottom: 2rem;
+}
+
+label {
+  font-weight: bold;
+}
+
+button {
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  background-color: #333333;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #555555;
+}
+.code {
+  background-color: #333333;
+  text-align: justify;
+  color: white;
+  white-space: break-spaces;
+  padding: 7px;
+}
+.post-list {
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #333333;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  width: 100%;
+  margin: auto;
+  padding: 5px;
+  list-style-type: none;
+}
+.post {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border: 2px solid silver;
+  background-color: gray;
+  margin: 10px auto;
+  padding: 5px;
+}
+
+/* Title post */
+.title-post {
+  padding: 3px;
+  font-family: "Oxanium", cursive;
+  font-weight: 500;
+  font-size: 20px;
+  font-style: italic;
+  text-decoration: underline;
+  text-align: justify;
+  text-shadow: rgb(255, 255, 255) 1px 1px 0px, rgb(170, 170, 170) 2px 2px 0px;
+}
+.info-post {
+  text-align: justify;
+  white-space: break-spaces;
+  padding: 7px;
+}
+.tags-post {
+  width: 100%;
+  color: yellow;
+  text-align: left;
+  text-transform: capitalize;
+  text-shadow: rgba(0, 0, 0, 0.3) 0px 1px 1px;
+  margin-top: 20px;
+}
+.data-post {
+  width: 100%;
+  color: white;
+  text-align: left;
+  text-transform: capitalize;
+  text-shadow: rgba(0, 0, 0, 0.3) 0px 1px 1px;
+  text-decoration: underline;
+}
+.author-post {
+  font-style: italic;
+  text-align: justify;
+  font-family: "Raleway", sans-serif;
+  text-decoration: underline;
+  text-shadow: rgba(0, 0, 0, 0.3) 0px 1px 1px;
+  margin-top: 30px;
+}
+h3 {
+  color: black;
+}
+.loading {
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  margin: 20px;
+}

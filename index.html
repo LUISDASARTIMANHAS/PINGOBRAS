@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+  <head>
+
+    <meta charset="utf-8" />
+    <meta http-equiv="Refresh" content="120">
+    <meta name="viewport" content="width=device-width, initial-scale=0.7" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+    <link rel="icon" href="https://cdn.glitch.global/b39d6a4a-0e14-4b41-930d-29d3ccd6c137/PINGOBRAS icon.png?v=1665177105635" />
+    <links></links>
+    <seo>
+    <meta
+      name="description"
+      content="Pingobras Website & Services || A Pingobras S.A é uma empresa que se dedica a hospedar e criar sites ou servidores, além de oferecer serviços de empréstimos. Atualmente, a empresa pode ser acessada através do endereço https://pingobras.glitch.me."/>
+    <meta name="robots" content="index,follow" />
+    <meta property="og:title" content="PINGOBRAS LOBBY" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://pingobras.glitch.me" />
+    <meta
+      property="og:description"
+      content="Pingobras Website & Services || A Pingobras S.A é uma empresa que se dedica a hospedar e criar sites ou servidores, além de oferecer serviços de empréstimos. Atualmente, a empresa pode ser acessada através do endereço https://pingobras.glitch.me."/>
+    <meta
+      property="og:image"
+      content="https://cdn.glitch.global/b39d6a4a-0e14-4b41-930d-29d3ccd6c137/PINGOBRAS CORP SEO.png?v=1665177583063"/>
+      <meta
+      property="og:image"
+      content="https://cdn.glitch.global/b39d6a4a-0e14-4b41-930d-29d3ccd6c137/PINGOBRAS icon.png?v=1665177105635"/>
+    <meta name="twitter:card" content="summary" />
+    </seo>
+    <title>PINGOBRAS LOBBY</title>
+           
+    <nav class="cabecalho copyright">
+          <button hidden
+                  id="btndev" 
+                  class="btnList btnNav " 
+                  onclick="redirectUrl('/banco')">
+          <img 
+               alt="Devedores.png"
+               src="https://cdn.glitch.global/b39d6a4a-0e14-4b41-930d-29d3ccd6c137/money-icon.png?v=1687044349695"
+               height="30px"/>
+            Sistema Bancario
+          </button>
+                  
+                 
+          <button 
+                  class="btnNav"
+                  id="btnServerUp"
+                  onclick="redirectUrl('/upload');">
+          <img 
+                 alt="download.png"
+                 src="https://cdn.glitch.global/fc6a494d-99b5-4c04-ab55-4c0f07bb3056/pngwing.com.png?v=1669328339648"
+                 height="30px"/>
+            Uploader
+          </button>
+         
+<!--          <button  
+                 class="btnNav"
+                 onclick="window.open('./status/fetch.html');ClickMouse.play()">
+           <img 
+               alt="CMD.png"
+               src="https://cdn.glitch.global/b39d6a4a-0e14-4b41-930d-29d3ccd6c137/command_prompt.png?v=1682089278930"
+               height="30px"/>
+           Terminal Fetch
+          </button> -->
+      
+      <button class="btnNav"
+              onclick="redirectUrl('/login');">
+        <img 
+               alt="Login.png"
+               src="https://cdn.glitch.global/b39d6a4a-0e14-4b41-930d-29d3ccd6c137/login.png?v=1691977405212"
+               height="30px"/>
+        
+           Entrar / Cadastrar   
+      </button>
+         
+         <button  
+                 class="btnNav"
+                 onclick="window.open('/status/ipconfig.html');ClickMouse.play()">
+           <img 
+               alt="ip info.png"
+               src="https://cdn.glitch.global/b39d6a4a-0e14-4b41-930d-29d3ccd6c137/ip-address.png?v=1691977866889"
+               height="30px"/>
+            IP Info
+          </button>
+         
+          <button  
+                 class="btnNav"
+                 onclick="window.open('https://pingobras-chat-server.glitch.me/');ClickMouse.play()">
+            <img 
+               alt="bate papo.png"
+               src="https://cdn.glitch.global/b39d6a4a-0e14-4b41-930d-29d3ccd6c137/bate-papo.png?v=1691977583783"
+               height="30px"/>
+            Bate papo
+          </button>
+                                     
+        <info class="adminID">
+          <right>
+                
+            <p inline>IP:</p><a target="_blank" id="linkIP"><js inline id="IP">NO IP</js></a>
+            <br>
+            <p inline>Estado: </p><js inline id="regiao">Sem Estados</js>
+            
+          </right>
+          <left>
+            
+          <p>Velocidade da Internet:</p>  
+          <p>Download MBps:<js id="MBps">SEM CONEXÃO MBps</js></p>
+          <p>Download GBps:<js id="GBps">SEM CONEXÃO GBps</js></p>
+          <p> Tempo do download: </p><js id="downloadTime">00:00</js>
+          </left>
+        </info>
+          
+         <br>
+         
+         <img alt="horario"
+               src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSyt0KNCU6vBxcq3gIZzAvTBGIJrlmFPXSD9w&usqp=CAU" 
+               height="20px" /> 
+            <border border rgb>
+              <time id="relogio"
+                    style="font-size: 25px;justify-content: center;" > 
+                Sem horario
+              </time>
+            </border> 
+         
+         <marquee class="intinerario-noticias" behavior="" width="100%" height="20px">
+           <p>
+             Navegador Utilizado: <js branco id="navigator-app">Net</js>
+             Conta administrativa:<js inline id="adminStatus" vermelho>NÃO CONECTADA</js>
+           </p>
+         </marquee>
+        
+    </nav>
+
+ </head>
+  <body style="text-transform: capitalize;">
+    <div class="site-altura">
+      <conteudo class="index" id="conteudo" role="main">        
+        
+        
+        <h2>PINGOBRAS</h2> <h3>CORPORATION</h3>
+        
+        <audio
+            controls
+            autoplay 
+            loop
+            muted
+            src="https://cdn.glitch.global/b39d6a4a-0e14-4b41-930d-29d3ccd6c137/Art%20of%20Silence%20-%20Dramatic%20_%20Cinematic%20%5BFree%20to%20use%5D%20Baixinho.mp3.mp3?v=1666869328078">
+        </audio>
+        
+        <button
+                 class="btn-pages"
+                 onclick="window.open('./login'); ClickMouse.play()">
+          <img src="https://cdn.glitch.global/b39d6a4a-0e14-4b41-930d-29d3ccd6c137/onlineshop_78377.png?v=1683983951991"
+               class="pages-img-icon"> 
+          Loja Virtual da Pingobras
+      </button> 
+        
+        <button 
+                  class="btn-pages"
+                  id="btnMusic"
+                  onclick="redirectUrl('/musicas');">
+          <img 
+                 alt="music-note.png"
+                 src="https://cdn-icons-png.flaticon.com/512/282/282120.png"
+                 height="30px"/>
+            Musicas
+          </button>
+        
+         <button
+                 class="btn-pages"
+                 onclick="window.open('./bot/PINGUINHO.html'); ClickMouse.play()">
+           <img
+                class="pages-img-icon"
+                src="https://cdn.discordapp.com/avatars/785908432670687262/5cfa33ac80c88c95702215e028902938.webp?size=2048"/>
+        Conheça O Bot PINGUINHO!
+      </button>
+        
+        <button
+                class="btn-pages"
+                onclick="window.open('./bot/COMMUNICATIONS-SATELLITE.html'); ClickMouse.play()">
+          <img
+               class="pages-img-icon"
+               src="https://cdn.discordapp.com/avatars/925362178662498314/dbb4e47b9f8a3a870d72fea935bbe8da"/>
+        Conheça O Bot COMMUNICATIONS SATELLITE!
+      </button>
+        
+        <button
+                class="btn-pages"
+                onclick="window.open('./bot/PINGOBRAS-SISTEMA.html'); ClickMouse.play()">
+          <img
+               class="pages-img-icon"
+               src="https://cdn.discordapp.com/avatars/1026240994317975722/f14cd007b1ad11cd615089a8a19f5c30.webp?size=2048"/>
+        Conheça O Bot PINGOBRAS SISTEMA!
+      </button>
+      
+        
+        <button
+                class="btn-dc"
+                onclick="window.open('https://discord.gg/TUpNd6CQgg'); ClickMouse.play()">
+        <img
+          src="https://cdn.glitch.global/b39d6a4a-0e14-4b41-930d-29d3ccd6c137/pequeno%2032%C3%9732.png?v=1643046753877"
+          alt="icone do discord"/>
+        SERVER DA PINGOBRAS
+        </button>
+        
+        <br>
+        <button class="btn-subir" id="back-to-top">Voltar ao topo</button>
+        
+        
+        
+        
+        <button class="btnFixedRight" 
+                id="jsDescer">
+          Descer Mais Fundo
+        </button>
+</conteudo> </div>
+    <footer>
+    <div id="direitos" class="direitos">
+      <div class="loading ">        
+        <p class="load "></p>
+      </div> 
+      </div>
+      <iframe hidden
+               width="100%" 
+               height="200px" 
+               src="https://pingobras-chat-server.glitch.me/frame"></iframe>
+      </footer>
+    
+<div rgb2 class="msg-error-hour">
+<p>O Site está fechado apartir das <js id="horaselect">Sem horario definifo</js></p><p>Volte amanha!</p><p><time id="timer">horario</time></p>
+</div>
+</body> 
+    
+    <scripts>
+    <script src="./js/links.js"></script>
+    <script src="js/STORAGE.js" defer></script>
+    <script src="js/time.js" defer></script>
+    <script src="js/relogio.js" defer></script>
+    <script src="./js/ip-info.js" defer></script>
+    </scripts>
+    <autoscripts>
+    <script src="js/load-scripts.js"></script>
+    </autoscripts>
+    <host>
+    <script src="./js/load-host.js" defer></script>
+    </host>
+  
+  <script>
+  const http = "http://pingobras.glitch.me/"
+if(document.URL == http) {window.location.href = ("https://pingobras.glitch.me/"); }
+  </script>
+  
+</html>

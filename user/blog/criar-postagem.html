@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=0.7" />
+    <meta http-equiv="Refresh" content="120">
+    <links></links>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oxanium:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="https://cdn.glitch.global/b39d6a4a-0e14-4b41-930d-29d3ccd6c137/PINGOBRAS icon.png?v=1665177105635" >
+    <link rel="stylesheet" href="/user/style.css" />
+    <link rel="stylesheet" href="/user/blog/blog.css" />
+    
+  <title>PINGOBRAS BLOG</title>
+         <nav class="cabecalho">
+<!--        Gerado automaticamente -->
+    </nav>
+  </head>
+  <body>
+     <div class="site-altura">
+      <div class="conteudo" role="main">
+        
+        <tela-posts>
+            <h2>Criar nova postagem</h2>
+            <form action="/posts">
+                <div class="form-group">
+                    <label for="title">Título:</label>
+                    <input type="text" 
+                           id="newPostTitle"
+                           name="title" 
+                           placeholder="Minha primeira postagem"
+                           required>
+                </div>
+                <div class="form-group">
+                    <label for="Author">Autor:</label>
+                    <input disabled
+                           type="text" 
+                           id="newPostAuthor" 
+                           name="author" >
+                </div>
+                <div class="form-group">
+                    <label for="content">Conteúdo:</label>
+                    <textarea
+                              contenteditable="true"
+                              id="newPostConteudo" 
+                              name="content" 
+                              rows="4" 
+                              required>
+                  </textarea>
+                </div>
+                <div class="form-group">
+                    <label for="tags">Tags:</label>
+                    <input type="text" 
+                           id="newPostTags" 
+                           placeholder="jogos, opinião"
+                           name="tags"
+                           required>
+                </div>
+              <p>ID: <js id="newPostID">00</js></p>
+                <button onclick="sendPost()" type="submit">Publicar</button>
+            </form>
+          
+        </tela-posts>
+        
+        
+   </div> </div>
+        <footer>
+          <div id="direitos" class="direitos">
+            <div class="loading">
+              <p class="load"></p>
+            </div>
+          </div>
+        </footer>
+</body>
+
+  <scripts>
+    <script src="/user/blog/send-posts.js" defer></script>
+    <script src="https://pingobras.glitch.me/js/links.js" defer></script>
+    <script src="https://cdn.ckeditor.com/4.16.0/standard/ckeditor.js"></script>
+    </scripts>
+  <autoscripts>
+    <script src="/js/load-scripts.js"></script>
+  </autoscripts>
+  <autoscriptsuser>
+    <script src="/user/load-scripts.js"></script>
+  </autoscriptsuser>
+   <host>
+    <script src="/js/load-host.js" defer></script>
+    </host>
+    <script>
+      CKEDITOR.replace("newPostConteudo");
+      // Definir evento para monitorar alterações no editor
+    </script>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adicionar/Sacar Fundos</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .transaction-container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        .transaction-container h2 {
+            margin-bottom: 20px;
+        }
+        .transaction-input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+        .transaction-button {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+        .transaction-button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="transaction-container">
+        <h2>Adicionar/Sacar Fundos</h2>
+        <form action="processar_transacao" method="post">
+            <label for="tipo">Tipo de Transação:</label>
+            <select class="transaction-input" name="tipo" required>
+                <option value="adicionar">Adicionar Fundos</option>
+                <option value="sacar">Sacar Fundos</option>
+            </select>
+            <input class="transaction-input" type="number" name="valor" placeholder="Valor" required>
+            <button class="transaction-button" type="submit">Realizar Transação</button>
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,50 @@
+body {
+  background: #121212;
+  color: rgb(204, 204, 204);
+  font-family: "Courier New", monospace;
+  margin: 0;
+  padding: 0;
+}
+
+.console {
+  background-color: #222222;
+}
+
+header{
+  background-color:#222222;
+}
+header p{
+  font-size: 18px;
+ border-style:solid;
+ border-width:2px;
+ border-color:blue;
+  padding: 5px;
+}
+terminal {
+  width: 95%;
+  margin: 50px auto;
+  background-color: black;
+  border: 2px solid #00ff00;
+  padding: 10px;
+  box-shadow: 0 0 10px rgba(0, 255, 0, 0.8);
+}
+
+#output {
+  height: 300px;
+  overflow-y: auto;
+}
+
+input {
+  width: 100%;
+  border: none;
+  font-size: 18px;
+  background-color: #222222;
+  color: rgb(204, 204, 204);
+  outline: none;
+  font-size: 16px;
+}
+
+#consumo{
+ max-height:100px;
+ overflow:hidden;
+}

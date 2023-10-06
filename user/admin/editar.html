@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+
+<html>
+  
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=0.7, user-scalable=no">
+    <meta charset="UTF-8">
+    <meta http-equiv="Refresh" content="120"> 
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="icon" href="https://cdn.glitch.global/b39d6a4a-0e14-4b41-930d-29d3ccd6c137/PINGOBRAS icon.png?v=1665177105635" >
+    <links></links>
+    <link rel="stylesheet" href="/user/style.css" />
+    <link rel="stylesheet" href="/user/edital/edital.css">  
+    
+    <title>Edital de Contratação</title>
+    <nav class="cabecalho">
+<!--        Gerado automaticamente -->
+    </nav>
+  </head> 
+  <body>
+    <div class="site-altura">
+      <div class="conteudo" role="main">
+        
+      
+    
+        <tela-editar-edital>
+          <h1>Editor e Reenvio de Edital</h1>
+    <form id="edital-form">
+        <label for="titulo">Título do Edital:</label>
+        <input type="text" 
+               id="titulo" 
+               name="titulo" 
+               required
+               placeholder="Recrutamento de Staffs">
+
+        <label for="dataTermino">Data de Término:</label>
+        <input type="date" 
+               id="dataTermino" 
+               name="dataTermino"
+               placeholder="31/12/20xx"
+               required>
+
+        <label for="descricao">Descrição:</label>
+        <textarea id="descricao" 
+                  name="descricao"
+                  required
+                  placeholder="Estamos em busca de profissionais criativos e experientes para impulsionar nossa presença online e promover nossos produtos de forma eficaz."
+                  rows="5">
+      </textarea>
+
+        <label for="status">Status:</label>
+        <select id="status" name="status">
+            <option value="Fechado">Fechado</option>
+            <option value="Aberto">Aberto</option>
+            <option value="Concluído">Concluído</option>
+        </select>
+
+        <label for="link">Link:</label>
+        <input type="url"
+               id="link" 
+               name="link"
+               placeholder="/">
+
+        <input type="submit" value="Salvar e Reenviar">
+    </form>
+        </tela-editar-edital>
+        
+        
+        <button 
+             class="btnFixedLeft"
+             onclick="redirectUrl('/user/admin')">
+          Voltar
+        </button>
+        
+      </div></div>
+    <footer>    
+      <div id="direitos" class="direitos">
+      <div class="loading ">        
+        <p class="load "></p>
+      </div> 
+      </div>
+    </footer>
+  </body>
+  <script src="https://pingobras.glitch.me/js/links.js" defer></script>
+  <autoscripts>
+    <script src="/js/load-scripts.js"></script>
+  </autoscripts>
+  <autoscriptsuser>
+    <script src="/user/load-scripts.js"></script>
+  </autoscriptsuser>
+   <host>
+    <script src="/js/load-host.js" defer></script>
+    </host>
+</html>

@@ -1,0 +1,138 @@
+<html lang="PT">
+
+  <head>
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=0.7" />
+    <meta http-equiv="Refresh" content="300">
+    <link rel="icon" href="https://cdn.glitch.global/b39d6a4a-0e14-4b41-930d-29d3ccd6c137/PINGOBRAS icon.png?v=1665177105635" >
+    <links></links>
+    <link rel="stylesheet" href="./user/style.css" />
+    <seo>
+    <meta name="robots" content="index,follow" />
+    <meta property="og:title" content="PINGOBRAS USER ACCOUNT!" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://pingobras.glitch.me/user" />
+    <meta
+      property="og:description"
+      content="PAGINA INICIAL DO USUARIO, MODIFIQUE, ADD FUNDOS, TRANSFORME SEU PERFIL, JOGUE JOGOS, ASSISTA LIVES, ETC..."/>
+    <meta
+      property="og:image"
+      content="https://cdn.glitch.global/b39d6a4a-0e14-4b41-930d-29d3ccd6c137/2020-11-03_12-58-10-1.jpg?v=1643163953526"/>
+    <meta name="twitter:card" content="summary" />
+    </seo>
+    
+    <title>PINGOBRAS ACCOUNT</title>
+    
+    <nav class="cabecalho">
+      <button  
+              class="btnNav"
+              onclick="redirectUrl('user/conta')">
+          Configurar Conta
+      </button>
+      
+      <button
+              class="btnNav" 
+              onclick="redirectUrl('user/edital')">
+        Editais!
+      </button>
+      
+      <button 
+              class="btnNav"
+              onclick="redirectUrl('user/blog')"
+              target="_blank">
+        Blog dos usuarios
+      </button>
+      
+      <a class="btn-open-chat btnNav"
+         href="/jogos">
+      <img
+          style="justify-content: left;"
+          src="https://cdn-icons-png.flaticon.com/512/180/180527.png"
+          alt="JOGOS GRATUITOS"
+          height="27px"/>
+      Jogos Online
+      </a>
+      
+      <button 
+              class="btnNav"
+              id="btnVideoplayer"
+              onclick="pageYT()">
+        Youtube Embutir Video
+      </button>
+
+    </nav>
+  </head>
+  
+  <body>
+    <div class="site-altura">
+      <div class="conteudo" role="main">   
+        
+        <button
+                class="btn-pages"
+                onclick="redirectUrl('user/conta/detalhes.html')">
+        Detalhes Da Conta
+        </button>
+        
+        <button
+                class="btn-pages"
+                hidden
+                admin
+                onclick="redirectUrl('user/admin')">
+        Opções administrativas (APENAS ADMIN)
+        </button>
+        
+        <button 
+                class="btn-pages"
+                onclick="window.open('./LUIS_DAS_ARTIMANHAS'); ClickMouse.play()">
+          <img src="https://cdn.glitch.global/b39d6a4a-0e14-4b41-930d-29d3ccd6c137/luis-das-artimanhas-img-perfil.png?v=1682112675302"
+               class="pages-img-icon"> 
+          Projetos De Luis Das Artimanhas
+      </button>
+        
+        <button
+                class="btn-pages"
+                onclick="redirectUrl('https://pingobras-find-color.glitch.me/')">
+        CONHEÇA O FIND COLOR!
+        </button>
+        
+        <button
+                class="btn-pages"
+                onclick="redirectUrl('/user/youtube.com')">
+        LIVES(FUTEBOL,COPA DO MUNDO,YOUTUBE) 
+        </button>
+        
+        
+                
+</div> </div>
+    <footer class="footer">  
+      <div id="direitos" class="direitos">
+      <div class="loading ">        
+        <p class="load "></p>
+      </div> 
+      </div>
+    </footer>
+    <button
+            class="btnFixedLeft"
+            onclick="sair()">
+      Sair
+    </button>
+</body>
+  <script src="https://pingobras.glitch.me/js/links.js" defer></script>
+  <autoscripts>
+    <script src="/js/load-scripts.js"></script>
+  </autoscripts>
+  <autoscriptsuser>
+    <script src="user/load-scripts.js"></script>
+  </autoscriptsuser>
+   <host>
+    <script src="/js/load-host.js" defer></script>
+    </host>
+  <script>
+  const http = "http://pingobras.glitch.me/user"
+if(document.URL == http) {
+   window.location.href = ("https://pingobras.glitch.me/user");}
+  </script>
+  
+  
+</html>

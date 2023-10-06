@@ -1,0 +1,120 @@
+<html lang="pt-BR">
+
+  <head>
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=0.7" />
+    <meta http-equiv="Refresh" content="300">
+    <link rel="icon" href="https://cdn.glitch.global/b39d6a4a-0e14-4b41-930d-29d3ccd6c137/PINGOBRAS icon.png?v=1665177105635" />
+    <links></links>
+    <link rel="stylesheet" href="/user/style.css" />
+    
+    <title>PINGOBRAS USER ACCOUNT</title>
+     <nav class="cabecalho">
+       <button 
+              class="btnNav"
+              disabled
+              id="btnVideoplayer"
+              onclick="redirectUrl('user/conta/fundos.html')">
+        Sacar/Adicionar Fundos
+      </button>
+<!--        Gerado automaticamente -->
+    </nav>
+  </head>
+  <body>
+    <div class="site-altura">
+      <div class="conteudo" role="main">
+        
+        <tela>
+        <h1>Configuração da Conta do Usuário</h1>
+        <form id="form">
+
+          <div class="form-group">        
+            <label for="user">Nome de Usuário:</label>
+            <input type="text" 
+                   id="user" 
+                   autocomplete="username"
+                   name="user" 
+                   required>
+          </div>
+
+          <div class="form-group">
+            <label for="senha">Nova Senha:</label>
+            <input type="password" 
+                   id="senha" 
+                   autocomplete="current-password"
+                   name="senha" 
+                   required>
+          </div>
+
+          <div class="form-group">
+            <label for="avatar">URL do PerfilIMG:</label>
+            <input type="text" 
+                   id="avatar" 
+                   name="avatar" 
+                   required>
+          </div>
+          
+          <div class="form-group">
+            <label for="userBG">Cor de Fundo do Usuário:</label>
+            <input type="text" 
+                   id="userBG" 
+                   name="userBG" 
+                   value="#333333"
+                   placeholder="Insira uma cor em inglês ou hexadecimal. #333333 ou gray"
+                   required>
+            <div id="previewBG">
+              previsualizar
+            </div>
+          </div>
+
+          <button onclick="atualizar()" type="submit">
+          Salvar Configurações
+          </button>
+        </form>
+           
+          <h1>Trocar VirtualCoins</h1>
+          <form>
+            <label for="quantidade">Quantidade de Moedas:</label>
+            <input type="number" 
+                   min="160"
+                   max="10000"
+                   id="quantidade" 
+                   name="quantidade" 
+                   value="160"
+                   placeholder="Digite a quantidade de coins que deseja trocar em sonhos"
+                   required>
+            <button type="submit">Trocar</button>
+          </form>
+        </tela>
+
+           <button 
+             class="btnFixedLeft"
+             onclick="redirectUrl('/user')">
+          Voltar
+        </button>
+        
+        
+      </div> </div>
+    <footer class="footer">    
+      <div id="direitos" class="direitos">
+      <div class="loading ">        
+        <p class="load "></p>
+      </div> 
+      </div>
+    </footer>
+
+  </body>
+  <script src="/js/links.js" defer></script>
+  <script src="/user/conta/config.js" defer></script>
+  <autoscripts>
+    <script src="/js/load-scripts.js"></script>
+  </autoscripts>
+  <autoscriptsuser>
+    <script src="/user/load-scripts.js"></script>
+  </autoscriptsuser>
+  <host>
+    <script src="/js/load-host.js" defer></script>  
+  </host>
+  
+</html>

@@ -1,0 +1,48 @@
+/* Reset styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+ul {
+  list-style: none;
+}
+
+.fa {
+  width: 100%;
+  font-size: 20px;
+}
+body {
+  font-family: "Poppins", sans-serif;
+  max-width: 1280px;
+  margin: 0 auto;
+  background: #5e5b5bad;
+  color: #333333;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  padding: 25px;
+}
+
+header .btn-alterar-tema {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+header .logo,
+header .imagem-btn {
+  width: 30px;
+  transition: 0.2s ease-in-out;
+  cursor: pointer;
+}
+
+header .logo:hover,
+header .imagem-btn:hover,
+tela .produto:hover {
+  transform: scale(1.05);
+}
+/* Fim do Reset Styles */

@@ -1,0 +1,24 @@
+button{
+ width:50%;
+ max-width:75%;
+ font-weight:500;
+ font-style:italic;
+ text-transform:uppercase;
+ border-width:5px;
+ border-color:purple;
+ border-style:solid;
+ color:black;
+ border-top-left-radius:24px;
+ border-top-right-radius:25px;
+ border-bottom-left-radius:25px;
+ border-bottom-right-radius:25px;
+ background-color:pink;
+ height:40px;
+}
+button:hover{
+background: blue;
+cursor: pointer;
+box-shadow: -8px 20px 20px purple;
+transform: translateY(5px);
+transition: all .5s ease-out;
+}

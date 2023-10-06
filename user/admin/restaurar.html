@@ -1,0 +1,68 @@
+<html lang="pt-BR">
+
+  <head>
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=0.7" />
+    <meta http-equiv="Refresh" content="300">
+    <link rel="icon" href="https://cdn.glitch.global/b39d6a4a-0e14-4b41-930d-29d3ccd6c137/PINGOBRAS icon.png?v=1665177105635" />
+    <links></links>
+    <link rel="stylesheet" href="/user/style.css" />
+    
+     <title>PINGOBRAS RESTAURAR CONTA</title>
+     <nav class="cabecalho">
+<!--        Gerado automaticamente -->
+    </nav>
+  </head>
+  <body>
+    <div class="site-altura">
+      <div class="conteudo" role="main">
+        
+        <tela>
+       <h1>Restaurar Conta</h1>
+          <p>Informe o endereço de e-mail para restaurar a conta:</p>
+        
+          <form onsubmit="restaurar()" id="form" action="/login">
+            <div class="form-group">
+              <label for="email">E-mail:</label>
+              <input type="email" 
+                     id="email" 
+                     name="email"
+                     required>
+            </div>
+            <div class="form-group">
+              <button type="submit" onclick="restaurar()">Enviar</button>
+            </div>
+          </form>
+        </tela>
+
+           <button 
+             class="btnFixedLeft"
+             onclick="redirectUrl('/user/admin')">
+          Voltar
+        </button>
+        
+        
+      </div> </div>
+    <footer class="footer">    
+      <div id="direitos" class="direitos">
+      <div class="loading ">        
+        <p class="load "></p>
+      </div> 
+      </div>
+    </footer>
+
+  </body>
+  <script src="/js/links.js" defer></script>
+  <script src="/user/admin/restaurar-conta.js" defer></script>
+  <autoscripts>
+    <script src="/js/load-scripts.js"></script>
+  </autoscripts>
+  <autoscriptsuser>
+    <script src="/user/load-scripts.js"></script>
+  </autoscriptsuser>
+  <host>
+    <script src="/js/load-host.js" defer></script>  
+  </host>
+  
+</html>

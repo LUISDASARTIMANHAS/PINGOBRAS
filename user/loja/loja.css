@@ -1,0 +1,136 @@
+main {
+  padding: 25px;
+}
+
+main .listagem-itens {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+}
+
+main .produto {
+  background-color: #d8e3ec;
+  width: 500px;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  border-radius: 15px;
+  -webkit-border-radius: 15px;
+  -moz-border-radius: 15px;
+  -ms-border-radius: 15px;
+  -o-border-radius: 15px;
+  transition: 0.2s ease-in-out;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  overflow: hidden;
+}
+
+main .produto:hover {
+  background-color: #96e9d6;
+}
+
+main .produto .info {
+  display: flex;
+  justify-content: space-between;
+  border: 1px solid #333333;
+  border-radius: 10pc;
+  -webkit-border-radius: 10pc;
+  -moz-border-radius: 10pc;
+  -ms-border-radius: 10pc;
+  -o-border-radius: 10pc;
+}
+
+main .produto .info span {
+  padding: 5px;
+  text-transform: uppercase;
+  font-size: 18px;
+}
+
+main .produto .produto-img {
+  width: 200px;
+  height: 200px;
+}
+
+main .produto-img-detalhe {
+  width: 500px;
+  height: 500px;
+}
+
+@media (max-width: 720px) {
+  main .produto-img-detalhe {
+    width: 450px;
+    height: 450px;
+  }
+}
+@media (max-width: 520px) {
+  main .produto-img-detalhe {
+    width: 350px;
+    height: 350px;
+  }
+}
+
+main .produto .tipos {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: center;
+}
+
+main .produto .tipo {
+  padding: 10px;
+  min-height: 40px;
+  max-height: 70px;
+  min-width: 70px;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+  text-shadow: rgb(255, 255, 255) 1px 1px 0px, rgb(170, 170, 170) 2px 2px 0px;
+  text-align: center;
+  overflow: hidden;
+}
+
+main .descricao {
+  max-height: 80px;
+  overflow-y: scroll;
+  font-size: 15px;
+  padding-right: 10px;
+}
+main ul li .icon-sistema {
+  width: 50px;
+  height: 50px;
+}
+.indisponivel {
+  background-color: red;
+}
+
+.memoria {
+  background-color: orange;
+  height: 40px;
+}
+.sistema {
+  background-color: lightblue;
+}
+.espaco {
+  background-color: yellowgreen;
+  height: 40px;
+}
+.marca {
+  height: 40px;
+  background-color: cyan;
+}
+.cor-verde {
+  height: 40px;
+  background-color: green;
+}
+.cor-roxo {
+  background-color: purple;
+  height: 40px;
+}

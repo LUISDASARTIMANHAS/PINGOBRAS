@@ -1,0 +1,77 @@
+/* estilos padroes */
+tela-edital {
+  background: gray;
+  padding: 20px;
+  overflow: hidden;
+  border-radius: 25px;
+  text-transform: capitalize;
+  text-align: center;
+  font-weight: 500;
+  white-space: normal;
+  color: white;
+  max-width: 90%;
+  min-width: 50%;
+  margin-top: 100px;
+}
+
+table {
+  border-collapse: collapse;
+  color: white;
+  max-width: 100%;
+}
+@media (max-width: 720px) {
+  .info {
+    display: none;
+  }
+}
+/* fim dos estilos padroes */
+
+th,
+td {
+  border: 2px solid black;
+  text-align: center;
+  padding: 7px;
+}
+
+/* titulos */
+th {
+  background-color: #3498db;
+}
+/* linhas */
+td {
+  background-color: #34495e;
+}
+.acoes {
+  background-color: #8e44ad;
+}
+a {
+  color: red;
+}
+
+tela-editar-edital {
+  background: gray;
+  padding: 20px;
+  overflow: hidden;
+  border-radius: 25px;
+  text-transform: capitalize;
+  text-align: center;
+  font-weight: 500;
+  white-space: normal;
+  color: white;
+  max-width: 90%;
+  min-width: 50%;
+  margin-top: 100px;
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  justify-content: center;
+  align-items: center;
+}
+tela-editar-edital form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  justify-content: center;
+  align-items: center;
+}

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Server uploader</title>
+	<meta charset="UTF-8" />
+  <meta http-equiv="Refresh" content="200">
+  <meta name="viewport" content="width=device-width, initial-scale=0.7" />
+  <link rel="icon" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRkwdDfPO6m5TgI2v4IxDr0kJwYHQWQsAj_ZVYy7xIvcQ&s" />
+  <links></links>
+  <link rel="stylesheet" href="/upload/upload.css" />
+</head>
+
+<body>
+<div class="site-altura">
+<div class="conteudo" role="main">
+  
+<br> 
+  
+<upador>
+<h1>Upador De Arquivos</h1>
+<input type="file" id="fileInput" />
+<br>
+<p vermelho>Upador: </p><js id="statusUP">Sem Arquivo!</js>
+</upador>
+  
+  <br>
+  
+    <table>
+  <tr>
+    <th>Informações do Arquivo</th>
+    <th>Dados</th>
+  </tr>
+  <tr>
+    <td>Status de Carregamento</td>
+    <td verde id="statusLoad">Sem Dados</td>
+  </tr>
+  <tr>
+    <td>Status do Server</td>
+    <td verde id="statusServer">402</td>
+  </tr>
+  <tr>
+    <td>ID do Arquivo</td>
+    <td azul id="fileID">Sem Dados</td>
+  </tr>
+  <tr>
+    <td>Chave do Link</td>
+    <td azul id="keyLink">Sem Dados</td>
+  </tr>
+  <tr>
+    <td>Nome do Arquivo</td>
+    <td vermelho id="fileName">Sem Dados</td>
+  </tr>
+  <tr>
+    <td>Tamanho do Arquivo</td>
+    <td vermelho id="fileSize">Sem Dados</td>
+  </tr>
+  <tr>
+    <td>Link do Arquivo</td>
+    <td roxo id="fileLink">Sem Dados</td>
+  </tr>
+  <tr>
+    <td>Expira em</td>
+    <td vermelho id="fileExpire">Sem Dados</td>
+  </tr>
+  <tr>
+    <td>Downloads Máximos do Arquivo</td>
+    <td vermelho id="maxDownloads">0</td>
+  </tr>
+  <tr>
+    <td>Tipo do Arquivo</td>
+    <td id="fileType">Sem Dados</td>
+  </tr>
+  <tr>
+    <td>Arquivo Criado em</td>
+    <td id="filecreated">Sem Dados</td>
+  </tr>
+  <tr>
+    <td>Arquivo Modificado em</td>
+    <td id="filemodified">Sem Dados</td>
+  </tr>
+  <tr>
+    <td>Re-Baixar Arquivo</td>
+    <td><a target="_blank" id="labelLink">Link Do Arquivo</a></td>
+  </tr>
+</table>
+  
+  
+  
+</div></div>  
+  <footer>
+  <div id="direitos" class="direitos">Loading...</div>
+    
+  </footer>
+</body>
+<!--   <script src="js/time.js" defer></script> -->
+  <script src="/js/copyright.js" defer></script>
+  <script src="/js/links.js" defer></script>
+  <script src="upload/upload.js" defer></script>
+  <script src="upload/storage.js" defer></script>
+</html>

@@ -1,0 +1,100 @@
+<html lang="PT">
+
+  <head>
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=0.7" />
+    <meta http-equiv="Refresh" content="300">
+    <link rel="icon" href="https://cdn.glitch.global/b39d6a4a-0e14-4b41-930d-29d3ccd6c137/onlineshop_78377.png?v=1683983951991" >
+    <links></links>
+    <link rel="stylesheet" href="/user/style.css" />
+    <link rel="stylesheet" href="/user/loja/loja.css" />
+    <link rel="stylesheet" href="/user/loja/scrollbar.css" />
+    <link rel="stylesheet" href="/user/loja/reset.css" />
+    
+    <title>PINGOBRAS STORE</title>
+    <nav class="cabecalho">
+        <button 
+              class="btnNav"
+              disabled
+              id="btnVideoplayer"
+              onclick="redirectUrl('/user/conta/fundos.html')">
+        Sacar/Adicionar Fundos
+      </button>
+      
+      <button 
+              class="btnNav"
+              disabled
+              onclick="redirectUrl('user/conta/fundos.html')">
+        Adicionar produto
+      </button>
+
+    </nav>
+  </head>
+  
+  <body>
+    <div class="site-altura">
+      <div class="conteudo" role="main">   
+
+          <main>
+         <ul class="listagem-itens" id="listagemItens">
+        
+        <li hidden class="produto">
+          <div class="info">
+            <span>K9</span>
+          </div>
+
+          <img src="https://cdn.glitch.global/b39d6a4a-0e14-4b41-930d-29d3ccd6c137/7892509113281.png?v=1683982547321" 
+               alt="Samsung Galaxy A01"
+               class="produto-img">
+
+          <ul class="tipos">
+            <li class="tipo marca">LG</li>
+            <li class="tipo espaco">16GB</li>
+            <li class="tipo memoria">2GB RAM</li>
+            <li class="tipo sistema">
+              <img class="icon-sistema" src="https://cdn.glitch.global/b39d6a4a-0e14-4b41-930d-29d3ccd6c137/android.png?v=1686257233518">
+            </li>
+          </ul>
+          
+          <p class="descricao">
+            Trinco na parte inferior Direita, não influencia no funcionamento do aparelho.
+          </p>
+        </li>
+      </ul>
+          </main>
+        
+        
+</div> </div>
+    <footer class="footer">  
+      <div id="direitos" class="direitos">
+      <div class="loading ">        
+        <p class="load "></p>
+      </div> 
+      </div>
+    </footer>
+    <button
+           class="btnFixedLeft"
+           onclick="redirectUrl('/user')">    
+      Voltar    
+    </button>
+</body>
+  <script src="https://pingobras.glitch.me/js/links.js" defer></script>
+  <script src="/user/loja/loader-produtos.js"></script>
+  <autoscripts>
+    <script src="/js/load-scripts.js"></script>
+  </autoscripts>
+  <autoscriptsuser>
+    <script src="/user/load-scripts.js"></script>
+  </autoscriptsuser>
+   <host>
+    <script src="/js/load-host.js" defer></script>
+    </host>
+  <script>
+  const http = "http://pingobras.glitch.me/user/loja"
+if(document.URL == http) {
+   window.location.href = ("https://pingobras.glitch.me/user/loja");}
+  </script>
+  
+  
+</html>
