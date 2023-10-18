@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="PT">
+
+  <head>
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=0.7" />
+    <meta http-equiv="Refresh" content="120">
+    <meta http-retry-after="120">
+    <link rel="icon" href="https://img1.gratispng.com/20180420/rsq/kisspng-exe-executable-installation-windows-installer-wooden-tag-5ada4fc7e672d8.7933322915242567119439.jpg" >
+    <links></links>
+    <link rel="stylesheet" href="https://pingobras.glitch.me/css/download.css" defer/>
+    
+    <title>PINGOBRAS EXECUTAVEIS</title>
+ </head>
+  <body style="background-image: url(https://seeklogo.com/images/E/exe-logo-4ACAF3533A-seeklogo.com.gif);
+               background-position: center;">
+    <div class="site-altura">
+      <div style="display: none;" id="executavel" class="conteudo" role="main">
+      
+        <audio  
+            -hidden
+            autoplay 
+            loop
+            preload="auto"
+            src="https://cdn.glitch.global/b39d6a4a-0e14-4b41-930d-29d3ccd6c137/Chill%20Noons%20Baixo.mp3?v=1666833330569">
+        </audio>
+        
+        <a class="download"
+           href="link do download" 
+           download="nome do download"
+           onclick="barButton()">
+          nome de exibição
+         </a>
+        <div class="boxbar">
+          <div class="bar" id="bar">0%</div>
+        </div>
+        
+        <a class="download"
+           href="https://cdn.glitch.global/b39d6a4a-0e14-4b41-930d-29d3ccd6c137/executavel.bat?v=1666386824163" 
+           download="EXECUTAVEL.bat"
+           onclick="barExe()">
+          Executavel.bat 
+        </a>
+        <div class="boxbar">
+          <div class="bar" id="exeBar">0%</div>
+        </div>
+        
+        <a class="download"
+           href="https://cdn.glitch.global/b39d6a4a-0e14-4b41-930d-29d3ccd6c137/Item.zip?v=1667234126704" 
+           download="item.zip"
+           onclick="barItemExe()">
+          Item.exe 
+        </a>
+        <div class="boxbar">
+          <div style="width: 50%;" class="bar" id="itemBar">Loading...50%</div>
+        </div>
+        
+        <a 
+          class="btndc btn"
+          href="https://pingobras.glitch.me">
+          Retornar para PINGOBRAS
+        </a>
+       
+        </div>
+    <login id="screenLoad" class="conteudo" role="main">
+      
+      <h1 id="labelLogin">AGUARDANDO LOGIN...</h1>
+      <div class="boxbar">
+          <div class="bar" id="barlogin">Loading... 50%</div>
+        </div>
+      
+      </login>
+      
+    </div>  
+</body>
+  <script src="js/links.js" defer></script>
+  <script>
+setInterval(netRecebida,7000)
+function netRecebida(){
+const network = localStorage.getItem("Network");
+let networkjson = JSON.parse(network)
+console.log(networkjson)
+}
+  </script>
+  <script src="https://pingobras.glitch.me/executavel-auth.js" defer></script>
+  <script>
+  var iniciar2 = "sim";
+
+function barExe() {
+  if (iniciar2 == "sim") {
+    iniciar2 = "no";
+    var barload = document.getElementById("exeBar");
+    var width = 50;
+    var barspeeedexe = 100;
+    var id = setInterval(frame, barspeeedexe);
+
+    function frame() {
+      if (width >= 100) {
+        clearInterval(id);
+        iniciar2 = "sim";
+        window.location.href = "/executavel.html"
+      }else{
+        width++;
+        barload.style.width = width + "%";
+        barload.innerHTML = "loading..." + width + "%";}
+    }
+  }
+}
+
+  </script>
+  <script>
+  var iniciar2 = "sim";
+
+function barItemExe() {
+  if (iniciar2 == "sim") {
+    iniciar2 = "no";
+    var barload = document.getElementById("itemBar");
+    var width = 75;
+    var barspeeedexe = 100;
+    var id = setInterval(frame, barspeeedexe);
+
+    function frame() {
+      if (width >= 100) {
+        clearInterval(id);
+        iniciar2 = "sim";
+        window.location.href = "/executavel.html"
+      }else{
+        width++;
+        barload.style.width = width + "%";
+        barload.innerHTML = "loading..." + width + "%";}
+    }
+  }
+}
+
+  </script>
+  <host>
+    <script src="./js/load-host.js" defer></script>
+    </host>
+  
+</html>

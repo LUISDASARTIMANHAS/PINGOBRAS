@@ -482,11 +482,3 @@ fieldset[disabled] .disabled {
   margin: 5px;
   border-radius: 25px;
 }
-a {
-  border-radius: 25px;
-  margin: 5px;
-  padding: 7px;
-  color: purple;
-  align-items: center;
-  text-align: justify;
-}

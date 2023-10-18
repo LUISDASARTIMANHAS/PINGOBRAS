@@ -1,12 +1,10 @@
-function importarCss(){
 const links = document.querySelector("links");
-const fonte = "https://pingobras.glitch.me/src/css/"
-const srcs = [
+const srcsLinks = [
   "footer",
-  "style",
-  "btn",
-  "head",
-  "RGB",
+  "style", 
+  "btn", 
+  "head",            
+  "RGB", 
   "main",
   "temas",
   "bootstrap"
@@ -15,16 +13,14 @@ const srcsLinksFonts = [
   "4.7.0/css/font-awesome.min.css"
 ];
 
-for (let i = 0; i < srcs.length; i++) {
-  const src = srcs[i];
-  const link = fonte + src + ".css"
+for (let i = 0; i < srcsLinks.length; i++) {
   var newLink = document.createElement("link");
 
-  newLink.setAttribute("href",link);
+  newLink.setAttribute("href","https://pingobras.glitch.me/css/" + srcsLinks[i] + ".css");
   newLink.rel = "stylesheet";
   links.appendChild(newLink);
 
-  console.log("Carregando css: " + link);
+  console.log(" Novo Link de css Num: " + srcsLinks[i]);
 }
 
 for (let i = 0; i < srcsLinksFonts.length; i++) {
@@ -37,6 +33,3 @@ for (let i = 0; i < srcsLinksFonts.length; i++) {
 
   console.log("Novo Link de fonte css Num: " + srcsLinksFonts[i]);
 }
-
-}
-importarCss();
