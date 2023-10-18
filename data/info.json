@@ -27,13 +27,13 @@
     "worker.js"
   ],
   "css": [
-    "footer",
-    "style",
-    "btn",
-    "head",
-    "RGB",
-    "main",
-    "temas",
-    "bootstrap"
+    "footer.css",
+    "style.css",
+    "btn.css",
+    "head.css",
+    "RGB.css",
+    "main.css",
+    "temas.css",
+    "bootstrap.css"
   ]
 }
