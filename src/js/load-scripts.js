@@ -1,6 +1,6 @@
 function importJs() {
   const autoscripts = document.querySelector("autoscripts");
-  const fonte = "https://pingobras.glitch.me/src/js"
+  const fonte = "https://pingobras.glitch.me/src/js/"
   const srcs = [
     "main.js",
     "network.js",
