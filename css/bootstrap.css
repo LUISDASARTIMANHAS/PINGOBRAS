@@ -1,9 +1,11 @@
 /* Our default values set as CSS variables */
-@font-face {
-  font-family: "Noto Sans Mono", monospace;
-  src: url("https://fonts.googleapis.com/css2?family=Noto+Sans+Mono:wght@500&display=swap")
-    format("opentype");
-}
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Mono&family=Poppins&family=Rubik&family=Secular+One&display=swap');
+/* 
+font-family: 'Noto Sans Mono', monospace;
+font-family: 'Poppins', sans-serif;
+font-family: 'Rubik', sans-serif;
+font-family: 'Secular One', sans-serif;
+*/
 
 /* ==================== presets css ==================== */
 
