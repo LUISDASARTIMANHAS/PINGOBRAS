@@ -1,14 +1,14 @@
 function importJs() {
   const autoscripts = document.querySelector("autoscripts");
-  const fonte = "https://pingobras.glitch.me/"
+  const fonte = "https://pingobras.glitch.me/src/js"
   const srcs = [
-    "js/main.js",
-    "js/network.js",
-    "js/copyright.js",
-    "js/autentication.js",
-    "js/functions.js",
-    "js/time.js",
-    "js/alterar-tema.js"
+    "main.js",
+    "network.js",
+    "copyright.js",
+    "autentication.js",
+    "functions.js",
+    "time.js",
+    "alterar-tema.js"
   ]
 
 

@@ -1,6 +1,6 @@
 function importarCss(){
 const links = document.querySelector("links");
-const fonte = "https://pingobras.glitch.me/"
+const fonte = "https://pingobras.glitch.me/src/css/"
 const srcs = [
   "footer",
   "style",
@@ -15,7 +15,7 @@ const srcsLinksFonts = [
   "4.7.0/css/font-awesome.min.css"
 ];
 
-for (let i = 0; i < srcsLinks.length; i++) {
+for (let i = 0; i < srcs.length; i++) {
   const src = srcs[i];
   const link = fonte + src + ".css"
   var newLink = document.createElement("link");
