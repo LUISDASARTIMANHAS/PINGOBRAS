@@ -24,7 +24,7 @@ for (let i = 0; i < srcs.length; i++) {
   newLink.rel = "stylesheet";
   links.appendChild(newLink);
 
-  console.log(" Novo Link de css Num: " + link);
+  console.log("Carregando css: " + link);
 }
 
 for (let i = 0; i < srcsLinksFonts.length; i++) {

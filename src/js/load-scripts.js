@@ -20,7 +20,7 @@ function importJs() {
     newScript.setAttribute('src', link);
     autoscripts.appendChild(newScript)
 
-    console.log(" Novo Script: " + link)
+    console.log("Carregando script: " + link)
   }
 }
 importJs();
