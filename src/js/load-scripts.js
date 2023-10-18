@@ -13,7 +13,7 @@ function importJs() {
 
 
   for (let i = 0; i < srcs.length; i++) {
-    const src = srcs[I]
+    const src = srcs[i]
     const link = fonte + src + ".js"
     var newScript = document.createElement('script');
 
