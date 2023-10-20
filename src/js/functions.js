@@ -29,11 +29,11 @@ function mostrarsenha() {
 
 function pageYT() {
   ClickMouseFUNCTIONS.play();
-  window.location.href = "/user/youtube.com/video-player";
+  window.location.href = "/user/video-player";
 }
 function pageLives() {
   ClickMouseFUNCTIONS.play();
-  window.location.href = "/user/youtube.com/live";
+  window.location.href = "/user/live";
 }
 function redirectUrl(url) {
   ClickMouseFUNCTIONS.play();
