@@ -27,7 +27,7 @@
         
         <ul id="navigation-bar">
             <li class="selected">
-                <a href="/">início</a>
+                <a href="/openttd">início</a>
             </li>
             <li><a href="https://servers.openttd.org/server/+jZ4ExDZ">
                 Sobre o Servidor
@@ -85,4 +85,13 @@
         </div>
     </footer>
 </body>
+<script>
+(function() {
+    var nav = navigator.language
+    if(nav == "en"){
+        window.location.href = "/openttd/en"
+    }
+    // auto change pt-BR to en us language
+})();
+</script>
 </html>
