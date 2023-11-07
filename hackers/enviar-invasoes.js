@@ -56,10 +56,13 @@ function postData(base, biticoins, money, replayLink) {
         .then((data) => {
             console.log("DATA RESPONSE: ");
             console.log(data);
+            alert(data);
+            window.location.href = ""
         })
         .catch((error) => errosEnviar(error));
 }
 
 function errosEnviar(error) {
     console.debug(error);
+    alert(error);
 }
