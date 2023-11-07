@@ -47,10 +47,10 @@ function postData(base, bitcoins, money, replayLink) {
     fetch(url, options)
         .then((response) => {
             if (response.ok) {
-                return response.json();
+                return response.text();
             } else {
                 // throw new Error("Erro na solicitação, URL inválida ou fetch inválido");
-                return response.text()
+                return response.text();
             }
         })
         .then((data) => {
