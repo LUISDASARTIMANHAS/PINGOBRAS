@@ -29,4 +29,5 @@ function getData() {
 
 function errosLogin(error) {
     console.debug(error);
+    alert(error);
 }
