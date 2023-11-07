@@ -1,0 +1,99 @@
+<html>
+   <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=0.7" />
+    <link rel="icon" href="https://www.youtube.com/s/desktop/f06ee14b/img/favicon_144x144.png" sizes="144x144">
+    <link rel="stylesheet" href="https://pingobras.glitch.me/user/style.css" />
+     <links></links>
+
+  
+     <title id="title">PINGOBRAS EMBUTIR VIDEO </title>
+     <nav class="cabecalho">
+     </nav>
+  </head>  
+  <body>        
+    <div class="site-altura">      
+      <div class="conteudo" role="main">
+
+    <h3 for="video" 
+        class="text-center text-light mb-4">
+      Insira um link do YouTube para embutir o video na tela
+    </h3>
+    <input placeholder="Insira um URL para indexar o video."
+           type="text" 
+           class="form-control" 
+           id="INPL">
+     
+    <switch>
+    <label> 
+      <input id="autoplay" class="switch-inp" type="checkbox">
+      <span class="slider round"></span>  
+    </label>
+    </switch>
+      <js>Iniciar Video Automaticamente?</js>
+     
+
+      <div style="width:95%; background: #e9ecef;">
+      <img src="https://cdn-icons-png.flaticon.com/512/5372/5372583.png" 
+           style="float:left;
+                  height:36px;
+                  width:26px;">            
+      <input class="form-control" 
+             placeholder="https://www.youtube.com/embed/OiL1kFo4C8Y?autoplay=1&muted=1" 
+             type="text" 
+             id="VIDEOPLAYERLINK" 
+             disabled
+             style="width: 95%; border: none;">    
+      </div>
+      <iframe 
+              id="VIDEOPLAYER" 
+              class="youtube-video"
+              title="YouTube video player" 
+              frameborder="0" 
+              allow="accelerometer; 
+                     autoplay; 
+                     clipboard-write; 
+                     encrypted-media; 
+                     gyroscope; 
+                     picture-in-picture" 
+              allowfullscreen
+              x-frame-options="sameorigin"
+              autoplay
+              muted
+              src="https://www.youtube.com/embed/OiL1kFo4C8Y?autoplay=1&muted=1">
+            Loading...
+      </iframe>
+
+
+     
+
+   
+
+              
+      </div></div>
+    <footer class="footer">  
+      <div id="direitos" class="direitos">
+      <div class="loading ">        
+        <p class="load "></p>
+      </div> 
+      </div>
+    </footer>
+    <button
+            class="btnFixedLeft"
+            onclick="redirectUrl('/user')">
+      Voltar
+    </button>
+  </body>
+  <script src="https://pingobras.glitch.me/src/js/links.js"></script>
+  <script src="https://pingobras.glitch.me/user/video-player/video-player.js" defer></script>
+
+  <autoscripts>
+    <script src="/src/js/load-scripts.js"></script>
+  </autoscripts>
+  <autoscriptsuser>
+    <script src="/user/load-scripts.js"></script>
+  </autoscriptsuser>
+    <host>
+    <script src="/src/js/load-host.js" defer></script>
+    </host>
+</html>
