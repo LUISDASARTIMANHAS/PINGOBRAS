@@ -1,5 +1,5 @@
 const baseName = document.getElementById("baseName");
-const biticoins = document.getElementById("biticoins");
+const bitcoins = document.getElementById("bitcoins");
 const money = document.getElementById("money");
 const urlReplay = document.getElementById("url");
 const form = document.querySelector('form');
@@ -14,23 +14,23 @@ form.addEventListener('submit', event => {
 
 function validar() {
     const baseNameValue = baseName.value;
-    const biticoinsValue = biticoins.value;
+    const bitcoinsValue = bitcoins.value;
     const moneyValue = money.value;
     const urlReplayValue = urlReplay.value;
 
-    if (baseNameValue && biticoinsValue && moneyValue && urlReplayValue) {
-        postData(baseNameValue, biticoinsValue, moneyValue, urlReplayValue);
+    if (baseNameValue && bitcoinsValue && moneyValue && urlReplayValue) {
+        postData(baseNameValue, bitcoinsValue, moneyValue, urlReplayValue);
         console.log("Enviando dados...")
     } else {
         alert("Dados Incompletos!");
     }
 }
 
-function postData(base, biticoins, money, replayLink) {
+function postData(base, bitcoins, money, replayLink) {
     const url = "https://pingobras-sg.glitch.me/api/thegame/hackers/invasions"
     const payload = {
         "base": base,
-        "biticoins": biticoins,
+        "bitcoins": bitcoins,
         "money": money,
         "replayLink": replayLink
     }
