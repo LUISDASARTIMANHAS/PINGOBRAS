@@ -37,7 +37,8 @@ function criarTabela(database) {
         const bitcoins = invasion.bitcoins;
         const money = invasion.money;
         const reputacao = invasion.reputacao;
-        const replayLink = edital.replayLink;
+        const pais = invasion.pais;
+        const replayLink = invasion.replayLink;
 
             var trLine = document.createElement("tr");
             var aElement = document.createElement("a");
@@ -45,17 +46,17 @@ function criarTabela(database) {
             var tdElementBiticoins = document.createElement("td");
             var tdElementMoney = document.createElement("td");
             var tdElementReputacao = document.createElement("td");
-            var tdElementReplay = document.createElement("td");
+            var tdElementPais = document.createElement("td");
             var tdElementAcoes = document.createElement("td");
 
             aElement.innerHTML = "View Replay";
-            aElement.href = "edital/results.html";
+            aElement.href = replayLink;
 
             tdElementBase.innerHTML = base;
             tdElementBiticoins.innerHTML = bitcoins;
             tdElementMoney.innerHTML = money;
             tdElementReputacao.innerHTML = reputacao;
-            tdElementReplay.innerHTML = replayLink;
+            tdElementPais.innerHTML = pais;
             tdElementAcoes.classList.add("acoes");
             tdElementAcoes.appendChild(aElement);
 
@@ -63,7 +64,7 @@ function criarTabela(database) {
             trLine.appendChild(tdElementBiticoins);
             trLine.appendChild(tdElementMoney);
             trLine.appendChild(tdElementReputacao);
-            trLine.appendChild(tdElementReplay);
+            trLine.appendChild(tdElementPais);
             trLine.appendChild(tdElementAcoes);
 
             tabela.appendChild(trLine);
