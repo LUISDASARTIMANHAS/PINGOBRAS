@@ -1,6 +1,7 @@
 const baseName = document.getElementById("baseName");
 const bitcoins = document.getElementById("bitcoins");
 const money = document.getElementById("money");
+const reputacao = document.getElementById("money");
 const urlReplay = document.getElementById("url");
 const form = document.querySelector('form');
 
@@ -16,22 +17,24 @@ function validar() {
     const baseNameValue = baseName.value;
     const bitcoinsValue = bitcoins.value;
     const moneyValue = money.value;
+    const repValue = money.value;
     const urlReplayValue = urlReplay.value;
 
-    if (baseNameValue && bitcoinsValue && moneyValue && urlReplayValue) {
-        postData(baseNameValue, bitcoinsValue, moneyValue, urlReplayValue);
+    if (baseNameValue && bitcoinsValue && moneyValue && urlReplayValue &&repValue) {
+        postData(baseNameValue, bitcoinsValue, moneyValue, repValue, urlReplayValue);
         console.log("Enviando dados...")
     } else {
         alert("Dados Incompletos!");
     }
 }
 
-function postData(base, bitcoins, money, replayLink) {
+function postData(base, bitcoins, money,rep, replayLink) {
     const url = "https://pingobras-sg.glitch.me/api/thegame/hackers/invasions"
     const payload = {
         "base": base,
         "bitcoins": bitcoins,
         "money": money,
+        "reputacao": rep,
         "replayLink": replayLink
     }
     const options = {
@@ -49,7 +52,6 @@ function postData(base, bitcoins, money, replayLink) {
             if (response.ok) {
                 return response.text();
             } else {
-                // throw new Error("Erro na solicitação, URL inválida ou fetch inválido");
                 return response.text();
             }
         })

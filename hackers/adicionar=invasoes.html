@@ -68,39 +68,57 @@
 
         <form>
           <label for="base-name">
-            Nome da base
+            Nome da base:
           </label>
           <input
           type="text"
           name="base-name"
           id="baseName"
+          placeholder="Insira o nome da base atacante"
           required>
 
-          <label for="bitcoins">
-            bitcoins adquiridos
+          <label for="Rep">
+            Reputação:
           </label>
           <input
           type="number"
-          name="bitcoins"
-          id="bitcoins"
+          name="Rep"
+          id="rep"
+          max="50"
+          value="0"
+          placeholder="Insira a quantidade de reputação adquirida"
           required>
 
           <label for="money">
-            Dinheiro adquirido
+            Dinheiro:
           </label>
           <input
           type="number"
           name="money"
           id="money"
+          value="0"
+          placeholder="Insira a quantidade de dinheiro adquirido"
+          required>
+
+          <label for="bitcoins">
+            bitcoins:
+          </label>
+          <input
+          type="number"
+          name="bitcoins"
+          id="bitcoins"
+          value="0"
+          placeholder="Insira a quantidade de biticoins adquirido"
           required>
 
           <label for="replay-url">
-            Link de replay
+            Link de replay:
           </label>
           <input
           type="url"
           name="replay-url"
           id="url"
+          placeholder="Insira o url de replay"
           required>
 
           <button class="btn btn-enviar" type="submit">
