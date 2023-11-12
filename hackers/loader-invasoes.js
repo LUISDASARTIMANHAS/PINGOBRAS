@@ -14,7 +14,6 @@ fetch(url, options)
         if (response.ok) {
             return response.json();
         } else {
-            throw new Error("Erro na solicitação, URL inválida ou fetch inválido");
             return response.text();
         }
     })
