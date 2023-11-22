@@ -5,7 +5,7 @@ const options = {
     mode: "cors",
     headers: {
         "content-type": "application/json;charset=utf-8",
-        Authorization: "snve072509ç$",
+        Authorization: "APIKey20231603",
     }
 };
 
