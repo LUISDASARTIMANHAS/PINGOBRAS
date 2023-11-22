@@ -1,7 +1,7 @@
 const baseName = document.getElementById("baseName");
 const bitcoins = document.getElementById("bitcoins");
 const money = document.getElementById("money");
-const reputacao = document.getElementById("money");
+const reputacao = document.getElementById("rep");
 const urlReplay = document.getElementById("url");
 const form = document.querySelector('form');
 
@@ -17,7 +17,7 @@ function validar() {
     const baseNameValue = baseName.value;
     const bitcoinsValue = bitcoins.value;
     const moneyValue = money.value;
-    const repValue = money.value;
+    const repValue = reputacao.value;
     const urlReplayValue = urlReplay.value;
 
     if (baseNameValue && bitcoinsValue && moneyValue && urlReplayValue &&repValue) {
@@ -42,7 +42,7 @@ function postData(base, bitcoins, money,rep, replayLink) {
         mode: "cors",
         headers: {
             "content-type": "application/json;charset=utf-8",
-            Authorization: "snve072509ç$",
+            Authorization: "APIKey20231603",
         },
         body: JSON.stringify(payload)
     };
