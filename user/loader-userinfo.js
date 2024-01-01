@@ -3,11 +3,9 @@ const userInfoElement = document.createElement("user-info");
 const imgElement = document.createElement("img");
 const divElement = document.createElement("div");
 const pElementUser = document.createElement("p");
-const pElementNavgator = document.createElement("p");
 const pElementSaldo = document.createElement("p");
 const pElementSonhos = document.createElement("p");
 const pElementCoins = document.createElement("p");
-const pElementAdmin = document.createElement("p");
 const jsElementUser = document.createElement("js");
 const jsElementSaldo = document.createElement("js");
 const jsElementSonhos = document.createElement("js");
@@ -30,23 +28,18 @@ jsElementAdmin.id = "labelAdmin"
 // P presets
 pElementUser.innerHTML = "Usuário: "
 pElementUser.appendChild(jsElementUser)
-pElementNavgator.innerHTML = "Navegador: " + navigator.appCodeName
 pElementSaldo.innerHTML = "Saldo: R$ "
 pElementSaldo.appendChild(jsElementSaldo)
 pElementCoins.innerHTML = "VirtualCoins(Moedas Virtuais): "
 pElementCoins.appendChild(jsElementCoins)
 pElementSonhos.innerHTML = "Sonhos: "
 pElementSonhos.appendChild(jsElementSonhos)
-pElementAdmin.innerHTML = "Conta De Adiministrador: "
-pElementAdmin.appendChild(jsElementAdmin)
 
 
 divElement.appendChild(pElementUser)
-divElement.appendChild(pElementNavgator)
 divElement.appendChild(pElementSaldo)
 divElement.appendChild(pElementSonhos)
 divElement.appendChild(pElementCoins)
-divElement.appendChild(pElementAdmin)
 
 userInfoElement.appendChild(imgElement)
 userInfoElement.appendChild(divElement)

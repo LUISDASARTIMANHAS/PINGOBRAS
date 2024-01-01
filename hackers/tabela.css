@@ -1,0 +1,48 @@
+* {
+    padding: 0;
+    box-sizing: border-box;
+}
+
+table {
+    font-size: 16px;
+     width:100%;
+    border-collapse: collapse;
+    color: white;
+    font-family: "Roboto", sans-serif;
+    max-width: 100%;
+}
+
+@media (max-width: 720px) {
+    .info {
+        display: none;
+    }
+}
+
+/* fim dos estilos padrões */
+
+th,
+td {
+    border: 2px solid black;
+    text-align: center;
+    padding: 7px;
+}
+
+/* titulos */
+th {
+    background-color: #3498db;
+}
+
+/* linhas */
+td {
+    background-color: #34495e;
+}
+
+.acoes {
+    background-color: #8e44ad;
+}
+
+table a,
+td a,
+th a {
+    color: red;
+}

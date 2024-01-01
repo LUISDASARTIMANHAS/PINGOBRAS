@@ -8,12 +8,10 @@ function loaderUserData() {
   const labelCoins = document.getElementById("coins");
   const labelPerfilIcon = document.getElementById("perfilIcon");
   const labellogado = document.getElementById("logado");
-  const labelAdmin = document.getElementById("labelAdmin");
-  const labelNavegador = document.getElementById("navegador");
   var elements = document.querySelectorAll("[admin]");
 
   // banco de dados
-  const nomeLoad = dataUser.nomeCad;
+  const nomeLoad = dataUser.nome;
   const userLoad = dataUser.user;
   const senhaLoad = dataUser.senhaCad;
   const saldoLoad = dataUser.saldo;
@@ -23,7 +21,6 @@ function loaderUserData() {
   const backgroundLoad = dataUser.UserBGCad;
   const tokenLoad = dataUser.Token;
   const admin = dataUser.admin;
-  const adminLoad = conversorSimEnao(admin);
   const navg = navigator.appCodeName;
 
   console.log("Carregando dados....");
@@ -40,9 +37,6 @@ function loaderUserData() {
   if (labellogado) {
     labellogado.innerHTML = userLoad + " Bem Vindo de Volta!";
   }
-  if (labelAdmin) {
-    labelAdmin.innerHTML = adminLoad;
-  }
   if (backgroundLoad) {
     bodyLoad.style.background = backgroundLoad;
   } else {
@@ -53,9 +47,6 @@ function loaderUserData() {
   } else {
     labelPerfilIcon.src =
       "https://w7.pngwing.com/pngs/798/436/png-transparent-computer-icons-user-profile-avatar-profile-heroes-black-profile.png";
-  }
-  if (labelNavegador) {
-    labelNavegador.innerHTML = navg;
   }
   elements.forEach(function (elemento) {ativarElementosAdm(elemento)});
   function ativarElementosAdm(elemento) {
