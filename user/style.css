@@ -90,7 +90,6 @@ li {
   padding-right: 1rem;
 }
 
-
 .loader {
   position: fixed;
   top: 0;
@@ -213,7 +212,6 @@ gradient {
   margin: 0px;
 }
 
-
 /* barra de navegação com informações */
 user-info {
   background-color: #333333;
@@ -234,6 +232,25 @@ user-info img {
   border-radius: 50%;
   margin-right: 10px;
 }
-.cabecalho div p{
- margin:5px;
+
+user-detalhes {
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  text-align: justify;
+  font-size: 16px;
+  padding: 10px;
+  margin: 5px;
+}
+
+user-detalhes img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.cabecalho div p {
+  margin: 5px;
 }
