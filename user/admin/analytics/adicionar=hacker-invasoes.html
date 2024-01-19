@@ -2,7 +2,11 @@
 <html lang="pt-BR">
   <head>
     <meta charset="utf-8" />
-    <title>Hackers – online strategy game</title>
+    <script src="https://hackersthegame.com/compiled.js?v=dzr1" async defer></script>
+    <link rel="stylesheet" href="/hackers/style.css">
+    <link rel="stylesheet" href="/src/css/btn.css">
+    <link href="https://hackersthegame.com/compiled.css?v=dyh1" rel="stylesheet" type="text/css"/>
+    <seo>
     <meta name="author" content="Trickster Arts" />
     <meta
       name="description"
@@ -19,20 +23,10 @@
     <meta property="og:url" content="http://hackersthegame.com" />
     <meta
       property="og:image"
-      content="http://hackersthegame.com/images/screens/Hackers_Screenshot_00.jpg"
-    />
+      content="https://hackersthegame.com/images/screens/Hackers_Screenshot_00.jpg"/>
+    </seo>
 
-    <link
-      href="https://hackersthegame.com/compiled.css?v=dyh1"
-      rel="stylesheet"
-      type="text/css"
-    />
-    <script
-      src="https://hackersthegame.com/compiled.js?v=dzr1"
-      async
-      defer
-    ></script>
-    <link rel="stylesheet" href="./style.css">
+    <title>Hackers – online strategy game</title>
   </head>
   <body class="tml, body">
     <div id="tricksterarts">
@@ -42,8 +36,8 @@
             <a href="https://www.facebook.com/hackersthegame/">FACEBOOK</a> |
             <a href="https://twitter.com/tricksterarts">TWITTER</a> |
             <a href="https://www.youtube.com/user/TricksterArts">YOUTUBE</a> |
-            <a href="http://forum.tricksterarts.com/">FORUM</a> |
-            <a href="http://tricksterarts.com/#contactform">CONTACT</a>
+            <a href="https://forum.tricksterarts.com/">FORUM</a> |
+            <a href="https://tricksterarts.com/#contactform">CONTACT</a>
           </div>
         </div>
       </div>
@@ -118,8 +112,14 @@
           type="url"
           name="replay-url"
           id="url"
-          placeholder="Insira o url de replay"
-          required>
+          placeholder="Insira o url de replay">
+          <label for="no-replay-url">
+            Sem Link de replay
+          </label>
+          <input name="no-replay-url"
+                 type="checkbox"
+                 value="./hackers"
+                 id="noUrl">
 
           <button class="btn btn-enviar" type="submit">
             Enviar
@@ -151,6 +151,21 @@
         <div id="footer">&copy; Trickster Arts &amp; Pingobras S.A</div>
       </div>
     </div>
+      <button 
+         class="btnFixedLeft"
+         onclick="redirectUrl('../analytics')">
+      Voltar
+    </button>
   </body>
+  
   <script src="./enviar-invasoes.js" defer></script>
+  <autoscripts>
+    <script src="/src/js/load-scripts.js"></script>
+  </autoscripts>
+  <autoscriptsuser>
+    <script src="/user/load-scripts.js"></script>
+  </autoscriptsuser>
+   <host>
+    <script src="/src/js/load-host.js" defer></script>
+    </host>
 </html>

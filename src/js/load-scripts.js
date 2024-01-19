@@ -5,7 +5,6 @@ function importJs() {
     "main",
     "network",
     "copyright",
-    "autentication",
     "functions",
     "time",
     "alterar-tema"

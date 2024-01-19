@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=0.7" />
     <meta http-equiv="Refresh" content="300">
     <link rel="icon" href="https://cdn.glitch.global/b39d6a4a-0e14-4b41-930d-29d3ccd6c137/PINGOBRAS icon.png?v=1665177105635" />
+    <meta http-equiv="Strict-Transport-Security" content="max-age=31536000; includeSubDomains; preload">
     <links></links>
     <link rel="stylesheet" href="/user/style.css" />
     
@@ -20,7 +21,37 @@
         
         <tela id="detalhes">
         <h1>Detalhes da Conta do Usuário</h1>
-        
+          <user-detalhes noselect>
+            <img id="thumbnail" alt="Foto de Perfil">
+            <div>
+              <p>Nome Completo: <js id="nomeDetalhes">Sem Dados!</js></p>
+              <p>Usuário: <js id="userDetalhes">Sem Dados!</js></p>
+              <p>Navegador: <js id="navigatorDetalhes"></js></p>
+              <p>Saldo: R$ <js id="saldoDetalhes">Sem Dados!</js></p>
+              <p>Sonhos: <js id="sonhosDetalhes">Sem Dados!</js></p>
+              <p>VirtualCoins(Moedas Virtuais): <js id="coinsDetalhes">Sem Dados!</js></p>
+              <p>Conta De Adiministrador: <js id="adminDetalhes">Sem Dados!</js></p>
+              <p>Token: <js id="tokenDetalhes">Sem Dados!</js></p>
+              <p>Chave Pix: <js id="pixDetalhes">Sem Dados!</js></p>
+              <p>Tipo da Chave Pix: <js id="pixTypeDetalhes">Sem Dados!</js></p>
+                <services>
+                  <h4>Serviços Prestados: </h4>
+                  <table>
+                  <tbody>
+                    <tr>  
+                      <th>Serviços Prestados</th>
+                      <th>Quantidade de Contribuição</th>
+                      <th>Quantidade Paga</th>
+                      <th>Total Pago (R$)</th>
+                      <th>Preço </th>
+                      <th>Status</th>
+                    </tr>
+                    <!-- Gerado automaticamente -->
+                  </tbody>
+                </table>
+              </services>
+            </div>
+          </user-detalhes>
           
         </tela>
 
@@ -42,7 +73,6 @@
 
   </body>
   <script src="/src/js/links.js" defer></script>
-  <script src="/user/conta/config.js" defer></script>
   <script src="/user/conta/detalhes.js" defer></script>
   <autoscripts>
     <script src="/src/js/load-scripts.js"></script>

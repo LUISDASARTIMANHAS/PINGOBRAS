@@ -7,6 +7,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="Refresh" content="120"> 
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Strict-Transport-Security" content="max-age=31536000; includeSubDomains; preload">
     <link rel="icon" href="https://cdn.glitch.global/b39d6a4a-0e14-4b41-930d-29d3ccd6c137/PINGOBRAS icon.png?v=1665177105635" >
     <links></links>
     <link rel="stylesheet" href="/user/style.css" />
@@ -20,50 +21,45 @@
   <body>
     <div class="site-altura">
       <div class="conteudo" role="main">
-        
-      
-    
-        <tela-editar-edital>
-          <h1>Editor e Reenvio de Edital</h1>
-    <form id="edital-form">
-        <label for="titulo">Título do Edital:</label>
-        <input type="text" 
+        <tela-edital>
+          <h1>Adicionar edital</h1>
+          <form id="editalForm">
+            <label for="byAdmin">Administrador:</label>
+            <input id="byAdmin"
+                   type="text"
+                   required
+                   name="byAdmin"
+                   placeholder="Nome do admin responsável">
+            
+            <label for="titulo">Título do Edital:</label>
+            <input type="text" 
                id="titulo" 
                name="titulo" 
                required
                placeholder="Recrutamento de Staffs">
-
-        <label for="dataTermino">Data de Término:</label>
-        <input type="date" 
-               id="dataTermino" 
-               name="dataTermino"
-               placeholder="31/12/20xx"
-               required>
-
-        <label for="descricao">Descrição:</label>
-        <textarea id="descricao" 
-                  name="descricao"
-                  required
-                  placeholder="Estamos em busca de profissionais criativos e experientes para impulsionar nossa presença online e promover nossos produtos de forma eficaz."
-                  rows="5">
-      </textarea>
-
-        <label for="status">Status:</label>
-        <select id="status" name="status">
-            <option value="Fechado">Fechado</option>
-            <option value="Aberto">Aberto</option>
-            <option value="Concluído">Concluído</option>
-        </select>
-
-        <label for="link">Link:</label>
-        <input type="url"
-               id="link" 
-               name="link"
-               placeholder="/">
-
-        <input type="submit" value="Salvar e Reenviar">
-    </form>
-        </tela-editar-edital>
+            
+            <label for="dataTermino">Data de Término:</label>
+            <input type="date" 
+                   id="dataTermino" 
+                   name="dataTermino"
+                   placeholder="31/12/20xx"
+                   required>
+            
+            <label for="descricao">Descrição:</label>
+            <textarea id="descricao" 
+                      name="descricao"
+                      required
+                      placeholder="Estamos em busca de profissionais criativos e experientes para impulsionar nossa presença online e promover nossos produtos de forma eficaz."
+                      rows="5">
+            </textarea>
+            
+            <button
+                    class="btn btn-primary"
+                    onclick="ClickMouseFUNCTIONS.play();adcionarEdital();">
+              Adicionar Edital
+            </button>
+          </form>
+        </tela-edital>
         
         
         <button 
@@ -82,6 +78,7 @@
     </footer>
   </body>
   <script src="https://pingobras.glitch.me/src/js/links.js" defer></script>
+  <script src="/user/admin/adicionar-edital.js" defer></script>
   <autoscripts>
     <script src="/src/js/load-scripts.js"></script>
   </autoscripts>

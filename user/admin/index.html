@@ -5,6 +5,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=0.7" />
     <meta http-equiv="Refresh" content="300">
+    <meta http-equiv="Strict-Transport-Security" content="max-age=31536000; includeSubDomains; preload">
     <link rel="icon" href="https://cdn.glitch.global/b39d6a4a-0e14-4b41-930d-29d3ccd6c137/PINGOBRAS icon.png?v=1665177105635" >
     <links></links>
     <link rel="stylesheet" href="/user/style.css" />
@@ -17,8 +18,17 @@
               hidden
               amarelo
               admin
-              onclick="redirectUrl('/user/admin/editar.html')">
-          Editar Editais
+              onclick="redirectUrl('/user/admin/adicionar=edital.html')">
+          Adicionar Editais
+      </button>
+      
+      <button  
+              class="btnNav"
+              hidden
+              amarelo
+              admin
+              onclick="redirectUrl('/user/admin/analytics')">
+          Sistema de Analytics
       </button>
       
       <button  
@@ -39,7 +49,7 @@
         
         <button
                 class="btn-pages"
-                onclick="redirectUrl('user/conta/detalhes.html')">
+                onclick="redirectUrl('/user/conta/detalhes.html')">
         Detalhes Da Conta
         </button>
         

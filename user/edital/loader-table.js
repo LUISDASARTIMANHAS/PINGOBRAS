@@ -15,7 +15,7 @@ fetch(url, options)
       return response.json();
     } else {
       throw new Error("Erro na solicitação, URL inválida ou fetch inválido");
-      return response.text()
+      return response.text();
     }
   })
   .then((data) => {
@@ -30,6 +30,8 @@ function errosLogin(error) {
 }
 
 function criarTabelaEdital(data) {
+  const dataUser = JSON.parse(localStorage.getItem("dataUser"));
+  const userLoad = dataUser.user;
   for (let i = 0; i < data.length; i++) {
     const edital = data[i];
     const editais = edital.edital;
@@ -37,8 +39,9 @@ function criarTabelaEdital(data) {
     const dataDeInicio = edital.dataDeInicio;
     const dataDeTermino = edital.dataDeTermino;
     const status = edital.status;
-    const inscritos = data[i].inscritos
-    console.log(inscritos)
+    const inscritos = edital.inscritos;
+    const inscrito = pesqInscrito(inscritos,userLoad)
+    console.log(inscritos);
 
     if (status == "Aberto" || status == "Fechado") {
       var trLine = document.createElement("tr");
@@ -48,23 +51,27 @@ function criarTabelaEdital(data) {
       var tdElementDataIni = document.createElement("td");
       var tdElementDataTerm = document.createElement("td");
       var tdElementStatus = document.createElement("td");
+      var tdElementInscricoes = document.createElement("td");
       var tdElementAcoes = document.createElement("td");
 
-      if (status == "Aberto") {
+      if ((status == "Aberto" )&& (inscrito == -1)) {
         aElement.innerHTML = "Inscrever Se";
-        aElement.setAttribute("onclick", "inscreverSe("+"'"+editais+"'"+")");
+        aElement.setAttribute("onclick", `inscreverSe("${editais}")`);
+        aElement.href = "#";
+      }else if(inscrito){
+        aElement.innerHTML = "Já Inscrito";
         aElement.href = "#";
       } else {
         aElement.innerHTML = "Ver";
         aElement.href = "edital/results.html";
       }
-
       tdElementEditais.innerHTML = editais;
       tdElementDescricao.innerHTML = descricao;
       tdElementDescricao.classList.add("info");
       tdElementDataIni.innerHTML = dataDeInicio;
       tdElementDataTerm.innerHTML = dataDeTermino;
       tdElementStatus.innerHTML = status;
+      tdElementInscricoes.innerHTML = `[${inscritos.length}]`;
       tdElementAcoes.classList.add("acoes");
       tdElementAcoes.appendChild(aElement);
 
@@ -73,9 +80,21 @@ function criarTabelaEdital(data) {
       trLine.appendChild(tdElementDataIni);
       trLine.appendChild(tdElementDataTerm);
       trLine.appendChild(tdElementStatus);
+      trLine.appendChild(tdElementInscricoes);
       trLine.appendChild(tdElementAcoes);
 
       tabela.appendChild(trLine);
     }
   }
+}
+
+function pesqInscrito(data, user) {
+  for (let i = 0; i < data.length; i++) {
+    const inscrito = data[i];
+
+    if (inscrito == user) {
+      return inscrito;
+    }
+  }
+  return -1
 }

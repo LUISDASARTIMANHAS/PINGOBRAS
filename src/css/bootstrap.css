@@ -1,5 +1,5 @@
 /* Our default values set as CSS variables */
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Mono&family=Poppins&family=Rubik&family=Secular+One&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+Mono&family=Poppins&family=Rubik&family=Secular+One&display=swap");
 /* 
 font-family: 'Noto Sans Mono', monospace;
 font-family: 'Poppins', sans-serif;
@@ -79,8 +79,15 @@ js {
 }
 [RGB] {
   transition: all 1s ease-out;
+  animation: animation-rgb 7s linear infinite;
 }
-
+[noselect],
+.copyright {
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
 button[disabled],
 .btn-disabled,
 [disabled],
@@ -90,11 +97,15 @@ fieldset[disabled] .disabled {
   -webkit-box-shadow: none;
   box-shadow: none;
   opacity: 0.65;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 /* ==================== header css ==================== */
 
-header{
+header {
   display: flex;
   justify-content: center;
 }
@@ -391,7 +402,7 @@ button {
   background-color: transparent;
   color: blue;
   width: 100%;
-  border:none;
+  border: none;
 }
 
 /* ==================== BUTTONS PRESETS ==================== */
@@ -461,48 +472,40 @@ button:hover,
 
 /* ==================== auto rgb ==================== */
 
-[rgb]{
-font-family: "Roboto",sans-serif, arial;
-animation: ani-rbg 5s infinite;
+[rgb] {
+  font-family: "Roboto", sans-serif, arial;
+  animation: ani-rbg 5s infinite;
 }
-.linear-gradient{
-font-family: "Roboto",sans-serif, arial;
-background-image: linear-gradient(60deg,red,blue,purple);
+.linear-gradient {
+  font-family: "Roboto", sans-serif, arial;
+  background-image: linear-gradient(60deg, red, blue, purple);
   animation: auto-deg 1s infinite linear;
 }
 
-@keyframes ani-rgb{
-  0%{
-    border-color: red;
+@keyframes animation-rgb {
+  0% {
     color: red;
   }
-  14%{
-    border-color: blue;
-    color: blue;
-  }
-  28%{
-    border-color: green;
-    color: green;
-  }
-  42%{
-    border-color: yellow;
-    color: yellow;
-  }
-  56%{
-    border-color: orange;
+  16% {
     color: orange;
   }
-  70%{
-    border-color: gray;
-    color: gray;
+  32% {
+    color: yellow;
   }
-  84%{
-    border-color: white;
-    color: white;
+  48% {
+    color: green;
   }
-  98%{
-    border-color: purple;
+  64% {
+    color: lightblue;
+  }
+  80% {
+    color: blue;
+  }
+  96% {
     color: purple;
+  }
+  100% {
+    color: red;
   }
 }
 a {
@@ -540,7 +543,7 @@ footer {
   padding: 40px;
   white-space: nowrap;
 }
-.footer-dev {  
+.footer-dev {
   display: flex;
   justify-content: space-between;
   margin: 1rem auto 0;
@@ -549,7 +552,7 @@ footer {
 }
 footer .load,
 footer div.load,
-footer js.load{
+footer js.load {
   width: 50px;
   height: 50px;
   border: 6px solid #e5e5e5;

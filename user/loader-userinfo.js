@@ -10,7 +10,6 @@ const jsElementUser = document.createElement("js");
 const jsElementSaldo = document.createElement("js");
 const jsElementSonhos = document.createElement("js");
 const jsElementCoins = document.createElement("js");
-const jsElementAdmin = document.createElement("js");
 
 
 // img presets
@@ -23,7 +22,6 @@ jsElementUser.id = "logado"
 jsElementSaldo.id = "saldo"
 jsElementCoins.id = "coins"
 jsElementSonhos.id = "sonhos"
-jsElementAdmin.id = "labelAdmin"
 
 // P presets
 pElementUser.innerHTML = "Usuário: "
