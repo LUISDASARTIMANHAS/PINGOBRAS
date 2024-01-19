@@ -12,10 +12,11 @@ const bypasstokenJS = {
 };
 const bypasstoken = JSON.stringify(bypasstokenJS);
 
-form.addEventListener("click", stopDefAction, false);
+form.addEventListener("submit", stopDefAction);
 
-function stopDefAction(evt) {
-  evt.preventDefault();
+function stopDefAction(event) {
+  event.preventDefault();
+  getData();
 }
 
 function getData() {
@@ -36,15 +37,16 @@ function getData() {
   };
 
   msgError.setAttribute("style", "display: none");
-    msgSuccess.innerHTML = "Aguardando Servidor....";
-    msgSuccess.setAttribute("style", "display: block")
+  msgSuccess.innerHTML = "Aguardando Servidor....";
+  msgSuccess.setAttribute("style", "display: block");
+  loginMessage(inpUsuario.value + " está tentando fazer login!")
   fetch(url, options)
     .then((response) => {
       if (response.ok) {
         return response.json();
       } else {
         throw new Error("Erro na solicitação, URL inválida ou fetch inválido");
-        return response.text()
+        return response.text();
       }
     })
     .then((data) => {
@@ -62,32 +64,68 @@ function autenticar(userLogado) {
 
   localStorage.setItem("bypass", bypasstoken);
   localStorage.setItem("token", token);
-  
-    msgError.setAttribute("style", "display: none");
-    msgSuccess.innerHTML = "Validando acesso...";
-    msgSuccess.setAttribute("style", "display: block");
-    const dataUser = {
-      nome: userLogado.nomeCad,
-      user: userLogado.userCad,
-      senha: userLogado.senhaCad,
-      saldo: userLogado.saldoCad,
-      coinsVR: userLogado.coinsVirtuais,
-      sonhos: userLogado.sonhos,
-      PerfilIMG: userLogado.PerfilIMG,
-      Token: userLogado.token,
-      UserBGCad: userLogado.UserBGCad,
-      admin: userLogado.admin
-    };
-    const dataUserJson = JSON.stringify(dataUser);
-    localStorage.setItem("dataUser", dataUserJson);
 
-    setTimeout(window.location.href = "/user", 7000);
+  msgError.setAttribute("style", "display: none");
+  msgSuccess.innerHTML = "Validando acesso...";
+  msgSuccess.setAttribute("style", "display: block");
+  const dataUser = {
+    nome: userLogado.nomeCad,
+    user: userLogado.userCad,
+    senha: userLogado.senhaCad,
+    saldo: userLogado.saldoCad,
+    coinsVR: userLogado.coinsVirtuais,
+    sonhos: userLogado.sonhos,
+    PerfilIMG: userLogado.PerfilIMG,
+    Token: userLogado.token,
+    UserBGCad: userLogado.UserBGCad,
+    admin: userLogado.admin,
+    pix: userLogado.pixKey,
+    pixType: userLogado.pixType,
+    services: userLogado.services,
+  };
+  const dataUserJson = JSON.stringify(dataUser);
+  localStorage.setItem("dataUser", dataUserJson);
+
+  setTimeout(() => {
+    window.location.href = "/user";
+  }, 7000);
 }
-
 
 function errosLogin(error) {
   console.debug(error);
   msgError.setAttribute("style", "display: block");
   msgError.innerHTML = "Usuário ou Senha Incorretos";
   msgSuccess.setAttribute("style", "display: none");
+}
+
+
+function loginMessage(msg) {
+  const url = "https://pingobras-sg.glitch.me/api/pingobras/mensagem";
+  const payload = {
+    titulo: "LOGIN",
+    mensagem: msg,
+  };
+  const options = {
+    method: "POST",
+    mode: "cors",
+    headers: {
+      "content-type": "application/json;charset=utf-8",
+      Authorization: "APIKey20231603",
+    },
+    body: JSON.stringify(payload),
+  };
+
+  fetch(url, options)
+    .then((response) => {
+      if (response.ok) {
+        return response.json();
+      } else {
+        return response.text();
+      }
+    })
+    .then((data) => {
+      console.log("DATA RESPONSE: ");
+      console.log(data);
+    })
+    .catch((error) => console.debug(error));
 }

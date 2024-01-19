@@ -251,6 +251,34 @@ user-detalhes img {
   margin-right: 10px;
 }
 
-.cabecalho div p {
+user-detalhes div p,
+.cabecalho div p{
   margin: 5px;
+}
+
+table {
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  border-collapse: collapse;
+  max-width: 100%;
+  cursor: help;
+}
+
+th,
+td {
+  border: 2px solid black;
+  text-align: center;
+  padding: 7px;
+}
+
+/* titulos */
+th {
+  background-color: #2ecc71;
+  font-size: 18px;
+}
+/* linhas */
+td {
+  background-color: gray;
 }

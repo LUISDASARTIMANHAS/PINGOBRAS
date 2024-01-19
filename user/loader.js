@@ -22,6 +22,10 @@ function loaderUserData() {
   const tokenLoad = dataUser.Token;
   const admin = dataUser.admin;
   const navg = navigator.appCodeName;
+  const pix = dataUser.pix;
+  const services = dataUser.services;
+  const editaisServices = services[0];
+  const analyticsServices = services[1];
 
   console.log("Carregando dados....");
   //account Setings

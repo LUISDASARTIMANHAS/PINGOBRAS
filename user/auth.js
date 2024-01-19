@@ -1,4 +1,4 @@
-const looptokenAuth = setInterval(refreshDesconect, 2000);
+setInterval(refreshDesconect, 2000);
 const bodyAuth = document.querySelector("body");
 const tokenAuth = localStorage.getItem("token");
 const headAuth = document.querySelector("nav");

@@ -56,6 +56,24 @@
                    required>
           </div>
           
+          <div class="form-group">            
+            <label for="pixType">Por favor selecione o tipo da chave pix</label>
+            <select id="pixType" required>
+              <option>Selecione uma opção</option>
+              <option value="email">Email</option>
+              <option value="telefone">Telefone</option>
+              <option value="aleatoria">Chave aleatória</option>
+            </select>
+            
+            <label for="pixKey">Chave Pix para saques do Usuário:</label>
+            <input type="text" 
+                   id="pixKey" 
+                   name="pixKey"
+                   autocomplete="current-pix"
+                   placeholder="Insira Chave Pix"
+                   required>
+          </div>
+          
           <div class="form-group">
             <label for="userBG">Cor de Fundo do Usuário:</label>
             <input type="text" 
@@ -69,13 +87,13 @@
             </div>
           </div>
 
-          <button onclick="atualizar()" type="submit">
+          <button>
           Salvar Configurações
           </button>
         </form>
            
           <h1>Trocar VirtualCoins</h1>
-          <form>
+          <form onsubmit="alert('indisponivel')">
             <label for="quantidade">Quantidade de Moedas:</label>
             <input type="number" 
                    min="160"
