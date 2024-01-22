@@ -3,7 +3,9 @@ const body = document.querySelector("body");
 const temaImg = document.getElementById("tema-Img");
 const d = new Date();
 const horas = d.getHours();
+if(btnAltTema){
 btnAltTema.addEventListener("click", alterarTema);
+}
 
 if(horas > 18 ||horas < 6 ){
   alterarTema()

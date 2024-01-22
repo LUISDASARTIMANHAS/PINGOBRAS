@@ -1,3 +1,7 @@
+const Subir = document.getElementById("back-to-top");
+const Descer = document.getElementById("jsDescer");
+const btnALL = document.querySelectorAll("button");
+const AreaDeTexto = document.getElementsByTagName("textarea");
 const WindowSongError1 = new Audio(
   "https://cdn.glitch.global/b39d6a4a-0e14-4b41-930d-29d3ccd6c137/Windows-error-song?v=1656019161212.mp3?v=1651870846885.mp3"
 );
@@ -7,12 +11,6 @@ const alarm = new Audio(
 const ClickMouseFUNCTIONS = new Audio(
   "https://cdn.glitch.global/b39d6a4a-0e14-4b41-930d-29d3ccd6c137/click%20do%20mouse.mp3?v=1661006466474"
 );
-const Subir = document.getElementById("back-to-top");
-const Descer = document.getElementById("jsDescer");
-let btnlistChangelogs = document.getElementById("btnlistChangelogs");
-var listChangelogs = document.getElementById("listChangelogs");
-const btnALL = document.querySelectorAll("button");
-let RGB;
 
 function mostrarsenha() {
   let inputSenha = document.getElementById("senha");
@@ -25,6 +23,18 @@ function mostrarsenha() {
     inputSenha.setAttribute("type", "password");
     inputSenha.placeholder = "****";
   }
+}
+
+btnALL.forEach((btn) => {
+  if (btn) {
+    console.log(btn);
+    addSoundClicker(btn);
+  }
+});
+for (let i = 0; i < AreaDeTexto.length; i++) {
+  AreaDeTexto[i].style.height = AreaDeTexto[i].scrollHeight;
+  AreaDeTexto[i].addEventListener("input", AoDigitar, false);
+  this.value = ""
 }
 
 function pageYT() {
@@ -40,20 +50,11 @@ function redirectUrl(url) {
   window.location.href = url;
 }
 
-function DESLOGAR() {
-  ClickMouseFUNCTIONS.play();
-  alert("usuario deslogado");
-  const tokenSair = "desconectado";
-  localStorage.setItem("ADMtoken", tokenSair);
-  alarm.play();
-  const myTimeout = setTimeout(REDIRECIONAR, 15000);
-  function REDIRECIONAR() {
-    window.location.href = "https://pingobras.glitch.me";
-  }
-  localStorage.setItem("bypass", "0");
+function FullScreen(){
+  document.documentElement.requestFullscreen();
 }
 
-//Events listener
+//======================= Events listener =====================
 if (Subir) {
   Subir.addEventListener("click", function () {
     ClickMouseFUNCTIONS.play();
@@ -69,36 +70,16 @@ if (Descer) {
   });
 }
 
-function Rgb() {
-  if (RGB) {
-    setTimeout(vermelho, 1000);
-    setTimeout(laranja, 2000);
-    setTimeout(amarelo, 3000);
-    setTimeout(verde, 4000);
-    setTimeout(azulClaro, 5000);
-    setTimeout(azul, 6000);
-    setTimeout(roxo, 7000);
-  }
-  function vermelho() {
-    RGB.style.color = "red";
-  }
-  function laranja() {
-    RGB.style.color = "orange";
-  }
-  function amarelo() {
-    RGB.style.color = "yellow";
-  }
-  function verde() {
-    RGB.style.color = "green";
-  }
-  function azulClaro() {
-    RGB.style.color = "lightblue";
-  }
-  function azul() {
-    RGB.style.color = "blue";
-  }
-  function roxo() {
-    RGB.style.color = "purple";
-    Rgb();
-  }
+
+function AoDigitar() {
+  console.warn("Redimensionamento Automático Ativado!")
+  this.style.height = 0;
+  this.style.height = (this.scrollHeight +20) + "px";
+}
+
+function addSoundClicker(button) {
+  button.addEventListener("click", () => {
+    ClickMouseFUNCTIONS.play();
+    console.log("Clicou no botão!");
+  });
 }
