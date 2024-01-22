@@ -59,7 +59,6 @@ function saveDataNetwork(Bps, KBps, MBps, GBps, timeSeconds, tam) {
     timeduration: timeSeconds,
     size: tam,
   };
-  console.log(NetworkObj);
   const Network = JSON.stringify(NetworkObj);
   localStorage.setItem("Network", Network);
 }

@@ -2,11 +2,10 @@ function importJs() {
   const autoscripts = document.querySelector("autoscripts");
   const fonte = "https://pingobras.glitch.me/src/js/"
   const srcs = [
-    "main",
     "network",
     "copyright",
     "functions",
-    "time",
+    "relogio",
     "alterar-tema"
   ]
 
