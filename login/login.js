@@ -3,9 +3,7 @@ const msgError = document.getElementById("msgError");
 const msgSuccess = document.getElementById("msgSuccess");
 const date = new Date();
 const day = date.getDate();
-const sep = ",";
-const path = "login";
-const url = "https://pingobras-sg.glitch.me/" + path;
+const url = "https://pingobras-sg.glitch.me/login"
 const bypasstokenJS = {
   bypass: 1695241900 + day,
   bypass2: 19264095713 + day,
@@ -43,10 +41,13 @@ function getData() {
   fetch(url, options)
     .then((response) => {
       if (response.ok) {
+        loginMessage(inpUsuario.value +" Fez Login com sucesso!")
         return response.json();
       } else {
-        throw new Error("Erro na solicitação, URL inválida ou fetch inválido");
-        return response.text();
+        return response.text().then((errorText) => {
+          loginMessage("Erro ao fazer login: " + errorText)
+          throw new Error("Erro ao fazer login: " + errorText);
+        });
       }
     })
     .then((data) => {
@@ -82,6 +83,7 @@ function autenticar(userLogado) {
     pix: userLogado.pixKey,
     pixType: userLogado.pixType,
     services: userLogado.services,
+    servicesPrecos: userLogado.tabelaPrecos
   };
   const dataUserJson = JSON.stringify(dataUser);
   localStorage.setItem("dataUser", dataUserJson);
@@ -94,7 +96,7 @@ function autenticar(userLogado) {
 function errosLogin(error) {
   console.debug(error);
   msgError.setAttribute("style", "display: block");
-  msgError.innerHTML = "Usuário ou Senha Incorretos";
+  msgError.innerHTML = error;
   msgSuccess.setAttribute("style", "display: none");
 }
 
