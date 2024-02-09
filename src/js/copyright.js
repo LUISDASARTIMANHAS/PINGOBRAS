@@ -1,6 +1,6 @@
-const loopcopy = setInterval(refreshcopy, 10000);
+setTimeout(loaderCopy, 10000);
 
-function refreshcopy() {
+function loaderCopy() {
 let ano = new Date().getFullYear();  
 let navegadorLang = navigator.language;
 const direitos = document.querySelector("#direitos");

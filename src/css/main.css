@@ -133,6 +133,7 @@ button:hover {
   align-items: center;
   font-style: italic;
   font-size: 20px;
+  justify-content:center;
   background: green;
 }
 .btn-voltar {
@@ -446,7 +447,7 @@ input {
   outline: none;
   min-width: 50%;
 }
-textarea{
+textarea {
   width: 95%;
   margin: 10px;
   border-radius: 25px;
@@ -548,6 +549,14 @@ tela {
   border-radius: 25px;
   text-align: center;
   white-space: normal;
+}
+tela label {
+  font-size: 18px;
+  font-style: italic;
+  margin: 5px;
+}
+tela p {
+  margin: 5px;
 }
 .form-group {
   display: flex;
@@ -840,11 +849,9 @@ barraicon {
 header {
   display: flex;
   justify-content: center;
-  padding: 7px;
   width: 100%;
   overflow: hidden;
   background-color: #808080;
-  margin-bottom: 20px;
 }
 barraicon a {
   float: left; /* Float links side by side */

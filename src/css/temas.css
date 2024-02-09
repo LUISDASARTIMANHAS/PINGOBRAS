@@ -8,6 +8,11 @@ body.modo-escuro {
   color: white;
 }
 
+body.modo-escuro tela{
+  background-color: #212121;
+  color: white;
+}
+
 .modo-escuro .produto {
   background-color: #a8a8a8;
 }
