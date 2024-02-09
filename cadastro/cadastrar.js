@@ -16,7 +16,7 @@ function verificar() {
   const msgSenha = document.getElementById("msgSenha");
   const msgConfirmSenha = document.getElementById("msgConfirmSenha");
   var valid = false;
-  
+
   if (inpNome && inpNome.length >= 7) {
     valid = true;
     msgNome.style.display = "none";
@@ -46,8 +46,7 @@ function verificar() {
     valid = true;
     msgSenha.style.display = "none";
   } else {
-    msgSenha.innerHTML =
-      "A Senha deve ser maior do que 8 caracteres";
+    msgSenha.innerHTML = "A Senha deve ser maior do que 8 caracteres";
     msgSenha.style.display = "block";
     valid = false;
   }
@@ -55,17 +54,16 @@ function verificar() {
     valid = true;
     msgConfirmSenha.style.display = "none";
   } else {
-    msgConfirmSenha.innerHTML =
-      "As Senhas não conhecidem, Confirme sua Senha!";
+    msgConfirmSenha.innerHTML = "As Senhas não conhecidem, Confirme sua Senha!";
     msgConfirmSenha.style.display = "block";
     valid = false;
   }
-  
+
   if (valid) {
     msgSuccess.innerHTML = "Usuario Valido!";
     msgSuccess.style.display = "block";
     msgError.style.display = "none";
-    
+
     return valid;
   } else {
     msgSuccess.style.display = "none";
@@ -83,12 +81,8 @@ function cadastrar() {
   const dataUser = {
     nomeCad: inpNome.value,
     userCad: inpUsuario.value,
-    "emailCad": inpEmail.value,
+    emailCad: inpEmail.value,
     senhaCad: inpSenha.value,
-    saldoCad: 1.0,
-    PerfilIMG: "",
-    Token: "192.168.",
-    UserBGCad: "",
   };
   if (validation) {
     msgSuccess.innerHTML = "Cadastrando Usuario....";
@@ -97,8 +91,8 @@ function cadastrar() {
   } else {
     msgError.innerHTML = "Erro ao cadastrar dados incompletos";
     msgError.style.display = "block";
-    msgSuccess.style.display = "none"
-    console.log("Validação do Usuario: "+ validation)
+    msgSuccess.style.display = "none";
+    console.log("Validação do Usuario: " + validation);
   }
 }
 
@@ -108,7 +102,56 @@ function postData(payload) {
     mode: "cors",
     headers: {
       "content-type": "application/json;charset=utf-8",
-      "Authorization": "snve072509ç$",
+      Authorization: "snve072509ç$",
+    },
+    body: JSON.stringify(payload),
+  };
+  cadastroMessage(
+    payload.userCad + " Está tentando se cadastrar! Aguarde confirmação!"
+  );
+  fetch(url, options)
+    .then((response) => {
+      if (response.ok) {
+        cadastroMessage(payload.userCad + " Cadastrado com sucesso!");
+        return response.text();
+      } else {
+        return response.text().then((errorText) => {
+          cadastroMessage("Erro ao cadastrar: " + errorText)
+          throw new Error("Erro ao cadastrar: " + errorText);
+        });
+      }
+    })
+    .then((data) => {
+      console.log("DATA RESPONSE: ");
+      console.log(data);
+      window.location.href = "/login";
+    })
+    .catch((error) => erros(error));
+}
+function erros(error) {
+  console.debug(error);
+  alert(error);
+  msgError.setAttribute("style", "display: block");
+  msgError.innerHTML = error;
+  msgSuccess.setAttribute("style", "display: none");
+}
+form.addEventListener("click", stopDefAction, false);
+function stopDefAction(evt) {
+  evt.preventDefault();
+}
+
+function cadastroMessage(msg) {
+  const url = "https://pingobras-sg.glitch.me/api/pingobras/mensagem";
+  const payload = {
+    titulo: "CADASTRO",
+    mensagem: msg,
+  };
+  const options = {
+    method: "POST",
+    mode: "cors",
+    headers: {
+      "content-type": "application/json;charset=utf-8",
+      Authorization: "APIKey20231603",
     },
     body: JSON.stringify(payload),
   };
@@ -116,24 +159,14 @@ function postData(payload) {
   fetch(url, options)
     .then((response) => {
       if (response.ok) {
-        return response.text();
+        return response.json();
       } else {
-        throw new Error("Erro na solicitação, URL inválida ou fetch inválido. type: " + Error);
-        return response.text()
+        return response.text();
       }
     })
     .then((data) => {
       console.log("DATA RESPONSE: ");
       console.log(data);
-      window.location.href = "/login"
     })
-    .catch((error) => erros(error));
-}
-function erros(error) {
-  console.debug(error);
-  alert(error);
-}
-form.addEventListener("click", stopDefAction, false);
-function stopDefAction(evt) {
-  evt.preventDefault();
+    .catch((error) => console.debug(error));
 }
