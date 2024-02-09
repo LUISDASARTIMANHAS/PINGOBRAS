@@ -11,23 +11,23 @@
     <link rel="stylesheet" href="/user/blog/blog.css" />
     
     <title>PINGOBRAS BLOG</title>
-    <nav class="cabecalho">
-      
-      <button 
-              class="btnNav"
-              id="btnfilms"
-              onclick="redirectUrl('blog/criar-postagem.html')"
-              target="_blank">
-        Criar Postagem
-      </button>
-      <!--        Gerado automaticamente -->
-    </nav>
   </head>
-  
   <body>
-    <div class="site-altura">
-      <div class="conteudo" role="main">
-        
+    <header>
+      <nav class="cabecalho-user">
+
+        <button 
+                class="btnNav"
+                id="btnfilms"
+                onclick="redirectUrl('blog/criar-postagem.html')"
+                target="_blank">
+          Criar Postagem
+        </button>
+        <!--        Gerado automaticamente -->
+      </nav>
+    </header>
+    <main>
+      
        <tela-posts id="postList">
          <h1>Postagens</h1>
          <div class="loading">
@@ -42,8 +42,9 @@
           Voltar
         </button>
         
+    </main>
                 
-</div> </div>
+
     <footer class="footer">  
        <div id="direitos" class="direitos">
          <div class="loading ">

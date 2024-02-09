@@ -5,11 +5,13 @@ const novoUsuario = document.getElementById("user");
 const novaImgPerfil = document.getElementById("avatar");
 const novoBgColor = document.getElementById("userBG");
 const previewBG = document.getElementById("previewBG");
-const pixKey = document.getElementById("pixKey");
-const pixType = document.getElementById("pixType");
+const previewIMG = document.getElementById("previewIMG");
+const previewPixKey = document.getElementById("pixKey");
+const previewPixType = document.getElementById("pixType");
 
 form.addEventListener("submit", stopDefAction);
 novoBgColor.addEventListener("keyup", preview);
+novaImgPerfil.addEventListener("keyup", preview);
 
 // banco de dados
 var userLoad = dataUserConfig.user;
@@ -17,6 +19,7 @@ var senhaLoad = dataUserConfig.senha;
 var imgLoad = dataUserConfig.PerfilIMG;
 var backgroundLoad = dataUserConfig.UserBGCad;
 var pix = dataUserConfig.pix;
+var pixType = dataUserConfig.pixType;
 var services = dataUserConfig.services;
 var editaisServices = services[0];
 var analyticsServices = services[1];
@@ -26,10 +29,13 @@ novoUsuario.value = userLoad;
 novaImgPerfil.value = imgLoad;
 novoBgColor.value = backgroundLoad;
 previewBG.style.background = backgroundLoad;
-pixKey.value = pix
+previewIMG.src = imgLoad
+previewPixKey.value = pix
+previewPixType.value = pixType
 
 function preview() {
   previewBG.style.background = novoBgColor.value;
+  previewIMG.src = novaImgPerfil.value
 }
 
 function atualizar() {

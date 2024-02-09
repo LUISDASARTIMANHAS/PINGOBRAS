@@ -1,4 +1,5 @@
 const baseName = document.getElementById("baseName");
+const simulacao = document.getElementById("Simulacao");
 const bitcoins = document.getElementById("bitcoins");
 const money = document.getElementById("money");
 const reputacao = document.getElementById("rep");
@@ -16,16 +17,18 @@ form.addEventListener("submit", (event) => {
 });
 
 function validar() {
-  const baseNameValue = baseName.value;
   const bitcoinsValue = bitcoins.value;
   const moneyValue = money.value;
   const repValue = reputacao.value;
-  let urlReplayValue;
+  var baseNameValue = baseName.value;
+  var urlReplayValue = urlReplay.value;
+
+  if (simulacao.checked) {
+    baseNameValue = baseName.value + " " + simulacao.value;
+  }
 
   if (noUrl.checked) {
     urlReplayValue = noUrl.value;
-  } else {
-    urlReplayValue = urlReplay.value;
   }
 
   if (

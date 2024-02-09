@@ -14,55 +14,32 @@
   </head>
   <body>
     <header>
-       <nav class="cabecalho-user">
-         <button 
-                class="btnNav"
-                disabled
-                id="btnVideoplayer"
-                onclick="redirectUrl('user/conta/fundos.html')">
-          Sacar/Adicionar Fundos
-        </button>
-
-         <button 
-                class="btnNav"
-                onclick="redirectUrl('/user/conta/services.html')">
-          Configurações de Serviços
-        </button>
-  <!--        Gerado automaticamente -->
+      <nav class="cabecalho-user">
+    <!--        Gerado automaticamente -->
       </nav>
-    </header>
+    </header> 
     <main>
-        
-      <tela>
-        <h1>Configuração da Conta do Usuário</h1>
+    
+        <tela>
+        <h1>Configuração de Serviços do usuário </h1>
         <form id="form">
 
           <div class="form-group">        
-            <label for="user">Nome de Usuário:</label>
-            <input type="text" 
-                   id="user" 
-                   autocomplete="username"
-                   name="user" 
+            <label for="user">Editais</label>
+             <input type="checkbox"
                    required>
           </div>
 
           <div class="form-group">
-            <label for="senha">Nova Senha:</label>
-            <input type="password" 
-                   id="senha" 
-                   autocomplete="current-password"
-                   name="senha" 
+            <label for="senha">Analitycs:</label>
+             <input type="checkbox"
                    required>
           </div>
 
           <div class="form-group">
-            <label for="avatar">URL do PerfilIMG:</label>
-            <input type="text" 
-                   id="avatar" 
-                   name="avatar" 
+            <label for="avatar">Atendimento:</label>
+             <input type="checkbox"
                    required>
-            <label for="senha">Pré-visualizar </label>
-            <img id="previewIMG" src="/" alt="Imagem que aparece no perfil"/>
           </div>
           
           <div class="form-group">            
@@ -92,7 +69,7 @@
                    placeholder="Insira uma cor em inglês ou hexadecimal. #333333 ou gray"
                    required>
             <div id="previewBG">
-              Pré-visualizar 
+              previsualizar
             </div>
           </div>
 
@@ -100,31 +77,17 @@
           Salvar Configurações
           </button>
         </form>
-           
-          <h1 hidden>Trocar VirtualCoins</h1>
-          <form hidden onsubmit="alert('indisponivel')">
-            <label for="quantidade">Quantidade de Moedas:</label>
-            <input type="number" 
-                   min="160"
-                   max="10000"
-                   id="quantidade" 
-                   name="quantidade" 
-                   value="160"
-                   placeholder="Digite a quantidade de coins que deseja trocar em sonhos"
-                   required>
-            <button type="submit">Trocar</button>
-          </form>
         </tela>
 
            <button 
              class="btnFixedLeft"
-             onclick="redirectUrl('/user')">
+             onclick="redirectUrl('/user/conta')">
           Voltar
         </button>
         
     </main>
-        
-
+    
+    
     <footer class="footer">    
       <div id="direitos" class="direitos">
       <div class="loading ">        
@@ -135,7 +98,7 @@
 
   </body>
   <script src="/src/js/links.js" defer></script>
-  <script src="/user/conta/config.js" defer></script>
+  <script src="/user/conta/services.js" defer></script>
   <autoscripts>
     <script src="/src/js/load-scripts.js"></script>
   </autoscripts>

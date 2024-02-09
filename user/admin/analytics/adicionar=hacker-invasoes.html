@@ -20,7 +20,7 @@
     <meta name="googlebot" content="index, follow, snippet, noarchive" />
     <meta property="og:title" content="Hackers" />
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="http://hackersthegame.com" />
+    <meta property="og:url" content="https://hackersthegame.com" />
     <meta
       property="og:image"
       content="https://hackersthegame.com/images/screens/Hackers_Screenshot_00.jpg"/>
@@ -65,12 +65,22 @@
             Nome da base:
           </label>
           <input
-          type="text"
-          name="base-name"
-          id="baseName"
-          placeholder="Insira o nome da base atacante"
-          required>
+                 type="text"
+                 name="base-name"
+                 id="baseName"
+                 placeholder="Insira o nome da base atacante"
+                 required>
 
+          <div class="control">
+            <input
+                   type="checkbox"
+                   value="[SIMULAÇÃO]"
+                   id="Simulacao">
+            <label for="Simulacao">
+             E uma Simulação
+            </label>
+          </div>
+          
           <label for="Rep">
             Reputação:
           </label>
@@ -105,21 +115,24 @@
           placeholder="Insira a quantidade de biticoins adquirido"
           required>
 
-          <label for="replay-url">
-            Link de replay:
-          </label>
-          <input
-          type="url"
-          name="replay-url"
-          id="url"
-          placeholder="Insira o url de replay">
-          <label for="no-replay-url">
-            Sem Link de replay
-          </label>
-          <input name="no-replay-url"
-                 type="checkbox"
-                 value="./hackers"
-                 id="noUrl">
+            <label for="replay-url">
+              Link de replay:
+            </label>
+            <input
+                   type="url"
+                    name="replay-url"
+                    id="url"
+                    placeholder="Insira o url de replay">
+            
+          <div class="control">
+            <input
+                   type="checkbox"
+                   value="./hackers"
+                   id="noUrl">
+            <label for="noUrl">
+              Sem Link de replay
+            </label>
+          </div>
 
           <button class="btn btn-enviar" type="submit">
             Enviar

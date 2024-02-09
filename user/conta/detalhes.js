@@ -31,6 +31,7 @@ function renderizarDetalhes() {
   const pix = dataUser.pix;
   const pixType = dataUser.pixType;
   const services = dataUser.services;
+  const tabelaPrecos = dataUser.servicesPrecos
 
   // img presets
   if (imgLoad) {
@@ -54,6 +55,7 @@ function renderizarDetalhes() {
   pixTypeLabel.textContent = pixType || "Não Selecionado";
   for (let i = 0; i < services.length; i++) {
     const service = services[i];
+    const serviceTabelaPreco = tabelaPrecos[i]
     var trLine = document.createElement("tr");
     var tdElementService = document.createElement("td");
     var tdElementServiceQtdeContr = document.createElement("td");
@@ -65,8 +67,8 @@ function renderizarDetalhes() {
     tdElementService.textContent = service.name;
     tdElementServiceQtdeContr.textContent = service.qtde;
     tdElementServiceQtdePaga.textContent = service.pago;
-    tdElementServiceTotalPago.textContent = service.pago * service.preco;
-    tdElementServicePreco.textContent = service.preco;
+    tdElementServiceTotalPago.textContent = service.pago * serviceTabelaPreco.preco;
+    tdElementServicePreco.textContent = serviceTabelaPreco.preco;
     tdElementServiceStatus.textContent = service.status;
 
     trLine.appendChild(tdElementService);
@@ -133,6 +135,7 @@ function reloadDataUser() {
         pixType: data.pixType,
         pix: data.pixKey,
         services: data.services,
+        servicesPrecos: data.tabelaPrecos
       };
       const newDataUserJson = JSON.stringify(newDataUser);
       localStorage.setItem("dataUser", newDataUserJson);

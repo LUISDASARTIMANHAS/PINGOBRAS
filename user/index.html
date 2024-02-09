@@ -25,57 +25,56 @@
     
     <title>PINGOBRAS ACCOUNT</title>
     
-    <nav class="cabecalho">
-      <button  
-              class="btnNav"
-              onclick="redirectUrl('user/conta')">
-          Configurar Conta
-      </button>
-      
-      <button
-              class="btnNav" 
-              onclick="redirectUrl('user/edital')">
-        Editais!
-      </button>
-      
-      <button 
-              class="btnNav"
-              onclick="redirectUrl('user/blog')"
-              target="_blank">
-        Blog dos usuarios
-      </button>
-      
-      <a class="btn-open-chat btnNav"
-         hidden
-         href="/jogos">
-      <img
-          style="justify-content: left;"
-          src="https://cdn-icons-png.flaticon.com/512/180/180527.png"
-          alt="JOGOS GRATUITOS"
-          height="27px"/>
-      Jogos Online
-      </a>
-      
-      <button 
-              class="btnNav"
-              id="btnVideoplayer"
-              onclick="pageYT()">
-        Youtube Embutir Video
-      </button>
-      
-      <button 
-              class="btnNav"
-              onclick="">
-        Chat
-      </button>
-
-    </nav>
   </head>
-  
   <body>
-    <div class="site-altura">
-      <div class="conteudo" role="main">   
-        
+    <header>
+      <nav class="cabecalho-user">
+        <button  
+                class="btnNav"
+                onclick="redirectUrl('user/conta')">
+            Configurar Conta
+        </button>
+
+        <button
+                class="btnNav" 
+                onclick="redirectUrl('user/edital')">
+          Editais!
+        </button>
+
+        <button 
+                class="btnNav"
+                onclick="redirectUrl('user/blog')"
+                target="_blank">
+          Blog dos usuarios
+        </button>
+
+        <a class="btn-open-chat btnNav"
+           hidden
+           href="/jogos">
+        <img
+            style="justify-content: left;"
+            src="https://cdn-icons-png.flaticon.com/512/180/180527.png"
+            alt="JOGOS GRATUITOS"
+            height="27px"/>
+        Jogos Online
+        </a>
+
+        <button 
+                class="btnNav"
+                id="btnVideoplayer"
+                onclick="pageYT()">
+          Youtube Embutir Video
+        </button>
+
+        <button 
+                class="btnNav"
+                onclick="">
+          Chat
+        </button>
+
+      </nav>
+    </header>
+    <main>
         <button
                 class="btn-pages"
                 onclick="redirectUrl('user/conta/detalhes.html')">
@@ -103,9 +102,9 @@
                 onclick="redirectUrl('https://pingobras-find-color.glitch.me/')">
         CONHEÇA O FIND COLOR!
         </button>
+    </main>
         
                 
-</div> </div>
     <footer class="footer">  
       <div id="direitos" class="direitos">
       <div class="loading ">        

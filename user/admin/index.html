@@ -1,4 +1,4 @@
-<html lang="PT">
+<html lang="pt-BR">
 
   <head>
 
@@ -11,51 +11,56 @@
     <link rel="stylesheet" href="/user/style.css" />
     
     <title>PINGOBRAS ADMIN</title>
-    
-    <nav class="cabecalho">
-      <button  
-              class="btnNav"
-              hidden
-              amarelo
+  </head>
+  <body>
+    <header>
+      <nav class="cabecalho-user">
+        <button  
+                class="btnNav"
+                hidden
+                amarelo
+                admin
+                onclick="redirectUrl('/user/admin/analytics')">
+            Sistema de Analytics
+        </button>
+
+        <button  
+                class="btnNav"
+                hidden
+                amarelo
+                admin
+                onclick="redirectUrl('/user/admin/payments')">
+            Sistema de Pagamentos
+        </button>
+
+      </nav>
+    </header>
+    <main>
+      <button
               admin
+              hidden
+              class="btn-pages"
               onclick="redirectUrl('/user/admin/adicionar=edital.html')">
-          Adicionar Editais
-      </button>
-      
-      <button  
-              class="btnNav"
-              hidden
-              amarelo
-              admin
-              onclick="redirectUrl('/user/admin/analytics')">
-          Sistema de Analytics
-      </button>
-      
-      <button  
-              class="btnNav"
-              hidden
-              amarelo
-              admin
-              onclick="redirectUrl('/user/admin/restaurar.html')">
-          Restaurar Contas
+      Adicionar Editais
       </button>
 
-    </nav>
-  </head>
-  
-  <body>
-    <div class="site-altura">
-      <div class="conteudo" role="main">   
+      <button
+              admin
+              hidden
+              class="btn-pages"
+              onclick="redirectUrl('/user/admin/restaurar.html')">
+      Restaurar Contas
+      </button>
+
+      <button
+              class="btn-pages"
+              onclick="redirectUrl('/user/conta/detalhes.html')">
+      Detalhes Da Conta
+      </button>
+      
+    </main>  
         
-        <button
-                class="btn-pages"
-                onclick="redirectUrl('/user/conta/detalhes.html')">
-        Detalhes Da Conta
-        </button>
-        
-        
-                
-</div> </div>
+             
     <footer class="footer">  
       <div id="direitos" class="direitos">
       <div class="loading ">        
