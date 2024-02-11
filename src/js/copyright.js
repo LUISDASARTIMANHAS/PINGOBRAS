@@ -9,7 +9,7 @@
     const scriptUnpkgNoModuleElement = document.createElement("script")
     const members = [
         "Pingobras S.A",
-        "Guilherme Antonio",
+        "Guilherme Antônio",
     ]
     const contatoDB = [
         {
@@ -35,17 +35,13 @@
     ]
     let textMembers = "&copy; LUIS DAS ARTIMANHAS"
 
-
-    scriptUnpkgElement.setAttribute("type", "module")
-    scriptUnpkgNoModuleElement.setAttribute("nomodule", "");
-    scriptUnpkgElement.setAttribute("src", "https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js");
-    scriptUnpkgNoModuleElement.setAttribute("src", "https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js");
-
     for (let i = 0; i < members.length; i++) {
         const membro = members[i];
         textMembers = textMembers + ` &amp; ${membro}`
     }
 
+    // config dos meios de contato
+    divContatoElement.setAttribute("class", "contato")
     for (let i = 0; i < contatoDB.length; i++) {
         const contato = contatoDB[i];
         const aElement = document.createElement("a")
@@ -60,6 +56,11 @@
         divContatoElement.appendChild(aElement)
     }
 
+    scriptUnpkgElement.setAttribute("type", "module")
+    scriptUnpkgNoModuleElement.setAttribute("nomodule", "");
+    scriptUnpkgElement.setAttribute("src", "https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js");
+    scriptUnpkgNoModuleElement.setAttribute("src", "https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js");
+
     //reset do direitos para remover loadings
     direitos.innerHTML = ""
 
@@ -68,14 +69,10 @@
     pAllReservedElement.innerHTML = "&copy; Todos os Direitos Reservados &reg;"
     pMembersElement.innerHTML = textMembers
 
-    // config dos meios de contato
-
     divDevElement.setAttribute("class", "devs")
     divDevElement.appendChild(h4Element)
     divDevElement.appendChild(pMembersElement)
     divDevElement.appendChild(pAllReservedElement)
-
-    divContatoElement.setAttribute("class", "contato")
 
     direitos.appendChild(divDevElement)
     direitos.appendChild(divContatoElement)
