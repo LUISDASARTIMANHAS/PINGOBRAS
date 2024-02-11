@@ -1,42 +1,85 @@
-setTimeout(loaderCopy, 10000);
+(function () {
+    const direitos = document.getElementById("direitos")
+    const divDevElement = document.createElement("div")
+    const divContatoElement = document.createElement("div")
+    const h4Element = document.createElement("h4")
+    const pMembersElement = document.createElement("p")
+    const pAllReservedElement = document.createElement("p")
+    const scriptUnpkgElement = document.createElement("script")
+    const scriptUnpkgNoModuleElement = document.createElement("script")
+    const members = [
+        "Pingobras S.A",
+        "Guilherme Antonio",
+    ]
+    const contatoDB = [
+        {
+            "text": "luis_das_artimanhas@gmail",
+            "logo": "mail-outline",
+            "href": "mailto:luisaugustodesouza785@gmail.com"
+        },
+        {
+            "text": "Fale Conosco",
+            "logo": "logo-whatsapp",
+            "href": "https://wa.me/55027995744791"
+        },
+        {
+            "text": "Github",
+            "logo": "logo-github",
+            "href": "https://gihub.com/LUISDASARTIMANHAS"
+        },
+        {
+            "text": "Linkedin",
+            "logo": "logo-linkedin",
+            "href": ""
+        }
+    ]
+    let textMembers = "&copy; LUIS DAS ARTIMANHAS"
 
-function loaderCopy() {
-let ano = new Date().getFullYear();  
-let navegadorLang = navigator.language;
-const direitos = document.querySelector("#direitos");
-const footer = document.querySelector("footer")
-  
-if(!direitos){
-const newDireitos = document.createElement("div");
-const att = document.createAttribute("id");
-att.value = "direitos"
 
-newDireitos.setAttributeNode(att);  
-footer.appendChild(newDireitos);
-}else{  
-  
-direitos.classList.add("direitos")
-direitos.innerHTML = "<p class=copyright>"+ "Desenvolvedores:"+
-"<br>"+
-"©LUIS_DAS_ARTIMANHAS" + "&" + "DOUGLAS_PG 2010-" + ano +" "+ navegadorLang+
-"<br>"+
-"Todos os direitos reservados" +
-"<br>"+
-"<a links target=_blank href=mailto:luisaugustodesouza785@gmail.com>" + "luis_das_artimanhas@gmail" + "</a>"+
-"<br>"+
-"<a href=https://wa.me/55027995744791 target=_blank>" +
-"<i class=fa id=WA>" + "Fale conosco!" + "</i>" + "</a>" +
- "<link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css>" +
-"</p>" 
-const wa = document.getElementById("WA");
-wa.classList.add("fa-whatsapp");
+    scriptUnpkgElement.setAttribute("type", "module")
+    scriptUnpkgNoModuleElement.setAttribute("nomodule", "");
+    scriptUnpkgElement.setAttribute("src", "https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js");
+    scriptUnpkgNoModuleElement.setAttribute("src", "https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js");
 
-"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/107.0.0.0 Safari/537.36"  
-let block = ""
-let user = navigator.userAgent
-if(user == block){
-alert("USER BLOCKED")
-window.location.href = "https://google.com"}
-}
-  
-}//Fim do refreshCopy
+    for (let i = 0; i < members.length; i++) {
+        const membro = members[i];
+        textMembers = textMembers + ` &amp; ${membro}`
+    }
+
+    for (let i = 0; i < contatoDB.length; i++) {
+        const contato = contatoDB[i];
+        const aElement = document.createElement("a")
+        const ionIconElement = document.createElement("ion-icon")
+
+        aElement.setAttribute("href", contato.href)
+        aElement.target = "_blank"
+        ionIconElement.name = contato.logo
+        ionIconElement.textContent = contato.text
+
+        aElement.appendChild(ionIconElement)
+        divContatoElement.appendChild(aElement)
+    }
+
+    //reset do direitos para remover loadings
+    direitos.innerHTML = ""
+
+    // config dos devs
+    h4Element.textContent = "Desenvolvedores:"
+    pAllReservedElement.innerHTML = "&copy; Todos os Direitos Reservados &reg;"
+    pMembersElement.innerHTML = textMembers
+
+    // config dos meios de contato
+
+    divDevElement.setAttribute("class", "devs")
+    divDevElement.appendChild(h4Element)
+    divDevElement.appendChild(pMembersElement)
+    divDevElement.appendChild(pAllReservedElement)
+
+    divContatoElement.setAttribute("class", "contato")
+
+    direitos.appendChild(divDevElement)
+    direitos.appendChild(divContatoElement)
+    direitos.appendChild(scriptUnpkgElement)
+    direitos.appendChild(scriptUnpkgNoModuleElement)
+
+}) ();
