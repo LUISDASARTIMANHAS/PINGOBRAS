@@ -562,6 +562,40 @@ footer js.load {
   animation: roda 1.5s infinite;
 }
 
+
+.direitos {
+    font-size: 18px;
+    color: yellow;
+    text-align: center;
+    border: none;
+    cursor: help;
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.direitos .devs h4 {
+    font-size: 20px;
+    color: orange;
+}
+
+.direitos .contato {
+    color: white;
+    font-size: 30px;
+    gap: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+    width: 50%
+}
+
+.direitos .contato a {
+    color: white;
+}
+
 @keyframes roda {
   to {
     transform: rotate(360deg);
