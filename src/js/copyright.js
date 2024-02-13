@@ -1,4 +1,6 @@
-(function () {
+setTimeout(loaderCopy,5000);
+
+function loaderCopy() {
     const direitos = document.getElementById("direitos")
     const divDevElement = document.createElement("div")
     const divContatoElement = document.createElement("div")
@@ -7,6 +9,8 @@
     const pAllReservedElement = document.createElement("p")
     const scriptUnpkgElement = document.createElement("script")
     const scriptUnpkgNoModuleElement = document.createElement("script")
+    const scriptAvaliacaoElement = document.createElement("script")
+
     const members = [
         "Pingobras S.A",
         "Guilherme Antônio",
@@ -25,7 +29,7 @@
         {
             "text": "Github",
             "logo": "logo-github",
-            "href": "https://gihub.com/LUISDASARTIMANHAS"
+            "href": "https://github.com/LUISDASARTIMANHAS"
         },
         {
             "text": "Linkedin",
@@ -60,6 +64,7 @@
     scriptUnpkgNoModuleElement.setAttribute("nomodule", "");
     scriptUnpkgElement.setAttribute("src", "https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js");
     scriptUnpkgNoModuleElement.setAttribute("src", "https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js");
+    scriptAvaliacaoElement.setAttribute("src","https://guilhermeantonioo.github.io/site-teste/src/js/script.js")
 
     //reset do direitos para remover loadings
     direitos.innerHTML = ""
@@ -78,5 +83,6 @@
     direitos.appendChild(divContatoElement)
     direitos.appendChild(scriptUnpkgElement)
     direitos.appendChild(scriptUnpkgNoModuleElement)
+    direitos.appendChild(scriptAvaliacaoElement)
 
-}) ();
+}
