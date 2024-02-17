@@ -110,6 +110,30 @@ header {
   justify-content: center;
   width: 100%;
 }
+
+body {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  padding: 0;
+  margin: 0;
+  align-items: center;
+  box-sizing: border-box;
+  justify-content: space-around;
+  min-height: 100vh;
+}
+
+main {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  width: 100%;
+  padding: 0px;
+  overflow: auto;
+  min-height: 50vh;
+}
+
 .cabecalho {
   display: block;
   position: static;
