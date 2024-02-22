@@ -125,11 +125,12 @@ body {
 
 main {
   display: flex;
-  flex-direction: row;
-  justify-content: space-around;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
   flex-wrap: wrap;
   width: 100%;
-  padding: 0px;
+  padding: 10px;
   overflow: auto;
   min-height: 50vh;
 }
