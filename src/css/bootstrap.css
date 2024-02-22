@@ -299,6 +299,31 @@ info strong {
   margin-left: 25%;
 }
 
+/* ==================== Table css ==================== */
+
+table {
+  border-collapse: collapse;
+  color: white;
+  max-width: 100%;
+}
+
+/* bordas */
+th,
+td {
+  border: 2px solid black;
+  text-align: center;
+  padding: 7px;
+}
+
+/* titulos */
+th {
+  background-color: green;
+}
+/* linhas */
+td {
+  background-color: #34495e;
+}
+
 /* ==================== buttons css ==================== */
 
 button {
