@@ -1,6 +1,41 @@
-function importJs() {
+(() => {
+  const url = "/src/data/info.json";
+  const options = {
+    method: "GET",
+    mode: "cors",
+    headers: {
+      "content-type": "application/json;charset=utf-8",
+    },
+  };
+
+  fetch(url, options)
+    .then((response) => {
+      if (response.ok) {
+        return response.json();
+      } else {
+        return response.text().then((errorText) => {
+          throw new Error("Erro ao fazer buscar hostname: " + errorText);
+        });
+      }
+    })
+    .then((data) => {
+      // console.log("DATA RESPONSE: ");
+      // console.log(data.hostname);
+      importJs(data);
+    })
+    .catch((error) => onErrorHostname(error));
+
+  function onErrorHostname(error) {
+    console.debug(error);
+  }
+})();
+
+
+function importJs(data) {
   const autoscripts = document.querySelector("autoscripts");
-  const fonte = "https://pingobras.glitch.me/src/js/"
+  const hostname = data.hostname || "betapingobras.glitch.me" || "pingobras.glitch.me"
+  const protocol = document.location.protocol
+  const fonte = `${protocol}//${hostname}/src/js/`
   const srcs = [
     "network",
     "copyright",
@@ -20,5 +55,5 @@ function importJs() {
 
     console.log("Carregando script: " + link)
   }
+
 }
-importJs();

@@ -125,11 +125,12 @@ body {
 
 main {
   display: flex;
-  flex-direction: row;
-  justify-content: space-around;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
   flex-wrap: wrap;
   width: 100%;
-  padding: 0px;
+  padding: 10px;
   overflow: auto;
   min-height: 50vh;
 }
@@ -296,6 +297,31 @@ info strong {
   text-align: center;
   width: 50%;
   margin-left: 25%;
+}
+
+/* ==================== Table css ==================== */
+
+table {
+  border-collapse: collapse;
+  color: white;
+  max-width: 100%;
+}
+
+/* bordas */
+th,
+td {
+  border: 2px solid black;
+  text-align: center;
+  padding: 7px;
+}
+
+/* titulos */
+th {
+  background-color: green;
+}
+/* linhas */
+td {
+  background-color: #34495e;
 }
 
 /* ==================== buttons css ==================== */
