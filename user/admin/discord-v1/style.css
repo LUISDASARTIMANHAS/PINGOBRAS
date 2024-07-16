@@ -1,0 +1,13 @@
+form {
+    background: gray;
+    padding: 20px;
+    overflow: hidden;
+    border-radius: 25px;
+    text-transform: capitalize;
+    text-align: center;
+    font-weight: 500;
+    white-space: normal;
+    color: white;
+    max-width: 50%;
+    margin-top: 100px;
+}

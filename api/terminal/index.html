@@ -1,0 +1,93 @@
+  <!DOCTYPE html>
+  <html lang="pt-BR">
+
+  <head>
+
+    <meta charset="utf-8" />
+    <!-- <meta http-equiv="Refresh" content="120"> -->
+    <meta name="viewport" content="width=device-width, initial-scale=0.7" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Strict-Transport-Security" content="max-age=31536000; includeSubDomains; preload">
+
+    <link rel="icon" href="https://cdn.glitch.global/b39d6a4a-0e14-4b41-930d-29d3ccd6c137/PINGOBRAS icon.png?v=1665177105635" />
+    <links></links>
+     <link href="/api/style.css" rel="stylesheet">
+    <seo>
+    <meta name="robots" content="index,follow" />
+    <meta property="og:title" content="PINGOBRAS API TERMINAL" />
+    <meta property="og:type" content="terminal" />
+    <meta property="og:url" content="pingobras.glitch.me/api/terminal" />
+    <meta
+      property="og:description"
+      content="TERMINAL PARA TESTES DE ROTAS DE API EM MODO GET OU POST. DELETE, PUT EM BREVE!"/>
+      <meta
+      property="og:image"
+      content="https://cdn.glitch.global/b39d6a4a-0e14-4b41-930d-29d3ccd6c137/PINGOBRAS icon.png?v=1665177105635"/>
+    <meta name="twitter:card" content="summary" />
+    </seo>
+    <title>PINGOBRAS API TERMINAL</title>
+
+  </head>
+  <body>
+    <main>
+  
+      <terminal>
+        <header>
+          <p>Api Terminal</p>
+          <input id="url" type="url" placeholder="Insira o link da api (/discord/webhook/v1)"/>
+          <button>
+            Enviar (POST)
+          </button>
+          <button onclick="terminalGetData()">
+            Obter (GET)
+          </button>
+          <button onclick="cls()">
+            CLS (CLEAR)
+          </button>
+          <button class="close">
+            X
+          </button>
+        </header>
+        PINGOBRAS TERMINAL [versão 0.0.51]
+        (c) PINGOBRAS S.A. Todos os direitos reservados.
+        
+        C:\Users\Public>Payload = {
+          <js id="payload">null</js>
+          }
+        options = {
+          mode: "cors",
+          headers: {
+            "content-type": "application/json;charset=utf-8",
+          },
+          body: JSON.stringify(payload),
+      };
+
+        C:\Users\Public>_ <js id="output"></js>
+          
+      <input type="text" placeholder="Insira o payload {user:'admin'}"/>
+      </terminal>
+      
+
+
+      </main>
+    <footer>
+    <div id="direitos" class="direitos">
+      <div class="loading ">
+        <p class="load "></p>
+      </div>
+      </div>
+      </footer>
+  </body>
+
+    <scripts>
+      <script src="/api/terminal/commands.js"></script>
+      <script src="/api/terminal/get.js"></script>
+      <script src="/src/js/links.js"></script>
+    </scripts>
+    <autoscripts>
+    <script src="/src/js/load-scripts.js"></script>
+    </autoscripts>
+    <host>
+    <script src="/src/js/load-host.js" defer></script>
+    </host>
+  </html>

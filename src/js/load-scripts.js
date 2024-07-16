@@ -41,7 +41,8 @@ function importJs(data) {
     "copyright",
     "functions",
     "relogio",
-    "alterar-tema"
+    "alterar-tema",
+    "telemetry"
   ]
 
 
@@ -53,7 +54,7 @@ function importJs(data) {
     newScript.setAttribute('src', link);
     autoscripts.appendChild(newScript)
 
-    console.log("Carregando script: " + link)
+    console.log(`%c [SISTEMA]: Carregando script: ${link}`,"color: #ff00ff");
   }
 
 }

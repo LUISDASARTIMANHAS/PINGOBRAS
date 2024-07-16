@@ -1,0 +1,11 @@
+User-agent: *
+Disallow: /admin/
+Disallow: /user/
+Disallow: /src/
+Disallow: /ifes/
+Disallow: /experimental/
+Disallow: /api/
+Allow: /
+Allow: /status/
+Allow: /upload/
+Allow: /openttd/
