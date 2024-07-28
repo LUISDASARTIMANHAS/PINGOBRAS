@@ -10,5 +10,5 @@ var newScriptHost = document.createElement('script');
 newScriptHost.setAttribute('src',srcsHost[i]);
 scriptsHost.appendChild(newScriptHost)
   
-console.log(" Novo host: " + srcsHost[i])
+console.log(`%c [SISTEMA]: Novo host: ${srcsHost[i]}`,"color: #00ccff")
 }

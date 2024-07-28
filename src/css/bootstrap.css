@@ -81,6 +81,11 @@ js {
   transition: all 1s ease-out;
   animation: animation-rgb 7s linear infinite;
 }
+.load.rgb {
+  font-family: "Roboto", sans-serif, arial;
+  animation: animation-rgb-roda 5s infinite, roda 1.5s infinite;
+}
+
 [noselect],
 .copyright {
   -moz-user-select: none;
@@ -135,19 +140,6 @@ main {
   min-height: 50vh;
 }
 
-.cabecalho {
-  display: block;
-  position: static;
-  top: 0;
-  padding: 5px;
-  width: 100%;
-  border: 3px solid black;
-  z-index: 1;
-  height: auto;
-  max-width: 100%;
-  background: repeating-linear-gradient(45deg, purple, #00b489);
-}
-
 @media (max-width: 820px) {
   .cabecalho {
     position: absolute;
@@ -171,35 +163,6 @@ main {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-}
-conteudo,
-.index {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  margin-top: 30%;
-}
-.site-altura {
-  min-height: var(--wrapper-altura);
-  display: grid;
-  place-items: center;
-  min-width: 50%;
-  width: 100%;
-}
-.conteudo {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-}
-/* Instructions */
-.instructions {
-  margin: 1rem auto 0;
 }
 /* .info {
   background: white;
@@ -533,6 +496,33 @@ button:hover,
   animation: auto-deg 1s infinite linear;
 }
 
+
+@keyframes animation-rgb-roda {
+   0% {
+    border-top-color: red;
+  }
+  16% {
+    border-top-color: orange;
+  }
+  32% {
+    border-top-color: yellow;
+  }
+  48% {
+    border-top-color: green;
+  }
+  64% {
+    border-top-color: lightblue;
+  }
+  80% {
+    border-top-color: blue;
+  }
+  96% {
+    border-top-color: purple;
+  }
+  100% {
+    border-top-color: red;
+  }
+}
 @keyframes animation-rgb {
   0% {
     color: red;

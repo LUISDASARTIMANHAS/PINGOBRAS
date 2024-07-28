@@ -30,30 +30,41 @@
   }
 })();
 
-
 function importJs(data) {
   const autoscripts = document.querySelector("autoscripts");
-  const hostname = data.hostname || "betapingobras.glitch.me" || "pingobras.glitch.me"
-  const protocol = document.location.protocol
-  const fonte = `${protocol}//${hostname}/src/js/`
+  const hostname =
+    data.hostname || "betapingobras.glitch.me" || "pingobras.glitch.me";
+  const protocol = document.location.protocol;
+  const fonte = `${protocol}//${hostname}/src/js/`;
   const srcs = [
     "network",
     "copyright",
     "functions",
     "relogio",
-    "alterar-tema"
-  ]
+    "alterar-tema",
+    // "telemetry",
+  ];
+  const srcsLib = [
+    "https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js",
+  ];
+  
+  for (let i = 0; i < srcsLib.length; i++) {
+    var newScriptLib = document.createElement("script");
 
+    newScriptLib.setAttribute("src", srcsLib[i]);
+    autoscripts.appendChild(newScriptLib);
 
-  for (let i = 0; i < srcs.length; i++) {
-    const src = srcs[i]
-    const link = fonte + src + ".js"
-    var newScript = document.createElement('script');
-
-    newScript.setAttribute('src', link);
-    autoscripts.appendChild(newScript)
-
-    console.log("Carregando script: " + link)
+    console.log(`%c [SISTEMA]: Nova Lib: ${srcsLib[i]}`, "color: #ffa500");
   }
 
+  for (let i = 0; i < srcs.length; i++) {
+    const src = srcs[i];
+    const link = fonte + src + ".js";
+    var newScript = document.createElement("script");
+
+    newScript.setAttribute("src", link);
+    autoscripts.appendChild(newScript);
+
+    console.log(`%c [SISTEMA]: Carregando script: ${link}`, "color: #ff00ff");
+  }
 }

@@ -9,27 +9,8 @@
       http-equiv="Strict-Transport-Security"
       content="max-age=31536000; includeSubDomains; preload"
     />
-    <meta
-      name="facebook-domain-verification"
-      content="5da4hjczxl3wnumkz30k61lujgzlhn"
-    />
-    <meta
-      name="google-site-verification"
-      content="RXOOkRrcAO1f6M-pu7LMHDg4miYaPhet6TmSum_4ZWM"
-    />
-    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-    <meta
-      name="keywords"
-      content="IFES, CEFETES"
-    />
-    <meta
-      name="description"
-      content="Portal para visualizações de horários, ₢Creditos ao Instituto Federal de Educação, Ciência e Tecnologia do Espírito Santo."
-    />
+    
     <link href="https://ifes.edu.br/templates/padraogoverno01/favicon-96x96.png" rel="icon" type="image/png" sizes="96x96">
-    <meta
-      property="og:image"
-      content="https://ifes.edu.br/templates/padraogoverno01/favicon-96x96.png"/>
     <links></links>
 
     <link
@@ -195,15 +176,36 @@
         <!-- fim .sobre -->
       </div>
     </header>
-    <main style="display: flex">
-      <table>
-        <tbody>
-          <div id="loadingTable" class="loading">
-            <p class="load rgb"></p>
-          </div>
-          <!-- Gerado automaticamente -->
-        </tbody>
-      </table>
+    <main style="display:flex;">
+      
+      <form id="form">
+        <label>Dia</label>
+        <select required>
+          <option value="">Selecione um dia</option>
+          <option value="Segunda">Segunda</option>
+          <option value="Terça">Terça</option>
+          <option value="Quarta">Quarta</option>
+          <option value="Quinta">Quinta</option>
+          <option value="Sexta">Sexta</option>
+        </select>
+        
+        <label>Horarios</label>
+        <select required>
+          <option value="">Selecione um horário</option>
+<!--           Carregado automaticamente -->
+        </select>
+        
+        <label>Nova Materia</label>
+        <input type="text"
+               required>
+        
+        <br>
+        
+        <button type="submit">
+          Atualizar
+        </button>
+      </form>
+      
     </main>
     <footer>
       <div id="direitos" class="direitos">
@@ -213,12 +215,11 @@
       </div>
     </footer>
     <scripts>
-      <script src="/ifes/table-render.js" defer></script>
-      <script src="./src/js/index.js" defer></script>
-      <script src="./src/js/links.js" defer></script>
+      <script src="/src/js/index.js" defer></script>
+      <script src="/src/js/links.js" defer></script>
     </scripts>
     <autoscripts>
-      <script src="./src/js/load-scripts.js"></script>
+      <script src="/src/js/load-scripts.js"></script>
     </autoscripts>
     <host>
       <script src="/src/js/load-host.js" defer></script>
