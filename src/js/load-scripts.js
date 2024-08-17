@@ -37,6 +37,8 @@ function importJs(data) {
   const protocol = document.location.protocol;
   const fonte = `${protocol}//${hostname}/src/js/`;
   const srcs = [
+    "window.cache",
+    "manutencao-redirect",
     "network",
     "copyright",
     "functions",

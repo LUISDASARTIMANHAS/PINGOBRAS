@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Informações do Canal do YouTube</title>
+</head>
+<body>
+    <h1>Buscar Informações do Canal do YouTube</h1>
+    <label for="channelId">ID do Canal:</label>
+    <input type="text" id="channelId" placeholder="Insira o ID do canal">
+    <button id="fetchStatsBtn">Buscar Estatísticas</button>
+    <div id="result"></div>
+    <script src="script.js"></script>
+    <script> 
+function beforeUnloadListener(event) {
+  event.preventDefault();
+  return event.returnValue = 'Are you sure you want to exit?';
+};
+
+// A function that invokes a callback when the page has unsaved changes.
+onPageHasUnsavedChanges(() => {
+  window.addEventListener('beforeunload', beforeUnloadListener);
+});
+
+// A function that invokes a callback when the page's unsaved changes are resolved.
+onAllChangesSaved(() => {
+  window.removeEventListener('beforeunload', beforeUnloadListener);
+});
+    </script>
+</body>
+</html>
