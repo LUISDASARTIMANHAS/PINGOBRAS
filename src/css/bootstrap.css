@@ -77,6 +77,10 @@ js {
   padding: 4px;
   border: 2px solid black;
 }
+[required]:after {
+  content: " *";
+  color: red;
+}
 [RGB] {
   transition: all 1s ease-out;
   animation: animation-rgb 7s linear infinite;
