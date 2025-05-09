@@ -1,0 +1,122 @@
+/* Dashboard Base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Orbitron', sans-serif;
+    background-color: #1f2833;
+    color: #c5c6c7;
+}
+
+.dashboard-container {
+    display: flex;
+}
+
+.sidebar {
+    background-color: #0b0c10;
+    width: 250px;
+    padding: 20px;
+    height: 100vh;
+}
+
+.sidebar .logo {
+    font-size: 24px;
+    color: #66fcf1;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.sidebar ul {
+    list-style: none;
+}
+
+.sidebar ul li {
+    margin: 20px 0;
+}
+
+.sidebar ul li a {
+    color: #c5c6c7;
+    text-decoration: none;
+    font-size: 18px;
+    display: block;
+    transition: 0.3s;
+    padding: 10px;
+}
+
+.sidebar ul li a:hover {
+    background-color: #45a29e;
+    color: #000;
+    border-radius: 5px;
+}
+
+.main-content {
+    flex-grow: 1;
+    padding: 40px;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.header h1 {
+    font-size: 36px;
+    color: #66fcf1;
+}
+
+.user-info {
+    font-size: 18px;
+}
+
+.dashboard-section {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+}
+
+.card {
+    background-color: rgba(31, 40, 51, 0.9);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 0 15px rgba(102, 252, 241, 0.2);
+    text-align: center;
+}
+
+.card h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.card ul {
+    list-style: none;
+    padding: 0;
+}
+
+.card ul li {
+    margin: 10px 0;
+    background-color: #1f2833;
+    padding: 10px;
+    border-radius: 8px;
+}
+
+.card button {
+    padding: 8px 16px;
+    background-color: #66fcf1;
+    color: #000;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.card button:hover {
+    background-color: #45a29e;
+}
+
+#usuarios-link {
+    display: none; /* Inicialmente escondido */
+}

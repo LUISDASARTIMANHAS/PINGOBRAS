@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="/minecraftbrasil/senado/dashboard/dashboard.css">
+</head>
+<body>
+
+    <div class="dashboard-container">
+        <!-- Barra lateral -->
+        <nav class="sidebar">
+            <div class="logo">Senado Galáctico</div>
+            <ul>
+                <li><a href="#">Início</a></li>
+                <li><a href="/minecraftbrasil/senado/dashboard/votacoes">Votações</a></li>
+                <li><a href="#">Configurações</a></li>
+                <li><a href="#">Relatórios</a></li>
+                <li><a href="/minecraftbrasil/senado">Sair</a></li>
+            </ul>
+        </nav>
+
+        <!-- Conteúdo principal -->
+         <main class="main-content">
+            <header class="header">
+                <h1>Bem-vindo ao Dashboard</h1>
+                <div class="user-info">
+                    <p>Olá, <span id="user-role">Usuário</span></p> <!-- Role exibido aqui -->
+                </div>
+            </header>
+
+            <!-- Seções do Dashboard -->
+            <section class="dashboard-section">
+                <div class="card">
+                    <h3>Votações em Andamento</h3>
+                    <p>3</p>
+                </div>
+
+                <div class="card">
+                    <h3>Votos Registrados</h3>
+                    <p>150</p>
+                </div>
+            </section>
+           <section class="dashboard-section">
+                <div class="card">
+                    <h3>Usuários</h3>
+                    <div id="usuarios-section">
+                        <!-- Lista de usuários será carregada aqui -->
+                        <button id="add-user-btn" class="btn">Adicionar Usuário</button>
+                        <ul id="usuarios-list">
+                            <!-- Lista de usuários será exibida aqui -->
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+    </div>
+
+    <script src="/minecraftbrasil/senado/dashboard/dashboard.js"></script>
+</body>
+</html>

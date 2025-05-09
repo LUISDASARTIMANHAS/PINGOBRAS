@@ -1,0 +1,102 @@
+/* Configuração Geral */
+body {
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+    background: linear-gradient(135deg, #121212, #1e1e1e);
+    color: #fff;
+    margin: 0;
+    padding: 0;
+}
+
+/* Cabeçalho */
+header {
+    background: #181818;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    font-size: 20px;
+}
+
+/* Seções */
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px;
+}
+
+/* Estilização das seções */
+section {
+    background: #222;
+    padding: 20px;
+    width: 90%;
+    max-width: 500px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+    margin: 15px 0;
+}
+
+/* Listas */
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+ul li {
+    background: #333;
+    padding: 10px;
+    margin: 8px 0;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: background 0.3s;
+}
+
+ul li:hover {
+    background: #444;
+}
+
+/* Inputs e Formulários */
+input {
+    width: 90%;
+    padding: 12px;
+    margin: 10px 0;
+    border-radius: 5px;
+    border: none;
+    background: #2a2a2a;
+    color: white;
+    font-size: 16px;
+    outline: none;
+    transition: all 0.3s;
+}
+
+input:focus {
+    background: #333;
+    box-shadow: 0 0 8px rgba(255, 136, 0, 0.8);
+}
+
+/* Botão Estilizado */
+button {
+    width: 95%;
+    padding: 12px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 5px;
+    background: linear-gradient(90deg, #ff8800, #ff5500);
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+button:hover {
+    background: linear-gradient(90deg, #ff5500, #ff2200);
+    transform: scale(1.05);
+    box-shadow: 0 0 12px rgba(255, 85, 0, 0.6);
+}
+
+/* Mensagem de feedback */
+#mensagem {
+    font-weight: bold;
+    margin-top: 15px;
+    font-size: 16px;
+}

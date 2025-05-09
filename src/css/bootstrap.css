@@ -81,12 +81,7 @@ js {
   content: " *";
   color: red;
 }
-[RGB] {
-  transition: all 1s ease-out;
-  animation: animation-rgb 7s linear infinite;
-}
 .load.rgb {
-  font-family: "Roboto", sans-serif, arial;
   animation: animation-rgb-roda 5s infinite, roda 1.5s infinite;
 }
 
@@ -489,11 +484,11 @@ button:hover,
 }
 
 /* ==================== auto rgb ==================== */
-
-[rgb] {
-  font-family: "Roboto", sans-serif, arial;
-  animation: ani-rbg 5s infinite;
+[RGB] {
+  transition: all 1s ease-out;
+  animation: animation-rgb 7s linear infinite;
 }
+
 .linear-gradient {
   font-family: "Roboto", sans-serif, arial;
   background-image: linear-gradient(60deg, red, blue, purple);
@@ -597,9 +592,8 @@ footer {
   width: 100%;
   color: white;
 }
-footer .load,
-footer div.load,
-footer js.load {
+
+.load{
   width: 50px;
   height: 50px;
   border: 6px solid #e5e5e5;
