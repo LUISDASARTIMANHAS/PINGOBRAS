@@ -22,6 +22,7 @@ form {
   overflow: hidden;
   border-bottom: 7px solid white;
   font-size: 18px;
+  width: 100%;
 }
 [inline] {
   display: inline;
@@ -30,20 +31,24 @@ form {
   display: none !important;
 }
 teladelogin {
-  text-align:center;
-  margin: 50px auto;
-  overflow: hidden;
-  display: block;
-  padding: 15px;
-  padding-top: 80px;
-  background: black;
-  justify-content: center;
-  align-items: center;
-  width: 75%;
-  border-radius: 25px;
-  z-index: 2;
-  color: white;
-  font-size: 18px;
+    display: flex;
+    text-align: center;
+    margin: 50px auto;
+    overflow: hidden;
+    /* display: block; */
+    padding: 15px;
+    padding-top: 80px;
+    background: black;
+    justify-content: center;
+    align-items: center;
+    width: 75%;
+    border-radius: 25px;
+    z-index: 2;
+    color: white;
+    font-size: 18px;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: center;
 }
 .msg {
   text-align: center;

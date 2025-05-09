@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teste de WebSocket</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f4f9;
+        }
+        .container {
+            text-align: center;
+            padding: 20px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            background-color: white;
+        }
+        input[type="text"], input[type="url"] {
+            width: 80%;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        .output {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #f1f1f1;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            height: 150px;
+            overflow-y: auto;
+            white-space: pre-wrap;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Teste de WebSocket</h1>
+    <div>
+        <label for="wsUrl">URL do WebSocket:</label>
+        <input type="url" id="wsUrl" placeholder="wss://exemplo.com" oninput="checkAndConnect()">
+    </div>
+    
+    <div class="output" id="output">
+        <strong>Mensagens recebidas:</strong>
+        <div id="messages"></div>
+    </div>
+</div>
+
+<script>
+    let socket;
+
+    // Função chamada a cada vez que o campo URL é alterado
+    function checkAndConnect() {
+        const wsUrl = document.getElementById('wsUrl').value;
+
+        // Verifica se a URL começa com "ws://" ou "wss://"
+        if (wsUrl.startsWith('ws://') || wsUrl.startsWith('wss://')) {
+            // Se já houver uma conexão anterior, fecha
+            if (socket && socket.readyState === WebSocket.OPEN) {
+                socket.close();
+            }
+
+            // Conectar ao WebSocket
+            socket = new WebSocket(wsUrl);
+
+            socket.onopen = () => {
+                appendMessage("✅ Conectado ao WebSocket!");
+               
+                    socket.send("Ping");
+                    appendMessage(`Você enviou: Ping`);
+              
+            };
+
+            socket.onmessage = (event) => {
+                appendMessage("📩 Mensagem recebida do servidor:", event.data);
+            };
+
+            socket.onerror = (error) => {
+                appendMessage("⚠️ Erro na conexão WebSocket:", error);
+            };
+
+            socket.onclose = () => {
+                appendMessage("❌ Conexão com o servidor WebSocket encerrada.");
+                setTimeout(function () {
+                  appendMessage("Tentando Novamente");
+                  checkAndConnect()
+              },5000)
+            };
+        }
+    }
+
+    // Função para exibir as mensagens recebidas na interface
+    function appendMessage(message) {
+        const messagesDiv = document.getElementById('messages');
+        const messageElement = document.createElement('div');
+        messageElement.textContent = message;
+        messagesDiv.appendChild(messageElement);
+    }
+</script>
+
+</body>
+</html>

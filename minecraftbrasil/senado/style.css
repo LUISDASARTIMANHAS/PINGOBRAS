@@ -1,0 +1,94 @@
+/* Fonte futurista */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
+
+body {
+    margin: 0;
+    font-family: 'Orbitron', sans-serif;
+    background: linear-gradient(135deg, #0b0c10, #1f2833, #0b0c10);
+    background-size: 400% 400%;
+    animation: gradientMove 15s ease infinite;
+    color: #c5c6c7;
+}
+
+@keyframes gradientMove {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+header {
+    position: sticky;
+    top: 0;
+    background: rgba(15, 15, 20, 0.8);
+    backdrop-filter: blur(10px);
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.7);
+    z-index: 10;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 26px;
+    color: #66fcf1;
+}
+
+/* Botões de login como links */
+nav a.login-btn {
+    margin-left: 10px;
+    padding: 8px 18px;
+    background-color: #45a29e;
+    border-radius: 20px;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.4s;
+    box-shadow: 0 0 8px #45a29e;
+}
+
+nav a.login-btn:hover {
+    background-color: #66fcf1;
+    color: black;
+    box-shadow: 0 0 15px #66fcf1;
+}
+
+main {
+    padding: 40px 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+#abas {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 30px;
+    gap: 15px;
+}
+
+#abas button {
+    background-color: #1f2833;
+    border: 2px solid #66fcf1;
+    border-radius: 15px;
+    padding: 12px 24px;
+    color: #c5c6c7;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+    box-shadow: 0 0 8px #45a29e;
+}
+
+#abas button:hover {
+    background-color: #45a29e;
+    color: black;
+    box-shadow: 0 0 15px #66fcf1;
+}
+
+#conteudo {
+    background-color: rgba(31, 40, 51, 0.9);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 0 15px rgba(102, 252, 241, 0.2);
+}

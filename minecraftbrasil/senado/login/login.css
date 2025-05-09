@@ -1,0 +1,166 @@
+/* Fonte futurista */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
+
+/* Configurações Globais */
+body {
+    font-family: 'Orbitron', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #0b0c10, #1f2833, #0b0c10); /* Gradiente do padrão */
+    background-size: 400% 400%;
+    animation: gradientMove 15s ease infinite;
+    color: #c5c6c7;
+}
+
+/* Animação de Gradiente */
+@keyframes gradientMove {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Header */
+header {
+    position: sticky;
+    top: 0;
+    background: rgba(15, 15, 20, 0.8);
+    backdrop-filter: blur(10px);
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.7);
+    z-index: 10;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 26px;
+    color: #66fcf1; /* Azul padrão */
+}
+
+/* Botões de Login (Links) */
+nav a.login-btn {
+    margin-left: 10px;
+    padding: 8px 18px;
+    background-color: #45a29e; /* Verde padrão */
+    border-radius: 20px;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.4s;
+    box-shadow: 0 0 8px #45a29e;
+}
+
+nav a.login-btn:hover {
+    background-color: #66fcf1; /* Azul de destaque */
+    color: black;
+    box-shadow: 0 0 15px #66fcf1;
+}
+
+/* Formatação para Login */
+.login-section {
+    background-color: rgba(31, 40, 51, 0.9); /* Fundo com leve transparência */
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+    margin: 0 auto;
+}
+
+h2 {
+    color: #66fcf1; /* Azul como título */
+    font-size: 24px;
+    margin-bottom: 30px;
+    font-weight: bold;
+}
+
+/* Estilo do Formulário */
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Label do Formulário */
+label {
+    font-size: 14px;
+    margin-bottom: 8px;
+    text-align: left;
+    color: #ccc; /* Cor suave para o texto */
+}
+
+/* Campos de Input */
+input[type="email"],
+input[type="text"],
+input[type="password"] {
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 2px solid #444;
+    border-radius: 5px;
+    background-color: #333; /* Fundo escuro */
+    color: #fff;
+    font-size: 16px;
+    outline: none;
+    transition: border 0.3s ease;
+}
+
+input[type="email"]:focus,
+input[type="text"]:focus,
+input[type="password"]:focus {
+    border-color: #66fcf1; /* Azul no foco */
+}
+
+/* Botão de Submissão */
+button[type="submit"] {
+    padding: 15px;
+    background-color: #45a29e; /* Verde padrão */
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 10px;
+}
+
+button[type="submit"]:hover {
+    background-color: #66fcf1; /* Azul de destaque */
+}
+
+/* Erros nos Campos */
+input[type="email"].error,
+input[type="text"].error,
+input[type="password"].error {
+    border-color: #ff3333; /* Vermelho para erro */
+}
+
+button[type="submit"].error {
+    background-color: #ff3333;
+    color: #fff;
+}
+
+button[type="submit"].error:hover {
+    background-color: #ff1a1a;
+}
+
+/* Formulário de Código (mostrar/ocultar) */
+.hidden {
+    display: none;
+}
+
+/* Animar Transições */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.login-section {
+    animation: fadeIn 0.8s ease-out;
+}

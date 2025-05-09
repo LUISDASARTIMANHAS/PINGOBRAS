@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=0.7, user-scalable=no">
+    <meta charset="UTF-8">
+    <meta http-equiv="Refresh" content="180"> 
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Strict-Transport-Security" content="max-age=31536000; includeSubDomains; preload">
+    <link rel="icon" href="https://cdn.glitch.global/b39d6a4a-0e14-4b41-930d-29d3ccd6c137/PINGOBRAS icon.png?v=1665177105635" >
+    <links></links>
+    <link rel="stylesheet" href="/user/style.css" />
+    <link rel="stylesheet" href="discord-v1/style.css">
+
+    <title>SISTEMA DE API WEBHOOK DISCORD</title>
+  </head>
+  <body>
+    <header>
+      <nav class="cabecalho-user">
+<!--         carregado automaticamente, adicione botões aqui -->
+      </nav>
+    </header>
+    <main>
+        <form id="webhookForm">
+          <h1>Discord Webhook Personalizado</h1>
+          <label for="webhook-url">
+            Webhook Url
+          </label>
+          <input
+                 type="url"
+                 name="webhook-url"
+                 id="webhookUrl"
+                 placeholder="Insira o url do webhook"
+                 required>
+          
+          <label for="webhook-titulo">
+            Titulo da mensagem
+          </label>
+          <input
+          type="text"
+          name="webhook-titulo"
+          id="webhookTitulo"
+          placeholder="Insira o titulo da mensagem, meu titulo legal"
+          required>
+
+          <label for="webhook-msg">
+           Mensagem
+          </label>
+          <input
+          type="text"
+          name="webhook-msg"
+          id="webhookMsg"
+          placeholder="Olá tudo bem? essa e minha mensagem legal"
+          required>
+
+          <label for="webhook-color">
+            cor do webhook
+          </label>
+          <input
+          type="color"
+          name="webhook-color"
+          id="webhookColor">
+
+          <button class="btn btn-enviar" 
+                  onclick="sendWebhook();">
+            Enviar
+          </button>
+        </form>
+    
+      <form id="webhookPingobrasForm">      
+        <h1>Teste o Webhook da Pingobras!</h1>
+        <label for="pingobras-webhook-titulo">
+          Titulo da mensagem
+        </label>
+        <input
+        type="text"
+        name="pingobras-webhook-titulo"
+        id="pingobras-webhookTitulo"
+        placeholder="Insira o titulo da mensagem, meu titulo legal"
+        required>
+
+        <label for="pingobras-webhook-msg">
+         Mensagem
+        </label>
+        <input
+        type="text"
+        name="pingobras-webhook-msg"
+        id="pingobras-webhookMsg"
+        placeholder="Olá tudo bem? essa e minha mensagem legal"
+        required>
+
+          <button class="btn btn-enviar"
+                  onclick="pingobrasSendWebhook();">
+            Enviar
+          </button>
+        </form>
+    </main>
+
+      <button 
+         class="btnFixedLeft"
+         onclick="redirectUrl('/user/admin')">
+      Voltar
+    </button>
+    <footer>
+    
+    </footer>
+  </body>
+  
+  <script src="discord-v1/enviar-webhook.js" defer></script>
+  <autoscripts>
+    <script src="/src/js/load-scripts.js"></script>
+    <script src="/src/js/links.js" defer=""></script>
+  </autoscripts>
+  <autoscriptsuser>
+    <script src="/user/load-scripts.js"></script>
+  </autoscriptsuser>
+   <host>
+    <script src="/src/js/load-host.js" defer></script>
+    </host>
+</html>

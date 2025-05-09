@@ -27,42 +27,41 @@
       <div class="conteudo" role="main">
         
       <teladelogin>
-       <form id="form">
         <h1 class="title-login">LOGIN PINGOBRAS S.A</h1>
         <js id="msgError" class="msg-Error msg">Nenhum Erro Encontrado!</js>
         <js id="msgSuccess" class="msg-Success msg">Verificando...</js>
-        
-         <label for="usuario">USUARIO</label>
+       <form id="form">
+        <p vermelho>indica campos obrigatórios (*) </p>
+         <label required for="email">Email</label>
          <input
                 class="input-login"       
-                type="text"
-                id="usuario"
-                placeholder="NOME" 
+                type="email"
+                id="email"
+                placeholder="Insira o seu e-mail" 
                 required>
       
-      
-         <label for="senha"> SENHA </label>
-         <input 
-                class="input-login"       
-                type="password" 
-                id="senha"
-                placeholder="******" 
-                required>
-         
-         <button
-                 type="submit"
-                 class="btn btn-login"
-                 id="autenticador" 
-                 onclick="ClickMouseFUNCTIONS.play();">
-           Entrar
-         </button>
-         
-         <p>Perdeu Sua Senha?</p>
-         <button class="btn btn-recupear-senha"
-                 onclick="redirectUrl('login/recuperar-senha.html')">
-           Trocar Senha!
+         <button class="btn btn-login" type="submit">
+            Enviar Código  
          </button>
         </form>
+        
+        <form hidden id="formCode">
+          <label required for="code">Código</label>
+          <input type="number"
+                 id="code"
+                 placeholder="Insira o Código Enviado"
+                 required>
+          
+          <button class="btn btn-login" type="submit">
+            Entrar
+          </button>
+        </form>
+        
+        <label for="continueConnected"> Permanecer conectado? </label>
+        <input type="checkbox" 
+               id="continueConnected" 
+               name="continueConnected"
+               checked>
         
         <button 
            class="btn"

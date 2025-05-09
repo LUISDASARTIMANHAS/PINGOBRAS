@@ -1,0 +1,40 @@
+/* Responsividade */
+@media (max-width: 768px) {
+    .header .logo {
+        font-size: 26px;
+    }
+
+    .nav-link {
+        font-size: 14px;
+    }
+
+    .votacoes-section {
+        padding: 15px;
+        margin: 10px;
+    }
+
+    .votacoes-section h2 {
+        font-size: 24px;
+    }
+
+    .votacoes-section button {
+        padding: 10px;
+        font-size: 14px;
+        width: 100%;
+    }
+
+    #resolucoes-list li {
+        flex-direction: column;
+        padding: 12px;
+        margin-bottom: 15px;
+    }
+
+    .voting-buttons button {
+        width: 100%;
+        margin-top: 10px;
+    }
+
+    #add-resolution-modal .modal-content {
+        width: 90%;
+    }
+}

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hospedar Bot</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/src/css/bootstrap.css" />
+    <link rel="stylesheet" href="/host/bots/hospedar/hospedar.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Hospedar Bot</h1>
+      <nav>
+        <a href="/host/bots">Início</a>
+        <a href="/host/bots/status">Status</a>
+      </nav>
+    </header>
+
+    <main>
+      <h2>Formulário de Hospedagem</h2>
+      <form id="formHospedagem" enctype="multipart/form-data">
+        <label for="token">Token do Bot:</label>
+        <input type="text" id="token" name="token" required />
+
+        <label for="appid">ID do Aplicativo (somente números):</label>
+        <input type="number" id="appid" name="appid" required />
+
+        <label for="fileStart">
+          Nome do Arquivo de Inicialização (main.py, index.js):
+        </label>
+        <input type="text" id="fileStart" name="fileStart" required />
+        
+        <label for="webhookLogs">
+          URL de Webhook para logs (Https://discord.com/webhook...):
+        </label>
+        <input type="url" id="webhookLogs" name="webhookLogs" required />
+
+        <label for="arquivo">Arquivo ZIP (máx 128mb):</label>
+        <input type="file" id="arquivo" name="arquivo" accept=".zip" required />
+
+        <label for="ram">Limite de RAM (até 100MB):</label>
+        <input
+          type="range"
+          id="ram"
+          name="ram"
+          min="10"
+          max="100"
+          value="50"
+          step="1"
+        />
+        <div class="ram-display" id="ramDisplay">50 MB</div>
+
+        <button id="sendBot" type="submit">Enviar para Hospedagem</button>
+        <div hidden id="statusSend" class="loading">
+          <p class="load"></p>
+        </div>
+      </form>
+    </main>
+
+    <script src="/host/bots/hospedar/hospedar.js"></script>
+  </body>
+</html>

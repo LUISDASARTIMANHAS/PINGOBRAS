@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portal Fama - Solicitação de Acesso</title>
+    <link rel="stylesheet" href="./portal-fama/style.css">
+</head>
+<body>
+    <header>
+        <h1>🚀 Portal Fama - Acesso ao Canal #fama</h1>
+    </header>
+
+    <main>
+        <section id="regras">
+            <h2>📢 Quer Compartilhar Seus Vídeos e Lives?</h2>
+            <p>Para ganhar acesso ao canal <strong>#fama</strong>, siga as instruções abaixo:</p>
+            <ul>
+                <li>✅ Abra um ticket.</li>
+                <li>✅ Envie o link do seu canal.</li>
+                <li>✅ Aguarde a nossa equipe revisar e aprovar seu acesso.</li>
+            </ul>
+            <h3>📌 Requisitos:</h3>
+            <ul>
+                <li>📌 Ter no mínimo <strong>1000 inscritos</strong>.</li>
+                <li>📌 Ter no mínimo <strong>400 visualizações</strong> por vídeo.</li>
+                <li>📌 Canal criado há mais de <strong>1 ano e meio</strong>.</li>
+            </ul>
+        </section>
+
+        <section id="formulario">
+            <h2>📋 Solicite Seu Acesso</h2>
+            <form id="solicitacao-form">
+                <label for="canal">🔗 Link do Canal:</label>
+                <input type="url" id="canal" required>
+
+                <label for="inscritos">📊 Quantos inscritos você tem?</label>
+                <input type="number" id="inscritos" required>
+
+                <label for="visualizacoes">📺 Média de visualizações por vídeo:</label>
+                <input type="number" id="visualizacoes" required>
+
+                <label for="idade">📅 Idade do Canal (anos):</label>
+                <input type="number" id="idade" required>
+
+                <button type="submit">Enviar Solicitação</button>
+            </form>
+            <p id="mensagem"></p>
+        </section>
+    </main>
+
+    <script src="./portal-fama/script.js"></script>
+</body>
+</html>
