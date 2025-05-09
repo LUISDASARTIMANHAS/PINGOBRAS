@@ -14,5 +14,5 @@ var newScriptUser = document.createElement('script');
 newScriptUser.setAttribute('src',fonteUser+srcsUser[i]+".js");
 autoscriptsUser.appendChild(newScriptUser)
   
-console.log(" Novo Script Num: " + srcsUser[i])
+console.log(" Novo User Script Num: " + srcsUser[i])
 }

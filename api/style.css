@@ -1,0 +1,50 @@
+body{
+  background: #333333;
+  font-family: "consolas", Arial, Helvetica, sans-serif;
+}
+
+main terminal{
+  display: flex;
+  flex-direction: column;
+  white-space: pre-line;
+  text-shadow: rgba(0, 0, 0, 0.3) 0px 1px 1px;
+  width: 85%;
+  background: #121212;
+  color: rgba(204, 204, 204);
+  font-family: "consolas", Arial, Helvetica, sans-serif;
+}
+
+main terminal header {
+  display: flex;
+  background: white;
+  color: #121212;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 10px;
+}
+
+main terminal header p {
+  width: 100%;
+  padding-left: 10px;
+}
+
+main header button {
+  padding: 0 10px;
+  border: none;
+  border-radius: 0;
+  color: #121212;
+  background: white;
+  border-style: none;
+}
+
+main header button:hover {
+  opacity: 0.7;
+  background: white;
+  transform: translateY(0px);
+  color: #121212;
+}
+
+main header .close:hover {
+  background: red;
+  color: white;
+}

@@ -84,6 +84,7 @@ header{
   height: auto;
   max-width: 100%;
   background: repeating-linear-gradient(45deg, purple, #00b489);
+  background-color: #333333;
 }
 
 @media (max-width: 820px) {

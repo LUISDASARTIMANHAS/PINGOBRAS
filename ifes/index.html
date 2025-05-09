@@ -83,12 +83,12 @@
 
             <ul class="pull-right" id="portal-siteactions">
               <li class="item-140">
-                <a href="https://ava3.cefor.ifes.edu.br/" accesskey="5">
+                <a target="_blank" href="https://ava3.cefor.ifes.edu.br/" accesskey="5">
                   AVA CEFOR | IFES
                 </a>
               </li>
               <li class="item-141 toggle-contraste">
-                <a
+                <a target="_blank"
                   class="toggle-contraste"
                   href="https://ava.cefor.ifes.edu.br/"
                   accesskey="6"
@@ -97,7 +97,7 @@
                 </a>
               </li>
               <li class="item-142">
-                <a href="https://academico.ifes.edu.br/" accesskey="7">
+                <a target="_blank" href="https://academico.ifes.edu.br/" accesskey="7">
                   Q-Acadêmico Web
                 </a>
               </li>
@@ -108,7 +108,7 @@
         <!-- fim .row-fluid -->
         <div class="row-fluid">
           <div id="logo" class="span8">
-            <a href="https://ifes.edu.br/" title="Ifes">
+            <a target="_blank" href="https://ifes.edu.br/" title="Ifes">
               <span class="portal-title-1"
                 >Instituto Federal do Espírito Santo</span
               >
@@ -123,49 +123,43 @@
 
               <ul class="pull-right">
                 <li class="portalredes-item item-136">
-                  <a
+                  <a target="_blank"
                     href="https://twitter.com/ifesoficial"
-                    target="_blank"
                     rel="noopener noreferrer"
                     ><i class="icon-twitter-sign"><span>Twitter</span></i></a
                   >
                 </li>
                 <li class="portalredes-item item-137">
-                  <a
+                  <a target="_blank"
                     href="https://www.youtube.com/ifesinstitutofederaldoespiritosanto"
-                    target="_blank"
                     rel="noopener noreferrer"
                     ><i class="icon-youtube"><span>YouTube</span></i></a
                   >
                 </li>
                 <li class="portalredes-item item-138">
-                  <a
+                  <a target="_blank"
                     href="https://www.facebook.com/ifes.oficial"
-                    target="_blank"
                     rel="noopener noreferrer"
                     ><i class="icon-facebook-sign"><span>Facebook</span></i></a
                   >
                 </li>
                 <li class="portalredes-item item-372">
-                  <a
+                  <a target="_blank"
                     href="https://www.instagram.com/ifesoficial/"
-                    target="_blank"
                     rel="noopener noreferrer"
                     ><i class="icon-instagram"><span>Instagram</span></i></a
                   >
                 </li>
                 <li class="portalredes-item item-374">
-                  <a
+                  <a target="_blank"
                     href="http://www.linkedin.com/school/1171418"
-                    target="_blank"
                     rel="noopener noreferrer"
                     ><i class="icon-linkedin"><span>Linkedin</span></i></a
                   >
                 </li>
                 <li class="portalredes-item item-474">
-                  <a
+                  <a target="_blank"
                     href="https://www.flickr.com/people/ifesoficial"
-                    target="_blank"
                     rel="noopener noreferrer"
                     ><i class="icon-flickr"><span>Flickr</span></i></a
                   >
@@ -184,13 +178,13 @@
 
               <ul>
                 <li class="item-420">
-                  <a href="/">Pingobras Lobby</a>
+                  <a target="_blank" href="/">Pingobras Lobby</a>
                 </li>
                 <li class="item-132">
-                  <a href="/contato">Contato</a>
+                  <a target="_blank" href="/contato">Contato</a>
                 </li>
                 <li class="item-133">
-                  <a href="/login">Acesso a sistemas</a>
+                  <a target="_blank" href="/login">Acesso a sistemas</a>
                 </li>
               </ul>
               <span class="hide">Fim do menu de serviços</span>
@@ -204,60 +198,9 @@
     <main style="display: flex">
       <table>
         <tbody>
-          <tr>
-            <th>HORARIOS</th>
-            <th>12:50 - 13:40</th>
-            <th>13:40 - 14:30</th>
-            <th>14:30 - 15:20</th>
-            <th>15:40 - 16:30</th>
-            <th>16:30 - 17:20</th>
-            <th>17:20 - 18:10</th>
-          </tr>
-          <tr>
-            <td>Segunda</td>
-            <td>ED</td>
-            <td>ED</td>
-            <td>ADM</td>
-            <td>ADM</td>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr>
-            <td>Terça</td>
-            <td></td>
-            <td></td>
-            <td>LGC</td>
-            <td>LGC</td>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr>
-            <td>Quarta</td>
-            <td>ED</td>
-            <td>ED</td>
-            <td>LGC</td>
-            <td>LGC</td>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr>
-            <td>Quinta</td>
-            <td>OAC</td>
-            <td>OAC</td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr>
-            <td>Sexta</td>
-            <td>OAC</td>
-            <td>OAC</td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
+          <div id="loadingTable" class="loading">
+            <p class="load rgb"></p>
+          </div>
           <!-- Gerado automaticamente -->
         </tbody>
       </table>
@@ -270,12 +213,12 @@
       </div>
     </footer>
     <scripts>
+      <script src="/ifes/table-render.js" defer></script>
       <script src="./src/js/index.js" defer></script>
       <script src="./src/js/links.js" defer></script>
     </scripts>
     <autoscripts>
       <script src="./src/js/load-scripts.js"></script>
-      <script></script>
     </autoscripts>
     <host>
       <script src="/src/js/load-host.js" defer></script>

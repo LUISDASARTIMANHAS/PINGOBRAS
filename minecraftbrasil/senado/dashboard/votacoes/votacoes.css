@@ -1,0 +1,233 @@
+/* Fonte futurista */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
+
+body {
+    margin: 0;
+    font-family: 'Orbitron', sans-serif;
+    background: linear-gradient(135deg, #0b0c10, #1f2833, #0b0c10);
+    background-size: 400% 400%;
+    animation: gradientMove 15s ease infinite;
+    color: #c5c6c7;
+}
+
+@keyframes gradientMove {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+header {
+    position: sticky;
+    top: 0;
+    background: rgba(15, 15, 20, 0.8);
+    backdrop-filter: blur(10px);
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.7);
+    z-index: 10;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 26px;
+    color: #66fcf1;
+}
+
+.nav-link {
+    margin-left: 10px;
+    padding: 8px 18px;
+    background-color: #45a29e;
+    border-radius: 20px;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.4s;
+    box-shadow: 0 0 8px #45a29e;
+}
+
+.nav-link:hover {
+    background-color: #66fcf1;
+    color: black;
+    box-shadow: 0 0 15px #66fcf1;
+}
+
+/* Votações Section */
+.votacoes-section {
+    padding: 30px;
+    background-color: rgba(31, 40, 51, 0.9);
+    border-radius: 15px;
+    box-shadow: 0 0 15px rgba(102, 252, 241, 0.2);
+    margin: 20px;
+}
+
+.votacoes-section h2 {
+    font-size: 28px;
+    font-weight: 600;
+    color: #66fcf1;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+#user-actions {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+button {
+    padding: 12px 20px;
+    font-size: 16px;
+    background-color: #1f2833;
+    color: #c5c6c7;
+    border: 2px solid #66fcf1;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: 0.3s;
+    box-shadow: 0 0 8px #45a29e;
+    width: 100%;
+}
+
+button:hover {
+    background-color: #45a29e;
+    color: black;
+    box-shadow: 0 0 15px #66fcf1;
+}
+
+button:disabled {
+    background-color: #666;
+    cursor: not-allowed;
+}
+
+/* Lista de Resoluções */
+#resolucoes-section {
+    margin-top: 40px;
+}
+
+#resolucoes-section h3 {
+    font-size: 24px;
+    font-weight: 600;
+    color: #66fcf1;
+    margin-bottom: 20px;
+}
+
+#resolucoes-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#resolucoes-list li {
+    background-color: rgba(31, 40, 51, 0.9);
+    padding: 15px;
+    margin: 10px 0;
+    border-radius: 10px;
+    border: 2px solid #66fcf1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 16px;
+    color: #c5c6c7;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+#resolucoes-list li:hover {
+    background-color: #45a29e;
+    color: black;
+    box-shadow: 0 0 15px #66fcf1;
+}
+
+/* Botões de Votação */
+.voting-buttons {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+}
+
+.voting-buttons button {
+    padding: 12px 20px;
+    font-size: 16px;
+    border-radius: 10px;
+    width: 100%;
+    transition: background-color 0.3s ease;
+}
+
+.vote-yes {
+    background-color: #28a745;
+    color: white;
+    border: 2px solid #28a745;
+}
+
+.vote-no {
+    background-color: #dc3545;
+    color: white;
+    border: 2px solid #dc3545;
+}
+
+.vote-yes:hover {
+    background-color: #218838;
+}
+
+.vote-no:hover {
+    background-color: #c82333;
+}
+
+/* Adicionar Resolução */
+.add-resolution-btn {
+    background-color: #007bff;
+    color: white;
+    border: 2px solid #007bff;
+}
+
+.add-resolution-btn:hover {
+    background-color: #0056b3;
+}
+
+/* Modal de Adicionar Resolução */
+#add-resolution-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+#add-resolution-modal .modal-content {
+    background-color: rgba(31, 40, 51, 0.9);
+    padding: 30px;
+    border-radius: 10px;
+    max-width: 600px;
+    width: 100%;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+#add-resolution-modal .modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#add-resolution-modal .modal-footer {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 20px;
+}
+
+#add-resolution-modal .modal-footer button {
+    background-color: #007bff;
+    color: white;
+    padding: 12px 18px;
+    margin-left: 10px;
+    border-radius: 5px;
+}
+
+#add-resolution-modal .modal-footer button:hover {
+    background-color: #0056b3;
+}

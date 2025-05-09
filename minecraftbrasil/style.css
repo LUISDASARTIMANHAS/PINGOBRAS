@@ -1,0 +1,20 @@
+* {
+  font-family: "Noto Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+}
+body {
+  background: black;
+  color: white;
+  text-align: center;
+}
+
+main{
+  height: 75vh;
+}
+
+footer {
+  background: #3d3938;
+}
+
+p {
+  margin: 10px;
+}

@@ -1,0 +1,14 @@
+[
+    {
+        "titulo": "Moderador",
+        "descricao": "Ajude a manter o chat e o servidor organizados."
+    },
+    {
+        "titulo": "Construtor",
+        "descricao": "Crie construções épicas para o servidor!"
+    },
+    {
+        "titulo": "Helper",
+        "descricao": "Auxilie novos jogadores e tire dúvidas no chat."
+    }
+]

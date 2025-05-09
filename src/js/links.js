@@ -58,7 +58,7 @@ function importarCss(data) {
     newLink.rel = "stylesheet";
     links.appendChild(newLink);
 
-    console.log("Carregando css: " + link);
+    console.log(`%c [SISTEMA]: Carregando css: ${link}`,"color: #ff00ff");
   }
 
   for (let i = 0; i < srcsLinksFonts.length; i++) {
@@ -69,7 +69,7 @@ function importarCss(data) {
     newLink.rel = "stylesheet";
     head.appendChild(newLink);
 
-    console.log("Novo Link de fonte css Num: " + srcsLinksFonts[i]);
+    console.log(`%c [SISTEMA]: Novo Link de fonte css Num: " + srcsLinksFonts[i]`,"color: #ff00ff");
   }
 
 }

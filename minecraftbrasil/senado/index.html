@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Senado Galáctico</title>
+    <link rel="stylesheet" href="senado/style.css" />
+  </head>
+  <body>
+    <!-- HEADER -->
+    <header>
+      <h1>Senado Galáctico</h1>
+      <nav>
+        <a href="senado/login" class="login-btn">Entrar como Membro</a>
+        <a href="senado/login" class="login-btn">Entrar como Senador</a>
+        <a href="senado/login" class="login-btn">Entrar como Administrador</a>
+      </nav>
+    </header>
+
+    <!-- CONTEÚDO PRINCIPAL -->
+    <main>
+      <div id="abas">
+        <button onclick="mostrarConteudo('resolucoes')">Resoluções</button>
+        <button onclick="mostrarConteudo('sancoes')">Sanções</button>
+        <button onclick="mostrarConteudo('debate')">Debate</button>
+        <button onclick="mostrarConteudo('analise')">Análise</button>
+      </div>
+
+      <div id="conteudo">
+        <h2>Bem-vindo!</h2>
+        <p>Selecione uma aba acima para ver as informações atuais.</p>
+      </div>
+    </main>
+
+    <script src="senado/script.js"></script>
+  </body>
+</html>
