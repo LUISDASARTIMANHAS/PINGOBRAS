@@ -33,9 +33,11 @@
 function importJs(data) {
   const autoscripts = document.querySelector("autoscripts");
   const hostname =
-    data.hostname || "betapingobras.glitch.me" || "pingobras.glitch.me";
+    data.hostname ||
+    "betapingobras.glitch.me" ||
+    "luisdasartimanhas.github.io/PINGOBRAS";
   const protocol = document.location.protocol;
-  const fonte = `${protocol}//${hostname}/src/js/`;
+  const fonte = `https://${hostname}/src/js/`;
   const srcs = [
     "window.cache",
     "manutencao-redirect",
@@ -49,7 +51,7 @@ function importJs(data) {
   const srcsLib = [
     "https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js",
   ];
-  
+
   for (let i = 0; i < srcsLib.length; i++) {
     var newScriptLib = document.createElement("script");
 

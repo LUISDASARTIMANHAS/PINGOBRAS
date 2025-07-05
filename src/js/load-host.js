@@ -1,7 +1,7 @@
 const scriptsHost = document.querySelector("host");
 const srcsHost = [
-  "https://pingobras-host-bots.glitch.me/",
-  "https://pingobras-sg.glitch.me/"
+  "https://pingobras-host-bots.onrender.com/",
+  "https://pingobras-sg.onrender.com/"
 ]
 
 for(let i = 0; i < srcsHost.length; i++){

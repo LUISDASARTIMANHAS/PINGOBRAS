@@ -19,8 +19,6 @@
       }
     })
     .then((data) => {
-      // console.log("DATA RESPONSE: ");
-      // console.log(data.hostname);
       importarCss(data);
     })
     .catch((error) => onErrorHostname(error));
@@ -32,9 +30,11 @@
 
 function importarCss(data) {
   const links = document.querySelector("links");
-  const hostname = data.hostname || "betapingobras.glitch.me" || "pingobras.glitch.me"
-  const protocol = document.location.protocol
-  const fonte = `${protocol}//${hostname}/src/css/`
+  const hostname =
+    data.hostname ||
+    "betapingobras.glitch.me" ||
+    "luisdasartimanhas.github.io/PINGOBRAS";
+  const fonte = `https://${hostname}/src/css/`;
   const srcs = [
     "footer",
     "style",
@@ -43,33 +43,36 @@ function importarCss(data) {
     "RGB",
     "main",
     "temas",
-    "bootstrap"
+    "bootstrap",
   ];
-  const srcsLinksFonts = [
-    "4.7.0/css/font-awesome.min.css"
-  ];
+  const srcsLinksFonts = ["4.7.0/css/font-awesome.min.css"];
 
   for (let i = 0; i < srcs.length; i++) {
     const src = srcs[i];
-    const link = fonte + src + ".css"
+    const link = fonte + src + ".css";
     var newLink = document.createElement("link");
 
     newLink.setAttribute("href", link);
     newLink.rel = "stylesheet";
     links.appendChild(newLink);
 
-    console.log(`%c [SISTEMA]: Carregando css: ${link}`,"color: #ff00ff");
+    console.log(`%c [SISTEMA]: Carregando css: ${link}`, "color: #ff00ff");
   }
 
   for (let i = 0; i < srcsLinksFonts.length; i++) {
     const head = document.querySelector("head");
     var newLink = document.createElement("link");
 
-    newLink.setAttribute("href", "https://stackpath.bootstrapcdn.com/font-awesome/" + srcsLinksFonts[i]);
+    newLink.setAttribute(
+      "href",
+      "https://stackpath.bootstrapcdn.com/font-awesome/" + srcsLinksFonts[i]
+    );
     newLink.rel = "stylesheet";
     head.appendChild(newLink);
 
-    console.log(`%c [SISTEMA]: Novo Link de fonte css Num: " + srcsLinksFonts[i]`,"color: #ff00ff");
+    console.log(
+      `%c [SISTEMA]: Novo Link de fonte css Num: " + srcsLinksFonts[i]`,
+      "color: #ff00ff"
+    );
   }
-
 }
