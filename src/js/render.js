@@ -1,5 +1,7 @@
 // PUBLIC PROJECT FOR AUTOMATED RENDERIZATIONS
 // POWERED BY LUIS DAS ARTIMANHAS
+// lib in 
+// https://github.com/LUISDASARTIMANHAS/PINGOBRAS/blob/main/src/js/render.js
 // funcoes basicas de renderização
 
 export function renderScript(element, src, isModule) {
