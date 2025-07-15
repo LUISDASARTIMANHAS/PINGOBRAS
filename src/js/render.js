@@ -2,6 +2,14 @@
 // POWERED BY LUIS DAS ARTIMANHAS
 // funcoes basicas de renderização
 
+export function renderScript(element,src) {
+  var script = document.createElement("script");
+
+  script.setAttribute("src", src);
+  element.appendChild(script);
+  return script;
+}
+
 export function renderA(element, classe,href, text,target) {
   var a = document.createElement("a");
   // configuracoes do span Categoria
