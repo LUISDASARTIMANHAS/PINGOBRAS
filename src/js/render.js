@@ -4,6 +4,15 @@
 // https://github.com/LUISDASARTIMANHAS/PINGOBRAS/blob/main/src/js/render.js
 // funcoes basicas de renderização
 
+export function renderLinkCss(element, href) {
+  var link = document.createElement("link");
+
+  link.setAttribute("href", href);
+  link.setAttribute("rel", "stylesheet");
+  element.appendChild(link);
+  return link;
+}
+
 export function renderScript(element, src, isModule) {
   var script = document.createElement("script");
 
