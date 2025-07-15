@@ -1,3 +1,4 @@
+import { renderScript } from "../lib/render.js";
 (() => {
   const url = "./src/data/info.json";
   const options = {
@@ -52,23 +53,19 @@ function importJs(data) {
     "https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js",
   ];
 
-  for (let i = 0; i < srcsLib.length; i++) {
-    var newScriptLib = document.createElement("script");
+  srcsLib.forEach((src) => {
+      var url = `${fonte}/${src}.js`;
+  
+      renderScript(autoscripts, url);
+  
+    console.log(`%c [SISTEMA]: Nova Lib: ${src}`, "color: #ffa500");
+    });
 
-    newScriptLib.setAttribute("src", srcsLib[i]);
-    autoscripts.appendChild(newScriptLib);
-
-    console.log(`%c [SISTEMA]: Nova Lib: ${srcsLib[i]}`, "color: #ffa500");
-  }
-
-  for (let i = 0; i < srcs.length; i++) {
-    const src = srcs[i];
-    const link = fonte + src + ".js";
-    var newScript = document.createElement("script");
-
-    newScript.setAttribute("src", link);
-    autoscripts.appendChild(newScript);
-
+  srcs.forEach((src) => {
+      var url = `${fonte}/${src}.js`;
+  
+      renderScript(autoscripts, url);
+  
     console.log(`%c [SISTEMA]: Carregando script: ${link}`, "color: #ff00ff");
-  }
+    });
 }
