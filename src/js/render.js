@@ -2,9 +2,12 @@
 // POWERED BY LUIS DAS ARTIMANHAS
 // funcoes basicas de renderização
 
-export function renderScript(element,src) {
+export function renderScript(element, src, isModule) {
   var script = document.createElement("script");
 
+  if (isModule || isModule == true) {
+    script.setAttribute("type", "module");
+  }
   script.setAttribute("src", src);
   element.appendChild(script);
   return script;
