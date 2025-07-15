@@ -29,7 +29,7 @@ window.addEventListener("load", async () => {
       });
 
     function redirectManutencao(offline) {
-      const DebugMode = JSON.parse(localStorage.getItem("dev")) || false;
+      const DebugMode = JSON.parse(localStorage.getItem("debugMode")) || false;
       const body = document.querySelector("body");
       const verificarOfflineENaoDebugMode = offline && !DebugMode
 
