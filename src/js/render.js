@@ -34,9 +34,13 @@ export function renderA(element, classe,href, text,target) {
   element.appendChild(a);
 }
 
-export function renderButton(element, classe, text) {
+export function renderButton(element, classe, text,onclick) {
   var button = document.createElement("button");
   // configuracoes do span Categoria
+
+  if (onclick) {
+    button.addEventListener("click", onclick);
+  }
   button.setAttribute("class", classe);
   button.textContent = text;
   element.appendChild(button);
