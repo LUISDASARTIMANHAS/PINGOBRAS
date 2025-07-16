@@ -13,6 +13,14 @@ export function renderLinkCss(element, href) {
   return link;
 }
 
+export function renderIcon(element, classe) {
+  var i = document.createElement("i");
+
+  i.setAttribute("class", classe);
+  element.appendChild(i);
+  return i;
+}
+
 export function renderScript(element, src, isModule) {
   var script = document.createElement("script");
 
