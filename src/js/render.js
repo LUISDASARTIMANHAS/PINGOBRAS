@@ -32,6 +32,14 @@ export function renderScript(element, src, isModule) {
   return script;
 }
 
+export function renderFont(element, classe) {
+  var font = document.createElement("font");
+
+  i.setAttribute("class", classe);
+  element.appendChild(font);
+  return i;
+}
+
 export function renderA(element, classe,href, text,target) {
   var a = document.createElement("a");
   // configuracoes do span Categoria
