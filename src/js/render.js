@@ -4,6 +4,21 @@
 // https://github.com/LUISDASARTIMANHAS/PINGOBRAS/blob/main/src/js/render.js
 // funcoes basicas de renderização
 
+export function renderTableElement(tableTrLine, innerHTML) {
+  var td = document.createElement("td");
+
+  td.innerHTML = innerHTML;
+  tableTrLine.appendChild(td);
+  return td;
+}
+
+export function renderTableLine(tabela) {
+  var tr = document.createElement("tr");
+
+  tabela.appendChild(tr);
+  return tr;
+}
+
 export function renderLinkCss(element, href) {
   var link = document.createElement("link");
 
