@@ -1,7 +1,7 @@
 import config from "./config.js";
-window.addEventListener("load", () => {
+window.addEventListener("load", async () => {
   try {
-    const url = `${config.apiUrl}/manutencao`;
+    const url = `${config.serverUrl}/manutencao`;
     const options = {
       method: "GET",
       mode: "cors",
@@ -9,7 +9,7 @@ window.addEventListener("load", () => {
         "content-type": "application/json;charset=utf-8",
       },
     };
-    fetch(url, options)
+    await fetch(url, options)
       .then((response) => {
         if (response.ok) {
           return response.json();
@@ -25,15 +25,15 @@ window.addEventListener("load", () => {
       })
       .catch((error) => {
         console.debug(`%c [SISTEMA MANUTENÇÃO] ${error}`, "color: #ff0000");
+        redirectManutencao(true);
       });
 
     function redirectManutencao(offline) {
-      const devUser = JSON.parse(localStorage.getItem("dev")) || false;
-      const expUser =
-        JSON.parse(localStorage.getItem("experimentalMode")) || false;
+      const DebugMode = JSON.parse(localStorage.getItem("debugMode")) || false;
       const body = document.querySelector("body");
+      const verificarOfflineENaoDebugMode = offline && !DebugMode
 
-      if ((offline && !devUser) || (offline && !devUser)) {
+      if (verificarOfflineENaoDebugMode) {
         body.hidden = true;
 
         if (body) {
@@ -41,11 +41,11 @@ window.addEventListener("load", () => {
         }
 
         setTimeout(() => {
-          window.location.href = "./sys/manutencao.html";
+          window.location.href = "../sys/manutencao.html";
         }, 3000);
       }
     }
-    redirectManutencao(true);
+    redirectManutencao(false);
   } catch (error) {
     alert(`ERRO FATAL: ${error}`);
   }
