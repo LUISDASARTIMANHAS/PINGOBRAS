@@ -1,6 +1,7 @@
 // PUBLIC PROJECT FOR AUTOMATED RENDERIZATIONS
 // POWERED BY LUIS DAS ARTIMANHAS
 // Clean Code + JSDoc + Logging automático
+// V 0.0.2
 
 /**
  * Log padronizado para eventos de renderização.
@@ -14,6 +15,22 @@ function logRender(componente, detalhe) {
     "color:#4FC3F7; font-weight:bold;"
   );
 }
+
+export function renderTableElement(tableTrLine, innerHTML) {
+  var td = document.createElement("td");
+
+  td.innerHTML = innerHTML;
+  tableTrLine.appendChild(td);
+  return td;
+}
+
+export function renderTableLine(tabela) {
+  var tr = document.createElement("tr");
+
+  tabela.appendChild(tr);
+  return tr;
+}
+
 
 /**
  * Renderiza um arquivo CSS no HEAD.
