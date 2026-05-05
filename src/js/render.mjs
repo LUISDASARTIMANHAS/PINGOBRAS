@@ -128,18 +128,28 @@ export function renderIcon(element, classe) {
  */
 export function renderScript(element, src, isModule) {
   const script = document.createElement("script");
+  const eUmModulo = (isModule === true ) || (src.endsWith("mjs"))
 
-  if (isModule === true) {
+  if (eUmModulo) {
     script.setAttribute("type", "module");
   }
 
   script.setAttribute("src", src);
   element.appendChild(script);
 
-  logRender("Script", `Carregado: ${src}, type=${isModule ? "module" : "js"}`);
+  logRender("Script", `Carregado: ${src}, type=${eUmModulo ? "module" : "js"}`);
 
   return script;
 }
+
+export function deployRenderScript(src, isModule) {
+		const body = document.querySelector("body")
+
+    renderScript(body, src, isModule)
+		logRender("Script", `deployRenderScript: ${src}`);
+
+		return script;
+	}
 
 /**
  * Renderiza uma fonte (tag <font>, embora obsoleta).
