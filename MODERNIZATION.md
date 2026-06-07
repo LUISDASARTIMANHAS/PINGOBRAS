@@ -55,6 +55,7 @@ Arquitetura proposta
 - CORS: garantir que a API permita CORS para os domínios de preview/produção usados; documente hosts permitidos na API.
 - Autenticação: para operações autenticadas, prefira tokens curtos emitidos pelo servidor; no front-end armazene apenas tokens não sensíveis com cuidado (por ex., em memória) e nunca exponha segredos no código-fonte.
 - Cache e offline: considere cache via `localStorage` ou `IndexedDB` para dados não sensíveis e melhorar UX offline.
+- Assets: todas as imagens estão em `src/assets/`; referencie-as com caminhos relativos corretos (ex.: `<img src="src/assets/logo.png" alt="Logo">` ou `../src/assets/` quando em subpastas).
 
 Links úteis
 ----------

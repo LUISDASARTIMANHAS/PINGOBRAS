@@ -50,10 +50,17 @@
             letter-spacing: 0.5px;
             color: white !important;
             transition: var(--transition);
+            display: flex;
+            align-items: center;
         }
 
-        .navbar-brand:hover {
-            transform: scale(1.05);
+        .navbar-brand img {
+            filter: brightness(1.1);
+            transition: var(--transition);
+        }
+
+        .navbar-brand:hover img {
+            filter: brightness(1.3) drop-shadow(0 0 8px rgba(255, 255, 255, 0.5));
         }
 
         .nav-link {
@@ -136,6 +143,17 @@
             from {
                 opacity: 0;
                 transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
             }
             to {
                 opacity: 1;
@@ -349,6 +367,10 @@
             .navbar-brand {
                 font-size: 1.2rem;
             }
+
+            .hero-content img {
+                height: 80px !important;
+            }
         }
 
         /* Loading animation */
@@ -362,7 +384,8 @@
     <nav class="navbar navbar-expand-lg navbar-dark">
         <div class="container-fluid">
             <a class="navbar-brand" href="/">
-                🚀 PINGOBRAS S.A
+                <img src="src/assets/pingobras logo.png" alt="PINGOBRAS" height="45" class="me-2">
+                <span style="vertical-align: middle;">PINGOBRAS</span>
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -389,6 +412,7 @@
     <!-- Hero Section -->
     <section class="hero">
         <div class="hero-content">
+            <img src="src/assets/pingobras logo.png" alt="PINGOBRAS Logo" height="120" class="mb-4" style="animation: fadeInDown 0.8s ease-out;">
             <h1>Bem-vindo à Pingobras S.A</h1>
             <p>Hospedagem de sites, servidores robustos e serviços de empréstimos confiáveis</p>
             <a href="#servicos" class="btn btn-primary-gradient">Explorar Serviços</a>
@@ -531,7 +555,7 @@
                 </div>
                 <div class="col-lg-6 fade-in">
                     <div class="bg-brand-light-blue p-5 rounded-4 text-center">
-                        <div style="font-size: 4rem; margin-bottom: 20px;">🚀</div>
+                        <img src="src/assets/pingobras logo.png" alt="PINGOBRAS" height="180" class="mb-4">
                         <h4 class="text-brand-blue">Inovação Constante</h4>
                         <p>Continuamente atualizando e melhorando nossos serviços para você</p>
                     </div>

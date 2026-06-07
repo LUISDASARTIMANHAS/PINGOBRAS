@@ -15,7 +15,8 @@ Visão rápida do repositório
 - Tipo: site estático com múltiplas páginas e subpastas.
 - Arquivos/dirs úteis para inspecionar:
   - [README.md](README.md)
-  - [src/](src/)
+  - [src/](src/) — contém `assets/`, `css/`, `js/` centralizados
+  - [src/assets/](src/assets/) — todas as imagens
   - [src/js/](src/js/)
   - [src/css/](src/css/)
   - [jogos/](jogos/)

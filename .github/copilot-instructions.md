@@ -48,9 +48,10 @@ Arquitetura (importante)
 
 Conveções e expectativas
 ------------------------
-- Projeto: site estático com JS/CSS em `src/` e páginas em várias pastas.
+- Projeto: site estático com JS/CSS em `src/`, assets em `src/assets/` e páginas em várias pastas.
 - Prefira PRs pequenos e reversíveis; documente mudanças de caminhos.
 - Não há CI ou testes automatizados detectados — alterações precisam de validação manual.
+- Ao adicionar imagens, coloque em `src/assets/` e use caminhos relativos corretos.
 
 Quando criar uma PR
 -------------------

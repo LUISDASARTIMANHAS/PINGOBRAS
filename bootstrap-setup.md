@@ -47,6 +47,12 @@ Armazenamento e tokens
 - Não armazene segredos no `localStorage` ou em arquivos públicos. Para tokens curtos, prefira mantê-los em memória ou usar cookies seguros quando possível.
 - Dados não-sensíveis podem ser cacheados em `localStorage` ou `IndexedDB` para melhorar o desempenho.
 
+Assets e imagens
+----------------
+- Todas as imagens devem estar em `src/assets/`.
+- Use caminhos relativos: `src/assets/logo.png` da raiz, ou `../src/assets/logo.png` se em subpastas.
+- Ao otimizar imagens para web, considere compressão (ex.: PNG otimizado, WEBP) para melhorar performance.
+
 Notas
 -----
 - Ao usar CDN, esteja atento a políticas de CSP se aplicável.
