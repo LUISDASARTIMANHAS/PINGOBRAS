@@ -53,11 +53,12 @@ Modernização planejada
 Requisitos da empresa
 ---------------------
 - Cores principais: azul e roxo — use variáveis CSS para facilitar o tema.
-- Animações: implemente animações suaves em todas as páginas; prefira performance com CSS.
+- **ANIMAÇÕES (OBRIGATÓRIO)**: implemente animações suaves em TODAS as páginas; prefira performance com CSS. Este requisito NÃO pode ser ignorado.
 - Objetivo geral: apresentar a Pingobras S.A. e agregar todos os sistemas web em um único site.
 - Segurança: priorizar sempre; validar entradas, usar HTTPS e rotas protegidas na API.
 - API atual: `https://pingobras-sg.onrender.com/` com base `/api`.
 - Estrutura de funcionários: páginas de colaboradores (ex.: `LUIS_DAS_ARTIMANHAS/`) devem permanecer integradas e visíveis como sub-sites ou blogs.
+- **SEPARAÇÃO DE ARQUIVOS (OBRIGATÓRIO)**: cada página/componente em `.html`, `.css` e `.js` separados. Nunca misturar CSS ou JS dentro do HTML.
 
 Arquitetura e restrições
 -----------------------

@@ -7,9 +7,10 @@ Este repositório contém a versão antiga do site da empresa (2019/2020). O obj
 Metas principais
 ----------------
 - Publicar uma versão moderna e responsiva do site.
-- Organizar CSS e JS em `src/` reutilizáveis.
-- Manter URLs e conteúdo existentes quando possível.
+- Organizar CSS e JS em `src/` reutilizáveis, separados em arquivos individuais.
+- Manter URLs e conteúdo existente quando possível.
 - Fornecer instruções claras para agentes/colaboradores no repositório.
+- **OBRIGATÓRIO**: Implementar animações suaves em TODAS as páginas.
 
 Roteiro (linha do tempo sugerida)
 ---------------------------------
@@ -26,12 +27,18 @@ Checklist mínimo de auditoria
 - Listar páginas críticas: `index.html`, `jogos/index.html`, `login/index.html`, páginas em `src/`.
 - Verificar referências a scripts externos e assets em caminhos relativos.
 - Identificar arquivos JavaScript com lógica de dependência (ex.: `src/js/load-scripts.js`).
+- **CRÍTICO**: Auditar TODAS as páginas quanto a animações — se não houver, adicionar. Sem exceções.
+- **CRÍTICO**: Verificar se CSS e JS estão misturados dentro dos arquivos HTML. Se sim, separar em arquivos `.css` e `.js` individuais.
 
 Como contribuir
 ---------------
 - Crie pequenas PRs focadas (uma tarefa por PR).
 - Teste localmente com `python -m http.server 8000` e documente quais páginas foram validadas.
 - Marque PRs com "modernização" no título para facilitar triagem.
+- **OBRIGATÓRIO em todas as PRs**: 
+  - Confirmar que TODAS as páginas afetadas têm animações suaves (CSS transitions/animations).
+  - Confirmar que CSS e JS estão em arquivos separados (`.css` e `.js`), não misturados no HTML.
+  - Documentar quais animações foram adicionadas no corpo da PR.
 
 Recomendações de tecnologia
 --------------------------
@@ -43,6 +50,8 @@ Requisitos da empresa
 ---------------------
 - Cores principais: azul e roxo — defina variáveis CSS para `--brand-blue` e `--brand-purple` em `src/css/variables.css`.
 - Animações: todas as páginas devem ter animações suaves; prefira CSS transitions/animations e bibliotecas leves (ex.: AOS ou animate.css) quando necessário.
++ **ANIMAÇÕES (OBRIGATÓRIO)**: TODAS as páginas devem ter animações suaves. Prefira CSS transitions/animations. Use bibliotecas leves quando necessário. Este é um requisito que NÃO pode ser ignorado.
++ **ESTRUTURA DE ARQUIVOS (OBRIGATÓRIO)**: Separar cada página em: `.html` (estrutura), `.css` (estilos), `.js` (comportamento). Nunca incluir CSS/JS em tags inline dentro do HTML.
 - Objetivo do site: apresentar a empresa Pingobras S.A. e centralizar todos os sistemas web (jogos, admin, login, etc.).
 - Segurança: priorizar sempre, validar entradas, usar HTTPS e proteger rotas de API.
 - API atual: servidor central `https://pingobras-sg.onrender.com/` com rota base `/api` para todas as chamadas.

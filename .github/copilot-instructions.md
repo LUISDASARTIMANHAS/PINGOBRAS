@@ -25,6 +25,8 @@ Checks rápidos antes de PR
 - Verifique links relativos em HTML/JS/CSS.
 - Teste páginas principais: `index.html`, `src/index.html`, `jogos/index.html`, `login/index.html`.
 - Evite grandes refatorações de caminhos sem testes manuais locais.
+- **OBRIGATÓRIO**: Toda página deve ter animações suaves — valide que existem.
+- **OBRIGATÓRIO**: Confirme que CSS e JS estão em arquivos separados, não inline no HTML.
 
 Notas de modernização
 ---------------------
@@ -35,7 +37,8 @@ Notas de modernização
 Requisitos e contexto rápido
 ---------------------------
 - Cores da empresa: azul e roxo — prefira variáveis CSS `--brand-blue` e `--brand-purple`.
-- Animações: todas as páginas devem ter animações suaves; priorize performance usando CSS transitions/animations.
+- **ANIMAÇÕES (OBRIGATÓRIO)**: todas as páginas devem ter animações suaves; priorize performance usando CSS transitions/animations. Este requisito NÃO pode ser ignorado.
+- **SEPARAÇÃO DE ARQUIVOS (OBRIGATÓRIO)**: arquivo `.html`, `.css` e `.js` separados. Nunca incluir CSS/JS inline ou em tags dentro do HTML.
 - API central: `https://pingobras-sg.onrender.com/` com base `/api` para todas as chamadas.
 - Segurança: valide entradas, use HTTPS e assegure que rotas sensíveis da API exigem autenticação.
 - Páginas importantes: verifique páginas em `LUIS_DAS_ARTIMANHAS/` (site do dono) e outras subpastas de funcionários.

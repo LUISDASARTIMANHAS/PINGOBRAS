@@ -18,6 +18,7 @@ Passos sugeridos para scaffold
 3. Migrar classes CSS: substitua grids e utilitários por classes Bootstrap (`container`, `row`, `col-*`, `d-flex`, etc.).
 4. Extrair estilos customizados para `src/css/custom.css` e carregá-lo após o CSS do Bootstrap para sobrescrever quando necessário.
 5. Testar responsividade em diferentes larguras e ajustar componentes.
+6. **IMPORTANTE**: Separar cada página em arquivos `.html`, `.css` e `.js` individuais. Nunca incluir CSS/JS inline nas tags `<style>` ou `<script>` dentro do HTML.
 
 Temas e animações
 -----------------
