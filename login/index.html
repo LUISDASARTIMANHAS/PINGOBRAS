@@ -1,100 +1,260 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
-  <head>
-    
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=0.7" />
-    <meta http-equiv="Strict-Transport-Security" content="max-age=31536000; includeSubDomains; preload">
-    <link rel="icon" href="https://cdn.glitch.global/d4f5fe8f-71d8-4ff8-be3a-c3c78bbd1b44/Member-Login-Button-PNG-Clipart.png?v=1646151214012" >
-    <links></links>
-    <link rel="stylesheet" href="login/style.css" />
-    <link rel="stylesheet" href="login/reset.css" />
-    <seo>
-    <meta name="robots" content="index,follow" />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="PINGOBRAS - Faça login em sua conta">
+    <meta name="author" content="Pingobras S.A">
     <meta property="og:title" content="PINGOBRAS LOGIN" />
     <meta property="og:type" content="article" />
     <meta property="og:url" content="https://pingobras.glitch.me/login" />
-    <meta
-      property="og:description"
-      content="Pingobras Login do usuário e administrativo "/>
-    </seo>
+    <meta property="og:description" content="Login do usuário e administrativo"/>
     
-    <title>PINGOBRAS LOGIN</title>
-  </head>
-  <body>
-    <div class="site-altura">
-      <div class="conteudo" role="main">
-        
-      <teladelogin>
-        <h1 class="title-login">LOGIN PINGOBRAS S.A</h1>
-        <js id="msgError" class="msg-Error msg">Nenhum Erro Encontrado!</js>
-        <js id="msgSuccess" class="msg-Success msg">Verificando...</js>
-       <form id="form">
-        <p vermelho>indica campos obrigatórios (*) </p>
-         <label required for="email">Email</label>
-         <input
-                class="input-login"       
-                type="email"
-                id="email"
-                placeholder="Insira o seu e-mail" 
-                required>
-      
-         <button class="btn btn-login" type="submit">
-            Enviar Código  
-         </button>
-        </form>
-        
-        <form hidden id="formCode">
-          <label required for="code">Código</label>
-          <input type="number"
-                 id="code"
-                 placeholder="Insira o Código Enviado"
-                 required>
-          
-          <button class="btn btn-login" type="submit">
-            Entrar
-          </button>
-        </form>
-        
-        <label for="continueConnected"> Permanecer conectado? </label>
-        <input type="checkbox" 
-               id="continueConnected" 
-               name="continueConnected"
-               checked>
-        
-        <button 
-           class="btn"
-           onclick="redirectUrl('/cadastro')"> 
-          Cadastrar
-        </button>
-        
-        </teladelogin>
+    <title>PINGOBRAS - Login</title>
+    
+    <!-- Bootstrap 5 CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Pingobras Custom Styles -->
+    <link rel="stylesheet" href="/src/css/template.css">
+    
+    <style>
+        .login-container {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, var(--brand-blue) 0%, var(--brand-purple) 100%);
+        }
 
-        <button 
-           class="btn-voltar"
-           onclick="redirectUrl('/')"> 
-          RETORNAR PARA PINGOBRAS
-        </button>
-        
-        
-          </div></div>
-        <footer>
-          <div id="direitos" class="direitos">
-            <div class="loading ">
-              <p class="load "></p>
-            </div> 
-          </div>
-        </footer>
-  </body>
-  <script src="/src/js/links.js" defer></script>
-  <script src="login/login.js" defer></script>
-  <autoscripts>
-    <script src="/src/js/load-scripts.js"></script>
-    </autoscripts>
-  <script>
-  const http = "http://pingobras.glitch.me/login"
-if(document.URL == http) {
-   window.location.href = ("https://pingobras.glitch.me/login");}
-  </script>
+        .login-card {
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+            padding: 50px 40px;
+            width: 100%;
+            max-width: 420px;
+            animation: fadeInUp 0.6s ease-out;
+        }
+
+        .login-card img {
+            width: 100%;
+            height: auto;
+            max-width: 150px;
+            margin: 0 auto 30px;
+            display: block;
+        }
+
+        .login-card h1 {
+            text-align: center;
+            color: var(--brand-blue);
+            font-weight: 700;
+            font-size: 1.8rem;
+            margin-bottom: 30px;
+        }
+
+        .login-card .msg {
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            font-weight: 600;
+            text-align: center;
+            display: none;
+        }
+
+        .msg-Error {
+            background-color: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+
+        .msg-Success {
+            background-color: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+
+        .msg.active {
+            display: block;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            font-weight: 600;
+            color: var(--brand-blue);
+            margin-bottom: 10px;
+        }
+
+        .form-control {
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            padding: 12px 15px;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .form-control:focus {
+            border-color: var(--brand-blue);
+            box-shadow: 0 0 0 0.2rem rgba(0, 52, 204, 0.25);
+        }
+
+        .checkbox-group {
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        .checkbox-group input[type="checkbox"] {
+            margin-right: 10px;
+        }
+
+        .checkbox-group label {
+            display: inline;
+            font-weight: normal;
+            color: #555;
+            margin: 0;
+        }
+
+        .btn-submit {
+            width: 100%;
+            padding: 12px;
+            font-weight: 600;
+            font-size: 1rem;
+            border: none;
+            border-radius: 8px;
+            background: linear-gradient(135deg, var(--brand-blue), var(--brand-purple));
+            color: white;
+            transition: all 0.3s ease;
+            margin-bottom: 15px;
+        }
+
+        .btn-submit:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(0, 52, 204, 0.3);
+        }
+
+        .btn-secondary {
+            width: 100%;
+            padding: 12px;
+            font-weight: 600;
+            font-size: 1rem;
+            border: 2px solid var(--brand-blue);
+            background: transparent;
+            color: var(--brand-blue);
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .btn-secondary:hover {
+            background: var(--brand-blue);
+            color: white;
+        }
+
+        .login-footer {
+            text-align: center;
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid #e0e0e0;
+        }
+
+        .login-footer a {
+            color: var(--brand-blue);
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .login-footer a:hover {
+            color: var(--brand-purple);
+        }
+
+        .required::after {
+            content: ' *';
+            color: #dc3545;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <div class="login-card">
+            <img src="/src/assets/pingobras logo.png" alt="PINGOBRAS Logo">
+            
+            <h1>Bem-vindo</h1>
+            
+            <div id="msgError" class="msg msg-Error"></div>
+            <div id="msgSuccess" class="msg msg-Success"></div>
+
+            <form id="form">
+                <div class="form-group">
+                    <label for="email" class="required">Email</label>
+                    <input 
+                        type="email" 
+                        class="form-control" 
+                        id="email" 
+                        placeholder="Digite seu e-mail"
+                        required>
+                </div>
+                
+                <button type="submit" class="btn-submit">Enviar Código</button>
+            </form>
+
+            <form id="formCode" style="display: none;">
+                <div class="form-group">
+                    <label for="code" class="required">Código de Verificação</label>
+                    <input 
+                        type="number" 
+                        class="form-control" 
+                        id="code" 
+                        placeholder="Digite o código recebido"
+                        required>
+                </div>
+                
+                <div class="checkbox-group">
+                    <input type="checkbox" id="continueConnected" checked>
+                    <label for="continueConnected">Permanecer conectado</label>
+                </div>
+                
+                <button type="submit" class="btn-submit">Entrar</button>
+            </form>
+
+            <div class="login-footer">
+                <p>Não tem conta? <a href="javascript:redirectUrl('/cadastro')">Cadastre-se aqui</a></p>
+                <p><a href="recuperar-senha.html">Recuperar Senha</a></p>
+                <a href="javascript:redirectUrl('/')" class="btn-secondary d-block">Voltar para Home</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Scripts -->
+    <script src="/src/js/functions.js" defer></script>
+    <script src="/login/login.js" defer></script>
+    
+    <script>
+        // Redirecionar HTTP para HTTPS
+        if (document.URL.includes('http://')) {
+            window.location.href = document.URL.replace('http://', 'https://');
+        }
+
+        // Alternar entre formulários
+        function showCodeForm() {
+            document.getElementById('form').style.display = 'none';
+            document.getElementById('formCode').style.display = 'block';
+        }
+
+        function showEmailForm() {
+            document.getElementById('form').style.display = 'block';
+            document.getElementById('formCode').style.display = 'none';
+        }
+
+        function redirectUrl(path) {
+            window.location.href = path;
+        }
+    </script>
+</body>
 </html>

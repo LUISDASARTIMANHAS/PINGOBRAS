@@ -1,88 +1,206 @@
-<html>
-  <head>
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=0.7, user-scalable=no, maximum-scale=1"
-    />
-    <meta charset="UTF-8" />
-    <meta http-equiv="Refresh" content="60" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title>Edital de Contratação</title>
-    <link
-      rel="icon"
-      href="https://cdn.glitch.global/b39d6a4a-0e14-4b41-930d-29d3ccd6c137/PINGOBRAS icon.png?v=1665177105635"
-    />
-    <link rel="stylesheet" href="/edital/edital.css" />
-  </head>
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Edital de Contratação - PINGOBRAS S.A">
+    <meta name="author" content="Pingobras S.A">
+    
+    <title>PINGOBRAS - Edital de Contratação</title>
+    
+    <!-- Bootstrap 5 CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Pingobras Custom Styles -->
+    <link rel="stylesheet" href="/src/css/template.css">
+    
+    <link rel="stylesheet" href="/edital/edital.css">
+    
+    <style>
+        .edital-header {
+            background: linear-gradient(135deg, var(--brand-blue) 0%, var(--brand-purple) 100%);
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+        }
 
-  <body
-    id="pgpage-concurso"
-    class="sidebar-desktop-active"
-    data-page-entry="list"
-    data-inactivity-timeout="0"
-  >
-    <div class="container-fluid">
-      <div class="row sidebar-owner">
-        <div class="sidebar">
-          <div class="content">
-            <div class="sidebar-nav">
-              <ul class="nav nav-pills nav-stacked">
-                <li class="active" title="Concurso Público">
-                  <a
-                    class="sidebar-nav-item"
-                    href="/edital"
-                    title="Edital de Contratação"
-                  >
-                    Edital de Contratação
-                  </a>
-                </li>
+        .edital-container {
+            padding: 40px 20px;
+        }
 
-                <li>
-                  <a
-                    class="sidebar-nav-item"
-                    href="/edital/results.html"
-                    title="Resultados Do Edital"
-                  >
-                    Resultados Do Edital
-                  </a>
-                </li>
-              </ul>
+        .edital-table {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .edital-table table {
+            margin: 0;
+        }
+
+        .edital-table thead {
+            background: linear-gradient(135deg, var(--brand-blue), var(--brand-purple));
+            color: white;
+        }
+
+        .edital-table th {
+            border: none;
+            padding: 15px;
+            font-weight: 600;
+        }
+
+        .edital-table td {
+            border-color: #e0e0e0;
+            padding: 15px;
+            vertical-align: middle;
+        }
+
+        .edital-table tbody tr:hover {
+            background-color: var(--brand-light-blue);
+        }
+
+        .edital-nav {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+
+        .edital-nav a, .edital-nav button {
+            flex: 1;
+            min-width: 150px;
+            padding: 12px 20px;
+            border-radius: 8px;
+            border: 2px solid var(--brand-blue);
+            background: transparent;
+            color: var(--brand-blue);
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            text-align: center;
+        }
+
+        .edital-nav a:hover, .edital-nav button:hover {
+            background: var(--brand-blue);
+            color: white;
+        }
+
+        .edital-nav .active {
+            background: linear-gradient(135deg, var(--brand-blue), var(--brand-purple));
+            color: white;
+            border-color: transparent;
+        }
+
+        .status-badge {
+            display: inline-block;
+            padding: 8px 12px;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 0.85rem;
+        }
+
+        .status-aberto {
+            background-color: #d4edda;
+            color: #155724;
+        }
+
+        .status-fechado {
+            background-color: #f8d7da;
+            color: #721c24;
+        }
+
+        .status-resultado {
+            background-color: #cfe2ff;
+            color: #084298;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="/">
+                <img src="/src/assets/pingobras logo.png" alt="PINGOBRAS" height="45" class="me-2">
+                <span style="vertical-align: middle;">PINGOBRAS</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/user">Minha Conta</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/jogos">Jogos</a>
+                    </li>
+                </ul>
             </div>
-          </div>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <section class="edital-header">
+        <h1>📋 Edital de Contratação</h1>
+        <p>Acompanhe os editais e processos de seleção da PINGOBRAS S.A</p>
+    </section>
+
+    <!-- Content -->
+    <div class="container edital-container">
+        <!-- Navigation Tabs -->
+        <div class="edital-nav">
+            <a href="/edital" class="active">Editais Abertos</a>
+            <a href="/edital/results.html">Resultados</a>
         </div>
 
-        <div class="sidebar-backdrop"></div>
-        <div class="col-md-12">
-          <div class="sidebar-outer">
-            <div class="container-padding">
-              <div class="page-header"></div>
-
-              <h1>Edital de Contratação</h1>
-              <table>
-                <tr>
-                  <th>Edital Nº</th>
-                  <th>Publicação</th>
-                  <th>Descrição</th>
-                  <th>Status</th>
-                  <th>Referência</th>
-                  <th>Ações</th>
-                </tr>
-                <!--       carregado automaticamente -->
-              </table>
-            </div>
-          </div>
+        <!-- Table -->
+        <div class="edital-table">
+            <table class="table" id="editalTable">
+                <thead>
+                    <tr>
+                        <th>Edital Nº</th>
+                        <th>Publicação</th>
+                        <th>Descrição</th>
+                        <th>Status</th>
+                        <th>Referência</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Conteúdo carregado dinamicamente -->
+                    <tr>
+                        <td colspan="6" style="text-align: center; color: #999;">Carregando editais...</td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
-      </div>
     </div>
 
-    <span
-      role="status"
-      aria-live="polite"
-      class="select2-hidden-accessible"
-    ></span>
-    <div class="webui-popover-backdrop" style="display: none"></div>
-    <scripts>
-      <script src="/edital/loader-table.js" defer></script>
-    </scripts>
-  </body>
+    <!-- Footer -->
+    <footer style="margin-top: 60px;">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h5>PINGOBRAS Editais</h5>
+                    <p>Procure sempre verificar os editais oficiais</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <p>&copy; 2026 Pingobras S.A. Todos os direitos reservados.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Scripts -->
+    <script src="/src/js/functions.js" defer></script>
+    <script src="/edital/loader-table.js" defer></script>
+</body>
 </html>

@@ -1,126 +1,223 @@
 <!DOCTYPE html>
-<html lang="PT">
-
-  <head>
-
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=0.7" />
-    <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/180/180527.png" >
-    <links></links>
-    <link rel="stylesheet" href="https://store.akamai.steamstatic.com/public/src/css/v6/store.css?v=W1sdttnLWQqu&l=portuguese">
-    <link rel="stylesheet" href="https://store.akamai.steamstatic.com/public/shared/src/css/shared_responsive.css?v=0k8e5PeElDG2&l=portuguese">
-    <link rel="stylesheet" href="https://store.akamai.steamstatic.com/public/src/css/v6/steamaccount.css?v=JDIGgJKK7-N1&l=portuguese">
-    <link rel="stylesheet" href="https://store.akamai.steamstatic.com/public/shared/src/css/shared_global.css?v=bZ1DujuZZkls&l=portuguese">
-    <link rel="stylesheet" href="https://store.akamai.steamstatic.com/public/shared/src/css/buttons.css?v=6PFqex5UPprb&l=portuguese">
-    <link rel="stylesheet" href="https://store.akamai.steamstatic.com/public/src/css/v6/account.css?v=P2WLI8B6ddJe&l=portuguese">
-    <link rel="stylesheet" href="https://store.akamai.steamstatic.com/public/src/css/v6/game.css?v=-uLT3t5ow-oO&l=portuguese">
-    <seo>
-    <meta
-      name="description"
-      content="Lobby de Jogos da PINGOBRAS. / Todos os Direitos Reservados"/>
-    <meta name="robots" content="index,follow" />
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Lobby de Jogos da PINGOBRAS">
+    <meta name="robots" content="index,follow">
     <meta property="og:title" content="Lobby De Jogos" />
     <meta property="og:type" content="game" />
-    <meta property="og:url" content="https://pinggobras.glitch.me/jogos" />
-    <meta
-      property="og:description"
-      content="Lobby de Jogos da PINGOBRAS. / Todos os Direitos Reservados"/>
-    <meta
-      property="og:image"
-      content="https://img.freepik.com/vetores-gratis/console-com-letras-de-jogos-sinal-de-neon-no-fundo-do-tijolo_1262-11854.jpg?w=360"/>
+    <meta property="og:url" content="https://pingobras.glitch.me/jogos" />
+    <meta property="og:description" content="Lobby de Jogos da PINGOBRAS - Todos os Direitos Reservados"/>
+    <meta property="og:image" content="https://img.freepik.com/vetores-gratis/console-com-letras-de-jogos-sinal-de-neon-no-fundo-do-tijolo_1262-11854.jpg?w=360"/>
     <meta name="twitter:card" content="summary" />
-    </seo>
-    <title>PINGOBRAS GAMES</title>
- 
-    <nav class="cabecalho" style="width:102%;" >
-     
-      <button
-         onclick="window.location.href='/user';ClickMouse.play();document.documentElement.requestFullscreen();"
-         class="btnNav">
-         Voltar
-      </button>
-       
-      <button 
-              class="btnNav"
-              id="btnfilms"
-              onclick="pageLives()"
-              target="_blank">
-        LIVES(FUTEBOL,COPA DO MUNDO,YOUTUBE) 
-      </button>
-      
-      <button 
-              class="btnNav"
-              id="btnVideoplayer"
-              onclick="window.location.href='/user/video-player';ClickMouse.play()">
-        Youtube Embutir Video
-      </button>
-     
-      <div id="header_wallet_ctn"
-             style="width:100%">
-        
-          <span class="carteira"
-                id="logado">
-          Server Not Response 401-501 Bad Getaway
-          </span>
-        <a href="/user/account.html">
-        <img id="perfilIcon"
-             class ="perfil-icon" 
-               src="https://w7.pngwing.com/pngs/798/436/png-transparent-computer-icons-user-profile-avatar-profile-heroes-black-profile.png" />
-        </a>
-        
-        <div class="item-account-left">
-        </div>
-        
-          <p branco>Saldo:</p>
-          <a 
-           class="global_action_link" 
-           id="header_wallet_balance" 
-           href="/carteira">
-          R$ 0,00
-          </a>
-				  </div>
+    
+    <title>PINGOBRAS - Jogos</title>
+    
+    <!-- Bootstrap 5 CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Pingobras Custom Styles -->
+    <link rel="stylesheet" href="/src/css/template.css">
+    
+    <style>
+        .games-hero {
+            background: linear-gradient(135deg, #7c3aed 0%, #0052cc 100%);
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
 
-    </nav>   
- </head>
-  <body>
-    <div class="site-altura">
-      <div class="conteudo" role="main">
-        <!-- This is the start of content for our page -->
-        <h2>PINGOBRAS</h2> <h3>CORPORATION</h3>
-        
-        <button
-                class="btn-user"
-                onclick="window.location.href='/jogos/web'; ClickMouse.play()">
-        JOGOS WEB
-      </button>
-             
-        <button
-                class="btn-user"
-                onclick="window.location.href='/jogos/io'; ClickMouse.play()">
-        JOGOS .IO
-      </button>
-        
-        
-        </div></div>
-        <footer>
-          <div id="direitos" class="direitos">Loading...</div>
-          
-      </footer>
-    <button
-            class="btn-descer"
-            onclick="sair()">
-      Sair
-    </button>     
-  </body>
-    <script src="/src/js/links.js" defer></script>
-    <autoscripts>
-    <script src="./src/js/load-scripts.js"></script>
-  </autoscripts>
-  <autoscriptsuser>
-    <script src="/user/load-scripts.js"></script>
-  </autoscriptsuser>
-    <host>
-    <script src="/src/js/load-host.js" defer></script>  
-  </host>
-  
+        .games-container {
+            padding: 60px 20px;
+        }
+
+        .game-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            text-decoration: none;
+            color: inherit;
+            display: block;
+            height: 100%;
+        }
+
+        .game-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 52, 204, 0.2);
+        }
+
+        .game-card-image {
+            width: 100%;
+            height: 200px;
+            background: linear-gradient(135deg, #0052cc, #7c3aed);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            color: white;
+        }
+
+        .game-card-content {
+            padding: 25px;
+            text-align: center;
+        }
+
+        .game-card h3 {
+            color: var(--brand-blue);
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .game-card p {
+            color: #666;
+            font-size: 0.95rem;
+            margin: 0;
+        }
+
+        .account-info {
+            background: var(--brand-light-blue);
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+        }
+
+        .account-info-item {
+            display: inline-block;
+            margin: 0 20px;
+        }
+
+        .account-info-item label {
+            color: var(--brand-blue);
+            font-weight: 600;
+            margin-right: 10px;
+        }
+
+        .account-info-item span {
+            color: #333;
+            font-weight: 700;
+            font-size: 1.1rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="/">
+                <img src="/src/assets/pingobras logo.png" alt="PINGOBRAS" height="45" class="me-2">
+                <span style="vertical-align: middle;">PINGOBRAS</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/user">Minha Conta</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/user/blog">Blog</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/user/video-player">Vídeos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link btn btn-primary-gradient" href="javascript:sair()">Sair</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="games-hero">
+        <div>
+            <h1 style="font-size: 3rem; margin-bottom: 20px;">🎮 PINGOBRAS GAMES</h1>
+            <p style="font-size: 1.2rem; opacity: 0.95;">Divirta-se com os melhores jogos online</p>
+        </div>
+    </section>
+
+    <!-- Account Info -->
+    <div class="container games-container">
+        <div class="account-info">
+            <div class="account-info-item">
+                <label>Status:</label>
+                <span id="logado">Carregando...</span>
+            </div>
+            <div class="account-info-item">
+                <label>Saldo:</label>
+                <span id="header_wallet_balance">R$ 0,00</span>
+            </div>
+        </div>
+
+        <h2 class="section-title text-center">Categorias de Jogos</h2>
+
+        <div class="row g-4">
+            <div class="col-md-6 col-lg-4">
+                <a href="/jogos/web" class="game-card">
+                    <div class="game-card-image">🌐</div>
+                    <div class="game-card-content">
+                        <h3>Jogos Web</h3>
+                        <p>Os melhores jogos para jogar no navegador</p>
+                    </div>
+                </a>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+                <a href="/jogos/io" class="game-card">
+                    <div class="game-card-image">🎯</div>
+                    <div class="game-card-content">
+                        <h3>Jogos .IO</h3>
+                        <p>Jogos multiplayer clássicos do gênero .io</p>
+                    </div>
+                </a>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+                <a href="/user/video-player" class="game-card">
+                    <div class="game-card-image">🎬</div>
+                    <div class="game-card-content">
+                        <h3>Vídeos e Lives</h3>
+                        <p>Assista lives de futebol e conteúdo exclusivo</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h5>PINGOBRAS Games</h5>
+                    <p>A melhor plataforma de jogos online do Brasil</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <p>&copy; 2026 Pingobras S.A. Todos os direitos reservados.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Scripts -->
+    <script src="/src/js/functions.js" defer></script>
+    <script src="/user/load-scripts.js" defer></script>
+    
+    <script>
+        function sair() {
+            if (confirm('Tem certeza que deseja sair?')) {
+                window.location.href = '/login';
+            }
+        }
+    </script>
+</body>
 </html>

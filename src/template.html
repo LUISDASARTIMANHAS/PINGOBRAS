@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Pingobras S.A - Hospedagem de sites, servidores e serviços de empréstimos">
+    <meta name="author" content="Pingobras S.A">
+    
+    <title>PINGOBRAS - Título da Página</title>
+    
+    <!-- Bootstrap 5 CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Animate.css para animações -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    
+    <!-- Pingobras Custom Styles -->
+    <link rel="stylesheet" href="/src/css/template.css">
+    
+    <!-- Custom Styles para esta página (opcional) -->
+    <style>
+        /* Adicione estilos específicos da página aqui */
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="/">
+                <img src="/src/assets/pingobras logo.png" alt="PINGOBRAS" height="45" class="me-2">
+                <span style="vertical-align: middle;">PINGOBRAS</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/jogos">Jogos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/edital">Editais</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/user">Conta</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link btn btn-primary-gradient" href="/login">Entrar</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content py-5">
+        <div class="container">
+            <!-- Adicione o conteúdo da página aqui -->
+            <h1 class="section-title text-center mb-5">Título da Página</h1>
+            <p>Conteúdo da página...</p>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3 footer-section fade-in">
+                    <h5>Pingobras S.A</h5>
+                    <p>Hospedagem, servidores e serviços financeiros confiáveis.</p>
+                    <div class="social-links">
+                        <a href="https://discord.gg/pingobras" title="Discord">📱</a>
+                        <a href="https://wa.me/5511999999999" title="WhatsApp">💬</a>
+                    </div>
+                </div>
+                <div class="col-md-3 footer-section fade-in">
+                    <h5>Serviços</h5>
+                    <ul>
+                        <li><a href="/">Hospedagem</a></li>
+                        <li><a href="/">Servidores</a></li>
+                        <li><a href="/">Empréstimos</a></li>
+                        <li><a href="/">Plataformas</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3 footer-section fade-in">
+                    <h5>Plataformas</h5>
+                    <ul>
+                        <li><a href="/jogos">Jogos</a></li>
+                        <li><a href="/user/blog">Blog</a></li>
+                        <li><a href="/user/chat">Chat</a></li>
+                        <li><a href="/edital">Editais</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3 footer-section fade-in">
+                    <h5>Conta</h5>
+                    <ul>
+                        <li><a href="/login">Entrar</a></li>
+                        <li><a href="/login/recuperar-senha.html">Recuperar Senha</a></li>
+                        <li><a href="/user">Minha Conta</a></li>
+                        <li><a href="/user/admin">Admin</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 Pingobras S.A. Todos os direitos reservados. | <a href="#">Privacidade</a> | <a href="#">Termos de Serviço</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Scripts personalizados da Pingobras -->
+    <script src="/src/js/functions.js" defer></script>
+    <script>
+        // Smooth scroll para links internos
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const href = this.getAttribute('href');
+                if (href !== '#' && document.querySelector(href)) {
+                    e.preventDefault();
+                    document.querySelector(href).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
