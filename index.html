@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Pingobras S.A - Hospedagem de sites, servidores e serviços de empréstimos">
+    <meta name="keywords" content="hospedagem, servidor, sites, empréstimos, Pingobras">
+    <meta name="author" content="Pingobras S.A">
+    
+    <title>Pingobras S.A - Hospedagem e Serviços</title>
+    
+    <!-- Bootstrap 5 CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Animate.css para animações -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    
+    <!-- Custom Styles -->
+    <style>
+        :root {
+            --brand-blue: #0052cc;
+            --brand-purple: #7c3aed;
+            --brand-light-blue: #e6f2ff;
+            --brand-light-purple: #faf5ff;
+            --transition: all 0.3s ease-in-out;
+        }
+
+        * {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f8f9fa;
+            color: #333;
+        }
+
+        /* Navbar */
+        .navbar {
+            background: linear-gradient(135deg, var(--brand-blue) 0%, var(--brand-purple) 100%);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1030;
+        }
+
+        .navbar-brand {
+            font-weight: 700;
+            font-size: 1.5rem;
+            letter-spacing: 0.5px;
+            color: white !important;
+            transition: var(--transition);
+        }
+
+        .navbar-brand:hover {
+            transform: scale(1.05);
+        }
+
+        .nav-link {
+            color: rgba(255, 255, 255, 0.9) !important;
+            transition: var(--transition);
+            margin: 0 5px;
+            border-radius: 4px;
+        }
+
+        .nav-link:hover {
+            color: white !important;
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--brand-blue) 0%, var(--brand-purple) 100%);
+            color: white;
+            padding: 80px 20px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none"><path d="M0,50 Q300,100 600,50 T1200,50 L1200,120 L0,120 Z" fill="rgba(255,255,255,0.05)"></path></svg>');
+            background-size: 1200px 120px;
+            animation: wave 15s linear infinite;
+        }
+
+        @keyframes wave {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(1200px); }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+            letter-spacing: -1px;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 30px;
+            opacity: 0.95;
+        }
+
+        .btn-primary-gradient {
+            background: linear-gradient(135deg, #fff 0%, #f0f0f0 100%);
+            color: var(--brand-blue);
+            border: none;
+            padding: 12px 30px;
+            font-weight: 600;
+            border-radius: 50px;
+            transition: var(--transition);
+            display: inline-block;
+            margin: 10px;
+        }
+
+        .btn-primary-gradient:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+            color: var(--brand-purple);
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Sections */
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 50px;
+            color: var(--brand-blue);
+            position: relative;
+            padding-bottom: 20px;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--brand-blue), var(--brand-purple));
+            border-radius: 2px;
+        }
+
+        /* Features / Cards */
+        .feature-card {
+            background: white;
+            border: none;
+            border-radius: 12px;
+            padding: 30px;
+            text-align: center;
+            transition: var(--transition);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(0, 52, 204, 0.15);
+        }
+
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            color: var(--brand-blue);
+            transition: var(--transition);
+        }
+
+        .feature-card:hover .feature-icon {
+            color: var(--brand-purple);
+            transform: scale(1.1);
+        }
+
+        .feature-card h5 {
+            color: var(--brand-blue);
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        .feature-card p {
+            color: #666;
+            margin: 0;
+            line-height: 1.6;
+        }
+
+        /* Services Section */
+        .services-section {
+            padding: 80px 20px;
+            background: white;
+        }
+
+        .service-item {
+            background: linear-gradient(135deg, var(--brand-light-blue) 0%, var(--brand-light-purple) 100%);
+            padding: 30px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            transition: var(--transition);
+            cursor: pointer;
+        }
+
+        .service-item:hover {
+            transform: translateX(10px);
+            box-shadow: 0 10px 25px rgba(0, 52, 204, 0.1);
+        }
+
+        .service-item h4 {
+            color: var(--brand-blue);
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .service-item p {
+            color: #555;
+            margin: 0;
+        }
+
+        /* Buttons */
+        .btn-outline-brand {
+            border: 2px solid var(--brand-blue);
+            color: var(--brand-blue);
+            transition: var(--transition);
+        }
+
+        .btn-outline-brand:hover {
+            background-color: var(--brand-blue);
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        .btn-brand-solid {
+            background: linear-gradient(135deg, var(--brand-blue), var(--brand-purple));
+            color: white;
+            border: none;
+            transition: var(--transition);
+        }
+
+        .btn-brand-solid:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(0, 52, 204, 0.3);
+            color: white;
+        }
+
+        /* Footer */
+        footer {
+            background: linear-gradient(135deg, var(--brand-blue) 0%, var(--brand-purple) 100%);
+            color: white;
+            padding: 50px 20px;
+            margin-top: 80px;
+        }
+
+        footer a {
+            color: rgba(255, 255, 255, 0.9);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        footer a:hover {
+            color: white;
+        }
+
+        .footer-section h5 {
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        .footer-section ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-section li {
+            margin-bottom: 10px;
+        }
+
+        .social-links {
+            margin-top: 20px;
+        }
+
+        .social-links a {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            line-height: 40px;
+            text-align: center;
+            margin-right: 10px;
+            transition: var(--transition);
+        }
+
+        .social-links a:hover {
+            background-color: rgba(255, 255, 255, 0.3);
+            transform: translateY(-3px);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 30px;
+            margin-top: 30px;
+            text-align: center;
+        }
+
+        /* Utilities */
+        .text-brand-blue { color: var(--brand-blue); }
+        .text-brand-purple { color: var(--brand-purple); }
+        .bg-brand-light-blue { background-color: var(--brand-light-blue); }
+        .bg-brand-light-purple { background-color: var(--brand-light-purple); }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .section-title {
+                font-size: 1.8rem;
+            }
+
+            .navbar-brand {
+                font-size: 1.2rem;
+            }
+        }
+
+        /* Loading animation */
+        .fade-in {
+            animation: fadeInUp 0.6s ease-out;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="/">
+                🚀 PINGOBRAS S.A
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#servicos">Serviços</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#plataformas">Plataformas</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#sobre">Sobre</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link btn btn-primary-gradient" href="login/">Entrar</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Bem-vindo à Pingobras S.A</h1>
+            <p>Hospedagem de sites, servidores robustos e serviços de empréstimos confiáveis</p>
+            <a href="#servicos" class="btn btn-primary-gradient">Explorar Serviços</a>
+            <a href="login/" class="btn btn-primary-gradient">Acessar Plataforma</a>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="py-80 bg-light">
+        <div class="container py-5">
+            <h2 class="section-title text-center">Por que escolher Pingobras?</h2>
+            
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6 fade-in">
+                    <div class="feature-card">
+                        <div class="feature-icon">⚡</div>
+                        <h5>Performance Alta</h5>
+                        <p>Servidores otimizados para máxima velocidade e confiabilidade</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 fade-in">
+                    <div class="feature-card">
+                        <div class="feature-icon">🔒</div>
+                        <h5>Segurança Premium</h5>
+                        <p>Proteção completa com criptografia e monitoramento 24/7</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 fade-in">
+                    <div class="feature-card">
+                        <div class="feature-icon">💬</div>
+                        <h5>Suporte Dedicado</h5>
+                        <p>Equipe de suporte disponível para atender suas necessidades</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="servicos" class="services-section">
+        <div class="container py-5">
+            <h2 class="section-title text-center">Nossos Serviços</h2>
+            
+            <div class="row">
+                <div class="col-lg-6 fade-in">
+                    <div class="service-item">
+                        <h4>🌐 Hospedagem de Sites</h4>
+                        <p>Soluções de hospedagem rápidas, seguras e escaláveis para seu negócio online.</p>
+                    </div>
+                </div>
+                <div class="col-lg-6 fade-in">
+                    <div class="service-item">
+                        <h4>💻 Servidores Dedicados</h4>
+                        <p>Infraestrutura robusta com controle total para aplicações críticas.</p>
+                    </div>
+                </div>
+                <div class="col-lg-6 fade-in">
+                    <div class="service-item">
+                        <h4>💰 Serviços de Empréstimos</h4>
+                        <p>Soluções financeiras acessíveis e transparentes para suas necessidades.</p>
+                    </div>
+                </div>
+                <div class="col-lg-6 fade-in">
+                    <div class="service-item">
+                        <h4>🎮 Plataformas Interativas</h4>
+                        <p>Acesso a jogos, blogs, chat e ferramentas exclusivas da Pingobras.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Platforms Section -->
+    <section id="plataformas" class="py-80 bg-light">
+        <div class="container py-5">
+            <h2 class="section-title text-center">Nossas Plataformas</h2>
+            
+            <div class="row g-4">
+                <div class="col-lg-3 col-md-6 fade-in">
+                    <a href="jogos/" class="text-decoration-none">
+                        <div class="feature-card">
+                            <div class="feature-icon">🎮</div>
+                            <h5>Jogos</h5>
+                            <p>Divirta-se com jogos online exclusivos</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-lg-3 col-md-6 fade-in">
+                    <a href="user/blog/" class="text-decoration-none">
+                        <div class="feature-card">
+                            <div class="feature-icon">📝</div>
+                            <h5>Blog</h5>
+                            <p>Notícias e artigos sobre tecnologia</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-lg-3 col-md-6 fade-in">
+                    <a href="user/chat/" class="text-decoration-none">
+                        <div class="feature-card">
+                            <div class="feature-icon">💬</div>
+                            <h5>Chat</h5>
+                            <p>Comunique-se em tempo real</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-lg-3 col-md-6 fade-in">
+                    <a href="edital/" class="text-decoration-none">
+                        <div class="feature-card">
+                            <div class="feature-icon">📋</div>
+                            <h5>Editais</h5>
+                            <p>Acompanhe oportunidades e processos</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <div class="text-center mt-5">
+                <a href="login/" class="btn btn-brand-solid btn-lg">Acessar Plataforma Completa</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="sobre" class="services-section">
+        <div class="container py-5">
+            <h2 class="section-title text-center">Sobre a Pingobras</h2>
+            
+            <div class="row align-items-center">
+                <div class="col-lg-6 fade-in">
+                    <h3 class="text-brand-blue mb-4">Confiança e Inovação</h3>
+                    <p class="mb-3">
+                        A Pingobras S.A é uma empresa dedicada a fornecer soluções de hospedagem web de alta qualidade e serviços financeiros acessíveis. Com uma infraestrutura robusta e equipe especializada, estamos comprometidos em atender às necessidades de nossos clientes.
+                    </p>
+                    <p class="mb-3">
+                        Oferecemos desde hospedagem de sites e servidores dedicados até plataformas interativas e serviços de empréstimos, tudo em um único lugar.
+                    </p>
+                    <p>
+                        Junte-se a milhares de clientes satisfeitos que já confiam em nós para seus projetos online!
+                    </p>
+                </div>
+                <div class="col-lg-6 fade-in">
+                    <div class="bg-brand-light-blue p-5 rounded-4 text-center">
+                        <div style="font-size: 4rem; margin-bottom: 20px;">🚀</div>
+                        <h4 class="text-brand-blue">Inovação Constante</h4>
+                        <p>Continuamente atualizando e melhorando nossos serviços para você</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-80" style="background: linear-gradient(135deg, var(--brand-blue) 0%, var(--brand-purple) 100%); color: white;">
+        <div class="container text-center py-5">
+            <h2 class="mb-4" style="font-size: 2.5rem;">Comece Agora!</h2>
+            <p style="font-size: 1.1rem; margin-bottom: 30px;">Acesse nossa plataforma e descubra tudo o que Pingobras pode fazer por você</p>
+            <a href="login/" class="btn btn-light btn-lg">Entrar na Plataforma</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3 footer-section fade-in">
+                    <h5>Pingobras S.A</h5>
+                    <p>Hospedagem, servidores e serviços financeiros confiáveis.</p>
+                    <div class="social-links">
+                        <a href="https://discord.gg/pingobras" title="Discord">📱</a>
+                        <a href="https://wa.me/5511999999999" title="WhatsApp">💬</a>
+                    </div>
+                </div>
+                <div class="col-md-3 footer-section fade-in">
+                    <h5>Serviços</h5>
+                    <ul>
+                        <li><a href="#servicos">Hospedagem</a></li>
+                        <li><a href="#servicos">Servidores</a></li>
+                        <li><a href="#servicos">Empréstimos</a></li>
+                        <li><a href="#servicos">Plataformas</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3 footer-section fade-in">
+                    <h5>Plataformas</h5>
+                    <ul>
+                        <li><a href="jogos/">Jogos</a></li>
+                        <li><a href="user/blog/">Blog</a></li>
+                        <li><a href="user/chat/">Chat</a></li>
+                        <li><a href="edital/">Editais</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3 footer-section fade-in">
+                    <h5>Conta</h5>
+                    <ul>
+                        <li><a href="login/">Entrar</a></li>
+                        <li><a href="login/recuperar-senha.html">Recuperar Senha</a></li>
+                        <li><a href="user/">Minha Conta</a></li>
+                        <li><a href="user/admin/">Admin</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 Pingobras S.A. Todos os direitos reservados. | <a href="#">Privacidade</a> | <a href="#">Termos de Serviço</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Custom Scripts -->
+    <script>
+        // Animação ao fazer scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate__animated', 'animate__fadeInUp');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Smooth scroll para links de navegação
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const href = this.getAttribute('href');
+                if (href !== '#' && document.querySelector(href)) {
+                    e.preventDefault();
+                    document.querySelector(href).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Adicionar animação ao navbar ao fazer scroll
+        window.addEventListener('scroll', () => {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.style.boxShadow = '0 5px 20px rgba(0, 0, 0, 0.15)';
+            } else {
+                navbar.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.1)';
+            }
+        });
+    </script>
+</body>
+</html>
