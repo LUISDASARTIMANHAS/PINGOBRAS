@@ -134,7 +134,7 @@ function errors(error) {
 }
 
 function sendMessage(titulo, msg) {
-  const url = "https://pingobras-sg.onrender.com/api/api/pingobras/mensagem";
+  const url = "https://pingobras-sg.onrender.com/api/pingobras/mensagem";
   const payload = {
     titulo: titulo,
     mensagem: msg,

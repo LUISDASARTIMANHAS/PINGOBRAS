@@ -6,7 +6,7 @@ document.getElementById('fetchStatsBtn').addEventListener('click', function() {
         return;
     }
 
-    const url = `https://pingobras-sg.onrender.com/api/api/youtube/search?id=${channelId}`;
+    const url = `https://pingobras-sg.onrender.com/api/youtube/search?id=${channelId}`;
 
     fetch(url, {
         method: 'GET',

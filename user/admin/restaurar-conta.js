@@ -44,7 +44,7 @@ function restaurar() {
   }
 
   function restaurarContaMessage(msg) {
-    const url = "https://pingobras-sg.onrender.com/api/api/pingobras/mensagem";
+    const url = "https://pingobras-sg.onrender.com/api/pingobras/mensagem";
     const payload = {
       titulo: "RESTAURAR-CONTA",
       mensagem: msg,
