@@ -41,7 +41,7 @@
 //   }
 // ]
 
-// // const url = "https://pingobras-sg.glitch.me/edital";
+// // const url = "https://pingobras-sg.onrender.com/api/edital";
 // // const options = {
 // //   method: "GET",
 // //   mode: "cors",

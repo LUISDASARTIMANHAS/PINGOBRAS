@@ -1,6 +1,6 @@
 setInterval(getPosts, 20000);
 const protocolPost = "";
-const url = "https://pingobras-sg.glitch.me/postagens"; // URL de destino
+const url = "https://pingobras-sg.onrender.com/api/postagens"; // URL de destino
 const options = {
   method: "GET",
   mode: "cors",

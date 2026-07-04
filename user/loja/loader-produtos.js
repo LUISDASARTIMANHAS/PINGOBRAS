@@ -5,7 +5,7 @@ const notFoundLink =
   "https://cdn.glitch.global/b39d6a4a-0e14-4b41-930d-29d3ccd6c137/2748558.png?v=1694725753717";
 
 function getData() {
-  const url = "https://pingobras-sg.glitch.me/produto";
+  const url = "https://pingobras-sg.onrender.com/api/produto";
   const options = {
     method: "GET",
     mode: "cors",

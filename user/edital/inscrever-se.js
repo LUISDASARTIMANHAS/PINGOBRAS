@@ -6,7 +6,7 @@ var imgLoad = dataUser.PerfilIMG;
 
 function inscreverSe(edital) {
   const path = "inscrever-se";
-  const url = "https://pingobras-sg.glitch.me/edital=" + path;
+  const url = "https://pingobras-sg.onrender.com/api/edital=" + path;
   const payloadInscrever = {
     editalDeInscricao: edital,
     usuario: userLoad,

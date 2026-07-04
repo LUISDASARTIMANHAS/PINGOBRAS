@@ -58,7 +58,7 @@ function pingobrasSendWebhook() {
 }
 
 function discordWebhookAPI(titulo, msg, color, webhookUrl) {
-  const url = "https://pingobras-sg.glitch.me/api/discord/webhook/v1";
+  const url = "https://pingobras-sg.onrender.com/api/api/discord/webhook/v1";
   const payload = {
     titulo: titulo,
     mensagem: msg,

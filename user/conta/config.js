@@ -39,7 +39,7 @@ function preview() {
 }
 
 function atualizar() {
-  const url = "https://pingobras-sg.glitch.me/alterar=dados";
+  const url = "https://pingobras-sg.onrender.com/api/alterar=dados";
   const novaSenha = document.getElementById("senha");
   const novoUsuario = document.getElementById("user");
   const novaImgPerfil = document.getElementById("avatar");

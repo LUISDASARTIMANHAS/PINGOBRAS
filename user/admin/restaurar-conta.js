@@ -8,7 +8,7 @@ function stopDefAction(evt) {
 function restaurar() {
   const dataUser = JSON.parse(localStorage.getItem("dataUser"));
   const userLoad = dataUser.user;
-  const url = "https://pingobras-sg.glitch.me/restaurar=conta";
+  const url = "https://pingobras-sg.onrender.com/api/restaurar=conta";
   const inpSenha = document.getElementById("senha");
   const inpEmail = document.getElementById("email");
   const payload = {
@@ -44,7 +44,7 @@ function restaurar() {
   }
 
   function restaurarContaMessage(msg) {
-    const url = "https://pingobras-sg.glitch.me/api/pingobras/mensagem";
+    const url = "https://pingobras-sg.onrender.com/api/api/pingobras/mensagem";
     const payload = {
       titulo: "RESTAURAR-CONTA",
       mensagem: msg,

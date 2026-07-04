@@ -108,7 +108,7 @@ function reloadDataUser() {
   autoLoginMessage(
     dataUser.user + " está recarregando seus dados via login automático!"
   );
-  fetch("https://pingobras-sg.glitch.me/login", options)
+  fetch("https://pingobras-sg.onrender.com/api/login", options)
     .then((response) => {
       if (response.ok) {
         return response.json();
@@ -149,7 +149,7 @@ function errors(error) {
 }
 
 function autoLoginMessage(msg) {
-  const url = "https://pingobras-sg.glitch.me/api/pingobras/mensagem";
+  const url = "https://pingobras-sg.onrender.com/api/api/pingobras/mensagem";
   const payload = {
     titulo: "AUTOLOGIN",
     mensagem: msg,

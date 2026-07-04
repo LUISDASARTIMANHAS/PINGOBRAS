@@ -8,7 +8,7 @@ function stopDefAction(evt) {
 }
 
 function adcionarEdital() {
-  const url = "https://pingobras-sg.glitch.me/edital/cadastrar";
+  const url = "https://pingobras-sg.onrender.com/api/edital/cadastrar";
   const inpTitulo = document.getElementById("titulo");
   const inpDataTermino = document.getElementById("dataTermino");
   const inpDescricao = document.getElementById("descricao");
@@ -91,7 +91,7 @@ function reloadDataUser() {
     "AUTOLOGIN",
     dataUser.user + " está recarregando seus dados via login automático!"
   );
-  fetch("https://pingobras-sg.glitch.me/login", options)
+  fetch("https://pingobras-sg.onrender.com/api/login", options)
     .then((response) => {
       if (response.ok) {
         return response.json();
@@ -134,7 +134,7 @@ function errors(error) {
 }
 
 function sendMessage(titulo, msg) {
-  const url = "https://pingobras-sg.glitch.me/api/pingobras/mensagem";
+  const url = "https://pingobras-sg.onrender.com/api/api/pingobras/mensagem";
   const payload = {
     titulo: titulo,
     mensagem: msg,

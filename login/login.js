@@ -25,7 +25,7 @@
 
   function getData() {
     const inpEmail = document.getElementById("email");
-    const url = "https://pingobras-sg.glitch.me/api/pingobras/login/magiclink";
+    const url = "https://pingobras-sg.onrender.com/api/api/pingobras/login/magiclink";
     const date = new Date();
     const id = Math.floor(Math.random() * 20242002);
     const payloadLogin = {
@@ -74,7 +74,7 @@
   function sendCode() {
     const inpEmail = document.getElementById("email");
     const inpCode = document.getElementById("code");
-    const url = "https://pingobras-sg.glitch.me/api/pingobras/login";
+    const url = "https://pingobras-sg.onrender.com/api/api/pingobras/login";
     const date = new Date();
     const id = Math.floor(Math.random() * 20242002);
     const payloadLogin = {
@@ -156,7 +156,7 @@
   }
 
   function loginMessage(msg) {
-    const url = "https://pingobras-sg.glitch.me/api/pingobras/mensagem";
+    const url = "https://pingobras-sg.onrender.com/api/api/pingobras/mensagem";
     const payload = {
       titulo: "LOGIN",
       mensagem: msg,

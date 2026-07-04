@@ -1,4 +1,4 @@
-const urlPosts = "https://pingobras-sg.glitch.me/postagens"; // URL de destino
+const urlPosts = "https://pingobras-sg.onrender.com/api/postagens"; // URL de destino
 const labelPostID = document.getElementById("newPostID");
 const author = document.getElementById("newPostAuthor");
 const form = document.querySelector("form");

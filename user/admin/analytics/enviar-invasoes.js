@@ -52,7 +52,7 @@ function validar() {
 }
 
 function postData(base, bitcoins, money, rep, replayLink) {
-  const url = "https://pingobras-sg.glitch.me/api/thegame/hackers/invasions";
+  const url = "https://pingobras-sg.onrender.com/api/api/thegame/hackers/invasions";
   const payload = {
     base: base,
     bitcoins: bitcoins,
@@ -97,7 +97,7 @@ function errosEnviar(error) {
 }
 
 function analyticsMessage(msg) {
-  const url = "https://pingobras-sg.glitch.me/api/pingobras/mensagem";
+  const url = "https://pingobras-sg.onrender.com/api/api/pingobras/mensagem";
   const payload = {
     titulo: "ANALYTICS",
     mensagem: msg,
