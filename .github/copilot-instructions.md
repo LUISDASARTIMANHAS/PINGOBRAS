@@ -6,8 +6,9 @@ Instruções curtas e acionáveis para agentes/assistentes de IA que editam este
 
 Antes de alterar
 ---------------
-- Consulte [AGENTS.md](../AGENTS.md) e [README.md](../README.md) para contexto.
+- Consulte [AGENTS.md](../AGENTS.md), [README.md](../README.md) e [MODERNIZATION.md](../MODERNIZATION.md) para contexto.
 - Procure por dependências de caminho relativo antes de mover arquivos.
+- Este é um site estático; não adicione backend ou segredos ao repositório.
 
 Preview local
 -------------
@@ -23,16 +24,18 @@ npx http-server . -p 8080
 Checks rápidos antes de PR
 -------------------------
 - Verifique links relativos em HTML/JS/CSS.
-- Teste páginas principais: `index.html`, `src/index.html`, `jogos/index.html`, `login/index.html`.
+- Teste páginas principais: `index.html`, `src/index.html`, `jogos/index.html`, `login/index.html`, e páginas em `LUIS_DAS_ARTIMANHAS/`.
 - Evite grandes refatorações de caminhos sem testes manuais locais.
 - **OBRIGATÓRIO**: Toda página deve ter animações suaves — valide que existem.
 - **OBRIGATÓRIO**: Confirme que CSS e JS estão em arquivos separados, não inline no HTML.
+- **OBRIGATÓRIO**: Mantenha conteúdo e URLs existentes quando possível; prefira pequenas PRs.
 
 Notas de modernização
 ---------------------
 - O projeto agora tem um plano de modernização; consulte [MODERNIZATION.md](../MODERNIZATION.md) para o roteiro.
 - Priorize pequenas PRs que implementem o scaffold do Bootstrap, migração de estilos e reorganização de `src/js/`.
 - Ao testar, documente quais páginas foram validadas no corpo do PR.
+- Use `src/template.html` como referência para páginas Bootstrap modernas.
 
 Requisitos e contexto rápido
 ---------------------------
@@ -42,6 +45,7 @@ Requisitos e contexto rápido
 - API central: `https://pingobras-sg.onrender.com/` com base `/api` para todas as chamadas.
 - Segurança: valide entradas, use HTTPS e assegure que rotas sensíveis da API exigem autenticação.
 - Páginas importantes: verifique páginas em `LUIS_DAS_ARTIMANHAS/` (site do dono) e outras subpastas de funcionários.
+- Novas imagens devem ir em `src/assets/` e serem referenciadas com caminhos relativos corretos.
 
 Arquitetura (importante)
 ------------------------
@@ -65,3 +69,4 @@ Links úteis
 ----------
 - [AGENTS.md](../AGENTS.md)
 - [README.md](../README.md)
+- [MODERNIZATION.md](../MODERNIZATION.md)

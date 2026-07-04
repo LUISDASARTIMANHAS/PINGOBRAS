@@ -15,12 +15,14 @@ Visão rápida do repositório
 - Tipo: site estático com múltiplas páginas e subpastas.
 - Arquivos/dirs úteis para inspecionar:
   - [README.md](README.md)
+  - [MODERNIZATION.md](MODERNIZATION.md)
   - [src/](src/) — contém `assets/`, `css/`, `js/` centralizados
-  - [src/assets/](src/assets/) — todas as imagens
-  - [src/js/](src/js/)
-  - [src/css/](src/css/)
-  - [jogos/](jogos/)
-  - [login/](login/)
+  - [src/assets/](src/assets/) — imagens e ícones do site
+  - [src/js/](src/js/) — scripts reutilizáveis e de página
+  - [src/css/](src/css/) — estilos globais e temas
+  - [src/template.html](src/template.html) — scaffold de página Bootstrap
+  - [jogos/](jogos/) e [login/](login/) — exemplos de páginas existentes
+  - [LUIS_DAS_ARTIMANHAS/](LUIS_DAS_ARTIMANHAS/) — sub-site pessoal que deve ser preservado
 
 Build / Preview
 ---------------
@@ -32,12 +34,12 @@ python -m http.server 8000
 npx http-server . -p 8080
 ```
 
-
 Conveções observadas
 ---------------------
 - CSS central em `src/css/` e estilos locais em pastas de componentes.
 - JS principal em `src/js/`; há scripts isolados por funcionalidade em várias pastas.
 - Arquivos HTML na raiz e em subpastas representam páginas estáticas; evite refatorações grandes sem testes.
+- A modernização atual está guiada por `MODERNIZATION.md` e usa Bootstrap progressivamente.
 
 Pontos de atenção
 -----------------
