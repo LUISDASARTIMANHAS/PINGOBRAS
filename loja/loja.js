@@ -128,7 +128,7 @@ function sortProducts(products, sort) {
  * @returns {string} URL completa do WhatsApp (wa.me) com a mensagem codificada.
  */
 function buildWhatsAppLink(product) {
-  const phone = "5511999999999";
+  const phone = "5527995744791";
   const productUrl = `${window.location.origin}/loja/produto.html?id=${product.id}`;
   const message =
     `Olá! Tenho interesse neste produto:\n` +
