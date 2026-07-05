@@ -17,7 +17,22 @@
   "use strict";
 
   /** Caminho base (mesmo domínio) onde vivem os fragmentos HTML dos componentes. */
-  const COMPONENTS_BASE_PATH = "/src/components/";
+  const COMPONENTS_BASE_PATH = (() => {
+  const { hostname, pathname } = window.location;
+
+  if (hostname.endsWith(".github.io")) {
+    const parts = pathname.split("/").filter(Boolean);
+
+    // primeiro diretório após o domínio
+    const repo = parts[0];
+
+    if (repo) {
+      return `/${repo}/src/components/`;
+    }
+  }
+
+  return "/src/components/";
+})();
 
   /** Nomes de componente só podem conter minúsculas, números e hífen. */
   const VALID_COMPONENT_NAME = /^[a-z][a-z0-9-]{1,40}$/;
