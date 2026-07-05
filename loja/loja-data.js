@@ -54,12 +54,47 @@ const CATEGORIES = [
 
 /** @type {string[]} Marcas disponíveis, usadas nos filtros. */
 const BRANDS = [
-  "Dell", "Lenovo", "HP", "Intel", "AMD", "Cisco", "Supermicro",
-  "Kingston", "Seagate", "TP-Link", "Intelbras", "APC",
+  "Dell",
+  "Lenovo",
+  "HP",
+  "Intel",
+  "AMD",
+  "Cisco",
+  "Supermicro",
+  "Kingston",
+  "Seagate",
+  "TP-Link",
+  "Intelbras",
+  "APC",
 ];
 
 /** @type {Product[]} */
 const PRODUCTS = [
+  {
+    id: 1783272333483,
+    name: "Carregador Portátil 20000 Turbo 22.5w Power Bank Premium Universal Rápido Voo Transporte Aéreo Para Samsung iPhone Xiaomi Motorola Celular Smartwatch Tablet Casenn Preto",
+    price: 196,
+    oldPrice: 96,
+    brand: "Supermicro",
+    model: "CC1-20000",
+    category: "nobreak",
+    subcategory: "",
+    shortDescription:
+      "Carregador Portátil 20000 Turbo 22.5w Power Bank Premium Universal Rápido Voo Transporte Aéreo Para Samsung iPhone Xiaomi Motorola Celular Smartwatch Tablet Casenn Preto",
+    longDescription:
+      'Este produto possui marca registrada no INPI, protegida pelas leis de Propriedade Intelectual (Lei nº 9.279/96). Todos os direitos de venda são reservados às Loja Casenn e MAANA STORE. A comercialização de produtos sem a devida autorização constitui crime, sujeito a penalidades legais."\n\nCarregador Portátil 20.000mAh com Carregamento Turbo 22,5W - Ideal para Quem Precisa de Energia a Todo Momento!\n\nNão fique na mão na hora de carregar o celular! Este carregador portátil de 20.000mAh é perfeito para quem precisa de energia para o seu dispositivo em qualquer lugar. Com capacidade para carregar seu celular de 4 a 6 vezes, você terá energia para o dia todo, sem se preocupar em encontrar uma tomada!\n\nAlém disso, o carregamento turbo de 22,5W garante que seus dispositivos sejam carregados rapidamente. Ele vem com 2 cabos embutidos: Light ning para iPhone e Tipo C para dispositivos Android, além de uma saída USB para você conectar qualquer cabo adicional.\n\nE para facilitar ainda mais, ele possui um display digital que mostra a porcentagem exata da bateria, permitindo que você saiba sempre o quanto de energia resta!\n\nCaracterísticas:\n\n- Capacidade de 20.000mAh, para carregar de 4 a 6 vezes.\n- Potência de saída de 22,5W (carregamento turbo).\n- 2 cabos embutidos: Tipo Light ning e Tipo C.\n- Saída USB para conectar outros cabos.\n- Display digital para monitoramento da porcentagem de bateria.\n\nPraticidade e rapidez na palma da sua mão. Não deixe de ter esse poderoso aliado sempre por perto!',
+    specs: {},
+    warranty: "sim",
+    condition: "novo",
+    stock: 1,
+    weightKg: 0.5,
+    dimensions: "",
+    images: [
+      "https://http2.mlstatic.com/D_NQ_NP_2X_614937-MLA96889123348_112025-F.webp",
+    ],
+    tags: [],
+    relatedIds: [],
+  },
   {
     id: 1001,
     name: "Servidor Dell PowerEdge R440",
@@ -86,7 +121,11 @@ const PRODUCTS = [
     stock: 4,
     weightKg: 16.5,
     dimensions: "43 x 68 x 4.3 cm",
-    images: ["servidor-dell-r440-1", "servidor-dell-r440-2", "servidor-dell-r440-3"],
+    images: [
+      "servidor-dell-r440-1",
+      "servidor-dell-r440-2",
+      "servidor-dell-r440-3",
+    ],
     tags: ["servidor", "dell", "rack", "datacenter", "xeon"],
     relatedIds: [1002, 1006],
   },
@@ -129,7 +168,8 @@ const PRODUCTS = [
     model: "Latitude 5440",
     category: "notebooks",
     subcategory: "corporativo",
-    shortDescription: "Notebook corporativo com Intel Core i5 e leitor biométrico.",
+    shortDescription:
+      "Notebook corporativo com Intel Core i5 e leitor biométrico.",
     longDescription:
       "O Latitude 5440 alia robustez e portabilidade para o dia a dia corporativo, com " +
       "leitor de digital, TPM 2.0 e chassi reforçado para uso profissional intenso.",
@@ -158,7 +198,8 @@ const PRODUCTS = [
     model: "ThinkPad E14 Gen 5",
     category: "notebooks",
     subcategory: "corporativo",
-    shortDescription: "Equilíbrio entre performance e mobilidade para escritório.",
+    shortDescription:
+      "Equilíbrio entre performance e mobilidade para escritório.",
     longDescription:
       "O ThinkPad E14 traz o teclado premiado da linha ThinkPad, chassi certificado MIL-STD " +
       "e desempenho consistente para tarefas corporativas e ferramentas de produtividade.",
@@ -327,7 +368,8 @@ const PRODUCTS = [
     model: "BarraCuda 510",
     category: "componentes",
     subcategory: "armazenamento",
-    shortDescription: "SSD NVMe de alta velocidade para upgrade de performance.",
+    shortDescription:
+      "SSD NVMe de alta velocidade para upgrade de performance.",
     longDescription:
       "Unidade de estado sólido NVMe com velocidades de leitura de até 3400MB/s, ideal " +
       "para acelerar notebooks, desktops e estações de trabalho.",
@@ -383,7 +425,8 @@ const PRODUCTS = [
     model: "Archer AX55",
     category: "redes",
     subcategory: "roteadores",
-    shortDescription: "Roteador Wi-Fi 6 para redes domésticas e pequenos escritórios.",
+    shortDescription:
+      "Roteador Wi-Fi 6 para redes domésticas e pequenos escritórios.",
     longDescription:
       "Entrega velocidades combinadas de até 3000Mbps, suporte a OFDMA e MU-MIMO, " +
       "ideal para ambientes com muitos dispositivos conectados simultaneamente.",

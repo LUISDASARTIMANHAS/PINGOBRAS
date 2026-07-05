@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+
+    <script>
+        window.PB_PAGE = {
+            title: "Admin - Produtos",
+            description: "Painel administrativo para cadastro de produtos da loja Pingobras",
+            keywords: "admin, produtos, pingobras, cadastro"
+        };
+    </script>
+
+    <script src="../src/js/site-config.js"></script>
+    <script src="../src/js/component-loader.js"></script>
+    <script src="../src/js/loader-components.js" defer></script>
+
+    <!-- DADOS DA LOJA -->
+    <script src="./loja-data.js"></script>
+
+    <link rel="stylesheet" href="./admin.css" />
+</head>
+
+<body>
+
+<main class="main-content py-5">
+    <div class="container">
+
+        <h1 class="section-title mb-4">Cadastro de Produtos</h1>
+
+        <form id="product-form" class="row g-3">
+
+            <div class="col-md-6">
+                <label class="form-label">Nome</label>
+                <input class="form-control" id="name" required>
+            </div>
+
+            <div class="col-md-3">
+                <label class="form-label">Preço</label>
+                <input type="number" step="0.01" class="form-control" id="price" required>
+            </div>
+
+            <div class="col-md-3">
+                <label class="form-label">Preço antigo</label>
+                <input type="number" step="0.01" class="form-control" id="oldPrice">
+            </div>
+
+            <div class="col-md-4">
+                <label class="form-label">Marca</label>
+                <select class="form-select" id="brand">
+                    <option value="">Carregando...</option>
+                </select>
+            </div>
+
+            <div class="col-md-4">
+                <label class="form-label">Modelo</label>
+                <input class="form-control" id="model">
+            </div>
+
+            <div class="col-md-4">
+                <label class="form-label">Condição</label>
+                <select class="form-select" id="condition">
+                    <option value="novo">Novo</option>
+                    <option value="seminovo">Seminovo</option>
+                    <option value="recondicionado">Recondicionado</option>
+                </select>
+            </div>
+
+            <div class="col-md-6">
+                <label class="form-label">Categoria</label>
+                <select class="form-select" id="category">
+                    <option value="">Carregando...</option>
+                </select>
+            </div>
+
+            <div class="col-md-6">
+                <label class="form-label">Subcategoria</label>
+                <select class="form-select" id="subcategory">
+                    <option value="">Selecione uma categoria</option>
+                </select>
+            </div>
+
+            <div class="col-12">
+                <label class="form-label">Descrição curta</label>
+                <input class="form-control" id="shortDescription">
+            </div>
+
+            <div class="col-12">
+                <label class="form-label">Descrição longa</label>
+                <textarea class="form-control" id="longDescription" rows="5"></textarea>
+            </div>
+
+            <div class="col-md-3">
+                <label class="form-label">Estoque</label>
+                <input type="number" class="form-control" id="stock">
+            </div>
+
+            <div class="col-md-3">
+                <label class="form-label">Peso (kg)</label>
+                <input type="number" step="0.01" class="form-control" id="weightKg">
+            </div>
+
+            <div class="col-md-6">
+                <label class="form-label">Dimensões</label>
+                <input class="form-control" id="dimensions">
+            </div>
+
+            <div class="col-12">
+                <label class="form-label">Garantia</label>
+                <input class="form-control" id="warranty">
+            </div>
+
+            <div class="col-12">
+                <label class="form-label">Specs (chave:valor, uma por linha)</label>
+                <textarea
+                    class="form-control"
+                    id="specs"
+                    rows="6"
+                    placeholder="Processador: Intel Xeon&#10;Memória: 32GB DDR4 ECC&#10;SSD: 1TB NVMe">
+                </textarea>
+            </div>
+
+            <div class="col-12">
+                <label class="form-label">Tags (separadas por vírgula)</label>
+                <input class="form-control" id="tags">
+            </div>
+
+            <div class="col-12">
+                <label class="form-label">Imagens (URLs ou nomes separados por vírgula)</label>
+                <input class="form-control" id="images">
+            </div>
+
+            <div class="col-12 d-flex gap-2">
+                <button type="submit" class="btn btn-primary">
+                    Gerar JSON
+                </button>
+
+                <button type="button" id="copy" class="btn btn-secondary">
+                    Copiar JSON
+                </button>
+            </div>
+
+        </form>
+
+        <pre class="mt-4 p-3 bg-dark text-light rounded" id="output"></pre>
+
+    </div>
+</main>
+
+<!-- SCRIPT DO ADMIN (DEVE VIR DEPOIS DO loja-data.js) -->
+<script src="./cad-prod.js"></script>
+
+</body>
+</html>
