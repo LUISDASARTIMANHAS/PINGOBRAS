@@ -36,10 +36,10 @@
     company: "Pingobras S.A",
 
     /** Caminho do logo usado pela navbar e Open Graph. */
-    logo: "/src/assets/pingobras logo.png",
+    logo: "./src/assets/pingobras logo.png",
 
     /** Favicon usado pelo componente de head. */
-    favicon: "/src/assets/favicon.png",
+    favicon: "./src/assets/favicon.png",
 
     /** Ano de fundação (não confundir com o ano do copyright, que é automático). */
     foundedYear: 2024,
@@ -48,7 +48,7 @@
     version: "1.0.0",
 
     /** Endpoint base do servidor geral que atende toda a plataforma. */
-    apiBaseUrl: "https://pingobras-sg.onrender.com",
+    apiBaseUrl: "https://pingobras-sg.onrender.com/api",
 
     /** Canais de contato e redes sociais. */
     contacts: Object.freeze({

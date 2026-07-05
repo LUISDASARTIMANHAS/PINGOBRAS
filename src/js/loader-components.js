@@ -16,7 +16,7 @@
  * Ao final, dispara: document.dispatchEvent(new Event("componentsLoaded"))
  */
 
-(function bootstrapComponents(global, document) {
+function bootstrapComponents(global, document) {
   "use strict";
 
   /**
@@ -167,4 +167,5 @@
   } else {
     bootstrap();
   }
-})(window, document);
+}
+bootstrapComponents(window, document);
