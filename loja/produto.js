@@ -41,29 +41,52 @@ function renderGallery(product) {
   const thumbsContainer = document.getElementById("gallery-thumbs");
   if (!mainImage || !thumbsContainer) return;
 
-  /**
-   * Atualiza a imagem principal exibida.
-   * @param {number} index - Índice da imagem selecionada.
-   * @returns {void}
-   */
+  const images = product.images?.length
+    ? product.images
+    : [null];
+
+  const mainImgEl = document.createElement("img");
+  mainImgEl.className = "img-fluid w-100";
+  mainImgEl.loading = "eager";
+  mainImgEl.decoding = "async";
+
   const setActiveImage = (index) => {
-    mainImage.innerHTML = `<i class="bi bi-image" aria-hidden="true"></i>`;
-    mainImage.setAttribute("aria-label", `${product.name} - imagem ${index + 1}`);
-    thumbsContainer.querySelectorAll(".gallery-thumb").forEach((thumb, thumbIndex) => {
-      thumb.classList.toggle("active", thumbIndex === index);
+    const imageName = images[index];
+
+    mainImgEl.src = getProductImageUrl(imageName);
+    mainImgEl.alt = `${product.name} - imagem ${index + 1}`;
+
+    thumbsContainer.querySelectorAll(".gallery-thumb").forEach((thumb, i) => {
+      thumb.classList.toggle("active", i === index);
     });
   };
 
+  // render principal
+  mainImage.innerHTML = "";
+  mainImage.appendChild(mainImgEl);
+
+  // render thumbs
   thumbsContainer.innerHTML = "";
-  product.images.forEach((_, index) => {
+
+  images.forEach((imageName, index) => {
     const thumb = document.createElement("button");
     thumb.type = "button";
     thumb.className = `gallery-thumb ${index === 0 ? "active" : ""}`;
-    thumb.setAttribute("aria-label", `Ver imagem ${index + 1} de ${product.name}`);
-    thumb.innerHTML = `<i class="bi bi-image" aria-hidden="true"></i>`;
+
+    const img = createProductImage(imageName, product.name);
+
+    img.className = "img-thumbnail";
+    img.style.width = "70px";
+    img.style.height = "70px";
+    img.style.objectFit = "cover";
+
+    thumb.appendChild(img);
+
     thumb.addEventListener("click", () => setActiveImage(index));
+
     thumbsContainer.appendChild(thumb);
   });
+
   setActiveImage(0);
 }
 

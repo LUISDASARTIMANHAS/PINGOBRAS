@@ -29,6 +29,46 @@ const state = {
   sort: "relevancia",
   page: 1,
 };
+const PRODUCT_IMAGE_PATH = "../src/assets/products/";
+const PRODUCT_FALLBACK_IMAGE = "../src/assets/no-image.png";
+
+/**
+ * Retorna a URL da imagem do produto.
+ *
+ * @param {string} imageName
+ * @returns {string}
+ */
+function getProductImageUrl(imageName) {
+    if (!imageName) {
+        return PRODUCT_FALLBACK_IMAGE;
+    }
+
+    return `${PRODUCT_IMAGE_PATH}${encodeURIComponent(imageName)}.png`;
+}
+
+/**
+ * Cria uma imagem com fallback automático.
+ *
+ * @param {string} imageName
+ * @param {string} alt
+ * @returns {HTMLImageElement}
+ */
+function createProductImage(imageName, alt) {
+    const img = document.createElement("img");
+
+    img.loading = "lazy";
+    img.decoding = "async";
+
+    img.src = getProductImageUrl(imageName);
+    img.alt = alt;
+
+    img.onerror = () => {
+        img.onerror = null;
+        img.src = PRODUCT_FALLBACK_IMAGE;
+    };
+
+    return img;
+}
 
 /**
  * Escapa caracteres especiais de HTML para evitar XSS ao inserir texto
@@ -80,7 +120,12 @@ function searchProducts(products, term) {
   const query = term.trim().toLowerCase();
   if (!query) return products;
   return products.filter((product) => {
-    const haystack = [product.name, product.brand, product.model, ...product.tags]
+    const haystack = [
+      product.name,
+      product.brand,
+      product.model,
+      ...product.tags,
+    ]
       .join(" ")
       .toLowerCase();
     return haystack.includes(query);
@@ -95,9 +140,12 @@ function searchProducts(products, term) {
  */
 function filterProducts(products, filters) {
   return products.filter((product) => {
-    const matchesCategory = filters.category === "todas" || product.category === filters.category;
-    const matchesBrand = filters.brand === "todas" || product.brand === filters.brand;
-    const matchesCondition = filters.condition === "todas" || product.condition === filters.condition;
+    const matchesCategory =
+      filters.category === "todas" || product.category === filters.category;
+    const matchesBrand =
+      filters.brand === "todas" || product.brand === filters.brand;
+    const matchesCondition =
+      filters.condition === "todas" || product.condition === filters.condition;
     return matchesCategory && matchesBrand && matchesCondition;
   });
 }
@@ -148,7 +196,8 @@ function renderProduct(product) {
   const col = document.createElement("div");
   col.className = "col-sm-6 col-lg-4 col-xl-3";
 
-  const hasDiscount = Number.isFinite(product.oldPrice) && product.oldPrice > product.price;
+  const hasDiscount =
+    Number.isFinite(product.oldPrice) && product.oldPrice > product.price;
   const discountPercent = hasDiscount
     ? Math.round((1 - product.price / product.oldPrice) * 100)
     : 0;
@@ -160,8 +209,17 @@ function renderProduct(product) {
           ${escapeHtml(conditionLabel(product.condition))}
         </span>
         ${hasDiscount ? `<span class="badge product-card__discount text-bg-danger">-${discountPercent}%</span>` : ""}
-        <div class="product-card__image" role="img" aria-label="${escapeHtml(product.name)}">
-          <i class="bi ${escapeHtml(categoryIcon(product.category))}" aria-hidden="true"></i>
+        <div class="product-card__image">
+          <img
+            class="product-card__img"
+            width="240px"
+            height="240px"
+            src="${getProductImageUrl(product.images?.[0])}"
+            alt="${escapeHtml(product.name)}"
+            loading="lazy"
+            decoding="async"
+            onerror="this.onerror=null;this.src='${PRODUCT_FALLBACK_IMAGE}';"
+          />
         </div>
       </div>
       <div class="product-card__body">
@@ -193,7 +251,11 @@ function renderProduct(product) {
  * @returns {string} Rótulo em português para exibição.
  */
 function conditionLabel(condition) {
-  const labels = { novo: "Novo", seminovo: "Seminovo", recondicionado: "Recondicionado" };
+  const labels = {
+    novo: "Novo",
+    seminovo: "Seminovo",
+    recondicionado: "Recondicionado",
+  };
   return labels[condition] || condition;
 }
 
@@ -243,7 +305,8 @@ function renderPagination(totalItems, currentPage, container, onPageChange) {
 
   const createPageItem = (label, page, disabled = false, active = false) => {
     const li = document.createElement("li");
-    li.className = `page-item ${disabled ? "disabled" : ""} ${active ? "active" : ""}`.trim();
+    li.className =
+      `page-item ${disabled ? "disabled" : ""} ${active ? "active" : ""}`.trim();
     const button = document.createElement("button");
     button.type = "button";
     button.className = "page-link";
@@ -254,11 +317,17 @@ function renderPagination(totalItems, currentPage, container, onPageChange) {
     return li;
   };
 
-  container.appendChild(createPageItem("Anterior", currentPage - 1, currentPage === 1));
+  container.appendChild(
+    createPageItem("Anterior", currentPage - 1, currentPage === 1),
+  );
   for (let page = 1; page <= totalPages; page += 1) {
-    container.appendChild(createPageItem(String(page), page, false, page === currentPage));
+    container.appendChild(
+      createPageItem(String(page), page, false, page === currentPage),
+    );
   }
-  container.appendChild(createPageItem("Próxima", currentPage + 1, currentPage === totalPages));
+  container.appendChild(
+    createPageItem("Próxima", currentPage + 1, currentPage === totalPages),
+  );
 }
 
 /**
@@ -290,7 +359,9 @@ function renderCategoryOptions(categories) {
       select.value = category.slug;
       state.page = 1;
       applyFiltersAndRender();
-      document.getElementById("catalogo")?.scrollIntoView({ behavior: "smooth" });
+      document
+        .getElementById("catalogo")
+        ?.scrollIntoView({ behavior: "smooth" });
     });
     chipsContainer.appendChild(chip);
   });
@@ -355,11 +426,14 @@ function bindFilterEvents() {
   const sortSelect = document.getElementById("sort-select");
   const clearButton = document.getElementById("clear-filters");
 
-  searchInput?.addEventListener("input", debounce((event) => {
-    state.search = event.target.value;
-    state.page = 1;
-    applyFiltersAndRender();
-  }, 250));
+  searchInput?.addEventListener(
+    "input",
+    debounce((event) => {
+      state.search = event.target.value;
+      state.page = 1;
+      applyFiltersAndRender();
+    }, 250),
+  );
 
   categorySelect?.addEventListener("change", (event) => {
     state.category = event.target.value;
@@ -435,7 +509,10 @@ function debounce(fn, delayMs) {
  * @returns {Promise<void>}
  */
 async function initLojaPage() {
-  const [products, categories] = await Promise.all([loadProducts(), loadCategories()]);
+  const [products, categories] = await Promise.all([
+    loadProducts(),
+    loadCategories(),
+  ]);
   productsCache = products;
 
   renderCategoryOptions(categories);
