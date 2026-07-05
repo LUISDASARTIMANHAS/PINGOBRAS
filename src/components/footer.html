@@ -1,0 +1,102 @@
+<!--
+  footer.html — Estrutura fixa do rodapé; colunas institucionais, redes
+  sociais, ano de copyright e links legais são preenchidos pelo script abaixo
+  a partir de window.PB_CONFIG.
+-->
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-3 footer-section fade-in">
+        <h5 id="pb-footer-company"></h5>
+        <p id="pb-footer-description"></p>
+        <div class="social-links" id="pb-footer-social"></div>
+      </div>
+      <div class="col-md-9" id="pb-footer-columns">
+        <div class="row"></div>
+      </div>
+    </div>
+
+    <div class="footer-bottom" id="pb-footer-bottom"></div>
+  </div>
+</footer>
+
+<script>
+  /**
+   * Preenche o rodapé (descrição, colunas, redes sociais, links legais e ano
+   * de copyright automático) a partir de PB_CONFIG.
+   *
+   * @return {void}
+   */
+  (function renderFooter() {
+    const config = window.PB_CONFIG;
+    if (!config) {
+      console.error("[Pingobras] PB_CONFIG não encontrado ao montar o rodapé.");
+      return;
+    }
+
+    const companyEl = document.getElementById("pb-footer-company");
+    const descriptionEl = document.getElementById("pb-footer-description");
+    const socialEl = document.getElementById("pb-footer-social");
+    const columnsWrapper = document.querySelector("#pb-footer-columns .row");
+    const bottomEl = document.getElementById("pb-footer-bottom");
+    if (!companyEl || !descriptionEl || !socialEl || !columnsWrapper || !bottomEl) return;
+
+    companyEl.textContent = config.company;
+    descriptionEl.textContent = config.footer.description;
+
+    /**
+     * Cria um link social com ícone textual acessível.
+     * @param {string} href
+     * @param {string} label
+     * @param {string} icon
+     * @return {HTMLAnchorElement}
+     */
+    function createSocialLink(href, label, icon) {
+      const a = document.createElement("a");
+      a.href = href;
+      a.title = label;
+      a.setAttribute("aria-label", label);
+      a.rel = "noopener noreferrer";
+      a.target = "_blank";
+      a.textContent = icon;
+      return a;
+    }
+
+    const { contacts } = config;
+    if (contacts.discord) socialEl.appendChild(createSocialLink(contacts.discord, "Discord", "📱"));
+    if (contacts.whatsapp) socialEl.appendChild(createSocialLink(contacts.whatsapp, "WhatsApp", "💬"));
+    if (contacts.github) socialEl.appendChild(createSocialLink(contacts.github, "GitHub", "💻"));
+    if (contacts.instagram) socialEl.appendChild(createSocialLink(contacts.instagram, "Instagram", "📷"));
+
+    config.footer.columns.forEach((column) => {
+      const col = document.createElement("div");
+      col.className = "col-md-4 footer-section fade-in";
+
+      const heading = document.createElement("h5");
+      heading.textContent = column.title;
+      col.appendChild(heading);
+
+      const list = document.createElement("ul");
+      column.links.forEach((link) => {
+        const li = document.createElement("li");
+        const a = document.createElement("a");
+        a.href = link.href;
+        a.textContent = link.label;
+        li.appendChild(a);
+        list.appendChild(li);
+      });
+
+      col.appendChild(list);
+      columnsWrapper.appendChild(col);
+    });
+
+    const currentYear = new Date().getFullYear();
+    const legalLinksHtml = config.footer.legalLinks
+      .map((link) => `<a href="${link.href}">${link.label}</a>`)
+      .join(" | ");
+
+    bottomEl.innerHTML =
+      `<p>&copy; ${currentYear} ${config.company}. Todos os direitos reservados. | ${legalLinksHtml}</p>` +
+      `<p class="pb-footer-version">v${config.version}</p>`;
+  })();
+</script>

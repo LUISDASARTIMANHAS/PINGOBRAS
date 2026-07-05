@@ -1,0 +1,122 @@
+<!--
+  search-modal.html — Modal de busca acionável via qualquer elemento com
+  atributo data-bs-toggle="modal" data-bs-target="#pb-search-modal". Consulta
+  o servidor geral da Pingobras (PB_CONFIG.apiBaseUrl) com debounce, sempre
+  renderizando resultados via textContent para evitar XSS.
+-->
+<div class="modal fade" id="pb-search-modal" tabindex="-1" aria-labelledby="pb-search-modal-title" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="pb-search-modal-title">Buscar na Pingobras</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+      </div>
+      <div class="modal-body">
+        <label for="pb-search-input" class="visually-hidden">Termo de busca</label>
+        <input type="search" id="pb-search-input" class="form-control mb-3"
+               placeholder="Digite ao menos 2 caracteres..." autocomplete="off" maxlength="120">
+        <ul class="list-group" id="pb-search-results" aria-live="polite"></ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  /**
+   * Controla o modal de busca: debounce da digitação, chamada ao servidor
+   * geral da Pingobras e renderização segura dos resultados.
+   */
+  (function initSearchModal() {
+    "use strict";
+
+    const config = window.PB_CONFIG;
+    const modalEl = document.getElementById("pb-search-modal");
+    const input = document.getElementById("pb-search-input");
+    const resultsList = document.getElementById("pb-search-results");
+    if (!config || !modalEl || !input || !resultsList) return;
+
+    const DEBOUNCE_MS = 350;
+    const MIN_QUERY_LENGTH = 2;
+    let debounceTimer = null;
+    let activeController = null;
+
+    /**
+     * Renderiza uma lista de resultados de busca de forma segura (sem HTML bruto).
+     * @param {Array<{title: string, url: string}>} results
+     * @return {void}
+     */
+    function renderResults(results) {
+      resultsList.innerHTML = "";
+
+      if (!results.length) {
+        const emptyItem = document.createElement("li");
+        emptyItem.className = "list-group-item text-muted";
+        emptyItem.textContent = "Nenhum resultado encontrado.";
+        resultsList.appendChild(emptyItem);
+        return;
+      }
+
+      results.forEach((result) => {
+        const item = document.createElement("li");
+        item.className = "list-group-item";
+
+        const link = document.createElement("a");
+        link.href = result.url;
+        link.textContent = result.title;
+
+        item.appendChild(link);
+        resultsList.appendChild(item);
+      });
+    }
+
+    /**
+     * Executa a busca contra o servidor geral da Pingobras, cancelando
+     * requisições anteriores ainda em andamento.
+     *
+     * @param {string} query - Termo de busca já validado (mínimo de caracteres).
+     * @return {Promise<void>}
+     */
+    async function performSearch(query) {
+      if (activeController) activeController.abort();
+      activeController = new AbortController();
+
+      try {
+        const endpoint = `${config.apiBaseUrl}/search?q=${encodeURIComponent(query)}`;
+        const response = await fetch(endpoint, { signal: activeController.signal });
+
+        if (!response.ok) {
+          throw new Error(`Busca falhou (HTTP ${response.status})`);
+        }
+
+        const data = await response.json();
+        renderResults(Array.isArray(data.results) ? data.results : []);
+      } catch (error) {
+        if (error.name === "AbortError") return;
+        console.error("[Pingobras] Falha na busca.", error);
+        resultsList.innerHTML = "";
+        const errorItem = document.createElement("li");
+        errorItem.className = "list-group-item text-danger";
+        errorItem.textContent = "Não foi possível concluir a busca no momento.";
+        resultsList.appendChild(errorItem);
+      }
+    }
+
+    input.addEventListener("input", () => {
+      window.clearTimeout(debounceTimer);
+      const query = input.value.trim();
+
+      if (query.length < MIN_QUERY_LENGTH) {
+        resultsList.innerHTML = "";
+        return;
+      }
+
+      debounceTimer = window.setTimeout(() => performSearch(query), DEBOUNCE_MS);
+    });
+
+    modalEl.addEventListener("shown.bs.modal", () => input.focus());
+    modalEl.addEventListener("hidden.bs.modal", () => {
+      input.value = "";
+      resultsList.innerHTML = "";
+    });
+  })();
+</script>

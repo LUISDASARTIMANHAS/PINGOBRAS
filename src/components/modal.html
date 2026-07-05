@@ -1,0 +1,78 @@
+<!--
+  modal.html — Modal genérico e reutilizável, controlado via
+  window.PBModal.open(title, contentNode, options). Por padrão o corpo aceita
+  apenas nós DOM ou texto puro (nunca HTML bruto), para reduzir superfície de
+  XSS; conteúdo HTML explícito só é permitido via opção trustedHtml=true,
+  reservada para uso interno e controlado.
+-->
+<div class="modal fade" id="pb-modal" tabindex="-1" aria-labelledby="pb-modal-title" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="pb-modal-title"></h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+      </div>
+      <div class="modal-body" id="pb-modal-body"></div>
+      <div class="modal-footer" id="pb-modal-footer" hidden>
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  /**
+   * API global do modal genérico da Pingobras.
+   * @namespace PBModal
+   */
+  (function initModalApi(global) {
+    "use strict";
+
+    const modalEl = document.getElementById("pb-modal");
+    const titleEl = document.getElementById("pb-modal-title");
+    const bodyEl = document.getElementById("pb-modal-body");
+    const footerEl = document.getElementById("pb-modal-footer");
+    if (!modalEl || !titleEl || !bodyEl || !footerEl) return;
+
+    const bsModal = new bootstrap.Modal(modalEl);
+
+    /**
+     * @typedef {Object} PBModalOptions
+     * @property {boolean} [showFooter=false] - Exibe o rodapé com botão "Fechar".
+     * @property {boolean} [trustedHtml=false] - Permite conteúdo HTML explícito
+     *   (usar apenas com strings 100% controladas internamente, nunca com
+     *   dados de usuário ou de API externa).
+     */
+
+    /**
+     * Abre o modal com título e conteúdo informados.
+     *
+     * @param {string} title - Título do modal.
+     * @param {string|Node} content - Corpo do modal (texto puro ou nó DOM).
+     * @param {PBModalOptions} [options={}] - Opções de exibição.
+     * @return {void}
+     */
+    function open(title, content, options = {}) {
+      titleEl.textContent = title;
+      bodyEl.innerHTML = "";
+
+      if (content instanceof Node) {
+        bodyEl.appendChild(content);
+      } else if (options.trustedHtml) {
+        bodyEl.innerHTML = content;
+      } else {
+        bodyEl.textContent = String(content);
+      }
+
+      footerEl.hidden = !options.showFooter;
+      bsModal.show();
+    }
+
+    /** Fecha o modal atualmente aberto. @return {void} */
+    function close() {
+      bsModal.hide();
+    }
+
+    global.PBModal = Object.freeze({ open, close });
+  })(window);
+</script>

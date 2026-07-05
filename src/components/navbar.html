@@ -1,0 +1,111 @@
+<!--
+  navbar.html — Estrutura fixa da navbar; os links, a marca e o destaque da
+  página ativa são preenchidos pelo script abaixo a partir de window.PB_CONFIG,
+  garantindo que funcione em qualquer diretório (/, /loja/, /user/, etc).
+-->
+<nav class="navbar navbar-expand-lg navbar-dark" aria-label="Navegação principal">
+  <div class="container-fluid">
+    <a class="navbar-brand" id="pb-navbar-brand" href="/">
+      <img id="pb-navbar-logo" src="" alt="" height="45" class="me-2">
+      <span id="pb-navbar-brand-name" style="vertical-align: middle;"></span>
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+            data-bs-target="#pbNavbarCollapse" aria-controls="pbNavbarCollapse"
+            aria-expanded="false" aria-label="Alternar navegação">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="pbNavbarCollapse">
+      <ul class="navbar-nav ms-auto" id="pb-navbar-links" role="menubar"></ul>
+    </div>
+  </div>
+</nav>
+
+<script>
+  /**
+   * Preenche a navbar (marca, links e link de autenticação) a partir de
+   * PB_CONFIG e marca o item correspondente à página atual como ativo.
+   * Executado automaticamente após a injeção deste componente.
+   *
+   * @return {void}
+   */
+  (function renderNavbar() {
+    const config = window.PB_CONFIG;
+    if (!config) {
+      console.error("[Pingobras] PB_CONFIG não encontrado ao montar a navbar.");
+      return;
+    }
+
+    const brandLogo = document.getElementById("pb-navbar-logo");
+    const brandName = document.getElementById("pb-navbar-brand-name");
+    const linksList = document.getElementById("pb-navbar-links");
+    if (!brandLogo || !brandName || !linksList) return;
+
+    brandLogo.src = config.logo;
+    brandLogo.alt = config.siteName;
+    brandName.textContent = config.siteName;
+
+    const currentPath = normalizePath(window.location.pathname);
+
+    /**
+     * Normaliza um caminho removendo barra final (exceto para a raiz).
+     * @param {string} path
+     * @return {string}
+     */
+    function normalizePath(path) {
+      if (path.length > 1 && path.endsWith("/")) {
+        return path.slice(0, -1);
+      }
+      return path;
+    }
+
+    /**
+     * Determina se um link de navegação corresponde à página atual.
+     * @param {string} href
+     * @return {boolean}
+     */
+    function isActiveLink(href) {
+      const normalizedHref = normalizePath(href);
+      if (normalizedHref === "/") {
+        return currentPath === "/";
+      }
+      return currentPath === normalizedHref || currentPath.startsWith(`${normalizedHref}/`);
+    }
+
+    const fragment = document.createDocumentFragment();
+
+    config.nav.forEach((item) => {
+      const li = document.createElement("li");
+      li.className = "nav-item";
+      li.setAttribute("role", "none");
+
+      const a = document.createElement("a");
+      a.className = "nav-link";
+      a.href = item.href;
+      a.textContent = item.label;
+      a.setAttribute("role", "menuitem");
+
+      if (isActiveLink(item.href)) {
+        a.classList.add("active");
+        a.setAttribute("aria-current", "page");
+      }
+
+      li.appendChild(a);
+      fragment.appendChild(li);
+    });
+
+    if (config.authLink) {
+      const li = document.createElement("li");
+      li.className = "nav-item";
+
+      const a = document.createElement("a");
+      a.className = "nav-link btn btn-primary-gradient";
+      a.href = config.authLink.href;
+      a.textContent = config.authLink.label;
+
+      li.appendChild(a);
+      fragment.appendChild(li);
+    }
+
+    linksList.appendChild(fragment);
+  })();
+</script>

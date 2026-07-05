@@ -1,0 +1,88 @@
+<!--
+  cookies.html — Banner de consentimento de cookies, exigido para conformidade
+  com a LGPD. A escolha do usuário é persistida em localStorage e o banner só
+  reaparece se a versão da política mudar (ver COOKIE_POLICY_VERSION abaixo).
+-->
+<div class="pb-cookie-banner" id="pb-cookie-banner" role="dialog" aria-live="polite"
+     aria-label="Aviso de cookies" hidden>
+  <div class="pb-cookie-banner__content">
+    <p>
+      Usamos cookies para melhorar sua experiência e analisar o uso da plataforma.
+      Ao continuar navegando, você concorda com nossa
+      <a href="/legal/cookies.html" id="pb-cookie-policy-link">Política de Cookies</a>.
+    </p>
+    <div class="pb-cookie-banner__actions">
+      <button type="button" class="btn btn-outline-light btn-sm" id="pb-cookie-reject">
+        Recusar não essenciais
+      </button>
+      <button type="button" class="btn btn-primary-gradient btn-sm" id="pb-cookie-accept">
+        Aceitar todos
+      </button>
+    </div>
+  </div>
+</div>
+
+<script>
+  /**
+   * Controla exibição, persistência e efeitos colaterais (evento customizado)
+   * do consentimento de cookies. Incrementar COOKIE_POLICY_VERSION força o
+   * banner a reaparecer para todos os usuários após mudanças na política.
+   */
+  (function initCookieConsent() {
+    const STORAGE_KEY = "pb_cookie_consent";
+    const COOKIE_POLICY_VERSION = 1;
+
+    const banner = document.getElementById("pb-cookie-banner");
+    const acceptBtn = document.getElementById("pb-cookie-accept");
+    const rejectBtn = document.getElementById("pb-cookie-reject");
+    if (!banner || !acceptBtn || !rejectBtn) return;
+
+    /**
+     * Lê o consentimento salvo, validando estrutura e versão da política.
+     * @return {{status: string, version: number}|null}
+     */
+    function readStoredConsent() {
+      try {
+        const raw = window.localStorage.getItem(STORAGE_KEY);
+        if (!raw) return null;
+        const parsed = JSON.parse(raw);
+        if (parsed && typeof parsed.status === "string" && typeof parsed.version === "number") {
+          return parsed;
+        }
+        return null;
+      } catch {
+        return null;
+      }
+    }
+
+    /**
+     * Persiste a escolha do usuário e dispara um evento para que outros
+     * scripts (ex: analytics) reajam ao consentimento.
+     * @param {"accepted"|"rejected"} status
+     * @return {void}
+     */
+    function storeConsent(status) {
+      try {
+        window.localStorage.setItem(
+          STORAGE_KEY,
+          JSON.stringify({ status, version: COOKIE_POLICY_VERSION, timestamp: Date.now() })
+        );
+      } catch (error) {
+        console.warn("[Pingobras] Não foi possível salvar o consentimento de cookies.", error);
+      }
+
+      document.dispatchEvent(new CustomEvent("pbCookieConsent", { detail: { status } }));
+      banner.hidden = true;
+    }
+
+    const stored = readStoredConsent();
+    const needsConsent = !stored || stored.version !== COOKIE_POLICY_VERSION;
+
+    if (needsConsent) {
+      banner.hidden = false;
+    }
+
+    acceptBtn.addEventListener("click", () => storeConsent("accepted"));
+    rejectBtn.addEventListener("click", () => storeConsent("rejected"));
+  })();
+</script>

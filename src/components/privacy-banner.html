@@ -1,0 +1,51 @@
+<!--
+  privacy-banner.html — Aviso curto e dispensável sobre a Política de
+  Privacidade e Termos de Serviço, independente do banner de cookies.
+  Reaparece apenas quando PRIVACY_NOTICE_VERSION é incrementado (ex: quando os
+  Termos de Serviço mudam substancialmente).
+-->
+<div class="pb-privacy-banner" id="pb-privacy-banner" role="note" aria-live="polite" hidden>
+  <p>
+    Atualizamos nossa
+    <a href="/legal/privacidade.html">Política de Privacidade</a> e nossos
+    <a href="/legal/termos.html">Termos de Serviço</a>. Continuar usando a plataforma
+    significa que você está de acordo com os termos atualizados.
+  </p>
+  <button type="button" class="btn-close btn-close-white" id="pb-privacy-dismiss"
+          aria-label="Fechar aviso de privacidade"></button>
+</div>
+
+<script>
+  /**
+   * Controla a exibição única do aviso de atualização de privacidade/termos,
+   * persistindo o fechamento por versão em localStorage.
+   */
+  (function initPrivacyBanner() {
+    const STORAGE_KEY = "pb_privacy_notice_dismissed_version";
+    const PRIVACY_NOTICE_VERSION = 1;
+
+    const banner = document.getElementById("pb-privacy-banner");
+    const dismissBtn = document.getElementById("pb-privacy-dismiss");
+    if (!banner || !dismissBtn) return;
+
+    let dismissedVersion = null;
+    try {
+      dismissedVersion = Number(window.localStorage.getItem(STORAGE_KEY));
+    } catch {
+      dismissedVersion = null;
+    }
+
+    if (dismissedVersion !== PRIVACY_NOTICE_VERSION) {
+      banner.hidden = false;
+    }
+
+    dismissBtn.addEventListener("click", () => {
+      banner.hidden = true;
+      try {
+        window.localStorage.setItem(STORAGE_KEY, String(PRIVACY_NOTICE_VERSION));
+      } catch (error) {
+        console.warn("[Pingobras] Não foi possível salvar a dispensa do aviso de privacidade.", error);
+      }
+    });
+  })();
+</script>

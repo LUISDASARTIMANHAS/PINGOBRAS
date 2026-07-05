@@ -1,0 +1,33 @@
+<!--
+  loading.html — Overlay de carregamento inicial, visível enquanto os demais
+  componentes globais são buscados em paralelo. É removido automaticamente
+  quando o evento "componentsLoaded" é disparado.
+-->
+<div class="pb-loading-overlay" id="pb-loading-overlay" role="status" aria-live="polite">
+  <div class="pb-loading-spinner" aria-hidden="true"></div>
+  <span class="visually-hidden">Carregando página...</span>
+</div>
+
+<script>
+  /**
+   * Oculta e remove o overlay de carregamento assim que todos os componentes
+   * globais terminarem de ser processados (evento "componentsLoaded").
+   *
+   * @return {void}
+   */
+  (function initLoadingOverlay() {
+    const overlay = document.getElementById("pb-loading-overlay");
+    if (!overlay) return;
+
+    document.addEventListener(
+      "componentsLoaded",
+      () => {
+        overlay.classList.add("pb-loading-overlay--hidden");
+        overlay.addEventListener("transitionend", () => overlay.remove(), { once: true });
+        // Fallback caso a transição CSS não dispare (ex: prefers-reduced-motion).
+        window.setTimeout(() => overlay.remove(), 600);
+      },
+      { once: true }
+    );
+  })();
+</script>

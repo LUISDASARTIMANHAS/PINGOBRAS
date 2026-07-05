@@ -1,0 +1,112 @@
+/**
+ * component-loader.css
+ * Estilos exclusivos da infraestrutura de componentes (overlay de loading,
+ * banners de cookies/privacidade e mensagens de erro amigáveis). Não deve
+ * conter estilos de identidade visual — isso pertence a template.css.
+ */
+
+/* ---------- Overlay de carregamento ---------- */
+.pb-loading-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #0a0a0a;
+  transition: opacity 0.4s ease;
+}
+
+.pb-loading-overlay--hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.pb-loading-spinner {
+  width: 48px;
+  height: 48px;
+  border: 4px solid rgba(255, 255, 255, 0.2);
+  border-top-color: #ffffff;
+  border-radius: 50%;
+  animation: pb-spin 0.8s linear infinite;
+}
+
+@keyframes pb-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pb-loading-spinner {
+    animation: none;
+  }
+}
+
+/* ---------- Banner de cookies ---------- */
+.pb-cookie-banner {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1500;
+  background: rgba(10, 10, 10, 0.97);
+  color: #f5f5f5;
+  padding: 1rem 1.25rem;
+  box-shadow: 0 -2px 12px rgba(0, 0, 0, 0.35);
+}
+
+.pb-cookie-banner__content {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.pb-cookie-banner__content p {
+  margin: 0;
+  flex: 1 1 320px;
+}
+
+.pb-cookie-banner__actions {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+/* ---------- Banner de privacidade ---------- */
+.pb-privacy-banner {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1490;
+  background: #14213d;
+  color: #f5f5f5;
+  padding: 0.65rem 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+.pb-privacy-banner a {
+  color: #ffd166;
+  text-decoration: underline;
+}
+
+/* ---------- Erro amigável de componente ---------- */
+.pb-component-error {
+  padding: 0.75rem 1rem;
+  margin: 0.5rem 0;
+  border: 1px dashed #dc3545;
+  border-radius: 0.4rem;
+  color: #dc3545;
+  font-size: 0.9rem;
+  background: rgba(220, 53, 69, 0.06);
+}

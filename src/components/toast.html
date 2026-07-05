@@ -1,0 +1,69 @@
+<!--
+  toast.html — Container de notificações toast (Bootstrap) disponível
+  globalmente via window.PBToast.show(message, type). Todo texto é inserido
+  com textContent, nunca innerHTML, para evitar XSS mesmo com mensagens
+  vindas de respostas de API.
+-->
+<div class="toast-container position-fixed bottom-0 end-0 p-3" id="pb-toast-container"
+     aria-live="polite" aria-atomic="true"></div>
+
+<script>
+  /**
+   * API global de toasts da Pingobras.
+   * @namespace PBToast
+   */
+  (function initToastApi(global) {
+    "use strict";
+
+    const container = document.getElementById("pb-toast-container");
+    if (!container) return;
+
+    const VARIANT_CLASSES = Object.freeze({
+      success: "text-bg-success",
+      error: "text-bg-danger",
+      warning: "text-bg-warning",
+      info: "text-bg-primary",
+    });
+
+    /**
+     * Exibe uma notificação toast temporária.
+     *
+     * @param {string} message - Texto a ser exibido (sempre tratado como texto puro).
+     * @param {"success"|"error"|"warning"|"info"} [type="info"] - Estilo visual do toast.
+     * @param {number} [delayMs=4000] - Tempo em milissegundos até o toast se ocultar.
+     * @return {void}
+     */
+    function show(message, type = "info", delayMs = 4000) {
+      const variantClass = VARIANT_CLASSES[type] || VARIANT_CLASSES.info;
+
+      const toastEl = document.createElement("div");
+      toastEl.className = `toast align-items-center ${variantClass} border-0`;
+      toastEl.setAttribute("role", "alert");
+      toastEl.setAttribute("aria-live", "assertive");
+      toastEl.setAttribute("aria-atomic", "true");
+
+      const flexWrapper = document.createElement("div");
+      flexWrapper.className = "d-flex";
+
+      const body = document.createElement("div");
+      body.className = "toast-body";
+      body.textContent = message; // Nunca innerHTML: previne XSS.
+
+      const closeBtn = document.createElement("button");
+      closeBtn.type = "button";
+      closeBtn.className = "btn-close btn-close-white me-2 m-auto";
+      closeBtn.setAttribute("data-bs-dismiss", "toast");
+      closeBtn.setAttribute("aria-label", "Fechar");
+
+      flexWrapper.append(body, closeBtn);
+      toastEl.appendChild(flexWrapper);
+      container.appendChild(toastEl);
+
+      const bootstrapToast = new bootstrap.Toast(toastEl, { delay: delayMs });
+      toastEl.addEventListener("hidden.bs.toast", () => toastEl.remove());
+      bootstrapToast.show();
+    }
+
+    global.PBToast = Object.freeze({ show });
+  })(window);
+</script>

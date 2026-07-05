@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <script>
+    /**
+     * Dados específicos desta página, lidos por loader-components.js ao
+     * montar o <head> (título, descrição, OG, etc). Todo o restante do head
+     * (Bootstrap, Animate.css, favicon, meta padrão) é injetado automaticamente.
+     */
+    window.PB_PAGE = {
+      title: "Início",
+      description: "Empréstimos pessoais, pesquisa e inteligência artificial com soluções digitais modernas.",
+      keywords: "empréstimos, pesquisa, inteligência artificial, pingobras",
+    };
+  </script>
+  <script src="/src/js/site-config.js"></script>
+  <script src="/src/js/component-loader.js"></script>
+  <script src="/src/js/loader-components.js" defer></script>
+</head>
+<body>
+
+<main class="main-content py-5">
+  <div class="container">
+    <h1 class="section-title text-center mb-5">Bem-vindo à Pingobras</h1>
+    <p>
+      Esta página não contém navbar, footer, scripts ou head manualmente —
+      tudo isso é injetado automaticamente pelo sistema de componentes.
+    </p>
+
+    <button type="button" class="btn btn-primary-gradient mt-3"
+            data-bs-toggle="modal" data-bs-target="#pb-search-modal">
+      Abrir busca
+    </button>
+  </div>
+</main>
+
+</body>
+</html>

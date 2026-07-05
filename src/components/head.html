@@ -1,0 +1,47 @@
+<!--
+  head.html — Template do <head>, preenchido via tokens {{CHAVE}} por
+  component-loader.js::loadHeadComponent(). Nunca deve ser referenciado
+  diretamente por <div data-component="head">, pois seu conteúdo é injetado
+  em document.head, não no corpo da página.
+
+  Tokens disponíveis (definidos por window.PB_PAGE na página + defaults de
+  site-config.js): TITLE, DESCRIPTION, KEYWORDS, AUTHOR, CANONICAL, FAVICON,
+  OG_IMAGE.
+-->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="{{DESCRIPTION}}">
+<meta name="keywords" content="{{KEYWORDS}}">
+<meta name="author" content="{{AUTHOR}}">
+<meta name="robots" content="index, follow">
+<title>{{TITLE}}</title>
+
+<link rel="canonical" href="{{CANONICAL}}">
+<link rel="icon" href="{{FAVICON}}" type="image/png">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="{{TITLE}}">
+<meta property="og:description" content="{{DESCRIPTION}}">
+<meta property="og:image" content="{{OG_IMAGE}}">
+<meta property="og:url" content="{{CANONICAL}}">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{{TITLE}}">
+<meta name="twitter:description" content="{{DESCRIPTION}}">
+<meta name="twitter:image" content="{{OG_IMAGE}}">
+
+<!-- Segurança básica de conteúdo -->
+<meta http-equiv="X-Content-Type-Options" content="nosniff">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+
+<!-- Bootstrap 5 -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+<!-- Animate.css -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+
+<!-- Estilos da Pingobras -->
+<link rel="stylesheet" href="/src/css/template.css">
+<link rel="stylesheet" href="/src/css/component-loader.css">
