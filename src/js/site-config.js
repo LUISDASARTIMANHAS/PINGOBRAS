@@ -36,16 +36,16 @@
     company: "Pingobras S.A",
 
     /** Caminho do logo usado pela navbar e Open Graph. */
-    logo: "./src/assets/pingobras logo.png",
+    logo: "https://luisdasartimanhas.github.io/PINGOBRAS/src/assets/pingobras logo.png",
 
     /** Favicon usado pelo componente de head. */
     favicon: "./src/assets/favicon.png",
 
     /** Ano de fundação (não confundir com o ano do copyright, que é automático). */
-    foundedYear: 2024,
+    foundedYear: 2010,
 
     /** Versão atual do site/sistema, exibida no rodapé. */
-    version: "1.0.0",
+    version: "1.0.26",
 
     /** Endpoint base do servidor geral que atende toda a plataforma. */
     apiBaseUrl: "https://pingobras-sg.onrender.com/api",
@@ -63,9 +63,9 @@
     nav: Object.freeze(
       /** @type {PBNavLink[]} */ ([
         { label: "Home", href: "./" },
-        { label: "Jogos", href: "../jogos" },
-        { label: "Editais", href: "../edital" },
-        { label: "Conta", href: "../user" },
+        { label: "loja", href: "./loja" },
+        { label: "Editais", href: "./edital" },
+        { label: "Conta", href: "./user" },
       ])
     ),
 
@@ -90,6 +90,7 @@
           {
             title: "Plataformas",
             links: [
+              { label: "Loja", href: "./loja" },
               { label: "Jogos", href: "/jogos" },
               { label: "Blog", href: "/user/blog" },
               { label: "Chat", href: "/user/chat" },
@@ -109,9 +110,9 @@
       ),
       /** Links legais obrigatórios (LGPD/consumo), exibidos no rodapé e no banner de cookies. */
       legalLinks: Object.freeze([
-        { label: "Política de Cookies", href: "/legal/cookies.html" },
-        { label: "Privacidade", href: "/legal/privacidade.html" },
-        { label: "Termos de Serviço", href: "/legal/termos.html" },
+        { label: "Política de Cookies", href: "./legal/cookies.html" },
+        { label: "Privacidade", href: "./legal/privacidade.html" },
+        { label: "Termos de Serviço", href: "./legal/termos.html" },
       ]),
     }),
   });
