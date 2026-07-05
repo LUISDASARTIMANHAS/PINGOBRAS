@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="Content-Security-Policy"
+          content="default-src 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net https://cdnjs.cloudflare.com; script-src 'self' https://cdn.jsdelivr.net; font-src 'self' https://cdn.jsdelivr.net; connect-src 'self' https://pingobras-sg.onrender.com;">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Loja Pingobras: computadores, notebooks, servidores, redes, rack/datacenter e equipamentos de CFTV com atendimento direto pelo WhatsApp.">
+    <meta name="keywords" content="loja pingobras, servidores, notebooks corporativos, rack datacenter, cftv, equipamentos de rede, ti">
+    <meta name="author" content="Pingobras S.A">
+    <link rel="canonical" href="https://www.pingobras.com.br/loja/index.html">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Loja Pingobras | Equipamentos de TI, Redes e Datacenter">
+    <meta property="og:description" content="Catálogo Pingobras de computadores, notebooks, servidores, redes e CFTV. Negocie diretamente pelo WhatsApp.">
+    <meta property="og:url" content="https://www.pingobras.com.br/loja/index.html">
+    <meta property="og:locale" content="pt_BR">
+
+    <!-- Twitter Cards -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Loja Pingobras | Equipamentos de TI, Redes e Datacenter">
+    <meta name="twitter:description" content="Catálogo Pingobras de computadores, notebooks, servidores, redes e CFTV. Negocie diretamente pelo WhatsApp.">
+
+    <title>Loja Pingobras - Equipamentos de TI, Redes e Datacenter</title>
+
+    <!-- Bootstrap 5 CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+    <!-- Animate.css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+
+    <!-- Identidade visual Pingobras -->
+    <link rel="stylesheet" href="/src/css/template.css">
+    <!-- Estilos específicos da Loja -->
+    <link rel="stylesheet" href="/src/css/loja.css">
+
+    <!-- Schema.org: coleção de produtos -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "CollectionPage",
+      "name": "Loja Pingobras",
+      "url": "https://www.pingobras.com.br/loja/index.html",
+      "description": "Catálogo de equipamentos de TI, redes, servidores e CFTV da Pingobras S.A."
+    }
+    </script>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="/">
+                <img src="/src/assets/pingobras logo.png" alt="PINGOBRAS" height="45" class="me-2">
+                <span style="vertical-align: middle;">PINGOBRAS</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+                    <li class="nav-item"><a class="nav-link active" aria-current="page" href="/loja">Loja</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/jogos">Jogos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/edital">Editais</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/user">Conta</a></li>
+                    <li class="nav-item"><a class="nav-link btn btn-primary-gradient" href="/login">Entrar</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <!-- Hero -->
+        <header class="loja-hero">
+            <div class="container">
+                <p class="loja-hero__eyebrow">Loja Pingobras</p>
+                <h1 class="loja-hero__title">Equipamentos de TI, redes e datacenter para o seu negócio</h1>
+                <p class="loja-hero__subtitle mt-3">
+                    Computadores, notebooks, servidores, storage, redes e CFTV com condição, garantia e
+                    especificações completas. Fale direto com nossa equipe pelo WhatsApp e feche o pedido sem burocracia.
+                </p>
+                <div class="search-box d-flex align-items-center mt-4" role="search">
+                    <i class="bi bi-search ms-3 text-secondary" aria-hidden="true"></i>
+                    <label for="search-input" class="visually-hidden">Buscar produtos</label>
+                    <input type="search" id="search-input" class="form-control" placeholder="Buscar por nome, marca ou modelo...">
+                </div>
+            </div>
+        </header>
+
+        <!-- Categorias populares -->
+        <section class="py-4 border-bottom" aria-labelledby="categorias-titulo">
+            <div class="container">
+                <h2 id="categorias-titulo" class="h6 text-uppercase text-secondary mb-3">Categorias populares</h2>
+                <div id="category-chips" class="d-flex flex-wrap gap-2"></div>
+            </div>
+        </section>
+
+        <!-- Produtos em destaque -->
+        <section class="py-5" aria-labelledby="destaques-titulo">
+            <div class="container">
+                <div class="d-flex justify-content-between align-items-end mb-4">
+                    <h2 id="destaques-titulo" class="section-title mb-0">Ofertas em destaque</h2>
+                </div>
+                <div id="featured-grid" class="row g-4"></div>
+            </div>
+        </section>
+
+        <!-- Banner promocional -->
+        <section class="py-4">
+            <div class="container">
+                <div class="promo-banner d-flex flex-column flex-lg-row justify-content-between align-items-lg-center gap-3">
+                    <div>
+                        <h2 class="h3 mb-2">Precisa estruturar um datacenter completo?</h2>
+                        <p class="mb-0">Nossa equipe monta o projeto: servidores, rack, rede e nobreak em uma única cotação.</p>
+                    </div>
+                    <a class="btn btn-light fw-semibold text-nowrap" href="https://wa.me/5511999999999?text=Ol%C3%A1%2C%20quero%20uma%20cota%C3%A7%C3%A3o%20para%20montar%20um%20datacenter." target="_blank" rel="noopener noreferrer">
+                        Solicitar cotação
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Catálogo com filtros -->
+        <section id="catalogo" class="py-5 bg-body-tertiary" aria-labelledby="catalogo-titulo">
+            <div class="container">
+                <h2 id="catalogo-titulo" class="section-title mb-4">Catálogo completo</h2>
+                <div class="row g-4">
+                    <!-- Filtros -->
+                    <div class="col-lg-3">
+                        <div class="filters-panel">
+                            <h3 class="h6 text-uppercase text-secondary mb-3">Filtrar</h3>
+
+                            <div class="mb-3">
+                                <label for="filter-category" class="form-label small fw-semibold">Categoria</label>
+                                <select id="filter-category" class="form-select">
+                                    <option value="todas" selected>Todas as categorias</option>
+                                </select>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="filter-brand" class="form-label small fw-semibold">Marca</label>
+                                <select id="filter-brand" class="form-select">
+                                    <option value="todas" selected>Todas as marcas</option>
+                                </select>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="filter-condition" class="form-label small fw-semibold">Condição</label>
+                                <select id="filter-condition" class="form-select">
+                                    <option value="todas" selected>Novo, seminovo ou recondicionado</option>
+                                    <option value="novo">Novo</option>
+                                    <option value="seminovo">Seminovo</option>
+                                    <option value="recondicionado">Recondicionado</option>
+                                </select>
+                            </div>
+
+                            <button type="button" id="clear-filters" class="btn btn-outline-secondary btn-sm w-100">
+                                <i class="bi bi-x-circle" aria-hidden="true"></i> Limpar filtros
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Grid de produtos -->
+                    <div class="col-lg-9">
+                        <div class="d-flex flex-wrap justify-content-between align-items-center mb-3 gap-2">
+                            <p id="results-count" class="mb-0 text-secondary small" aria-live="polite"></p>
+                            <div class="d-flex align-items-center gap-2">
+                                <label for="sort-select" class="small fw-semibold mb-0">Ordenar por</label>
+                                <select id="sort-select" class="form-select form-select-sm w-auto">
+                                    <option value="relevancia">Relevância</option>
+                                    <option value="menor-preco">Menor preço</option>
+                                    <option value="maior-preco">Maior preço</option>
+                                    <option value="nome">Nome (A-Z)</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div id="products-grid" class="row g-4" aria-live="polite"></div>
+
+                        <nav aria-label="Paginação de produtos" class="mt-4">
+                            <ul id="pagination" class="pagination justify-content-center"></ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Benefícios -->
+        <section class="py-5" aria-labelledby="beneficios-titulo">
+            <div class="container">
+                <h2 id="beneficios-titulo" class="section-title text-center mb-5">Por que comprar com a Pingobras</h2>
+                <div class="row g-4 text-center">
+                    <div class="col-md-3">
+                        <i class="bi bi-shield-check display-6 text-primary" aria-hidden="true"></i>
+                        <h3 class="h6 mt-3">Garantia real</h3>
+                        <p class="small text-secondary">Todo produto sai com garantia documentada, novo ou seminovo.</p>
+                    </div>
+                    <div class="col-md-3">
+                        <i class="bi bi-whatsapp display-6 text-primary" aria-hidden="true"></i>
+                        <h3 class="h6 mt-3">Atendimento direto</h3>
+                        <p class="small text-secondary">Negocie e tire dúvidas com um especialista, sem robôs.</p>
+                    </div>
+                    <div class="col-md-3">
+                        <i class="bi bi-tools display-6 text-primary" aria-hidden="true"></i>
+                        <h3 class="h6 mt-3">Suporte técnico</h3>
+                        <p class="small text-secondary">Instalação e suporte para redes, servidores e CFTV.</p>
+                    </div>
+                    <div class="col-md-3">
+                        <i class="bi bi-truck display-6 text-primary" aria-hidden="true"></i>
+                        <h3 class="h6 mt-3">Entrega para todo o Brasil</h3>
+                        <p class="small text-secondary">Equipamentos embalados e transportados com segurança.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ -->
+        <section class="py-5 bg-body-tertiary" aria-labelledby="faq-titulo">
+            <div class="container">
+                <h2 id="faq-titulo" class="section-title mb-4">Perguntas frequentes</h2>
+                <div class="accordion" id="faq-accordion">
+                    <div class="accordion-item">
+                        <h3 class="accordion-header">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq-1">
+                                Como faço para comprar um produto?
+                            </button>
+                        </h3>
+                        <div id="faq-1" class="accordion-collapse collapse show" data-bs-parent="#faq-accordion">
+                            <div class="accordion-body">
+                                Basta clicar em "Comprar pelo WhatsApp" no produto desejado. Uma mensagem já com o
+                                nome, preço e código do produto será preenchida automaticamente para nossa equipe.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h3 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq-2">
+                                Os produtos seminovos têm garantia?
+                            </button>
+                        </h3>
+                        <div id="faq-2" class="accordion-collapse collapse" data-bs-parent="#faq-accordion">
+                            <div class="accordion-body">
+                                Sim. Todo produto seminovo ou recondicionado passa por revisão técnica e recebe
+                                garantia Pingobras informada na própria página do produto.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h3 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq-3">
+                                Vocês entregam para todo o Brasil?
+                            </button>
+                        </h3>
+                        <div id="faq-3" class="accordion-collapse collapse" data-bs-parent="#faq-accordion">
+                            <div class="accordion-body">
+                                Sim, realizamos envios para todo o território nacional através de transportadoras parceiras.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3 footer-section fade-in">
+                    <h5>Pingobras S.A</h5>
+                    <p>Infraestrutura de TI, redes, servidores e soluções digitais confiáveis.</p>
+                    <div class="social-links">
+                        <a href="https://discord.gg/pingobras" title="Discord">📱</a>
+                        <a href="https://wa.me/5511999999999" title="WhatsApp">💬</a>
+                    </div>
+                </div>
+                <div class="col-md-3 footer-section fade-in">
+                    <h5>Loja</h5>
+                    <ul>
+                        <li><a href="/loja">Catálogo completo</a></li>
+                        <li><a href="/loja#categorias-titulo">Categorias</a></li>
+                        <li><a href="/loja#destaques-titulo">Ofertas</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3 footer-section fade-in">
+                    <h5>Plataformas</h5>
+                    <ul>
+                        <li><a href="/jogos">Jogos</a></li>
+                        <li><a href="/user/blog">Blog</a></li>
+                        <li><a href="/user/chat">Chat</a></li>
+                        <li><a href="/edital">Editais</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3 footer-section fade-in">
+                    <h5>Conta</h5>
+                    <ul>
+                        <li><a href="/login">Entrar</a></li>
+                        <li><a href="/login/recuperar-senha.html">Recuperar Senha</a></li>
+                        <li><a href="/user">Minha Conta</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Pingobras S.A. Todos os direitos reservados. |
+                    <a href="/privacidade.html">Privacidade</a> |
+                    <a href="/termos.html">Termos de Serviço</a> |
+                    <a href="/cookies.html">Política de Cookies</a>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Dados e lógica da Loja (ordem importa: dados -> lógica) -->
+    <script src="/src/js/loja-data.js"></script>
+    <script src="/src/js/loja.js"></script>
+    <script src="/src/js/cookie-consent.js" defer></script>
+</body>
+</html>

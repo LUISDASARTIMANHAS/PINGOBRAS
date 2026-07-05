@@ -1,0 +1,303 @@
+/**
+ * PINGOBRAS - Estilos da Loja (Catálogo)
+ * --------------------------------------------------------------------------
+ * Este arquivo estende (não substitui) o /src/css/template.css já existente
+ * no projeto. As variáveis abaixo assumem valores compatíveis com a
+ * identidade visual atual (navbar escura + botões com gradiente); ajuste os
+ * tons caso o design system oficial (template.css) defina outros valores.
+ */
+
+:root {
+  --pb-gradient: linear-gradient(135deg, #1657d6 0%, #17b4e0 100%);
+  --pb-navy: #0b1f3a;
+  --pb-ink: #0f172a;
+  --pb-muted: #5b6b82;
+  --pb-surface: #ffffff;
+  --pb-surface-alt: #f5f7fa;
+  --pb-border: #e3e8ef;
+  --pb-radius: 0.75rem;
+}
+
+/* ---------------------------------------------------------------------- */
+/* Hero                                                                    */
+/* ---------------------------------------------------------------------- */
+.loja-hero {
+  background: var(--pb-navy);
+  background-image: radial-gradient(circle at 15% 20%, rgba(23, 180, 224, 0.25), transparent 45%),
+    radial-gradient(circle at 85% 0%, rgba(22, 87, 214, 0.35), transparent 50%);
+  color: #fff;
+  padding: 4.5rem 0 3rem;
+}
+
+.loja-hero__eyebrow {
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  color: #8fd8ef;
+  font-weight: 600;
+}
+
+.loja-hero__title {
+  font-weight: 800;
+  font-size: clamp(2rem, 4vw, 3rem);
+  line-height: 1.1;
+}
+
+.loja-hero__subtitle {
+  color: rgba(255, 255, 255, 0.8);
+  max-width: 640px;
+}
+
+.search-box {
+  background: var(--pb-surface);
+  border-radius: var(--pb-radius);
+  padding: 0.5rem;
+  box-shadow: 0 20px 40px -20px rgba(0, 0, 0, 0.45);
+}
+
+.search-box .form-control {
+  border: none;
+  box-shadow: none;
+}
+
+/* ---------------------------------------------------------------------- */
+/* Botões que estendem os já existentes no template                       */
+/* ---------------------------------------------------------------------- */
+.btn-primary-gradient {
+  background: var(--pb-gradient);
+  border: none;
+  color: #fff;
+  font-weight: 600;
+}
+
+.btn-primary-gradient:hover,
+.btn-primary-gradient:focus-visible {
+  filter: brightness(1.08);
+  color: #fff;
+}
+
+.btn-outline-primary-gradient {
+  background: transparent;
+  border: 1.5px solid #1657d6;
+  color: #1657d6;
+  font-weight: 600;
+}
+
+.btn-outline-primary-gradient:hover,
+.btn-outline-primary-gradient:focus-visible {
+  background: var(--pb-gradient);
+  border-color: transparent;
+  color: #fff;
+}
+
+/* ---------------------------------------------------------------------- */
+/* Categorias populares (chips)                                           */
+/* ---------------------------------------------------------------------- */
+.category-chip {
+  border: 1px solid var(--pb-border);
+  background: var(--pb-surface);
+  border-radius: 999px;
+  padding: 0.45rem 1rem;
+  font-size: 0.85rem;
+  color: var(--pb-ink);
+  transition: transform 0.15s ease, box-shadow 0.15s ease, color 0.15s ease;
+}
+
+.category-chip:hover,
+.category-chip:focus-visible {
+  color: #1657d6;
+  border-color: #1657d6;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 18px -12px rgba(22, 87, 214, 0.6);
+}
+
+/* ---------------------------------------------------------------------- */
+/* Cartão de produto                                                       */
+/* ---------------------------------------------------------------------- */
+.product-card {
+  display: flex;
+  flex-direction: column;
+  background: var(--pb-surface);
+  border: 1px solid var(--pb-border);
+  border-radius: var(--pb-radius);
+  overflow: hidden;
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.product-card:hover {
+  box-shadow: 0 20px 30px -18px rgba(15, 23, 42, 0.25);
+  transform: translateY(-4px);
+}
+
+.product-card__media {
+  position: relative;
+  background: var(--pb-surface-alt);
+}
+
+.product-card__image {
+  aspect-ratio: 4 / 3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.5rem;
+  color: #9fb2c9;
+}
+
+.product-card__badge {
+  position: absolute;
+  top: 0.6rem;
+  left: 0.6rem;
+  z-index: 1;
+}
+
+.product-card__discount {
+  position: absolute;
+  top: 0.6rem;
+  right: 0.6rem;
+  z-index: 1;
+}
+
+.product-card__body {
+  padding: 1rem 1rem 0.25rem;
+  flex-grow: 1;
+}
+
+.product-card__brand {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--pb-muted);
+  margin-bottom: 0.15rem;
+}
+
+.product-card__title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--pb-ink);
+  margin-bottom: 0.5rem;
+  min-height: 2.6rem;
+}
+
+.product-card__price {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  margin-bottom: 0.35rem;
+}
+
+.product-card__old-price {
+  font-size: 0.8rem;
+  color: var(--pb-muted);
+  text-decoration: line-through;
+}
+
+.product-card__current-price {
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: var(--pb-ink);
+}
+
+.product-card__stock {
+  font-size: 0.78rem;
+  color: var(--pb-muted);
+  margin-bottom: 0.75rem;
+}
+
+.product-card__footer {
+  padding: 0 1rem 1rem;
+}
+
+/* ---------------------------------------------------------------------- */
+/* Filtros                                                                 */
+/* ---------------------------------------------------------------------- */
+.filters-panel {
+  background: var(--pb-surface);
+  border: 1px solid var(--pb-border);
+  border-radius: var(--pb-radius);
+  padding: 1.25rem;
+}
+
+.empty-state {
+  color: var(--pb-muted);
+}
+
+/* ---------------------------------------------------------------------- */
+/* Banner promocional                                                      */
+/* ---------------------------------------------------------------------- */
+.promo-banner {
+  background: var(--pb-gradient);
+  border-radius: var(--pb-radius);
+  color: #fff;
+  padding: 2.5rem;
+}
+
+/* ---------------------------------------------------------------------- */
+/* Acessibilidade: foco visível sempre presente                            */
+/* ---------------------------------------------------------------------- */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible {
+  outline: 3px solid #17b4e0;
+  outline-offset: 2px;
+}
+
+/* Respeita preferência do usuário por menos movimento */
+@media (prefers-reduced-motion: reduce) {
+  .product-card,
+  .category-chip {
+    transition: none;
+  }
+}
+
+/* ---------------------------------------------------------------------- */
+/* Página de detalhes do produto                                          */
+/* ---------------------------------------------------------------------- */
+.gallery-main {
+  aspect-ratio: 4 / 3;
+  background: var(--pb-surface-alt);
+  border: 1px solid var(--pb-border);
+  border-radius: var(--pb-radius);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 4rem;
+  color: #9fb2c9;
+}
+
+.gallery-thumb {
+  aspect-ratio: 1 / 1;
+  background: var(--pb-surface-alt);
+  border: 1px solid var(--pb-border);
+  border-radius: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+  color: #9fb2c9;
+  cursor: pointer;
+}
+
+.gallery-thumb.active {
+  border-color: #1657d6;
+  box-shadow: 0 0 0 2px rgba(22, 87, 214, 0.35);
+}
+
+.specs-table th {
+  width: 40%;
+  color: var(--pb-muted);
+  font-weight: 600;
+}
+
+/* ---------------------------------------------------------------------- */
+/* Banner de cookies (LGPD)                                                */
+/* ---------------------------------------------------------------------- */
+.cookie-banner {
+  position: fixed;
+  inset-inline: 0;
+  bottom: 0;
+  z-index: 1080;
+  background: var(--pb-navy);
+  color: #fff;
+  box-shadow: 0 -12px 30px rgba(0, 0, 0, 0.25);
+}

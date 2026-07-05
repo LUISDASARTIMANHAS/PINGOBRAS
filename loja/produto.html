@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="Content-Security-Policy"
+          content="default-src 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net https://cdnjs.cloudflare.com; script-src 'self' https://cdn.jsdelivr.net; font-src 'self' https://cdn.jsdelivr.net; connect-src 'self' https://pingobras-sg.onrender.com;">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Detalhes do produto, especificações técnicas e condições de compra na Loja Pingobras.">
+    <meta name="author" content="Pingobras S.A">
+    <link rel="canonical" href="https://www.pingobras.com.br/loja/produto.html">
+
+    <title>Detalhes do Produto | Loja Pingobras</title>
+
+    <!-- Bootstrap 5 CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Identidade visual Pingobras -->
+    <link rel="stylesheet" href="/src/css/template.css">
+    <link rel="stylesheet" href="/src/css/loja.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="/">
+                <img src="/src/assets/pingobras logo.png" alt="PINGOBRAS" height="45" class="me-2">
+                <span style="vertical-align: middle;">PINGOBRAS</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+                    <li class="nav-item"><a class="nav-link active" aria-current="page" href="/loja">Loja</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/jogos">Jogos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/edital">Editais</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/user">Conta</a></li>
+                    <li class="nav-item"><a class="nav-link btn btn-primary-gradient" href="/login">Entrar</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main class="py-5">
+        <div class="container" id="product-main">
+            <!-- Breadcrumb -->
+            <nav aria-label="breadcrumb" class="mb-4">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="/">Home</a></li>
+                    <li class="breadcrumb-item"><a href="/loja">Loja</a></li>
+                    <li class="breadcrumb-item" id="breadcrumb-category">Categoria</li>
+                    <li class="breadcrumb-item active" aria-current="page">Detalhes</li>
+                </ol>
+            </nav>
+
+            <div class="row g-5">
+                <!-- Galeria -->
+                <div class="col-lg-5">
+                    <div id="gallery-main" class="gallery-main mb-3" role="img" aria-label="Imagem do produto">
+                        <i class="bi bi-image" aria-hidden="true"></i>
+                    </div>
+                    <div id="gallery-thumbs" class="d-flex gap-2 flex-wrap"></div>
+                </div>
+
+                <!-- Informações principais -->
+                <div class="col-lg-7">
+                    <p id="product-brand" class="text-uppercase small fw-semibold text-primary mb-1"></p>
+                    <h1 id="product-title" class="h2 fw-bold mb-3"></h1>
+
+                    <div class="d-flex align-items-center gap-3 mb-3">
+                        <span id="product-condition" class="badge text-bg-secondary"></span>
+                        <span id="product-stock" class="text-secondary small"></span>
+                    </div>
+
+                    <p id="product-short-description" class="mb-4"></p>
+
+                    <div class="d-flex align-items-baseline gap-3 mb-4">
+                        <span id="product-old-price" class="text-secondary text-decoration-line-through d-none"></span>
+                        <span id="product-price" class="display-6 fw-bold"></span>
+                    </div>
+
+                    <a id="whatsapp-cta" class="btn btn-primary-gradient btn-lg w-100 w-md-auto" href="#" target="_blank" rel="noopener noreferrer">
+                        <i class="bi bi-whatsapp" aria-hidden="true"></i> Comprar pelo WhatsApp
+                    </a>
+
+                    <hr class="my-4">
+
+                    <dl class="row small">
+                        <dt class="col-sm-4">Garantia</dt>
+                        <dd class="col-sm-8" id="product-warranty"></dd>
+                        <dt class="col-sm-4">Peso</dt>
+                        <dd class="col-sm-8" id="product-weight"></dd>
+                        <dt class="col-sm-4">Dimensões</dt>
+                        <dd class="col-sm-8" id="product-dimensions"></dd>
+                    </dl>
+                </div>
+            </div>
+
+            <!-- Descrição completa -->
+            <section class="py-5" aria-labelledby="descricao-titulo">
+                <h2 id="descricao-titulo" class="h4 mb-3">Descrição</h2>
+                <p id="product-long-description" class="text-secondary"></p>
+            </section>
+
+            <!-- Especificações técnicas -->
+            <section class="py-4" aria-labelledby="specs-titulo">
+                <h2 id="specs-titulo" class="h4 mb-3">Especificações técnicas</h2>
+                <div class="table-responsive">
+                    <table class="table specs-table">
+                        <tbody id="specs-table-body"></tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- Produtos relacionados -->
+            <section class="py-5" aria-labelledby="relacionados-titulo">
+                <h2 id="relacionados-titulo" class="h4 mb-4">Produtos relacionados</h2>
+                <div id="related-grid" class="row g-4"></div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3 footer-section fade-in">
+                    <h5>Pingobras S.A</h5>
+                    <p>Infraestrutura de TI, redes, servidores e soluções digitais confiáveis.</p>
+                    <div class="social-links">
+                        <a href="https://discord.gg/pingobras" title="Discord">📱</a>
+                        <a href="https://wa.me/5511999999999" title="WhatsApp">💬</a>
+                    </div>
+                </div>
+                <div class="col-md-3 footer-section fade-in">
+                    <h5>Loja</h5>
+                    <ul>
+                        <li><a href="/loja">Catálogo completo</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3 footer-section fade-in">
+                    <h5>Plataformas</h5>
+                    <ul>
+                        <li><a href="/jogos">Jogos</a></li>
+                        <li><a href="/user/blog">Blog</a></li>
+                        <li><a href="/user/chat">Chat</a></li>
+                        <li><a href="/edital">Editais</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3 footer-section fade-in">
+                    <h5>Conta</h5>
+                    <ul>
+                        <li><a href="/login">Entrar</a></li>
+                        <li><a href="/user">Minha Conta</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Pingobras S.A. Todos os direitos reservados. |
+                    <a href="/privacidade.html">Privacidade</a> |
+                    <a href="/termos.html">Termos de Serviço</a> |
+                    <a href="/cookies.html">Política de Cookies</a>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/src/js/loja-data.js"></script>
+    <script src="/src/js/loja.js"></script>
+    <script src="/src/js/produto.js"></script>
+    <script src="/src/js/cookie-consent.js" defer></script>
+</body>
+</html>
