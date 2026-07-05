@@ -52,20 +52,20 @@
 
     /** Canais de contato e redes sociais. */
     contacts: Object.freeze({
-      whatsapp: "https://wa.me/5511999999999",
+      whatsapp: "https://wa.me/5527995744791",
       discord: "https://discord.gg/pingobras",
-      github: "https://github.com/pingobras",
+      github: "https://github.com/LUISDASARTIMANHAS",
       instagram: "https://instagram.com/pingobras",
-      email: "contato@pingobras.com",
+      email: "pingobras.s.a@gmail.com",
     }),
 
     /** Itens principais de navegação (usados pela navbar). */
     nav: Object.freeze(
       /** @type {PBNavLink[]} */ ([
-        { label: "Home", href: "/" },
-        { label: "Jogos", href: "/jogos" },
-        { label: "Editais", href: "/edital" },
-        { label: "Conta", href: "/user" },
+        { label: "Home", href: "./" },
+        { label: "Jogos", href: "../jogos" },
+        { label: "Editais", href: "../edital" },
+        { label: "Conta", href: "../user" },
       ])
     ),
 
