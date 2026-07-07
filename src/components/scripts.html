@@ -123,8 +123,8 @@
 
 <script>
   // Redirecionar HTTP para HTTPS
-  if (document.URL.includes("http://")) {
-    // window.location.href = document.URL.replace("http://", "https://");
+  if (document.URL.includes("http://") && !document.URL.includes("hellokitty.com.br:5500")) {
+    window.location.href = document.URL.replace("http://", "https://");
   }
 
   // Alternar entre formulários
