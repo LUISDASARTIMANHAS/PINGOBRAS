@@ -42,10 +42,8 @@ function importJs(data) {
   const srcs = [
     "window.cache",
     "manutencao-redirect",
-    "network",
     "copyright",
     "functions",
-    "relogio",
     "alterar-tema",
     // "telemetry",
   ];

@@ -45,7 +45,7 @@
     foundedYear: 2010,
 
     /** Versão atual do site/sistema, exibida no rodapé. */
-    version: "1.0.26",
+    version: "1.0.28",
 
     /** Endpoint base do servidor geral que atende toda a plataforma. */
     apiBaseUrl: "https://pingobras-sg.onrender.com/api",
@@ -66,6 +66,7 @@
         { label: "loja", href: "./loja" },
         { label: "Editais", href: "./edital" },
         { label: "Conta", href: "./user" },
+        { label: "Sobre", href: "./#sobre" },
       ])
     ),
 
