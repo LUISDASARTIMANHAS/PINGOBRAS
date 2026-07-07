@@ -1,5 +1,5 @@
 /**
- * @file component-loader.js
+ * @file engine.js
  * @description Motor de baixo nível responsável por buscar, injetar e executar
  * os componentes HTML da Pingobras (navbar, footer, cookies, etc). Não conhece
  * regras de negócio — apenas "como" carregar um componente com segurança,

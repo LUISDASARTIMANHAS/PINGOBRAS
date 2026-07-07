@@ -22,7 +22,7 @@ src/
     component-loader.css  -> estilos exclusivos da infraestrutura de componentes
   js/
     site-config.js        -> ÚNICA fonte de URLs, redes sociais e navegação
-    component-loader.js   -> motor genérico de fetch/injeção/execução
+    engine.js   -> motor genérico de fetch/injeção/execução
     loader-components.js  -> orquestrador: descobre placeholders e inicializa tudo
 
 legal/
@@ -50,7 +50,7 @@ Toda página nova só precisa disto:
     };
   </script>
   <script src="/src/js/site-config.js"></script>
-  <script src="/src/js/component-loader.js"></script>
+  <script src="/src/js/engine.js"></script>
   <script src="/src/js/loader-components.js" defer></script>
 </head>
 <body>

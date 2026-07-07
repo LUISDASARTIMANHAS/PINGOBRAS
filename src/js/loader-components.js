@@ -148,7 +148,7 @@ function bootstrapComponents(global, document) {
 
     if (!global.PBComponentLoader) {
       console.error(
-        "[Pingobras] component-loader.js não foi carregado antes de loader-components.js."
+        "[Pingobras] engine.js não foi carregado antes de loader-components.js."
       );
       return;
     }
