@@ -45,7 +45,7 @@
     foundedYear: 2010,
 
     /** Versão atual do site/sistema, exibida no rodapé. */
-    version: "1.0.28",
+    version: "1.9.2026",
 
     /** Endpoint base do servidor geral que atende toda a plataforma. */
     apiBaseUrl: "https://pingobras-sg.onrender.com/api",
@@ -53,7 +53,7 @@
     /** Canais de contato e redes sociais. */
     contacts: Object.freeze({
       whatsapp: "https://wa.me/5527995744791",
-      discord: "https://discord.gg/pingobras",
+      discord: "https://discord.gg/dGaxRhrUEc",
       github: "https://github.com/LUISDASARTIMANHAS",
       instagram: "https://instagram.com/pingobras",
       email: "pingobras.s.a@gmail.com",
