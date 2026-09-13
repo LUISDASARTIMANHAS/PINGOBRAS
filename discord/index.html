@@ -1,61 +1,37 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
   <head>
-
-    <meta charset="utf-8" />
-    <meta http-equiv="Refresh" content="60">
-    <meta name="viewport" content="width=device-width, initial-scale=0.7" />
-    <link rel="icon" href="https://cdn.glitch.global/b39d6a4a-0e14-4b41-930d-29d3ccd6c137/pequeno%2032%C3%9732.png?v=1643046753877" />
-    <links></links>
-   <seo>
-    <meta
-      name="description"
-      content=" PINGOBRAS DISCORD! "/>
-    <meta name="robots" content="index,follow" />
-    <meta property="og:title" content="PINGOBRAS DISCORD" />
-    <meta property="og:type" content="article" />
-    <meta property="og:url" content="https://pingobras.glitch.me/social/pingobras" />
-    <meta
-      property="og:description"
-      content="Pingobras Research & Softwares || Somos uma empresa especializada em pesquisa tecnológica, inteligência artificial e desenvolvimento de sistemas personalizados. Transformamos conhecimento técnico em soluções digitais inteligentes, escaláveis e eficazes."/>
-    <meta
-      property="og:image"
-      content="https://cdn.glitch.global/b39d6a4a-0e14-4b41-930d-29d3ccd6c137/PINGOBRAS CORP SEO.png?v=1665177583063"/>
-    <meta name="twitter:card" content="summary" />
-    </seo>
-    
-  <title>PINGOBRAS DISCORD</title>
-  </head>  
-  <body>
-    <div class="site-altura">
-      <div class="conteudo" role="main">
-           
-        
-        
-        <h1 branco>Redirecionando...</h1>
-        
-        
-        <footer>
-        <div class="links"></div>
-    
-          <div id="direitos" class="direitos">Loading...</div>
-            </footer>
-       
-</div> </div>
-</body>
-
-  <scripts>
-    <script src="/src/js/links.js" defer></script>
-    <script src="/src/js/main.js" defer></script>
-    <script src="/src/js/copyright.js" defer></script>  
+    <meta charset="UTF-8" />
     <script>
-    setTimeout(discordPingobras,5000)  
-      
-    function discordPingobras(){window.location.href = "https://discord.gg/TUpNd6CQgg"}
+      window.PB_PAGE = {
+        title: "Discord",
+        description: "Entre no servidor oficial da comunidade Pingobras.",
+        keywords: "Pingobras, Discord, comunidade",
+      };
     </script>
-    </scripts>
-  <host>
-    <script src="./src/js/load-host.js" defer></script>  
-  </host>
+    <link rel="stylesheet" href="./discord.css" />
+    <script src="../src/js/site-config.js"></script>
+    <script src="../src/js/engine.js"></script>
+    <script src="../src/js/loader-components.js" defer></script>
+    <script src="./discord.js" defer></script>
+  </head>
+  <body>
+    <main class="discord-page main-content py-5">
+      <div class="container text-center">
+        <div class="discord-content mx-auto animate__animated animate__fadeInUp">
+          <p class="text-uppercase small fw-semibold mb-2">Comunidade Pingobras</p>
+          <h1 class="section-title mb-3">Redirecionando para o Discord</h1>
+          <p class="lead mb-4">
+            Aguarde um instante. Você será encaminhado para o servidor oficial.
+          </p>
+          <div class="discord-progress" role="status" aria-label="Preparando redirecionamento">
+            <span></span>
+          </div>
+          <p class="small mt-3 mb-0">
+            Caso o redirecionamento não aconteça, <a id="discord-fallback" href="/">volte para a página inicial</a>.
+          </p>
+        </div>
+      </div>
+    </main>
+  </body>
 </html>
