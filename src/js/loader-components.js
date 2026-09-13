@@ -153,6 +153,10 @@ function bootstrapComponents(global, document) {
       return;
     }
 
+    if (global.PB_CONFIG_READY) {
+      await global.PB_CONFIG_READY.catch(() => undefined);
+    }
+
     await Promise.allSettled([
       global.PBComponentLoader.loadHeadComponent(buildHeadTokens()),
       loadAllGlobalComponents(),

@@ -1,78 +1,55 @@
 # AGENTS.md
 
-Objetivo
---------
-Fornecer instruções curtas e acionáveis para agentes de IA trabalharem com este repositório.
+## Objetivo
 
-Como usar
----------
-- Preferir referenciação a documentos existentes; não copie grandes trechos de docs.
-- Antes de modificar arquivos, identificar o impacto e pedir confirmação para alterações amplas.
-- Abra PRs pequenos e focados; inclua comando(s) para reproduzir alterações localmente.
+Orientar agentes de IA a fazer mudanças pequenas e verificáveis no site estático
+da Pingobras. Consulte [README.md](README.md) e [MODERNIZATION.md](MODERNIZATION.md)
+para contexto e roteiro; não duplique esses documentos.
 
-Visão rápida do repositório
----------------------------
-- Tipo: site estático com múltiplas páginas e subpastas.
-- Arquivos/dirs úteis para inspecionar:
-  - [README.md](README.md)
-  - [MODERNIZATION.md](MODERNIZATION.md)
-  - [src/](src/) — contém `assets/`, `css/`, `js/` centralizados
-  - [src/assets/](src/assets/) — imagens e ícones do site
-  - [src/js/](src/js/) — scripts reutilizáveis e de página
-  - [src/css/](src/css/) — estilos globais e temas
-  - [src/template.html](src/template.html) — scaffold de página Bootstrap
-  - [jogos/](jogos/) e [login/](login/) — exemplos de páginas existentes
-  - [LUIS_DAS_ARTIMANHAS/](LUIS_DAS_ARTIMANHAS/) — sub-site pessoal que deve ser preservado
+## Visão rápida
 
-Build / Preview
----------------
-Não há pipeline de build identificado. Para pré-visualizar localmente, use um servidor HTTP simples:
+- Site estático multipágina: HTML na raiz e em subpastas, sem backend neste repositório.
+- Código compartilhado: [src/css/](src/css/), [src/js/](src/js/) e [src/assets/](src/assets/).
+- Padrão novo: [src/template.html](src/template.html), `site-config.js`, `engine.js` e
+  `loader-components.js` carregam componentes de [src/components/](src/components/).
+- Páginas legadas ainda existem em `login/`, `jogos/`, `loja/`, `user/` e
+  [LUIS_DAS_ARTIMANHAS/](LUIS_DAS_ARTIMANHAS/); preserve-as durante a migração.
 
-```bash
-python -m http.server 8000
-# ou
-npx http-server . -p 8080
-```
+## Arquitetura e convenções
 
-Conveções observadas
----------------------
-- CSS central em `src/css/` e estilos locais em pastas de componentes.
-- JS principal em `src/js/`; há scripts isolados por funcionalidade em várias pastas.
-- Arquivos HTML na raiz e em subpastas representam páginas estáticas; evite refatorações grandes sem testes.
-- A modernização atual está guiada por `MODERNIZATION.md` e usa Bootstrap progressivamente.
+- O site executa no navegador e chama a API central em
+  `https://pingobras-sg.onrender.com/api`; não adicione servidor, chaves ou segredos.
+- Informações institucionais, navegação e contatos devem vir de
+  [src/js/site-config.js](src/js/site-config.js). Endpoints específicos de domínio
+  ainda podem estar em scripts de página; não presuma que toda URL já foi centralizada.
+- Para páginas novas, prefira o sistema de componentes e mantenha HTML, CSS e JS em
+  arquivos separados. Componentes existentes podem conter scripts inline por legado;
+  não reescreva todos eles em uma tarefa localizada.
+- Ao mover ou adicionar arquivos, verifique dependências relativas. Evite URLs iniciadas
+  por `/` quando a página precisar funcionar em deploy sob subcaminho, como GitHub Pages.
+- Use `--brand-blue` e `--brand-purple` nos estilos novos, Bootstrap 5 conforme o padrão
+  local e animações suaves com CSS, respeitando `prefers-reduced-motion` quando possível.
+- Valide entradas no cliente, use HTTPS, não exponha tokens e trate operações autenticadas
+  como responsabilidade da API. Insira texto dinâmico com `textContent` quando possível.
 
-Pontos de atenção
------------------
-- Não há testes automatizados nem CI óbvios — tome cuidado ao alterar infra-estrutura crítica.
-- Muitos arquivos dependem de caminhos relativos; verifique caminhos ao mover arquivos.
+## Preview e validação
 
-Modernização planejada
-----------------------
-- Estado atual: site antigo (2019/2020) e parcialmente obsoleto.
-- Objetivo: modernizar o site com Bootstrap, JS modularizado e CSS organizado, mantendo o conteúdo existente onde aplicável.
-- Roteiro principal: audit, migrar estilos para Bootstrap, refatorar scripts em `src/js/`, tornar páginas responsivas, testar páginas chave manualmente, publicar versão inicial moderna.
+- Não há build, testes automatizados, lint ou CI detectados.
+- Preview confiável: `python -m http.server 8000` na raiz do repositório.
+- Valide manualmente as páginas alteradas em desktop e mobile, conferindo console,
+  links relativos, componentes carregados, animações e chamadas de API.
+- Páginas de referência existentes: `index.html`, `index-example.html`,
+  `jogos/index.html`, `login/index.html`, `loja/index.html` e `user/index.html`.
+- Não use `src/index.html` como página de teste: esse arquivo não existe.
 
-Requisitos da empresa
----------------------
-- Cores principais: azul e roxo — use variáveis CSS para facilitar o tema.
-- **ANIMAÇÕES (OBRIGATÓRIO)**: implemente animações suaves em TODAS as páginas; prefira performance com CSS. Este requisito NÃO pode ser ignorado.
-- Objetivo geral: apresentar a Pingobras S.A. e agregar todos os sistemas web em um único site.
-- Segurança: priorizar sempre; validar entradas, usar HTTPS e rotas protegidas na API.
-- API atual: `https://pingobras-sg.onrender.com/` com base `/api`.
-- Estrutura de funcionários: páginas de colaboradores (ex.: `LUIS_DAS_ARTIMANHAS/`) devem permanecer integradas e visíveis como sub-sites ou blogs.
-- **SEPARAÇÃO DE ARQUIVOS (OBRIGATÓRIO)**: cada página/componente em `.html`, `.css` e `.js` separados. Nunca misturar CSS ou JS dentro do HTML.
+## Regras de mudança
 
-Arquitetura e restrições
------------------------
+- Faça PRs pequenas e focadas; mantenha conteúdo e URLs existentes quando possível.
+- Antes de alterar caminhos, procure os consumidores e teste pelo menos uma página na
+  raiz e uma página em subpasta.
+- Novas imagens devem ficar em `src/assets/` e usar caminhos relativos corretos.
+- Não corrija arquivos ausentes ou refatore a arquitetura inteira incidentalmente;
+  registre o problema e mantenha o escopo da tarefa.
+- Ao preparar uma PR, descreva objetivo, arquivos afetados, páginas testadas e animações
+  verificadas. Peça confirmação antes de mudanças amplas.
 - O projeto é um site estático renderizado no navegador; toda a dinâmica vem da API externa (`/api`).
-- Não adicione código de backend neste repositório; mantenha o foco em HTML/CSS/JS que o navegador executa.
-- Não inclua segredos (API keys) no front-end. Se for necessário um token, documente o fluxo de obtenção seguro e prefira tokens temporários.
-
-Próximas customizações recomendadas
------------------------------------
-- Criar `.github/copilot-instructions.md` com atalhos e comandos de build/preview específicos (já presente; atualizar conforme necessidade).
-- Criar skill/AGENT para tarefas comuns: abrir PRs, atualizar dependências front-end, formatar JS/CSS, rodar checklist de QA manual.
-
-Contato
--------
-Quando em dúvida sobre escopo de alteração, peça confirmação ao mantenedor antes de mudanças amplas.

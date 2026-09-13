@@ -13,6 +13,17 @@
   "use strict";
 
   /**
+   * Localiza o JSON relativo ao próprio script, funcionando na raiz e em
+   * páginas servidas por subdiretórios.
+   *
+   * @return {string} URL absoluta do arquivo de informações do site.
+   */
+  function getInfoUrl() {
+    const scriptUrl = document.currentScript && document.currentScript.src;
+    return new URL("../data/info.json", scriptUrl || global.location.href).href;
+  }
+
+  /**
    * @typedef {Object} PBNavLink
    * @property {string} label - Texto exibido no link.
    * @property {string} href  - Caminho absoluto (ex: "/jogos").
@@ -25,40 +36,11 @@
    */
 
   /**
-   * Configuração global e imutável do site.
+   * Configuração estrutural que não faz parte dos dados institucionais.
+   *
    * @type {Readonly<Object>}
    */
-  const PB_CONFIG = Object.freeze({
-    /** Nome oficial exibido na marca. */
-    siteName: "PINGOBRAS",
-
-    /** Razão social usada em textos institucionais e rodapé. */
-    company: "Pingobras S.A",
-
-    /** Caminho do logo usado pela navbar e Open Graph. */
-    logo: "https://luisdasartimanhas.github.io/PINGOBRAS/src/assets/pingobras logo.png",
-
-    /** Favicon usado pelo componente de head. */
-    favicon: "./src/assets/favicon.png",
-
-    /** Ano de fundação (não confundir com o ano do copyright, que é automático). */
-    foundedYear: 2010,
-
-    /** Versão atual do site/sistema, exibida no rodapé. */
-    version: "1.9.2026",
-
-    /** Endpoint base do servidor geral que atende toda a plataforma. */
-    apiBaseUrl: "https://pingobras-sg.onrender.com/api",
-
-    /** Canais de contato e redes sociais. */
-    contacts: Object.freeze({
-      whatsapp: "https://wa.me/5527995744791",
-      discord: "https://discord.gg/dGaxRhrUEc",
-      github: "https://github.com/LUISDASARTIMANHAS",
-      instagram: "https://instagram.com/pingobras",
-      email: "pingobras.s.a@gmail.com",
-    }),
-
+  const STRUCTURAL_CONFIG = {
     /** Itens principais de navegação (usados pela navbar). */
     nav: Object.freeze(
       /** @type {PBNavLink[]} */ ([
@@ -116,8 +98,46 @@
         { label: "Termos de Serviço", href: "./legal/termos.html" },
       ]),
     }),
-  });
+  };
 
-  // Expõe a configuração de forma somente-leitura no escopo global.
-  global.PB_CONFIG = PB_CONFIG;
+  /**
+   * Busca o arquivo de dados e combina seus valores com a configuração
+   * estrutural usada pelos componentes globais.
+   *
+   * @return {Promise<Readonly<Object>>} Configuração pronta e imutável.
+   */
+  async function loadSiteConfig() {
+    const response = await fetch(getInfoUrl(), {
+      headers: { Accept: "application/json" },
+    });
+    if (!response.ok) {
+      throw new Error(`Falha ao carregar info.json: HTTP ${response.status}`);
+    }
+
+    const info = await response.json();
+    if (!info || typeof info !== "object") {
+      throw new Error("info.json não contém um objeto de configuração válido.");
+    }
+
+    const config = {
+      ...info,
+      favicon: info.icon || "./src/assets/favicon.png",
+      contacts: Object.freeze({ ...(info.contacts || {}) }),
+      ...STRUCTURAL_CONFIG,
+    };
+
+    return Object.freeze(config);
+  }
+
+  /** Inicialização compartilhada para que os componentes aguardem o JSON. */
+  global.PB_CONFIG = null;
+  global.PB_CONFIG_READY = loadSiteConfig()
+    .then((config) => {
+      global.PB_CONFIG = config;
+      return config;
+    })
+    .catch((error) => {
+      console.error("[Pingobras] Não foi possível carregar a configuração do site.", error);
+      throw error;
+    });
 })(window);
