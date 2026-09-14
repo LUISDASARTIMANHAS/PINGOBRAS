@@ -111,6 +111,30 @@
     font-size: 3rem;
     height: 11rem;
     justify-content: center;
+    overflow: hidden;
+    position: relative;
+}
+
+.game-card-image video,
+.game-card-image iframe,
+.game-card-image img {
+    border: 0;
+    height: 100%;
+    object-fit: cover;
+    width: 100%;
+}
+
+.game-card-image video,
+.game-card-image iframe {
+    display: block;
+}
+
+.game-card-image::after {
+    background: linear-gradient(180deg, transparent 45%, rgba(0, 0, 0, 0.28));
+    content: "";
+    inset: 0;
+    pointer-events: none;
+    position: absolute;
 }
 
 .game-card-content {
