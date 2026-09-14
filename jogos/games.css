@@ -1,0 +1,152 @@
+/* PINGOBRAS Games - lobby */
+.games-page {
+    background: #f4f7fb;
+}
+
+.games-hero {
+    background:
+        linear-gradient(135deg, rgba(0, 82, 204, 0.96), rgba(124, 58, 237, 0.94)),
+        radial-gradient(circle at 80% 20%, rgba(255, 255, 255, 0.2), transparent 32rem);
+    color: white;
+    padding: clamp(3.5rem, 8vw, 6rem) 1.25rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.games-hero::after {
+    content: "";
+    position: absolute;
+    inset: auto -10% -70%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 50%;
+    transform: rotate(-5deg);
+}
+
+.games-hero-content {
+    position: relative;
+    z-index: 1;
+    animation: games-rise 0.7s ease-out both;
+}
+
+.games-hero h1 {
+    font-size: clamp(2.25rem, 6vw, 4rem);
+    font-weight: 800;
+    margin-bottom: 1rem;
+}
+
+.games-hero p {
+    font-size: clamp(1rem, 2vw, 1.25rem);
+    margin-bottom: 0;
+    opacity: 0.95;
+}
+
+.games-container {
+    padding: clamp(2.5rem, 6vw, 4.5rem) 1.25rem;
+}
+
+.account-info {
+    background: white;
+    border-left: 4px solid var(--brand-purple);
+    border-radius: var(--radius);
+    box-shadow: 0 8px 24px rgba(20, 35, 60, 0.08);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem 2.5rem;
+    margin-bottom: 3rem;
+    padding: 1.25rem 1.5rem;
+}
+
+.account-info-item {
+    display: flex;
+    gap: 0.65rem;
+    align-items: baseline;
+}
+
+.account-info-item label {
+    color: var(--brand-blue);
+    font-weight: 600;
+}
+
+.account-info-item span {
+    color: #26354a;
+    font-weight: 700;
+}
+
+.games-grid {
+    row-gap: 1.5rem;
+}
+
+.game-card {
+    background: white;
+    border: 1px solid rgba(0, 82, 204, 0.08);
+    border-radius: var(--radius);
+    box-shadow: 0 8px 20px rgba(20, 35, 60, 0.08);
+    color: inherit;
+    display: block;
+    height: 100%;
+    overflow: hidden;
+    text-decoration: none;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.game-card:hover,
+.game-card:focus-visible {
+    box-shadow: 0 16px 32px rgba(0, 52, 204, 0.16);
+    color: inherit;
+    outline: none;
+    transform: translateY(-6px);
+}
+
+.game-card:focus-visible {
+    box-shadow: 0 0 0 4px rgba(124, 58, 237, 0.25), 0 16px 32px rgba(0, 52, 204, 0.16);
+}
+
+.game-card-image {
+    align-items: center;
+    background: linear-gradient(135deg, var(--brand-blue), var(--brand-purple));
+    color: white;
+    display: flex;
+    font-size: 3rem;
+    height: 11rem;
+    justify-content: center;
+}
+
+.game-card-content {
+    padding: 1.5rem;
+    text-align: center;
+}
+
+.game-card h3 {
+    color: var(--brand-blue);
+    font-size: 1.35rem;
+    font-weight: 700;
+    margin-bottom: 0.6rem;
+}
+
+.game-card p {
+    color: #5d6b7d;
+    font-size: 0.95rem;
+    margin: 0;
+}
+
+@keyframes games-rise {
+    from { opacity: 0; transform: translateY(1rem); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 575.98px) {
+    .account-info-item {
+        justify-content: space-between;
+        width: 100%;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .games-hero-content,
+    .game-card {
+        animation: none;
+        transition: none;
+    }
+}
