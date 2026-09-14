@@ -76,7 +76,7 @@
               { label: "Loja", href: "./loja" },
               { label: "Jogos", href: "/jogos" },
               { label: "Blog", href: "/user/blog" },
-              { label: "Chat", href: "/user/chat" },
+              { label: "Chat", href: "./chat" },
               { label: "Editais", href: "/edital" },
             ],
           },

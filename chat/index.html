@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Converse em tempo real na comunidade Pingobras." />
+    <title>Chat | PINGOBRAS</title>
+    <link rel="icon" href="../src/assets/pingobras logo.png" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="chat.css" />
+  </head>
+  <body>
+    <header class="chat-header">
+      <nav class="navbar navbar-expand-lg" aria-label="Navegação principal">
+        <div class="container-fluid chat-shell">
+          <a class="navbar-brand" href="../">
+            <img src="../src/assets/pingobras logo.png" alt="PINGOBRAS" width="42" height="42" />
+            <span>PINGOBRAS <small>CHAT</small></span>
+          </a>
+          <a class="back-link" href="../user/" aria-label="Voltar para minha conta">
+            <span aria-hidden="true">&#8592;</span> Minha conta
+          </a>
+        </div>
+      </nav>
+    </header>
+
+    <main class="chat-main chat-shell">
+      <section class="chat-intro" aria-labelledby="chat-title">
+        <div>
+          <p class="eyebrow">Comunidade PINGOBRAS</p>
+          <h1 id="chat-title">Converse com a comunidade.</h1>
+          <p class="intro-copy">Um espaço direto para trocar ideias, tirar dúvidas e acompanhar as novidades.</p>
+        </div>
+        <div class="status-pill" aria-live="polite">
+          <span class="status-dot"></span>
+          <span id="connection-status">Conectando</span>
+        </div>
+      </section>
+
+      <section class="chat-frame-wrap" aria-label="Chat da comunidade">
+        <div class="frame-toolbar">
+          <span class="toolbar-title">Sala principal</span>
+          <a href="https://pingobras-chat-server.glitch.me/" target="_blank" rel="noopener noreferrer">Abrir em nova aba <span aria-hidden="true">&#8599;</span></a>
+        </div>
+        <div class="frame-loading" id="frame-loading" aria-live="polite">Carregando o chat...</div>
+        <iframe
+          id="chat-frame"
+          title="Chat da comunidade PINGOBRAS"
+          src="https://pingobras-chat-server.glitch.me/"
+          loading="eager"
+          allow="clipboard-read; clipboard-write"
+          referrerpolicy="strict-origin-when-cross-origin">
+        </iframe>
+      </section>
+    </main>
+
+    <footer class="chat-footer chat-shell">
+      <span>&copy; 2026 Pingobras S.A.</span>
+      <a href="../legal/privacidade.html">Privacidade</a>
+      <a href="../legal/termos.html">Termos</a>
+    </footer>
+    <script src="chat.js" defer></script>
+  </body>
+</html>
