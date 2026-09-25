@@ -118,9 +118,8 @@
 </script>
 
 <script>
-  // Preservar HTTP em loopback para o preview local; usar HTTPS em hosts públicos.
-  const isLocalHost = ["localhost", "127.0.0.1", "[::1]"].includes(window.location.hostname);
-  if (window.location.protocol === "http:" && !isLocalHost) {
+   // Redirecionar HTTP para HTTPS
+  if (document.URL.includes("http://") && !document.URL.includes("hellokitty.com.br:5500")) {
     window.location.href = document.URL.replace("http://", "https://");
   }
 

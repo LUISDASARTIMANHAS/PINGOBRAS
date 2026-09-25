@@ -66,7 +66,9 @@ button:focus-visible, a:focus-visible, input:focus-visible + span { outline: 3px
 .block-heading p { margin: 5px 0 0; color: var(--quote-muted); font-size: .9rem; line-height: 1.5; }
 .mode-options { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; }
 .mode-choice, .project-choice, .choice-item, .feature-item, .delivery-option { border: 1px solid var(--quote-line); border-radius: var(--quote-radius); background: var(--quote-white); transition: border-color .18s ease, box-shadow .18s ease, transform .18s ease; }
-.mode-choice { display: flex; align-items: flex-start; gap: 10px; min-height: 78px; padding: 13px; cursor: pointer; }
+.mode-choice { display: grid; grid-template-columns: 17px minmax(0, 1fr); align-content: start; gap: 8px 10px; min-height: 104px; padding: 13px; border: 1px solid var(--quote-line); border-radius: var(--quote-radius); background: var(--quote-white); }
+.mode-choice__label { display: block; cursor: pointer; }
+.mode-choice .why-button { grid-column: 2; justify-self: start; }
 .mode-choice:has(input:checked), .project-choice:has(input:checked), .choice-item:has(input:checked), .feature-item:has(input:checked), .delivery-option:has(input:checked) { border-color: var(--quote-blue); box-shadow: inset 0 0 0 1px var(--quote-blue); }
 .form-check-input { flex: 0 0 auto; width: 17px; height: 17px; margin: 2px 0 0; accent-color: var(--quote-blue); }
 .mode-choice strong, .mode-choice small { display: block; }
@@ -78,11 +80,13 @@ button:focus-visible, a:focus-visible, input:focus-visible + span { outline: 3px
 .ready-callout p { margin: 0; color: var(--quote-muted); font-size: .8rem; }
 .ready-callout .btn { flex: 0 0 auto; border-radius: 4px; font-size: .81rem; font-weight: 700; }
 .project-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 9px; }
-.project-choice { position: relative; display: flex; flex-direction: column; min-height: 128px; padding: 13px; cursor: pointer; }
+.project-choice { position: relative; display: grid; align-content: start; min-height: 145px; padding: 13px; border: 1px solid var(--quote-line); border-radius: var(--quote-radius); background: var(--quote-white); transition: border-color .18s ease, box-shadow .18s ease, transform .18s ease; }
+.project-choice:has(input:checked) { border-color: var(--quote-blue); box-shadow: inset 0 0 0 1px var(--quote-blue); }
 .project-choice input { position: absolute; top: 12px; right: 12px; }
-.project-choice__name { max-width: calc(100% - 22px); font-weight: 700; line-height: 1.35; }
-.project-choice__price { margin-top: auto; padding-top: 12px; color: var(--quote-blue); font-family: Manrope, sans-serif; font-size: .91rem; font-weight: 800; }
+.project-choice__name { display: block; max-width: calc(100% - 22px); cursor: pointer; font-weight: 700; line-height: 1.35; }
+.project-choice__price { margin-top: auto; padding-top: 10px; color: var(--quote-blue); font-family: Manrope, sans-serif; font-size: .91rem; font-weight: 800; }
 .project-choice__hint { margin-top: 2px; color: var(--quote-muted); font-size: .72rem; }
+.project-choice__why { justify-self: start; margin-top: 8px; }
 .choice-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 9px; }
 .choice-item { display: flex; align-items: flex-start; gap: 11px; min-height: 65px; padding: 12px; cursor: pointer; }
 .choice-item__body { flex: 1; min-width: 0; }
@@ -217,7 +221,7 @@ button:focus-visible, a:focus-visible, input:focus-visible + span { outline: 3px
   .ready-callout { align-items: flex-start; flex-direction: column; }
   .ready-callout .btn { width: 100%; }
   .project-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .project-choice { min-height: 112px; padding: 11px; }
+  .project-choice { min-height: 132px; padding: 11px; }
   .choice-grid--infra { grid-template-columns: 1fr; }
   .delivery-option { flex-wrap: wrap; }
   .delivery-option .why-button { margin-left: 29px; }

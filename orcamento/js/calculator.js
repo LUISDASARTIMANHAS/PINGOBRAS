@@ -41,7 +41,6 @@ export function calculateEstimate(project) {
 
   const monthlyItems = selectedInfrastructure.filter((item) => item.unit === "mês").map((item) => ({ name: item.name, price: item.price }));
   const annualItems = selectedInfrastructure.filter((item) => item.unit === "ano").map((item) => ({ name: item.name, price: item.price }));
-  selectedFeatures.filter((item) => item.monthly).forEach((item) => monthlyItems.push({ name: `Infraestrutura: ${item.name}`, price: item.monthly }));
   selectedMaintenance.filter((item) => item.unit === "mês").forEach((item) => monthlyItems.push({ name: item.name, price: item.price }));
   selectedMaintenance.filter((item) => item.unit !== "mês").forEach((item) => oneTimeItems.push({ name: item.name, price: item.price }));
 

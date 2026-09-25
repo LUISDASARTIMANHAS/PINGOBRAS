@@ -38,16 +38,22 @@ function choiceControl({ item, group, checked, priceLabel, description, help = t
 function renderScenarios() {
   const root = byId("scenario-options");
   scenarios.forEach((scenario) => {
-    const label = element("label", "mode-choice");
+    const label = element("div", "mode-choice");
     const input = element("input", "form-check-input");
     input.type = "radio";
     input.name = "scenario";
+    input.id = `scenario-${scenario.id}`;
     input.value = scenario.id;
     input.checked = state.scenario === scenario.id;
     input.dataset.choice = "scenario";
-    const copy = element("span");
+    const copy = element("label", "mode-choice__label");
+    copy.htmlFor = input.id;
     copy.append(element("strong", "", scenario.name), element("small", "", scenario.detail));
-    label.append(input, copy);
+    const why = element("button", "why-button", "Por que isso custa?");
+    why.type = "button";
+    why.dataset.why = scenario.id;
+    why.dataset.whyGroup = "scenario";
+    label.append(input, copy, why);
     root.append(label);
   });
 }
@@ -55,15 +61,21 @@ function renderScenarios() {
 function renderProjects() {
   const root = byId("project-options");
   projectTypes.forEach((project) => {
-    const label = element("label", "project-choice");
+    const label = element("article", "project-choice");
     const input = element("input", "form-check-input");
     input.type = "radio";
     input.name = "project-type";
+    input.id = `project-${project.id}`;
     input.value = project.id;
     input.checked = state.project === project.id;
     input.dataset.choice = "project";
-    label.append(input, element("span", "project-choice__name", project.name), element("span", "project-choice__price", `A partir de ${formatMoney(project.price)}`), element("span", "project-choice__hint", project.hint));
-    label.dataset.projectDescription = project.description;
+    const name = element("label", "project-choice__name", project.name);
+    name.htmlFor = input.id;
+    const why = element("button", "why-button project-choice__why", "Por que isso custa?");
+    why.type = "button";
+    why.dataset.why = project.id;
+    why.dataset.whyGroup = "project";
+    label.append(input, name, element("span", "project-choice__price", `A partir de ${formatMoney(project.price)}`), element("span", "project-choice__hint", project.hint), why);
     root.append(label);
   });
 }
@@ -83,7 +95,6 @@ function renderChoices() {
     const list = element("div", "feature-list");
     items.forEach((feature) => {
       const control = choiceControl({ item: feature, group: "feature", checked: state.features.includes(feature.id), priceLabel: formatMoney(feature.price), description: feature.description });
-      if (feature.monthly) control.querySelector(".feature-item__price").textContent += ` + ${formatMoney(feature.monthly)}/mês infra`;
       list.append(control);
     });
     section.append(list);
@@ -161,6 +172,8 @@ function updateRequestLink(estimate) {
     `Tipo: ${estimate.projectName}`,
     `Páginas: ${estimate.pages.map((item) => item.name).join(", ") || "não se aplica"}`,
     `Funcionalidades: ${estimate.features.map((item) => item.name).join(", ") || "nenhuma selecionada"}`,
+    `Infraestrutura: ${estimate.infrastructure.map((item) => item.name).join(", ") || "nenhuma selecionada"}`,
+    `Manutenção e suporte: ${estimate.maintenance.map((item) => item.name).join(", ") || "nenhum selecionado"}`,
     `Desenvolvimento estimado: ${formatMoney(estimate.developmentTotal)}`,
     `Recorrência mensal: ${formatMoney(estimate.monthlyTotal)}`,
     `Recorrência anual: ${formatMoney(estimate.annualTotal)}`,
@@ -173,14 +186,14 @@ function updateRequestLink(estimate) {
 }
 
 function openWhy(id, group = "feature") {
-  const catalog = { feature: features, page: pages, infrastructure, maintenance };
+  const catalog = { feature: features, page: pages, infrastructure, maintenance, project: projectTypes, scenario: scenarios };
   const item = group === "delivery" ? delivery : catalog[group]?.find((entry) => entry.id === id);
   if (!item) return;
   const content = byId("why-content");
   content.replaceChildren();
   content.append(element("h2", "", item.name));
-  content.append(element("h3", "", "O que é?"), element("p", "", item.description));
-  content.append(element("h3", "", "Por que existe esse custo?"), element("p", "", item.why || item.description));
+  content.append(element("h3", "", "O que é?"), element("p", "", item.description || item.detail));
+  content.append(element("h3", "", "Por que existe esse custo?"), element("p", "", item.why || item.description || item.detail));
   if (item.includes?.length) {
     content.append(element("h3", "", "O que está incluído?"));
     const list = element("ul");
@@ -189,7 +202,7 @@ function openWhy(id, group = "feature") {
   }
   if (item.needed) content.append(element("h3", "", "Quando é necessário?"), element("p", "", item.needed));
   if (item.fallback) content.append(element("h3", "", "E se eu não contratar?"), element("p", "", item.fallback));
-  const price = item.price ? `${formatMoney(item.price)}${item.unit ? `/${item.unit}` : " · valor único"}` : "Sem custo adicional nesta estimativa; formato definido no contrato.";
+  const price = item.billing || (item.price ? `${formatMoney(item.price)}${item.unit ? `/${item.unit}` : " · valor único"}` : "Sem custo adicional nesta estimativa; formato definido no contrato.");
   content.append(element("p", "why-cost-note", `Cobrança: ${price}${item.monthly ? ` + ${formatMoney(item.monthly)}/mês de infraestrutura, quando contratado` : ""}.`));
   byId("why-dialog").showModal();
 }
@@ -197,13 +210,14 @@ function openWhy(id, group = "feature") {
 function setScenario(value) {
   state.scenario = value;
   if (value === "own-server") {
-    state.infrastructure = state.infrastructure.filter((id) => id !== "hosting");
+    state.infrastructure = state.infrastructure.filter((id) => !["hosting", "database-hosting"].includes(id));
   }
   if (value === "api-only") {
     state.features = [...new Set([...state.features, "api-backend", "database"] )];
     state.pages = [];
-    state.infrastructure = state.infrastructure.filter((id) => id !== "hosting");
+    state.infrastructure = state.infrastructure.filter((id) => !["hosting", "database-hosting"].includes(id));
   }
+  renderChoiceChecks();
   renderSummary();
   updateScenarioVisibility();
 }
@@ -216,7 +230,7 @@ function updateScenarioVisibility() {
 
 function setManagedDefaults() {
   state.scenario = "complete";
-  state.infrastructure = [...new Set([...state.infrastructure, "hosting", "domain"])];
+  state.infrastructure = [...new Set([...state.infrastructure, "hosting", "database-hosting", "domain"])];
   state.features = [...new Set([...state.features, "database", "api-backend", "backups"])];
   renderScenarioChecks();
   renderChoiceChecks();
