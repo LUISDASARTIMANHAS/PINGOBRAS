@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Monte uma estimativa para seu site ou sistema e entenda os custos de desenvolvimento, infraestrutura e manutenção."
+    />
+    <meta name="theme-color" content="#f6f7f3" />
+    <script>
+      window.PB_PAGE = {
+        title: "Simulador de orçamento",
+        description:
+          "Monte uma estimativa para seu site ou sistema e entenda cada etapa do investimento.",
+        keywords: "orçamento de site, simulador, desenvolvimento web, Pingobras",
+      };
+    </script>
+    <script src="../src/js/site-config.js"></script>
+    <script src="../src/js/engine.js"></script>
+    <script src="../src/js/loader-components.js" defer></script>
+    <link rel="stylesheet" href="./css/style.css" />
+    <script type="module" src="./js/app.js"></script>
+  </head>
+  <body>
+    <main>
+      <section class="quote-hero" aria-labelledby="page-title">
+        <div class="container quote-hero__inner">
+          <div class="quote-hero__copy">
+            <p class="eyebrow"><span></span> Planeje com clareza</p>
+            <h1 id="page-title">Quanto custa criar <em>um site?</em></h1>
+            <p class="quote-hero__lead">
+              Monte seu projeto, veja uma estimativa e entenda o que existe por
+              trás de cada valor.
+            </p>
+            <a class="btn quote-hero__action" href="#simulador">Simular meu projeto <span aria-hidden="true">↓</span></a>
+            <p class="quote-hero__note">Estimativa sem compromisso. O escopo final é definido em conversa.</p>
+          </div>
+          <div class="hero-map" aria-label="Camadas que formam um projeto web">
+            <div class="hero-map__orbit hero-map__orbit--outer"></div>
+            <div class="hero-map__orbit hero-map__orbit--inner"></div>
+            <div class="hero-map__core"><span>SEU</span><strong>PROJETO</strong><small>feito para funcionar</small></div>
+            <span class="hero-tag hero-tag--pages">Páginas</span>
+            <span class="hero-tag hero-tag--logic">Lógica</span>
+            <span class="hero-tag hero-tag--data">Dados</span>
+            <span class="hero-tag hero-tag--infra">Infraestrutura</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="steps-band" aria-label="Como funciona">
+        <div class="container steps-row">
+          <article class="step-item"><span>01</span><div><h2>Escolha o projeto</h2><p>Defina o tipo de site ou sistema.</p></div></article>
+          <article class="step-item"><span>02</span><div><h2>Adicione recursos</h2><p>Escolha páginas, funções e serviços.</p></div></article>
+          <article class="step-item"><span>03</span><div><h2>Entenda a estimativa</h2><p>Veja desenvolvimento e recorrências.</p></div></article>
+        </div>
+      </section>
+
+      <section class="simulator-section" id="simulador" aria-labelledby="simulator-title">
+        <div class="container">
+          <div class="section-heading">
+            <p class="eyebrow">Configurador de projeto</p>
+            <h2 id="simulator-title">Comece pelo que você precisa</h2>
+            <p>Suas escolhas atualizam o resumo na hora. Abra “Por que isso custa?” em qualquer item para ver detalhes.</p>
+          </div>
+
+          <div class="simulator-layout">
+            <div class="builder">
+              <section class="builder-block" aria-labelledby="mode-title">
+                <div class="block-heading"><span class="block-number">01</span><div><h3 id="mode-title">Como quer contratar?</h3><p>Você pode ajustar o modelo a qualquer momento.</p></div></div>
+                <div class="mode-options" id="scenario-options" role="group" aria-label="Modelo de contratação"></div>
+                <div class="ready-callout">
+                  <div><span class="ready-callout__label">Opção gerenciada</span><h4>Você cuida do negócio. Nós cuidamos da infraestrutura.</h4><p>Um ponto de partida prático, sem ser a única forma de contratar.</p></div>
+                  <button type="button" class="btn btn-outline-dark" data-action="managed">Quero tudo pronto</button>
+                </div>
+              </section>
+
+              <section class="builder-block" id="project-block" aria-labelledby="project-title">
+                <div class="block-heading"><span class="block-number">02</span><div><h3 id="project-title">Qual é o tipo de projeto?</h3><p>Os valores iniciais variam conforme a estrutura necessária.</p></div></div>
+                <div class="project-grid" id="project-options"></div>
+              </section>
+
+              <section class="builder-block" id="pages-block" aria-labelledby="pages-title">
+                <div class="block-heading"><span class="block-number">03</span><div><h3 id="pages-title">Quais páginas entram no escopo?</h3><p>A primeira página está contemplada no valor inicial. As demais são estimadas à parte.</p></div></div>
+                <div class="choice-grid" id="page-options"></div>
+              </section>
+
+              <section class="builder-block" aria-labelledby="features-title">
+                <div class="block-heading"><span class="block-number">04</span><div><h3 id="features-title">O que o projeto precisa fazer?</h3><p>Selecione funcionalidades. Cada item explica o trabalho envolvido.</p></div></div>
+                <div class="feature-groups" id="feature-options"></div>
+              </section>
+
+              <section class="builder-block" aria-labelledby="infra-title">
+                <div class="block-heading"><span class="block-number">05</span><div><h3 id="infra-title">E a infraestrutura?</h3><p>Custos recorrentes ficam separados do desenvolvimento.</p></div></div>
+                <div class="choice-grid choice-grid--infra" id="infrastructure-options"></div>
+              </section>
+
+              <section class="builder-block" aria-labelledby="delivery-title">
+                <div class="block-heading"><span class="block-number">06</span><div><h3 id="delivery-title">Como prefere receber?</h3><p>A entrega de arquivos não mantém a hospedagem ativa automaticamente.</p></div></div>
+                <label class="delivery-option" for="source-delivery"><input class="form-check-input" id="source-delivery" type="checkbox" data-choice="delivery" /><span><strong>Quero receber os arquivos do projeto</strong><small>Frontend, backend contratado, código-fonte e documentação disponível.</small></span><button class="why-button" type="button" data-why="delivery">Por que isso custa?</button></label>
+                <p class="delivery-warning">A entrega não inclui hospedagem contínua. Você pode precisar configurar seu próprio servidor, banco de dados, domínio e serviços relacionados.</p>
+              </section>
+
+              <section class="builder-block maintenance-block" aria-labelledby="maintenance-title">
+                <div class="block-heading"><span class="block-number">07</span><div><h3 id="maintenance-title">Suporte depois da entrega</h3><p>Manutenção é opcional quando você administra uma infraestrutura compatível.</p></div></div>
+                <div class="choice-grid" id="maintenance-options"></div>
+              </section>
+            </div>
+
+            <aside class="estimate-panel" aria-labelledby="estimate-title">
+              <div class="estimate-panel__top"><span class="live-dot"></span><span>ESTIMATIVA ATUALIZADA</span><button class="reset-button" type="button" data-action="reset">Recomeçar</button></div>
+              <h2 id="estimate-title">Seu projeto</h2>
+              <div id="summary-content" aria-live="polite" aria-atomic="true"></div>
+              <div class="estimate-total"><span>Desenvolvimento estimado</span><strong id="development-total">R$ 0</strong><small>valor único, sujeito à análise do escopo</small></div>
+              <div class="recurring-totals" id="recurring-totals"></div>
+              <a class="btn estimate-cta" id="request-quote" href="mailto:pingobras.s.a@gmail.com">Solicitar orçamento personalizado <span aria-hidden="true">↗</span></a>
+              <p class="estimate-disclaimer">Os valores são estimativas para simulação, não uma proposta comercial definitiva.</p>
+            </aside>
+          </div>
+        </div>
+      </section>
+
+      <section class="complexity-section" aria-labelledby="complexity-title">
+        <div class="container">
+          <div class="section-heading section-heading--light"><p class="eyebrow">Nem todo projeto é igual</p><h2 id="complexity-title">Dois “sites” podem ser mundos diferentes.</h2><p>O preço não depende só da aparência: regras, integrações, segurança e armazenamento mudam o trabalho necessário.</p></div>
+          <div class="complexity-compare">
+            <article class="compare-item compare-item--simple"><div class="compare-item__head"><span>01 / INFORMATIVO</span><strong>Site institucional</strong></div><ul><li>Home, sobre e serviços</li><li>Conteúdo e navegação</li><li>Formulário de contato</li></ul><div class="complexity-meter"><span>Complexidade</span><strong>Baixa</strong><i><b></b></i></div></article>
+            <div class="compare-divider" aria-hidden="true">→</div>
+            <article class="compare-item compare-item--system"><div class="compare-item__head"><span>02 / INTERATIVO</span><strong>Sistema web</strong></div><ul><li>Contas e permissões</li><li>Banco de dados e API</li><li>Pedidos e painel admin</li></ul><div class="complexity-meter"><span>Complexidade</span><strong>Alta</strong><i><b></b></i></div></article>
+          </div>
+        </div>
+      </section>
+
+      <section class="models-section" aria-labelledby="models-title">
+        <div class="container">
+          <div class="section-heading"><p class="eyebrow">Um projeto, diferentes acordos</p><h2 id="models-title">Escolha o modelo que combina com você</h2></div>
+          <div class="models-grid"><article><span>01</span><h3>Desenvolvimento</h3><p>Você recebe o escopo contratado e administra a infraestrutura.</p></article><article><span>02</span><h3>Desenvolvimento + infraestrutura</h3><p>Hospedagem e serviços necessários ficam no mesmo planejamento.</p></article><article><span>03</span><h3>API e backend</h3><p>Para quem já tem interface e precisa da lógica ou integração.</p></article><article><span>04</span><h3>Projeto com entrega de arquivos</h3><p>O acesso ao código e a responsabilidade pela operação são combinados no contrato.</p></article></div>
+        </div>
+      </section>
+
+      <section class="faq-section" aria-labelledby="faq-title">
+        <div class="container faq-layout"><div class="section-heading"><p class="eyebrow">Sem mistério</p><h2 id="faq-title">Dúvidas comuns</h2><p>O orçamento final depende de entender o que o seu projeto precisa fazer.</p></div><div class="accordion faq-list" id="faq-list"></div></div>
+      </section>
+
+      <section class="closing-note"><div class="container"><p>“Um site não é apenas uma página na internet.”</p><span>Interface, dados, regras e infraestrutura se combinam de um jeito diferente em cada projeto.</span></div></section>
+    </main>
+
+    <dialog class="why-dialog" id="why-dialog" aria-labelledby="why-title">
+      <div class="why-dialog__head"><span class="eyebrow">Entenda o item</span><button type="button" class="dialog-close" data-action="close-dialog" aria-label="Fechar explicação">×</button></div>
+      <div id="why-content"></div>
+    </dialog>
+  </body>
+</html>
