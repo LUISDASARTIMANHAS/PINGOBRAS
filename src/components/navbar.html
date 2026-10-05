@@ -35,12 +35,14 @@
       return;
     }
 
+    const brand = document.getElementById("pb-navbar-brand");
     const brandLogo = document.getElementById("pb-navbar-logo");
     const brandName = document.getElementById("pb-navbar-brand-name");
     const linksList = document.getElementById("pb-navbar-links");
-    if (!brandLogo || !brandName || !linksList) return;
+    if (!brand || !brandLogo || !brandName || !linksList) return;
 
-    brandLogo.src = config.logo;
+    brand.href = config.resolveUrl("./");
+    brandLogo.src = config.resolveUrl(config.logo);
     brandLogo.alt = config.siteName;
     brandName.textContent = config.siteName;
 
@@ -64,7 +66,9 @@
      * @return {boolean}
      */
     function isActiveLink(href) {
-      const normalizedHref = normalizePath(href);
+      const normalizedHref = normalizePath(
+        new URL(config.resolveUrl(href)).pathname,
+      );
       if (normalizedHref === "/") {
         return currentPath === "/";
       }
@@ -80,7 +84,7 @@
 
       const a = document.createElement("a");
       a.className = "nav-link";
-      a.href = item.href;
+      a.href = config.resolveUrl(item.href);
       a.textContent = item.label;
       a.setAttribute("role", "menuitem");
 
@@ -99,7 +103,7 @@
 
       const a = document.createElement("a");
       a.className = "btn btn-primary-gradient";
-      a.href = config.authLink.href;
+      a.href = config.resolveUrl(config.authLink.href);
       a.textContent = config.authLink.label;
 
       li.appendChild(a);

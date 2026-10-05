@@ -12,6 +12,23 @@
 (function initSiteConfig(global) {
   "use strict";
 
+  const CONFIG_SCRIPT_URL = new URL(
+    (document.currentScript && document.currentScript.src) ||
+      "../src/js/site-config.js",
+    global.location.href,
+  );
+  const SITE_BASE_URL = new URL("../../", CONFIG_SCRIPT_URL).href;
+
+  /**
+   * Resolve um caminho interno a partir da raiz publicada, preservando URLs externas.
+   * @param {string} href
+   * @return {string}
+   */
+  function resolveSiteUrl(href) {
+    if (/^(?:[a-z][a-z\d+.-]*:|\/\/)/i.test(href)) return href;
+    return new URL(href.replace(/^\/+/, ""), SITE_BASE_URL).href;
+  }
+
   /**
    * Localiza o JSON relativo ao próprio script, funcionando na raiz e em
    * páginas servidas por subdiretórios.
@@ -19,14 +36,13 @@
    * @return {string} URL absoluta do arquivo de informações do site.
    */
   function getInfoUrl() {
-    const scriptUrl = document.currentScript && document.currentScript.src;
-    return new URL("../data/info.json", scriptUrl || global.location.href).href;
+    return new URL("../data/info.json", CONFIG_SCRIPT_URL).href;
   }
 
   /**
    * @typedef {Object} PBNavLink
    * @property {string} label - Texto exibido no link.
-   * @property {string} href  - Caminho absoluto (ex: "/jogos").
+  * @property {string} href  - Caminho interno ou URL externa.
    */
 
   /**
@@ -48,6 +64,7 @@
         { label: "loja", href: "./loja" },
         { label: "Editais", href: "./edital" },
         { label: "Conta", href: "./user" },
+        { label: "Hospedagem", href: "./host/" },
         { label: "Sobre", href: "./#sobre" },
       ])
     ),
@@ -121,6 +138,8 @@
 
     const config = {
       ...info,
+      baseUrl: SITE_BASE_URL,
+      resolveUrl: resolveSiteUrl,
       favicon: info.icon || "./src/assets/favicon.png",
       contacts: Object.freeze({ ...(info.contacts || {}) }),
       ...STRUCTURAL_CONFIG,

@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <base href="../" />
+    <script src="src/js/site-config.js"></script>
+    <script src="src/js/engine.js"></script>
+    <script src="host/host.js" defer></script>
+    <script src="src/js/loader-components.js" defer></script>
+    <link rel="stylesheet" href="host/host.css" />
+  </head>
+  <body>
+    <main class="host-page">
+      <div class="container py-4 py-lg-5">
+        <nav aria-label="Caminho da página" class="host-breadcrumb">
+          <a href="./">Início</a>
+          <span aria-hidden="true">/</span>
+          <span aria-current="page">Hospedagem</span>
+        </nav>
+
+        <header class="host-page-header">
+          <div>
+            <p class="host-eyebrow">Painel de hospedagem</p>
+            <h1>Visão geral</h1>
+            <p class="host-intro">
+              Informações sobre a hospedagem de bots para Discord.
+            </p>
+          </div>
+          <a class="btn btn-outline-brand" href="./#servicos">
+            Voltar aos serviços
+          </a>
+        </header>
+
+        <div class="host-dashboard">
+          <aside class="host-sidebar" aria-label="Navegação do painel">
+            <p class="host-sidebar-label">Esta área</p>
+            <nav class="host-section-nav" aria-label="Seções do painel">
+              <a href="#visao-geral" data-section-link aria-current="location">
+                Visão geral
+              </a>
+              <a href="#linguagens" data-section-link>Linguagens</a>
+            </nav>
+          </aside>
+
+          <div class="host-dashboard-content">
+            <section
+              id="visao-geral"
+              class="host-overview fade-in"
+              aria-labelledby="host-service-title"
+            >
+              <p class="host-section-kicker">Serviço</p>
+              <h2 id="host-service-title">Hospedagem de bots para Discord</h2>
+              <p>
+                A Pingobras hospeda bots de Discord desenvolvidos em Python e
+                JavaScript.
+              </p>
+            </section>
+
+            <section
+              id="linguagens"
+              class="host-languages fade-in"
+              aria-labelledby="host-languages-title"
+            >
+              <div class="host-section-heading">
+                <div>
+                  <p class="host-section-kicker">Desenvolvimento</p>
+                  <h2 id="host-languages-title">Linguagens</h2>
+                </div>
+              </div>
+              <div class="host-language-list">
+                <article class="host-language">
+                  <span class="host-language-mark" aria-hidden="true">Py</span>
+                  <h3>Python</h3>
+                </article>
+                <article class="host-language">
+                  <span class="host-language-mark" aria-hidden="true">JS</span>
+                  <h3>JavaScript</h3>
+                </article>
+              </div>
+            </section>
+          </div>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>

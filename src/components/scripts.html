@@ -12,7 +12,6 @@
   integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
   crossorigin="anonymous"
 ></script>
-<script src="./src/js/functions.js" defer></script>
 <script
   src="https://luisdasartimanhas.github.io/PINGOBRAS/src/globalScritps/render.mjs"
   type="module"
@@ -61,6 +60,10 @@
    * @return {void}
    */
   function enableSmoothScroll() {
+    const reduceMotion = window.matchMedia(
+      "(prefers-reduced-motion: reduce)",
+    ).matches;
+
     document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
       anchor.addEventListener("click", (event) => {
         const href = anchor.getAttribute("href");
@@ -70,7 +73,9 @@
         if (!targetEl) return;
 
         event.preventDefault();
-        targetEl.scrollIntoView({ behavior: "smooth" });
+        targetEl.scrollIntoView({
+          behavior: reduceMotion ? "auto" : "smooth",
+        });
       });
     });
   }
@@ -118,9 +123,16 @@
 </script>
 
 <script>
-   // Redirecionar HTTP para HTTPS
-  if (document.URL.includes("http://") && !document.URL.includes("hellokitty.com.br:5500")) {
-    window.location.href = document.URL.replace("http://", "https://");
+  // Redirecionar HTTP para HTTPS, exceto durante o preview local.
+  const isLocalPreview = ["localhost", "127.0.0.1", "::1", "[::1]"].includes(
+    window.location.hostname,
+  );
+  if (
+    window.location.protocol === "http:" &&
+    !isLocalPreview &&
+    !document.URL.includes("hellokitty.com.br:5500")
+  ) {
+    window.location.replace(document.URL.replace(/^http:/, "https:"));
   }
 
   // Alternar entre formulários

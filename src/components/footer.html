@@ -53,7 +53,7 @@
      */
     function createSocialLink(href, label, icon) {
       const a = document.createElement("a");
-      a.href = href;
+      a.href = config.resolveUrl(href);
       a.title = label;
       a.setAttribute("aria-label", label);
       a.rel = "noopener noreferrer";
@@ -80,7 +80,7 @@
       column.links.forEach((link) => {
         const li = document.createElement("li");
         const a = document.createElement("a");
-        a.href = link.href;
+        a.href = config.resolveUrl(link.href);
         a.textContent = link.label;
         li.appendChild(a);
         list.appendChild(li);
@@ -92,7 +92,7 @@
 
     const currentYear = new Date().getFullYear();
     const legalLinksHtml = config.footer.legalLinks
-      .map((link) => `<a href="${link.href}">${link.label}</a>`)
+      .map((link) => `<a href="${config.resolveUrl(link.href)}">${link.label}</a>`)
       .join(" | ");
 
     bottomEl.innerHTML =
