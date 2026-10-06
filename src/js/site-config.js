@@ -85,6 +85,7 @@
               { label: "Pesquisa e IA", href: "/" },
               { label: "Consultoria", href: "/" },
               { label: "Plataformas", href: "/" },
+              { label: "CyberWatch - Monitoramento de Rede e Cibersegurança", href: "https://luisdasartimanhas.github.io/CyberWatch/" },
             ],
           },
           {
