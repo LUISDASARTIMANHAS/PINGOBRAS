@@ -35,7 +35,7 @@ Se um membro da comunidade se envolver em um comportamento inaceitável, os orga
 
 5. Diretrizes para relatórios
 Se você estiver sujeito ou testemunhar um comportamento inaceitável, ou tiver outras preocupações, notifique um organizador da comunidade o mais rápido possível. 
-mailto:luisaugustodesouza785@gmail.com
+mailto:luisaugustodesouza785+abuso@gmail.com
 
 Além disso, os organizadores da comunidade estão disponíveis para ajudar os membros da comunidade a se envolverem com as autoridades locais ou para ajudar aqueles que experimentam comportamentos inaceitáveis ​​a se sentirem seguros. No contexto de eventos presenciais, os organizadores também fornecerão acompanhantes conforme desejado pela pessoa em sofrimento.
 
