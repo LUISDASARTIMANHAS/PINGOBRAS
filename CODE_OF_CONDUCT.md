@@ -40,7 +40,7 @@ mailto:luisaugustodesouza785+abuso@gmail.com
 Além disso, os organizadores da comunidade estão disponíveis para ajudar os membros da comunidade a se envolverem com as autoridades locais ou para ajudar aqueles que experimentam comportamentos inaceitáveis ​​a se sentirem seguros. No contexto de eventos presenciais, os organizadores também fornecerão acompanhantes conforme desejado pela pessoa em sofrimento.
 
 6. Lidando com Reclamações
-Se você sentir que foi falsa ou injustamente acusado de violar este Código de Conduta, você deve notificar luisaugustodesouza785@gmail.com com uma descrição concisa de sua reclamação. Sua reclamação será tratada de acordo com nossas políticas governamentais existentes. 
+Se você sentir que foi falsa ou injustamente acusado de violar este Código de Conduta, você deve notificar luisaugustodesouza785+suporte@gmail.com com uma descrição concisa de sua reclamação. Sua reclamação será tratada de acordo com nossas políticas governamentais existentes. 
 
 [NOTA: As políticas governamentais de cada organização devem ditar como você lida com advertências e expulsões de membros da comunidade. É altamente recomendável que você mencione essas políticas aqui ou na Seção 6 e inclua um mecanismo para lidar com reclamações.]
 
